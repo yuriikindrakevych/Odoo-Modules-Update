@@ -1,0 +1,25 @@
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.env
+
+# Odoo
+*.pyc
+*.pyo
+filestore/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
