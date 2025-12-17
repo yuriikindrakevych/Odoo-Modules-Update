@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access__model_choosing_lead_and_contact_wizard,access__model_choosing_lead_and_contact_wizard,model_choosing_lead_and_contact_wizard,base.group_user,1,1,1,1

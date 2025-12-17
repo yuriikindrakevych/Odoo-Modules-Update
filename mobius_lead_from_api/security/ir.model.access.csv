@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+mobius_lead_from_api.access_rights_of_external_services,access_rights_of_external_services,mobius_lead_from_api.model_rights_of_external_services,base.group_user,1,1,1,1

@@ -1,0 +1,173 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mobius_product_sizes
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20221229\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-30 12:26+0000\n"
+"PO-Revision-Date: 2022-12-30 12:26+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_crm_lead__certificate_data
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_res_partner__certificate_data
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_res_users__certificate_data
+msgid "Certificate data"
+msgstr "Дані сертифікату"
+
+#. module: mobius_product_sizes
+#: model:ir.model,name:mobius_product_sizes.model_res_partner
+msgid "Contact"
+msgstr "Контакт"
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_category__display_name
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_product__display_name
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_template__display_name
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_res_partner__display_name
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_sale_order_line__display_name
+msgid "Display Name"
+msgstr "Відобразити назву"
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_product__height
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_template__height
+msgid "Height"
+msgstr "Висота"
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_product__height_uom_id
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_template__height_uom_id
+msgid "Height Unit of Measure"
+msgstr ""
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_product__height_uom_name
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_template__height_uom_name
+msgid "Height Unit of Measure label"
+msgstr ""
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_crm_lead__id
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_category__id
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_product__id
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_template__id
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_res_partner__id
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_sale_order_line__id
+msgid "ID"
+msgstr ""
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_crm_lead____last_update
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_category____last_update
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_product____last_update
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_template____last_update
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_res_partner____last_update
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_sale_order_line____last_update
+msgid "Last Modified on"
+msgstr "Останні зміни"
+
+#. module: mobius_product_sizes
+#: model:ir.model,name:mobius_product_sizes.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Лід/Нагода"
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_product__length
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_template__length
+msgid "Length"
+msgstr "Довжина"
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_product__length_uom_id
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_template__length_uom_id
+msgid "Length Unit of Measure"
+msgstr ""
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_product__length_uom_name
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_template__length_uom_name
+msgid "Length Unit of Measure label"
+msgstr ""
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_category__name
+msgid "Name"
+msgstr "Ім'я"
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,help:mobius_product_sizes.field_product_product__volume_uom_id
+#: model:ir.model.fields,help:mobius_product_sizes.field_product_template__volume_uom_id
+msgid "Packaging volume unit of measure"
+msgstr ""
+
+#. module: mobius_product_sizes
+#: model:ir.model,name:mobius_product_sizes.model_product_product
+msgid "Product"
+msgstr "Товар"
+
+#. module: mobius_product_sizes
+#: model:ir.model,name:mobius_product_sizes.model_product_category
+msgid "Product Category"
+msgstr "Категорія товару"
+
+#. module: mobius_product_sizes
+#: model:ir.model,name:mobius_product_sizes.model_product_template
+msgid "Product Template"
+msgstr "Шаблон товару"
+
+#. module: mobius_product_sizes
+#: model:ir.model,name:mobius_product_sizes.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Рядок замовлення на продаж"
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_sale_order_line__serial_number
+#: model:ir.model.fields,help:mobius_product_sizes.field_sale_order_line__serial_number
+msgid "Serial Number"
+msgstr "Серійний номер"
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_crm_lead__trade_guardian_code
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_res_partner__trade_guardian_code
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_res_users__trade_guardian_code
+msgid "Trade code"
+msgstr "Код торгового опікуна"
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_product__volume
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_template__volume
+msgid "Volume"
+msgstr "Об'єм"
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_product__volume_uom_id
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_template__volume_uom_id
+msgid "Volume Units of Measure"
+msgstr ""
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_product__width
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_template__width
+msgid "Width"
+msgstr "Ширина"
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_product__width_uom_id
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_template__width_uom_id
+msgid "Width Unit of Measure"
+msgstr ""
+
+#. module: mobius_product_sizes
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_product__width_uom_name
+#: model:ir.model.fields,field_description:mobius_product_sizes.field_product_template__width_uom_name
+msgid "Width Unit of Measure label"
+msgstr ""

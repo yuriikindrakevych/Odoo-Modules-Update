@@ -1,0 +1,261 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mobius_lead_from_api
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20220902\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-27 09:55+0000\n"
+"PO-Revision-Date: 2023-02-27 09:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mobius_lead_from_api
+#: model:mail.template,body_html:mobius_lead_from_api.crm_lead_reg_send_info
+msgid ""
+"<div class=\"text-center\" style=\"margin-left:auto;margin-right:auto;\">\n"
+"                <img alt=\"logo\" src=\"/web/binary/company_logo\" style=\"max-height:120px; max-width: 100%; width:auto;object-fit: contain;\"/>\n"
+"                <p style=\"box-sizing:border-box;font-weight:bolder;margin: auto, auto;\">ZAREJESTROWANO NOWEGO UŻYTKOWNIKA W SERWISIE PARTNERSHIP360</p>\n"
+"            </div>\n"
+"            <div id=\"main\">\n"
+"                <p>Na stronie <a href=\"https://partnership360.aklimapolska.pl/\" style=\"text-decoration:none;box-sizing:border-box;background-color:transparent;color:#008f8c;\">https://partnership360.aklimapolska.pl/</a> możesz zalogować się przez numer telefonu <b><span t-out=\"object.phone\"/></b>\n"
+"                ta wysłanego SMSem kodu werywiracjinego.\n"
+"                </p>\n"
+"                <p>Twój opiekun handlowy <span t-out=\"object.user_id.name\"/>, <span t-out=\"object.user_id.phone\"/>, <span t-out=\"object.user_id.email\"/></p>\n"
+"                <p>Z poważaniem, zespół Aklima Polska.</p>\n"
+"            </div>\n"
+"            "
+msgstr ""
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_res_users__access_code_to_external_systems
+msgid "Access code to external systems"
+msgstr "Kod dostępu do systemów"
+
+#. module: mobius_lead_from_api
+#: model_terms:ir.ui.view,arch_db:mobius_lead_from_api.inherit_res_partner_form
+msgid "Are you sure you want to do this?"
+msgstr "Czy na pewno chcesz utworzyć użytkownika?"
+
+#. module: mobius_lead_from_api
+#: code:addons/mobius_lead_from_api/models/res_partner.py:0
+#, python-format
+msgid "Be sure to specify an email"
+msgstr "Pamiętaj, aby podać adres e-mail"
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_crm_lead__certificate_data
+msgid "Certificate data"
+msgstr "Certyfikat F-Gaz"
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_rights_of_external_services__name
+msgid "Code"
+msgstr "Kod"
+
+#. module: mobius_lead_from_api
+#: model:ir.actions.act_window,name:mobius_lead_from_api.action_services_rights_open
+msgid "Code Generation"
+msgstr "Kod rejestrujący"
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields.selection,name:mobius_lead_from_api.selection__res_partner__company_type__company
+msgid "Company"
+msgstr "Firma"
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_res_partner__company_type
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_res_users__company_type
+msgid "Company Type"
+msgstr "Typ firmy"
+
+#. module: mobius_lead_from_api
+#: code:addons/mobius_lead_from_api/models/crm_lead.py:0
+#, python-format
+msgid "Confirm"
+msgstr ""
+
+#. module: mobius_lead_from_api
+#: model:ir.model,name:mobius_lead_from_api.model_res_partner
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: mobius_lead_from_api
+#: code:addons/mobius_lead_from_api/models/res_partner.py:0
+#, python-format
+msgid "Contact dont have name"
+msgstr "Kontakt nie ma imienia"
+
+#. module: mobius_lead_from_api
+#: model_terms:ir.ui.view,arch_db:mobius_lead_from_api.inherit_res_partner_form
+msgid "Create User"
+msgstr "Stwórz użytkownika"
+
+#. module: mobius_lead_from_api
+#: model_terms:ir.ui.view,arch_db:mobius_lead_from_api.crm_lead_view_form_inherit_mobius
+msgid "Create contact/user"
+msgstr "Utwórz kontakt/użytkownika"
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_rights_of_external_services__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_rights_of_external_services__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_rights_of_external_services__description
+msgid "Description"
+msgstr "Opis"
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_rights_of_external_services__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_res_partner__has_user
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_res_users__has_user
+msgid "Has User"
+msgstr ""
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_rights_of_external_services__id
+msgid "ID"
+msgstr ""
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_crm_lead__vat
+msgid "Identification Number"
+msgstr "NIP"
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields.selection,name:mobius_lead_from_api.selection__res_partner__company_type__person
+msgid "Individual"
+msgstr "Indywidualne"
+
+#. module: mobius_lead_from_api
+#: model_terms:ir.ui.view,arch_db:mobius_lead_from_api.window_accept_create_user_contact_company_view_form
+msgid ""
+"Is the lead already verified? After approval, the user will be registered "
+"for access to the database."
+msgstr ""
+"Czy lead już weryfikowany? Po zatwierdzeniu będzie zarejestrowano "
+"użytkownika dla dostępu do bazy."
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_rights_of_external_services____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_rights_of_external_services__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_rights_of_external_services__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: mobius_lead_from_api
+#: model:ir.model,name:mobius_lead_from_api.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Szansa/Możliwość"
+
+#. module: mobius_lead_from_api
+#: model_terms:ir.ui.view,arch_db:mobius_lead_from_api.view_services_rights_form
+msgid "Mask Form"
+msgstr ""
+
+#. module: mobius_lead_from_api
+#: model_terms:ir.ui.view,arch_db:mobius_lead_from_api.window_accept_create_user_contact_company_view_form
+msgid "No"
+msgstr "NIE"
+
+#. module: mobius_lead_from_api
+#: code:addons/mobius_lead_from_api/models/res_partner.py:0
+#, python-format
+msgid "OK"
+msgstr ""
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_rights_of_external_services__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: mobius_lead_from_api
+#: model:mail.template,name:mobius_lead_from_api.crm_lead_reg_send_info
+msgid "Reg Email"
+msgstr ""
+
+#. module: mobius_lead_from_api
+#: model_terms:ir.ui.view,arch_db:mobius_lead_from_api.crm_lead_view_form_inherit_mobius
+msgid "Send Mail"
+msgstr "Wysłać list"
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_res_partner__right_services_ids
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_res_users__right_services_ids
+#: model:ir.ui.menu,name:mobius_lead_from_api.res_partner_services_rights_open
+#: model_terms:ir.ui.view,arch_db:mobius_lead_from_api.view_services_rights_tree
+msgid "Services Rights"
+msgstr "Prawa do usług zewnętrznych"
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_res_partner__techinal_password
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_res_users__techinal_password
+msgid "Techinal Password"
+msgstr ""
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,help:mobius_lead_from_api.field_res_partner__has_user
+#: model:ir.model.fields,help:mobius_lead_from_api.field_res_users__has_user
+msgid "Technical field"
+msgstr ""
+
+#. module: mobius_lead_from_api
+#: code:addons/mobius_lead_from_api/models/res_partner.py:0
+#, python-format
+msgid "This contact already has a user"
+msgstr "Ten kontakt ma już użytkownika"
+
+#. module: mobius_lead_from_api
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_crm_lead__trade_guardian_code
+#: model:ir.model.fields,field_description:mobius_lead_from_api.field_res_users__trade_guardian_code
+msgid "Trade code"
+msgstr "Kod opiekuna handlu"
+
+#. module: mobius_lead_from_api
+#: code:addons/mobius_lead_from_api/models/res_partner.py:0
+#, python-format
+msgid "User has been created."
+msgstr "Użytkownik został utworzony."
+
+#. module: mobius_lead_from_api
+#: model:ir.model,name:mobius_lead_from_api.model_res_users
+msgid "Users"
+msgstr "Użytkownicy"
+
+#. module: mobius_lead_from_api
+#: model_terms:ir.ui.view,arch_db:mobius_lead_from_api.window_accept_create_user_contact_company_view_form
+msgid "YES (Create contact/user and send mail)"
+msgstr "TAK (Utwórz kontakt/użytkownika i wyślij pocztę)"
+
+#. module: mobius_lead_from_api
+#: model:mail.template,subject:mobius_lead_from_api.crm_lead_reg_send_info
+msgid "ZAREJESTROWANO NOWEGO UŻYTKOWNIKA W SERWISIE PARTNERSHIP360"
+msgstr ""
+
+#. module: mobius_lead_from_api
+#: model:ir.model,name:mobius_lead_from_api.model_rights_of_external_services
+msgid "rights.of.external.services"
+msgstr ""

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_view_sale_order']" position="before">
+                <button class="oe_stat_button"
+                        name="open_building_object"
+                        icon="fa-home"
+                        type="object">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="building_object_item_count"/>
+                            </span>
+                            <span attrs="{'invisible': [('building_object_item_count', '=', 1)]}">
+                                Building objects
+                            </span>
+                            <span attrs="{'invisible': [('building_object_item_count', '!=', 1)]}">
+                                Building Object
+                            </span>
+                        </div>
+                </button>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

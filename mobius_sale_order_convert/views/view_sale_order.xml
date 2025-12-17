@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_quotation_tree_with_onboarding_convert" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree//field[@name='amount_untaxed']" position="after">
+                    <field name="company_currency_id" invisible="1"/>
+                    <field name="amount_untaxed_convert" sum="Total Tax Excluded" widget="monetary"
+                           options="{'currency_field': 'company_currency_id'}" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+</odoo>

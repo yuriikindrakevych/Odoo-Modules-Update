@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_mobius_catalogue_koatuu_settlement_type,access_mobius_catalogue_koatuu_settlement_type,model_mobius_catalogue_koatuu_settlement_type,base.group_user,1,0,0,0
+access_mobius_catalogue_koatuu_settlement,access_mobius_catalogue_koatuu_settlement,model_mobius_catalogue_koatuu_settlement,base.group_user,1,1,1,1

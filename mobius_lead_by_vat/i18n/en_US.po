@@ -1,0 +1,110 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mobius_lead_by_vat
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20220902\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-29 05:39+0000\n"
+"PO-Revision-Date: 2023-03-29 05:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mobius_lead_by_vat
+#: model_terms:ir.ui.view,arch_db:mobius_lead_by_vat.lead_by_vat_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: mobius_lead_by_vat
+#: model_terms:ir.ui.view,arch_db:mobius_lead_by_vat.lead_by_vat_wizard_form
+msgid "Create Lead By Vat"
+msgstr ""
+
+#. module: mobius_lead_by_vat
+#. openerp-web
+#: code:addons/mobius_lead_by_vat/static/src/xml/open_wizard_lead_by_vat_tree.xml:0
+#: model_terms:ir.ui.view,arch_db:mobius_lead_by_vat.lead_by_vat_wizard_form
+#, python-format
+msgid "Create by VAT"
+msgstr ""
+
+#. module: mobius_lead_by_vat
+#: model:ir.model.fields,field_description:mobius_lead_by_vat.field_lead_by_vat_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: mobius_lead_by_vat
+#: model:ir.model.fields,field_description:mobius_lead_by_vat.field_lead_by_vat_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: mobius_lead_by_vat
+#: model:ir.model,name:mobius_lead_by_vat.model_lead_by_vat_wizard
+msgid "Creating of Contact by the VAT code"
+msgstr ""
+
+#. module: mobius_lead_by_vat
+#. openerp-web
+#: code:addons/mobius_lead_by_vat/static/src/js/open_wizard_lead_by_vat_tree.js:0
+#, python-format
+msgid "Creating of Lead by the VAT code"
+msgstr ""
+
+#. module: mobius_lead_by_vat
+#: model:ir.model.fields,field_description:mobius_lead_by_vat.field_lead_by_vat_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: mobius_lead_by_vat
+#: model:ir.model.fields,field_description:mobius_lead_by_vat.field_lead_by_vat_wizard__vat_code
+msgid "Enter the VAT code"
+msgstr ""
+
+#. module: mobius_lead_by_vat
+#: model:ir.model.fields,field_description:mobius_lead_by_vat.field_lead_by_vat_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: mobius_lead_by_vat
+#: model:ir.model.fields,field_description:mobius_lead_by_vat.field_lead_by_vat_wizard____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: mobius_lead_by_vat
+#: model:ir.model.fields,field_description:mobius_lead_by_vat.field_lead_by_vat_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mobius_lead_by_vat
+#: model:ir.model.fields,field_description:mobius_lead_by_vat.field_lead_by_vat_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: mobius_lead_by_vat
+#: code:addons/mobius_lead_by_vat/models/mobius_lead_by_vat.py:0
+#, python-format
+msgid "Sorry, nothing was found with the code you provided"
+msgstr ""
+
+#. module: mobius_lead_by_vat
+#: code:addons/mobius_lead_by_vat/models/mobius_lead_by_vat.py:0
+#, python-format
+msgid "The VAT code value can't be empty!"
+msgstr ""
+
+#. module: mobius_lead_by_vat
+#: code:addons/mobius_lead_by_vat/models/mobius_lead_by_vat.py:0
+#, python-format
+msgid "The VAT code value have to be a digit!"
+msgstr ""
+
+#. module: mobius_lead_by_vat
+#: code:addons/mobius_lead_by_vat/models/mobius_lead_by_vat.py:0
+#, python-format
+msgid "This VAT code already exists in the system. \nContact name: %s \nManager name: %s"
+msgstr ""

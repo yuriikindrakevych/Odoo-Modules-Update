@@ -1,0 +1,789 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mobius_sale_order_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20230206\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-10 11:02+0000\n"
+"PO-Revision-Date: 2024-07-10 11:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_with_avans
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_with_avans_en
+msgid "% VAT"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.actions.report,print_report_name:mobius_sale_order_reports.action_report_sale_order_pro_forma
+#: model:ir.actions.report,print_report_name:mobius_sale_order_reports.action_report_sale_order_pro_forma_en
+msgid "'%s' % (object.name_file_pro_forma or '')"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.actions.report,print_report_name:mobius_sale_order_reports.action_report_sale_order_zamowienie_short
+msgid "'Zamowienie / Oferta (SHORT) - %s' % (object.name or '')"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.actions.report,print_report_name:mobius_sale_order_reports.action_report_sale_order_zamowienie_en_short
+msgid "'Zamowienie / Oferta (SHORT)- %s' % (object.name or '')"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.actions.report,print_report_name:mobius_sale_order_reports.action_report_sale_order_zamowienie
+#: model:ir.actions.report,print_report_name:mobius_sale_order_reports.action_report_sale_order_zamowienie_en
+msgid "'Zamowienie / Oferta - %s' % (object.name or '')"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma_en
+msgid ""
+"<br/>\n"
+"                                    <span style=\"font-weight: bold;\">KRS: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma_en
+msgid ""
+"<br/>\n"
+"                                    <span style=\"font-weight: bold;\">REGON: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma_en
+msgid ""
+"<br/>\n"
+"                                    <span style=\"font-weight: bold;\">e-mail: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_banks_pro_forma_en
+msgid ""
+"<br/>\n"
+"                            <span style=\"font-weight: bold;\">Currency: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_banks_pro_forma_en
+msgid ""
+"<br/>\n"
+"                            <span style=\"font-weight: bold;\">IBAN: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_en_short
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_short
+msgid ""
+"<br/>\n"
+"                            <span style=\"font-weight: bold;\">KRS: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_pro_forma
+msgid ""
+"<br/>\n"
+"                            <span style=\"font-weight: bold;\">NIP: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_banks_pro_forma
+msgid ""
+"<br/>\n"
+"                            <span style=\"font-weight: bold;\">Nr konta: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_en_short
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_short
+msgid ""
+"<br/>\n"
+"                            <span style=\"font-weight: bold;\">REGON: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_pro_forma_en
+msgid ""
+"<br/>\n"
+"                            <span style=\"font-weight: bold;\">VAT-number: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_banks_pro_forma
+msgid ""
+"<br/>\n"
+"                            <span style=\"font-weight: bold;\">Waluta: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_en_short
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_short
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_en_short
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_pro_forma_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_short
+msgid ""
+"<br/>\n"
+"                            <span style=\"font-weight: bold;\">e-mail: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_pro_forma_en
+msgid ""
+"<br/>\n"
+"                            <span style=\"font-weight: bold;\">tel: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_en_short
+msgid ""
+"<br/>\n"
+"                            <span/>\n"
+"                            <br/>\n"
+"                            <span/>\n"
+"                            <br/>\n"
+"                            <span style=\"font-weight: bold;\">phone: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_short
+msgid ""
+"<br/>\n"
+"                            <span/>\n"
+"                            <br/>\n"
+"                            <span/>\n"
+"                            <br/>\n"
+"                            <span style=\"font-weight: bold;\">tel: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_banks_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_banks_pro_forma_en
+msgid "<span style=\"font-weight: bold;\">Bank: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_en_short
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_short
+msgid "<span style=\"font-weight: bold;\">NIP: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma_en
+msgid "<span style=\"font-weight: bold;\">VAT-number: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_en_short
+msgid "<span style=\"font-weight: bold;\">phone: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_short
+msgid "<span style=\"font-weight: bold;\">tel: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_banks_pro_forma_en
+msgid "<span style=\"margin-left: 50px;font-weight: bold;\">SWIFT: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_pro_forma_en
+msgid "<span style=\"vertical-align: middle;\">Buyer</span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_en_short
+msgid "<span style=\"vertical-align: middle;\">Customer Data</span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_short
+msgid "<span style=\"vertical-align: middle;\">Dane Klienta</span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_pro_forma
+msgid "<span style=\"vertical-align: middle;\">Nabywca</span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_en_short
+msgid "<span style=\"vertical-align: middle;\">Responsible for the offer</span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_en_short
+msgid "<span style=\"vertical-align: middle;\">Responsible for the order</span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_pro_forma_en
+msgid "<span style=\"vertical-align: middle;\">Seller</span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_pro_forma
+msgid "<span style=\"vertical-align: middle;\">Sprzedawca</span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_short
+msgid "<span style=\"vertical-align: middle;\">Za ofertę odpowiada</span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_short
+msgid "<span style=\"vertical-align: middle;\">Za zamówienie odpowiada</span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_short
+msgid ""
+"<span style=\"vertical-align: middle;margin-left: 12.5%;font-weight: "
+"bold;\">Dotyczy: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_en_short
+msgid ""
+"<span style=\"vertical-align: middle;margin-left: 12.5%;font-weight: "
+"bold;\">Refers to: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_en_short
+msgid ""
+"<span style=\"vertical-align: middle;margin-left: 25%;font-weight: "
+"bold;\">Currency: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_first_short
+msgid ""
+"<span style=\"vertical-align: middle;margin-left: 25%;font-weight: "
+"bold;\">Waluta: </span>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.document_tax_totals_pl_pro_forma_update
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.document_tax_totals_pro_forma_pl
+msgid "<strong>Kwota zaliczki</strong>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.document_tax_totals_pl
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.document_tax_totals_pl_short
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.document_tax_totals_pro_forma_pl_zaliczki_bottom
+msgid "<strong>Suma</strong>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.document_tax_totals_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.document_tax_totals_en_short
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.document_tax_totals_pl_pro_forma_update_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.document_tax_totals_pro_forma_pl_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.document_tax_totals_pro_forma_pl_zaliczki_bottom_en
+msgid "<strong>Total</strong>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.view_partner_bank_tree_add_banks
+msgid "Add Bank to profile"
+msgstr "Dodaj banki"
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.view_profile_res_partner_bank
+msgid "Add Banks"
+msgstr "Dodaj banki"
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_bank_statement_line__advance_payment_method_delivered
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_move__advance_payment_method_delivered
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_payment__advance_payment_method_delivered
+msgid "Advance Payment Method Delivered"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_with_avans_en
+msgid "Amount Brutto"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_with_avans_en
+msgid "Amount netto"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.account_invoice_view_form_inherit_advance_payment_method_delivered
+msgid "Avans"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_bank_statement_line__bank_account_id
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_move__bank_account_id
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_payment__bank_account_id
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_res_currency__default_bank_id
+msgid "Bank Account"
+msgstr "Bank"
+
+#. module: mobius_sale_order_reports
+#: model:ir.model,name:mobius_sale_order_reports.model_res_partner_bank
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.view_partner_bank_tree_add_banks
+msgid "Bank Accounts"
+msgstr "Konta bankowe"
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_profile_res_partner_bank__bank_ids
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.view_profile_res_partner_bank
+msgid "Banks"
+msgstr "Banki"
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info_short
+msgid "CENA"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_with_avans
+msgid "Cena netto"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info_en_short
+msgid "Comments"
+msgstr "Komentarz"
+
+#. module: mobius_sale_order_reports
+#: model:ir.model,name:mobius_sale_order_reports.model_res_partner
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_profile_res_partner_bank__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_profile_res_partner_bank__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model,name:mobius_sale_order_reports.model_res_currency
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_profile_res_partner_bank__currency_id
+msgid "Currency"
+msgstr "Waluta"
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info_en_short
+msgid "DELIVERY"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info_short
+msgid "DOSTAWA"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_product_pricelist__description
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_profile_res_partner_bank__description
+msgid "Description"
+msgstr "Opis"
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_profile_res_partner_bank__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_res_partner__ensurance
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_res_users__ensurance
+msgid "Ensurance"
+msgstr "Ma limit kredytowy"
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma
+msgid "Etykieta"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_profile_res_partner_bank__id
+msgid "ID"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_with_avans
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_short
+msgid "Ilość"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_bank_statement_line__invoice_date
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_move__invoice_date
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_payment__invoice_date
+msgid "Invoice/Bill Date"
+msgstr "Data faktury"
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_sale_order_line__is_delivery
+msgid "Is a Delivery"
+msgstr "Jest opłatą za dostawę"
+
+#. module: mobius_sale_order_reports
+#: model:ir.model,name:mobius_sale_order_reports.model_account_move
+msgid "Journal Entry"
+msgstr "Zapis dziennika"
+
+#. module: mobius_sale_order_reports
+#: model:ir.model,name:mobius_sale_order_reports.model_account_move_line
+msgid "Journal Item"
+msgstr "Pozycja zapisu"
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_en
+msgid "Label"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_profile_res_partner_bank____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_profile_res_partner_bank__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_profile_res_partner_bank__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_move_line__line_down_payment
+msgid "Line Down Payment"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_with_avans
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_short
+msgid "Lp."
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_profile_res_partner_bank__name
+msgid "Name"
+msgstr "Nazwa"
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_bank_statement_line__name_file_pro_forma
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_move__name_file_pro_forma
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_payment__name_file_pro_forma
+msgid "Name File Pro Forma"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_with_avans
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_short
+msgid "Nazwa towaru"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info_pro_forma_en
+msgid "Notes"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields.selection,name:mobius_sale_order_reports.selection__account_move__type_show_bank__one
+msgid "Only one bank"
+msgstr "Tylko jeden bank"
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info_en_short
+msgid "PRICE"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.actions.report,name:mobius_sale_order_reports.action_report_sale_order_pro_forma
+msgid "PRO-FORMA / Faktura"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.actions.report,name:mobius_sale_order_reports.action_report_sale_order_pro_forma_en
+msgid "PRO-FORMA / Faktura (en)"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_en_short
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma_en
+msgid "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr "Strona: <span class=\"page\"/> / <span class=\"topage\"/>"
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_with_avans_en
+msgid "Price netto"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model,name:mobius_sale_order_reports.model_product_pricelist
+msgid "Pricelist"
+msgstr "Cennik"
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_en_short
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_with_avans_en
+msgid "Product name"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_setup_bank_manual_config__profile_id
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_res_partner_bank__profile_id
+msgid "Profile"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.actions.act_window,name:mobius_sale_order_reports.action_bank_form_add_banks
+#: model:ir.actions.act_window,name:mobius_sale_order_reports.action_bank_form_show_bank
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_bank_statement_line__profile_id
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_move__profile_id
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_payment__profile_id
+msgid "Profile Banks"
+msgstr "Banki profilu"
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.view_profile_res_partner_bank
+msgid "Profile Res Partner Bank"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields.selection,name:mobius_sale_order_reports.selection__account_move__type_show_bank__profile
+msgid "Profile with banks"
+msgstr "Kilka banków"
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_en_short
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_with_avans_en
+msgid "Quantity"
+msgstr "Ilość"
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.account_invoice_view_form_inherit_advance_payment_method_delivered
+msgid "Regular invoice"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model,name:mobius_sale_order_reports.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "Zaliczkowa faktura sprzedaży"
+
+#. module: mobius_sale_order_reports
+#: model:ir.model,name:mobius_sale_order_reports.model_sale_order
+msgid "Sales Order"
+msgstr "Zamówienie sprzedaży"
+
+#. module: mobius_sale_order_reports
+#: model:ir.model,name:mobius_sale_order_reports.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Pozycja zamówienia sprzedaży"
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_footer_short
+msgid "Strona: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info_en_short
+msgid "TERMS OF PAYMENT"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,help:mobius_sale_order_reports.field_account_bank_statement_line__advance_payment_method_delivered
+#: model:ir.model.fields,help:mobius_sale_order_reports.field_account_move__advance_payment_method_delivered
+#: model:ir.model.fields,help:mobius_sale_order_reports.field_account_payment__advance_payment_method_delivered
+msgid "Technical  field"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,help:mobius_sale_order_reports.field_account_bank_statement_line__name_file_pro_forma
+#: model:ir.model.fields,help:mobius_sale_order_reports.field_account_move__name_file_pro_forma
+#: model:ir.model.fields,help:mobius_sale_order_reports.field_account_move_line__line_down_payment
+#: model:ir.model.fields,help:mobius_sale_order_reports.field_account_payment__name_file_pro_forma
+#: model:ir.model.fields,help:mobius_sale_order_reports.field_sale_order_line__is_delivery
+msgid "Technical field"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_bank_statement_line__type_show_bank
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_move__type_show_bank
+#: model:ir.model.fields,field_description:mobius_sale_order_reports.field_account_payment__type_show_bank
+msgid "Type bank for print"
+msgstr "Bank do druku"
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info_short
+msgid "Uwagi"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info_en_short
+msgid "VALIDITY OF THE OFFER UNTIL"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info_short
+msgid "WARUNKI PŁATNOŚCI"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_page_additional_info_short
+msgid "WAŻNOŚĆ OFERTY DO"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_with_avans
+msgid "Wartość Brutto"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_main_second_pro_forma_faktura_vat_with_avans
+msgid "Wartość netto"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.actions.report,name:mobius_sale_order_reports.action_report_sale_order_zamowienie_en
+msgid "Zamowienie / Oferta (en)"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.actions.report,name:mobius_sale_order_reports.action_report_sale_order_zamowienie
+msgid "Zamowienie / Oferta (pl)"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.actions.report,name:mobius_sale_order_reports.action_report_sale_order_zamowienie_en_short
+msgid "Zamowienie / Oferta SHORT (en)"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.actions.report,name:mobius_sale_order_reports.action_report_sale_order_zamowienie_short
+msgid "Zamowienie / Oferta SHORT (pl)"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.view_profile_res_partner_bank
+msgid "e.g. Profile Banks"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_header
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_header_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_header_en_short
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_header_pro_forma
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_header_pro_forma_en
+#: model_terms:ir.ui.view,arch_db:mobius_sale_order_reports.sale_order_zamowienie_header_short
+msgid "logo"
+msgstr ""
+
+#. module: mobius_sale_order_reports
+#: model:ir.model,name:mobius_sale_order_reports.model_profile_res_partner_bank
+msgid "profile.res.partner.bank"
+msgstr ""

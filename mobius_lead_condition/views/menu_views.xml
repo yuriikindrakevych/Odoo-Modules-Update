@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="lead_condition_main_menu"
+        name="Lead Conditions"
+        action="mobius_lead_condition_lead_condition_action_window"
+        parent="crm.menu_crm_config_lead"
+        sequence="2"/>
+
+</odoo>

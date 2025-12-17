@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="inherit_res_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet" position="before">
+                <header>
+                    <button
+                        name="create_user"
+                        string="Create User"
+                        type="object"
+                        confirm="Are you sure you want to do this?"
+                        attrs="{'invisible': ['|', ('has_user', '=', True), ('company_type', '=', 'company')]}"
+                        />
+                    <field name="has_user" invisible="1"/>
+                </header>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet//field[@name='trade_guardian_code']" position="after">
+                <field name="right_services_ids" widget="many2many_tags"/>
+                <field name="user_ids" widget="many2many_tags"/>
+            </xpath>
+            <xpath expr="//field[@name='website']" position="after">
+                <field name="linkedin"/>
+                <field name="linkedin_company"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_product_template_form2" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view" />
+        <field name="arch" type="xml">
+            <field name="barcode" position="replace">
+                <label for="barcode"/>
+                <div class="o_row" string="Barcode">
+                    <field name="barcode" class="oe_inline" position="move"/>
+                    <button string="Generate" name="generate_all" type="object" class="btn-primary oe_inline oe_right" colspan="2" tyle="margin-left: 10px"/>
+                </div>
+            </field>
+        </field>
+    </record>
+
+    <record id="product_template_tree_view_inherit" model="ir.ui.view">
+        <field name="name">product.template.tree</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="default_code" position="after">
+                <field name="category_desc" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="product_template_only_form_view_inherit" model="ir.ui.view">
+        <field name="name">product.template.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='general_information']//field[@name='categ_id']" position="after">
+                <field name="category_desc" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

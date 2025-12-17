@@ -1,0 +1,573 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mobius_bulding_object
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-04 08:48+0000\n"
+"PO-Revision-Date: 2025-04-04 08:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid ""
+"<span attrs=\"{'invisible': [('attachment_number', '=', 1)]}\">\n"
+"                                        Attachments\n"
+"                                    </span>\n"
+"                                    <span attrs=\"{'invisible': [('attachment_number', '!=', 1)]}\">\n"
+"                                        Attachment\n"
+"                                    </span>"
+msgstr ""
+"<span attrs=\"{'invisible': [('attachment_number', '=', 1)]}\">\n"
+"                                        Документи\n"
+"                                    </span>\n"
+"                                    <span attrs=\"{'invisible': [('attachment_number', '!=', 1)]}\">\n"
+"                                        Документ\n"
+"                                    </span>"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_partner_form_inherit
+msgid ""
+"<span attrs=\"{'invisible': [('building_object_item_count', '=', 1)]}\">\n"
+"                                Building objects\n"
+"                            </span>\n"
+"                            <span attrs=\"{'invisible': [('building_object_item_count', '!=', 1)]}\">\n"
+"                                Building Object\n"
+"                            </span>"
+msgstr ""
+"<span attrs=\"{'invisible': [('building_object_item_count', '=', 1)]}\">\n"
+"                                Об'єкти будови\n"
+"                            </span>\n"
+"                            <span attrs=\"{'invisible': [('building_object_item_count', '!=', 1)]}\">\n"
+"                                Об'єкт будови\n"
+"                            </span>"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid ""
+"<span attrs=\"{'invisible': [('crm_lead_count', '=', 1)]}\">\n"
+"                                        Leads\n"
+"                                    </span>\n"
+"                                    <span attrs=\"{'invisible': [('crm_lead_count', '!=', 1)]}\">\n"
+"                                        Lead\n"
+"                                    </span>"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid ""
+"<span attrs=\"{'invisible': [('sale_order_count', '=', 1)]}\">\n"
+"                                        Sale Orders\n"
+"                                    </span>\n"
+"                                    <span attrs=\"{'invisible': [('sale_order_count', '!=', 1)]}\">\n"
+"                                        Sale Order\n"
+"                                    </span>"
+msgstr ""
+"<span attrs=\"{'invisible': [('sale_order_count', '=', 1)]}\">\n"
+"                                         Продажі\n"
+"                                    </span>\n"
+"                                    <span attrs=\"{'invisible': [('sale_order_count', '!=', 1)]}\">\n"
+"                                        Продаж\n"
+"                                    </span>"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.crm_lead_view_form_inherit_mobius_building_object
+msgid "<span class=\"o_stat_text\">Building Object</span>"
+msgstr "Об'єкт будови"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "<span class=\"o_stat_text\">Lead</span>"
+msgstr "Лід"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Add a product"
+msgstr "Додати продукт"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Additional Info"
+msgstr "Додаткова Інформація"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Address"
+msgstr "Адреса"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__analytical_account
+msgid "Analytical Account"
+msgstr "Аналітичний акаунт"
+
+#. module: mobius_bulding_object
+#: model:ir.model,name:mobius_bulding_object.model_ir_attachment
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__attachment
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_ir_attachment__attach_rel
+msgid "Attachment"
+msgstr "Прикріплення"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.window_bulding_object_lead_form
+msgid "Barcode"
+msgstr "Штих-код"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__building_object_line
+msgid "Building Lines"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: code:addons/mobius_bulding_object/models/crm_lead.py:0
+#: model:ir.actions.act_window,name:mobius_bulding_object.action_building_object_open
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__building_object_id
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_crm_lead__building_object_id
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_sale_order__building_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_sale_order_line__order_building_id
+#: model:ir.ui.menu,name:mobius_bulding_object.menu_action_building_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.crm_lead_view_search_inherit_mobius_building_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form_confirm_order
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_tree
+#, python-format
+msgid "Building Object"
+msgstr "Об'єкт будови"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_sale_order_line__order_building_line_id
+msgid "Building Object Line"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_res_partner__building_object_item_count
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_res_users__building_object_item_count
+msgid "Building Object count"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form_confirm_order
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.window_bulding_object_lead_form
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields.selection,name:mobius_bulding_object.selection__building_object__state__cancel
+msgid "Cancelled"
+msgstr "Скасовано"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__check_box
+msgid "Check Box"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__city
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "City"
+msgstr "Місто"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form_confirm_order
+msgid "Clear All"
+msgstr "Очистити всі"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__company_id
+msgid "Company"
+msgstr "Компанія"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form_confirm_order
+msgid "Confirm"
+msgstr "Підтвердити"
+
+#. module: mobius_bulding_object
+#: code:addons/mobius_bulding_object/models/building_object.py:0
+#: code:addons/mobius_bulding_object/models/building_object.py:0
+#: code:addons/mobius_bulding_object/models/building_object.py:0
+#, python-format
+msgid "Confirm Order"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model,name:mobius_bulding_object.model_res_partner
+msgid "Contact"
+msgstr "Контакт"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__country_id
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Country"
+msgstr "Країна"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.window_bulding_object_lead_form
+msgid "Create"
+msgstr "Створити"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.crm_lead_view_form_inherit_mobius_building_object
+msgid "Create Building Object"
+msgstr "Створити об'єкт будови"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Create Offer"
+msgstr "Створити замовлення"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__create_uid
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__create_date
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__partner_id
+msgid "Customer"
+msgstr "Клієнт"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__date
+msgid "Date"
+msgstr "Дата"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__demand
+msgid "Demand"
+msgstr "Попит"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__designer_id
+msgid "Designer"
+msgstr "Проектант"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__display_name
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__display_name
+msgid "Display Name"
+msgstr "Об'єкт будови"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields.selection,name:mobius_bulding_object.selection__building_object__state__done
+msgid "Done"
+msgstr "Виконано"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__end_date
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__end_date_time
+msgid "End Date"
+msgstr "Термін реалізації кінець"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields.selection,name:mobius_bulding_object.selection__building_object__state__executed
+msgid "Executed"
+msgstr "У процесі"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form_confirm_order
+msgid "Fill All"
+msgstr "Заповнити всі"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__full_reserved
+msgid "Full Reserved"
+msgstr "Повністю зарезервовано"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__general_executor_id
+msgid "General Executor"
+msgstr "Генеральний виконавець"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__id
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__id
+msgid "ID"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__installer_id
+msgid "Installer"
+msgstr "Інсталятор"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__investor_id
+msgid "Investor"
+msgstr "Інвестор"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object____last_update
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__write_uid
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__write_date
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: code:addons/mobius_bulding_object/models/building_object.py:0
+#, python-format
+msgid "Lead"
+msgstr "Лід"
+
+#. module: mobius_bulding_object
+#: model:ir.model,name:mobius_bulding_object.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Лід/Нагода"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_filter
+msgid "My Orders"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: code:addons/mobius_bulding_object/models/crm_lead.py:0
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_crm_lead__name_building_object
+#, python-format
+msgid "Name Building Object"
+msgstr "Назва об'єкту будови"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__name
+msgid "Name Object"
+msgstr "Об'єкт будови"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields.selection,name:mobius_bulding_object.selection__building_object__state__new
+msgid "New"
+msgstr "Новий"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__seq_number
+msgid "No."
+msgstr "Номер"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__attachment_number
+msgid "Number of Attachments"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__crm_lead_id
+msgid "Opportunity"
+msgstr "Лід"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__order_line_building
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__order_line_building_line
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Order Lines"
+msgstr "Детальні операції"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__property_product_pricelist
+msgid "Pricelist"
+msgstr "Прайс-лист"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__product_id
+msgid "Product"
+msgstr "Продукт"
+
+#. module: mobius_bulding_object
+#: model:ir.actions.act_window,name:mobius_bulding_object.act_building_object
+#: model:ir.actions.act_window,name:mobius_bulding_object.crm_lead_building_object
+msgid "Quotations and Sales"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Renew"
+msgstr "Поновити"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__reserved
+msgid "Reserved"
+msgstr "Зарезервовано"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__order
+msgid "Sale"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: code:addons/mobius_bulding_object/models/building_object.py:0
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__sale_order_ids
+#, python-format
+msgid "Sale Order"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__crm_lead_count
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__sale_order_count
+msgid "Sale Order count"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model,name:mobius_bulding_object.model_sale_order
+msgid "Sales Order"
+msgstr "Замовлення на продаж"
+
+#. module: mobius_bulding_object
+#: model:ir.model,name:mobius_bulding_object.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Рядок замовлення на продаж"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form_confirm_order
+msgid "Sales Order Lines"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__team_id
+msgid "Sales Team"
+msgstr "Команда продажу"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__user_id
+msgid "Salesperson"
+msgstr "Продавець"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_filter
+msgid "Search Building Object"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__show_button_cancel
+msgid "Show Button Cancel"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__start_date
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__start_date_time
+msgid "Start Date"
+msgstr "Термін реалізації початок"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__state_id
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "State"
+msgstr "Область"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__state
+msgid "Status"
+msgstr "Статус"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__street
+msgid "Street"
+msgstr "Вулиця"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Street 2..."
+msgstr "Вулиця 2..."
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Street..."
+msgstr "Вулиця..."
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__street2
+msgid "Street2"
+msgstr "Вулиця 2"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__crm_lead_id_show
+msgid "Technical"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: code:addons/mobius_bulding_object/models/building_object_line.py:0
+#, python-format
+msgid "The quantity for sale cannot be less than zero"
+msgstr "Кількість для продажу не може бути менше нуля"
+
+#. module: mobius_bulding_object
+#: model:ir.model.constraint,message:mobius_bulding_object.constraint_building_object_seq_number_unique
+msgid "The value of sequence number (No.) must be unique!"
+msgstr "Номер повинен бути унікальним!"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,help:mobius_bulding_object.field_building_object__property_product_pricelist
+msgid ""
+"This pricelist will be used, instead of the default one, for sales to the "
+"current partner"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form_confirm_order
+msgid "To Sale Order"
+msgstr "Ilość na sprzedaż"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__total_power
+msgid "Total power"
+msgstr "Загальна потужність"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__price_unit
+msgid "Unit Price"
+msgstr "Ціна за одиницю"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,help:mobius_bulding_object.field_building_object__attachment
+msgid "You can upload your document"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: code:addons/mobius_bulding_object/models/building_object_line.py:0
+#, python-format
+msgid "You cannot sell more than demand."
+msgstr "Ви не можете продати більше, ніж попит."
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "ZIP"
+msgstr "Поштовий індекс"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__zip
+msgid "Zip"
+msgstr "Поштовий індекс"
+
+#. module: mobius_bulding_object
+#: model:ir.model,name:mobius_bulding_object.model_building_object
+msgid "building.object"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model,name:mobius_bulding_object.model_building_object_line
+msgid "building.object.line"
+msgstr ""

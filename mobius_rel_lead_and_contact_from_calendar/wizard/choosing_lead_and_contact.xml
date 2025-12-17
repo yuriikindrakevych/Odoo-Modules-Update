@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="mobius_rel_lead_and_contact_from_calendar_choosing_lead_and_contact_wizard_form">
+        <field name="name">choosing.lead.and.contact.wizard.form (mobius_rel_lead_and_contact_from_calendar)</field>
+        <field name="model">choosing.lead.and.contact.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="calendar_event_id" invisible="1"/>
+                        <field name="opportunity_old_id" invisible="1"/>
+                        <field name="contact_old_id" invisible="1"/>
+                        <field name="opportunity_id" attrs="{'readonly': [('contact_id', '!=', False)]}"/>
+                        <field name="contact_id" attrs="{'readonly': [('opportunity_id', '!=', False)]}"/>
+                    </group>
+
+                    <footer>
+                        <button special="cancel" string="Cancel"/>
+                        <button name="confirm_changes" string="Confirm" type="object" class="oe_highlight"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="mobius_rel_lead_and_contact_from_calendar_choosing_lead_and_contact_wizard_action_window"
+            model="ir.actions.act_window">
+        <field name="name">Choosing Lead or Contact for Calendar Event</field>
+        <field name="res_model">choosing.lead.and.contact.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

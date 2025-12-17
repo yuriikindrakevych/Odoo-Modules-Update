@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+   <template id="mobius_website_product_sharelink_hide_product_share_buttons_inherit" inherit_id="website_sale.product_share_buttons">
+        <xpath expr="//div[hasclass('h4') and hasclass('mt-3') and hasclass('d-flex') and hasclass('justify-content-end')]" position="replace"/>
+    </template>
+
+</odoo>

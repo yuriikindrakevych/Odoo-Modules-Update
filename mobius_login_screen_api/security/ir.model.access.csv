@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+mobius_login_screen_api.access_code_generation,access_code_generation,mobius_login_screen_api.model_code_generation,base.group_user,1,1,1,1
+mobius_login_screen_api.access_login_screen_api,access_login_screen_api,mobius_login_screen_api.model_login_screen_api,base.group_user,1,1,1,1

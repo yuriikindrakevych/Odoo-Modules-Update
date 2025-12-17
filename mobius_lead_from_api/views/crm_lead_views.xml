@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="crm_lead_view_form_inherit_mobius" model="ir.ui.view">
+        <field name="name">crm.lead.form</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="certificate_data"/>
+                <field name="trade_guardian_code"/>
+                <field name="vat"/>
+            </xpath>
+            <xpath expr="//group[@name='opportunity_info']" position="after">
+                <group>
+                    <field name="linkedin"/>
+                    <field name="linkedin_company"/>
+                </group>
+            </xpath>
+            <xpath expr="//button[@name='action_set_lost']" position="after">
+                <button name="window_accept_create_user_contact_company"
+                    string="Create contact/user"
+                    type="object"
+                    class="oe_highlight"
+                    attrs="{'invisible': [('partner_id', '!=', False)]}"/>
+                <button name="send_email_crm_lead_template"
+                    string="Send Mail"
+                    type="object"
+                    invisible="1"
+                    />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="window_accept_create_user_contact_company_view_form" model="ir.ui.view">
+        <field name="name">crm.lead.form</field>
+        <field name="model">crm.lead</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="partner_id" invisible="1"/>
+                <field name="company_id" invisible="1"/>
+                    <h3>Is the lead already verified? After approval, the user will be registered for access to the database.</h3>
+                <footer>
+                <button name="create_user_contact_company"
+                    string="YES (Create contact/user and send mail)"
+                    type="object"
+                    class="oe_highlight"
+                    attrs="{'invisible': [('partner_id', '!=', False)]}"/>
+                    <button special="cancel" string="No" class="btn-secondary text-center"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="mobius_quotation_cancel_reason_view_sale_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit (mobius_quotation_cancel_reason)</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="before">
+                <group string="Quotation Cancel Reason" attrs="{'invisible': [('state', '!=', 'cancel')]}">
+                    <group>
+                        <field name="cancel_reason_id" attrs="{'readonly': [('state', '!=', 'cancel')]}"/>
+                        <field name="cancellation_comment" attrs="{'readonly': [('state', '!=', 'cancel')]}"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mobius_quotation_cancel_reason_view_sale_order_tree" model="ir.ui.view">
+        <field name="name">sale.order.tree.inherit (mobius_quotation_cancel_reason)</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="before">
+                <field name="cancel_reason_id"/>
+                <field name="cancellation_comment"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="mobius_sale_order_reports.vat_correction_invoice_header">
+        <link rel="stylesheet" href="/mobius_sale_order_reports/static/src/css/style.css"/>
+        <table class="" style="width:100%; height:0;" cellspacing="0">
+            <col width="50%"/>
+            <col width="50%"/>
+            <tr class="R6" style="">
+                <td class="R6C0">
+                    <div class="R6C0">
+                        <img alt="logo" class="" src="/web/binary/company_logo"
+                             style="object-fit: cover; height: 80px; text-align:inherit; vertical-align: top;"/>
+                    </div>
+                </td>
+                <td class="R6C0">
+                    <div style="width:100%; line-height: 45px; overflow:hidden; text-align: inherit;vertical-align: middle;">
+                        <p style="line-height: 0.9em;vertical-align: middle;" t-esc="'Faktura korygująca VAT'"/>
+                        <p style="line-height: 0.9em;vertical-align: middle;"
+                           t-esc="invoice.name + ' z dnia ' + invoice.invoice_date.strftime('%d.%m.%Y')"/>
+                        <i>
+                            <p style="line-height: 0.9em;vertical-align: middle; text-align: right; font-size: 10px; font-weight: 300;"
+                               t-esc="original_invoice.name + ' z dnia ' + original_invoice.invoice_date.strftime('%d.%m.%Y')"/>
+                        </i>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </template>
+
+    <template id="mobius_sale_order_reports.vat_correction_invoice_layout">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <div class="header">
+            <t t-call="mobius_sale_order_reports.vat_correction_invoice_header"/>
+        </div>
+        <div class="article o_report_layout_standard">
+            <t t-out="0"/>
+        </div>
+        <div class="footer o_standard_footer">
+            <t t-call="mobius_sale_order_reports.sale_order_zamowienie_footer_pro_forma"/>
+        </div>
+    </template>
+
+    <template id="mobius_sale_order_reports.account_move_vat_correction_invoice_main_first">
+        <table class="" style="width:100%; height:0;" cellspacing="0">
+            <col width="50%"/>
+            <col width="50%"/>
+            <hr/>
+            <tr class="R7" style="">
+                <td class="R7C0">
+                    <div style="width:100%; height: 100%; line-height: inherit; overflow:hidden; text-align: left;">
+                        <span style="vertical-align: middle;">Sprzedawca</span>
+                    </div>
+                </td>
+                <td class="R7C0">
+                    <div style="width:100%; height: 100%; line-height: inherit; overflow:hidden; text-align: left;">
+                        <span style="vertical-align: middle;">Nabywca</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <hr/>
+        <table class="" style="width:100%; height:0;" cellspacing="0">
+            <col width="50%"/>
+            <col width="50%"/>
+            <tr class="R8" style="">
+                <td class="R8C0">
+                    <div style="width:100%; height: 100%;  overflow:hidden; text-align: left;">
+                        <span style="font-weight: bold;"
+                              t-esc="str(doc.company_id.name if doc.company_id.name else '')"/>
+                        <br/>
+                        <span style="font-weight: bold;">NIP:</span>
+                        <span style="font-weight: normal;"
+                              t-esc="str(doc.company_id.vat if doc.company_id.vat else '')"/>
+                        <br/>
+                        <span t-esc="str(doc.company_id.street if doc.company_id.street else '')"/>
+                        <br/>
+                        <!--Using 'city' because the res.company does not have a field 'city_ua'-->
+                        <t t-if="doc.company_id.city">
+                            <span t-esc="str(doc.company_id.city if doc.company_id.city else '')"/>
+                            <br/>
+                        </t>
+                        <t t-else="">
+                            <t t-if="doc.company_id.street2">
+                                <span t-esc="str(doc.company_id.street2 if doc.company_id.street2 else '')"/>
+                                <br/>
+                            </t>
+                        </t>
+                        <span t-esc="str(doc.company_id.zip if doc.company_id.zip else '')"/>
+                        <br/>
+                        <span style="font-weight: bold;">tel:</span>
+                        <span style="font-weight: normal;"
+                              t-esc="str(doc.company_id.phone  if doc.company_id.phone else '')"/>
+                        <br/>
+                        <span style="font-weight: bold;">e-mail:</span>
+                        <span style="font-weight: normal;"
+                              t-esc="str(doc.company_id.email if doc.company_id.email else '')"/>
+                    </div>
+                </td>
+                <td class="R8C0">
+                    <div style="width:100%; height: 100%;  overflow:hidden; text-align: left;">
+                        <span style="font-weight: bold;"
+                              t-esc="str(invoice.partner_id.name if invoice.partner_id.name else '')"/>
+                        <br/>
+                        <span style="font-weight: bold;">NIP:</span>
+                        <span style="font-weight: normal;"
+                              t-esc="str(invoice.partner_id.vat if invoice.partner_id.vat else '')"/>
+                        <br/>
+                        <span t-esc="str(invoice.partner_id.street if invoice.partner_id.street else '')"/>
+                        <br/>
+                        <t t-if="invoice.partner_id.city_ua">
+                            <span t-esc="str(invoice.partner_id.city_ua.name if invoice.partner_id.city_ua.name else '')"/>
+                            <br/>
+                        </t>
+                        <t t-else="">
+                            <t t-if="invoice.partner_id.street2">
+                                <span t-esc="str(invoice.partner_id.street2 if invoice.partner_id.street2 else '')"/>
+                                <br/>
+                            </t>
+                        </t>
+                        <span t-esc="str(invoice.partner_id.zip if invoice.partner_id.zip else '')"/>
+                        <br/>
+                        <span style="font-weight: bold;">tel:</span>
+                        <span style="font-weight: normal;"
+                              t-esc="str(invoice.partner_id.phone  if invoice.partner_id.phone else '')"/>
+                        <br/>
+                        <span style="font-weight: bold;">e-mail:</span>
+                        <span style="font-weight: normal;"
+                              t-esc="str(invoice.partner_id.email if invoice.partner_id.email else '')"/>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <hr/>
+    </template>
+
+    <template id="mobius_sale_order_reports.account_move_vat_correction_invoice_banks">
+        <t t-set="banks" t-value="invoice.get_banks_invoice()"/>
+        <t t-foreach="banks" t-as="bank">
+            <table class="" style="width:100%; height:0;" cellspacing="0">
+                <col width="50%"/>
+                <col width="50%"/>
+                <tr class="R7" style="">
+                    <td class="R7C0">
+                        <div style="width:100%; height: 100%; line-height: inherit; overflow:hidden; text-align: left;">
+                            <span style="font-weight: bold;">Bank:</span>
+                            <span style="font-weight: normal;"
+                                  t-esc="str(bank.bank_id.name if bank.bank_id.name else '')"/>
+                            <br/>
+                            <span style="font-weight: bold;">IBAN:</span>
+                            <span style="font-weight: normal;" t-esc="str(bank.acc_number if bank.acc_number else '')"/>
+                            <br/>
+                            <span style="font-weight: bold;">Powód korekty:</span>
+                            <t t-if="',' in str(invoice.ref)">
+                                <span style="font-weight: normal;" t-esc="invoice.ref.split(', ')[-1]"/>
+                            </t>
+                        </div>
+                    </td>
+                    <td class="R7C0">
+                        <div style="width:100%; height: 100%; line-height: inherit; overflow:hidden; text-align: right;">
+                            <br/>
+                            <span style="font-weight: bold;">Waluta:</span>
+                            <span style="font-weight: normal;"
+                                  t-esc="str(bank.currency_id.name if bank.currency_id.name else '')"/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </t>
+    </template>
+
+    <template id="mobius_sale_order_reports.account_move_vat_correction_invoice_zamowienie_main_second">
+        <t t-set="to_org_invoice_map" t-value="invoice.get_original_invoice_lines_map()"/>
+        <t t-set="number" t-value="1"/>
+        <table style="width:100%; height:0;margin:0; padding:0; border-collapse: collapse;" cellspacing="0">
+            <col width="5%"/>
+            <col width="33%"/>
+            <col width="7%"/>
+            <col width="12%"/>
+            <col width="17%"/>
+            <col width="9%"/>
+            <col width="17%"/>
+            <tr class="R4">
+                <td class="R4C0" style="vertical-align: middle; border: 1px solid black;">
+                    <div style="width:100%;height:41px;overflow:hidden;">No.</div>
+                </td>
+                <td class="R4C0" style="border: 1px solid black;">
+                    <div style="width:100%;height:20px;overflow:hidden;">Towar lub usługa</div>
+                </td>
+                <td class="R4C0" style="border: 1px solid black;">
+                    <div style="width:100%;height:20px;overflow:hidden;">Ilość</div>
+                </td>
+                <td class="R4C0" style="text-align: center; border: 1px solid black;">
+                    <div style="width:100%;height:20px;overflow:hidden;">Cena netto</div>
+                </td>
+                <td class="R4C0" style="text-align: center; border: 1px solid black;">
+                    <div style="width:100%;height:20px;overflow:hidden;">Wartość netto</div>
+                </td>
+                <td class="R4C0" style="vertical-align: middle; text-align: center; border: 1px solid black;">
+                    <div style="width:100%;height:41px;overflow:hidden;">% VAT</div>
+                </td>
+                <td class="R4C0" style="text-align: center; border: 1px solid black;">
+                    <div style="width:100%;height:20px;overflow:hidden;">Wartość Brutto</div>
+                </td>
+            </tr>
+        </table>
+        <t t-foreach="invoice.invoice_line_ids" t-as="line">
+            <t t-set="org_line" t-value="to_org_invoice_map[line.id][0]"/>
+            <t t-set="ok" t-value="True"/>
+            <t t-if="ok">
+<!--                <t t-if="not line.line_down_payment">-->
+<!--                    <t t-if="brutto_zero">-->
+                    <table style="width:100%; border-collapse: collapse;" cellspacing="0">
+                        <t t-if="not line.display_type">
+                            <col width="5%"/>
+                            <col width="33%"/>
+                            <col width="7%"/>
+                            <col width="12%"/>
+                            <col width="17%"/>
+                            <col width="9%"/>
+                            <col width="17%"/>
+
+                            <t t-set="org_quantity" t-value="0"/>
+                            <t t-set="org_price_netto" t-value="0"/>
+                            <t t-set="org_price_subtotal" t-value="0"/>
+                            <t t-set="org_price_brutto" t-value="0"/>
+
+                            <tr t-if="org_line" class="R5" style="page-break-inside: avoid;">
+                                <td class="R5C0" rowspan="2" style="border: 1px solid black;">
+                                    <div style="width:100%;height:40px;display:flex;align-items:center;justify-content:center;overflow:hidden;"
+                                         t-esc="number"/>
+                                </td>
+                                <td class="R5C0" style="border: 1px solid black;">
+                                    <div style="width:100%;height:20px;overflow:hidden;"
+                                         t-esc="str(line.product_id.categ_id.category_desc if line.product_id.categ_id.category_desc else '') + ' ' + str(line.product_id.name if line.product_id.name else '')"/>
+                                </td>
+                                <td class="R5C0" style="border: 1px solid black;">
+                                    <t t-set="org_quantity" t-value="invoice.get_int_or_float_qweb(org_line.quantity) if int(org_line.quantity) else 0"/>
+                                    <div style="width:100%;height:20px;overflow:hidden;"
+                                         t-esc="str(invoice.get_int_or_float_qweb(org_line.quantity) if int(org_line.quantity) else '')"/>
+                                </td>
+                                <td class="R5C0" style="text-align: right; border: 1px solid black;">
+                                    <div style="width:100%;height:20px;overflow:hidden;">
+                                        <t t-set="is_discount" t-value="invoice.is_discont(org_line.discount)"/>
+                                        <t t-set="price_netto"
+                                           t-value="invoice.get_price_netto(org_line.price_subtotal, org_line.quantity)"/>
+                                        <t t-set="org_price_netto" t-value="invoice.get_price_netto_float(org_line.price_subtotal, org_line.quantity)"/>
+                                        <t t-if="is_discount">
+                                            <span t-esc="str(price_netto) + ' (dod. rabat ' + str(invoice.get_int_or_float_qweb(org_line.discount)) + '%)'"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-esc="str(price_netto)"/>
+                                        </t>
+                                    </div>
+                                </td>
+                                <td class="R5C0" style="text-align: right; border: 1px solid black;">
+                                    <t t-set="org_price_subtotal" t-value="org_line.price_subtotal"/>
+                                    <div style="width:100%;height:20px;overflow:hidden;"
+                                         t-esc="org_line.price_subtotal"
+                                         t-options="{'widget': 'float', 'precision': 2}"/>
+                                </td>
+                                <td class="R5C0" rowspan="2" style="text-align: right; border: 1px solid black;">
+                                    <div style="width:100%;height:40px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+                                        <t t-if="line.tax_ids">
+                                            <span t-esc="str(line.tax_ids.description if line.tax_ids.description else '')"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-esc="str('0 %')"/>
+                                        </t>
+                                    </div>
+                                </td>
+                                <td class="R5C0" style="text-align: right; border: 1px solid black;">
+                                    <div style="width:100%;height:20px;overflow:hidden;">
+                                        <t t-if="org_line.tax_ids.amount">
+                                            <t t-if="invoice.is_tax_id_included_in_price(org_line.tax_ids)">
+                                                <t t-set="wartosc_brutto"
+                                                   t-value="invoice.wartosc_brutto(org_line.price_subtotal, org_line.tax_ids.amount, False)"/>
+                                                <t t-set="org_price_brutto" t-value="wartosc_brutto"/>
+                                                <span t-esc="(wartosc_brutto) "
+                                                      t-options="{'widget': 'float', 'precision': 2}"/>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-set="wartosc_brutto"
+                                                   t-value="invoice.wartosc_brutto(org_line.price_subtotal, org_line.tax_ids.amount, True)"/>
+                                                <t t-set="org_price_brutto" t-value="wartosc_brutto"/>
+                                                <span t-esc="(wartosc_brutto)"
+                                                      t-options="{'widget': 'float', 'precision': 2}"/>
+                                            </t>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="org_price_brutto" t-value="org_line.price_subtotal"/>
+                                            <span t-esc="(org_line.price_subtotal)"
+                                                  t-options="{'widget': 'float', 'precision': 2}"/>
+                                        </t>
+                                    </div>
+                                </td>
+                                <t t-set="number" t-value="number + 1"/>
+                            </tr>
+                            <tr t-else="">
+                                <td class="R5C0" rowspan="2" style="border: 1px solid black;">
+                                    <div style="width:100%;height:40px;display:flex;align-items:center;justify-content:center;overflow:hidden;"
+                                         t-esc="number"/>
+                                </td>
+                                <td class="R5C0" style="border: 1px solid black;">
+                                    <div style="width:100%;height:20px;overflow:hidden;"
+                                         t-esc="str(line.product_id.categ_id.category_desc if line.product_id.categ_id.category_desc else '') + ' ' + str(line.product_id.name if line.product_id.name else '')"/>
+                                </td>
+                                <td class="R5C0" style="border: 1px solid black;">
+                                    <div style="width:100%;height:20px;overflow:hidden;"
+                                         t-esc="'0.00'"/>
+                                </td>
+                                <td class="R5C0" style="text-align: right; border: 1px solid black;">
+                                    <div style="width:100%;height:20px;overflow:hidden;">
+                                        <span t-esc="'0.00'"/>
+                                    </div>
+                                </td>
+                                <td class="R5C0" style="text-align: right; border: 1px solid black;">
+                                    <div style="width:100%;height:20px;overflow:hidden;"
+                                         t-esc="'0.00'"/>
+                                </td>
+                                <td class="R5C0" rowspan="2" style="text-align: right; border: 1px solid black;">
+                                    <div style="width:100%;height:40px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+                                        <span t-esc="str('-')"/>
+                                    </div>
+                                </td>
+                                <td class="R5C0" style="text-align: right; border: 1px solid black;">
+                                    <div style="width:100%;height:20px;overflow:hidden;">
+                                        <span t-esc="'0.00'"/>
+                                    </div>
+                                </td>
+                                <t t-set="number" t-value="number + 1"/>
+                            </tr>
+                            <tr class="R5 second-row" style="page-break-inside: avoid;">
+                                <td class="R5C0" style="border: 1px solid black;text-align: right;">
+                                    <div style="width:100%;height:20px;overflow:hidden;">Po korekcie:</div>
+                                </td>
+                                <td class="R5C0" style="border: 1px solid black;">
+                                    <t t-set="quantity" t-value="org_quantity - int(line.quantity) if int(line.quantity) else org_quantity"/>
+                                    <div style="width:100%;height:20px;overflow:hidden;"
+                                        t-esc="str(invoice.get_int_or_float_qweb(quantity))"/>
+                                </td>
+                                <td class="R5C0" style="text-align: right; border: 1px solid black;">
+                                    <div style="width:100%;height:20px;overflow:hidden;">
+                                        <t t-set="is_discount" t-value="invoice.is_discont(line.discount)"/>
+                                        <t t-set="price_netto"
+                                           t-value="org_price_netto - invoice.get_price_netto_float(line.price_subtotal, line.quantity)"/>
+                                        <t t-if="is_discount">
+                                            <span t-esc="str(price_netto).replace('.', ',') + ' (dod. rabat ' + str(invoice.get_int_or_float_qweb(line.discount)) + '%)'"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-esc="str(price_netto).replace('.', ',')"/>
+                                        </t>
+                                    </div>
+                                </td>
+                                <td class="R5C0" style="text-align: right; border: 1px solid black;">
+                                    <div style="width:100%;height:20px;overflow:hidden;"
+                                         t-esc="org_price_subtotal - line.price_subtotal"
+                                         t-options="{'widget': 'float', 'precision': 2}"/>
+                                </td>
+                                <td class="R5C0" style="text-align: right; border: 1px solid black;">
+                                    <div style="width:100%;height:20px;overflow:hidden;">
+                                        <t t-if="line.tax_ids.amount">
+                                            <t t-if="invoice.is_tax_id_included_in_price(line.tax_ids)">
+                                                <t t-set="wartosc_brutto"
+                                                   t-value="org_price_brutto - invoice.wartosc_brutto(line.price_subtotal, line.tax_ids.amount, False)"/>
+                                                <span t-esc="(wartosc_brutto) "
+                                                      t-options="{'widget': 'float', 'precision': 2}"/>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-set="wartosc_brutto"
+                                                   t-value="org_price_brutto - invoice.wartosc_brutto(line.price_subtotal, line.tax_ids.amount, True)"/>
+                                                <span t-esc="(wartosc_brutto)"
+                                                      t-options="{'widget': 'float', 'precision': 2}"/>
+                                            </t>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-esc="(org_price_brutto - line.price_subtotal)"
+                                                  t-options="{'widget': 'float', 'precision': 2}"/>
+                                        </t>
+                                    </div>
+                                </td>
+                            </tr>
+                        </t>
+                        <t t-if="line.display_type == 'line_section'">
+                            <col width="100%"/>
+                            <tr class="R9" style="page-break-inside: avoid;">
+                                <td class="R9C0" colspan="7" style="border: 1px solid black;">
+                                    <div style="width:100%; height:35px; display:flex; align-items:center; justify-content:center; overflow:hidden; text-align: left;">
+                                        <span style="vertical-align: middle;" t-field="line.name"/>
+                                    </div>
+                                </td>
+                            </tr>
+                        </t>
+                    </table>
+<!--                    </t>-->
+<!--                </t>-->
+            </t>
+        </t>
+        <br/>
+        <table style="width:100%;" cellspacing="0">
+        <tr class="Rheader">
+        <td colspan="4" style="text-align: center; font-weight: bold; border: 1px solid black; border-bottom: none;">
+        Razem korekta:
+        </td>
+        </tr>
+        </table>
+<!--        <t t-set="ok" t-value="False"/>-->
+<!--        <t t-foreach="invoice.invoice_line_ids" t-as="line">-->
+<!--            <t t-if="line.line_down_payment">-->
+<!--                <t t-set="ok" t-value="True"/>-->
+<!--            </t>-->
+<!--        </t>-->
+        <t t-if="invoice.invoice_line_ids">
+<!--            <t t-if="ok">-->
+            <table style="width:100%; height:15px; " cellspacing="0">
+                <col width="25%"/>
+                <col width="25%"/>
+                <col width="25%"/>
+                <col width="25%"/>
+                <tr class="R5" style="page-break-inside: avoid;">
+                    <td class="R5C0">
+                        <div style="width:100%;height:41px;overflow:hidden;">Wartość netto</div>
+                    </td>
+                    <td class="R5C0">
+                        <div style="width:100%;height:41px;overflow:hidden;">% VAT</div>
+                    </td>
+                    <td class="R5C0">
+                        <div style="width:100%;height:41px;overflow:hidden;">VAT</div>
+                    </td>
+                    <td class="R5C0">
+                        <div style="width:100%;height:41px;overflow:hidden;">Wartość Brutto</div>
+                    </td>
+                </tr>
+            </table>
+<!--            </t>-->
+        </t>
+        <t t-set="number" t-value="1"/>
+        <t t-set="grouped_vats_and_correction_sum" t-value="invoice.group_correction_by_vat()"/>
+        <t t-set="grouped_vats" t-value="grouped_vats_and_correction_sum[0]"/>
+        <t t-foreach="grouped_vats" t-as="grouped_vat">
+            <t t-set="ok" t-value="True"/>
+            <t t-if="ok">
+<!--            <t t-if="line.line_down_payment">-->
+<!--            <t t-if="not line.display_type">-->
+<!--                <t t-if="line.tax_ids.amount">-->
+<!--                    <t t-if="invoice.is_tax_id_included_in_price(line.tax_ids)">-->
+<!--                        <t t-set="brutto_zero" t-value="invoice.check_can_print(line.price_subtotal, line.tax_ids.amount, False)"/>-->
+<!--                    </t>-->
+<!--                    <t t-else="">-->
+<!--                        <t t-set="brutto_zero" t-value="invoice.check_can_print(line.price_subtotal, line.tax_ids.amount, True)"/>-->
+<!--                    </t>-->
+<!--                </t>-->
+<!--                <t t-else="">-->
+<!--                    <t t-set="brutto_zero" t-value="invoice.check_can_print(line.price_subtotal, False, False, True)"/>-->
+<!--                </t>-->
+            <t t-if="not line.display_type">
+            <table style="width:100%; height:15px; " cellspacing="0">
+                <t t-if="not line.display_type">
+                    <col width="25%"/>
+                    <col width="25%"/>
+                    <col width="25%"/>
+                    <col width="25%"/>
+                    <tr class="R5" style="page-break-inside: avoid;">
+                            <td class="R5C0" style="text-align: right">
+                                <div style="width:100%;overflow:hidden;"
+                                     t-esc="grouped_vat['price_subtotal']" t-options="{'widget': 'float', 'precision': 2}">
+                                </div>
+                            </td>
+                            <td class="R5C0" style="text-align: right">
+                                <div style="width:100%;overflow:hidden;">
+                                    <span t-esc="grouped_vat['vat_percent']"/>
+                                </div>
+                            </td>
+                            <td class="R5C0">
+<!--                                <div style="width:100%;overflow:hidden;"-->
+<!--                                     t-esc="str(line.name if line.name else '')">-->
+<!--                                </div>-->
+                                <div style="width:100%;overflow:hidden;"
+                                     t-esc="grouped_vat['vat']" t-options="{'widget': 'float', 'precision': 2}">
+                                </div>
+                            </td>
+                            <td class="R5C0" style="text-align: right">
+                                <div style="width:100%;overflow:hidden;"
+                                     t-esc="grouped_vat['wartosc_brutto']" t-options="{'widget': 'float', 'precision': 2}">
+                                </div>
+                            </td>
+                            <t t-set="number" t-value="number + 1"/>
+                    </tr>
+                </t>
+            </table>
+        </t>
+        </t>
+        </t>
+        <table style="width:100%; height:15px; " cellspacing="0">
+            <t t-set="correction" t-value="grouped_vats_and_correction_sum[1]"/>
+            <col width="25%"/>
+            <col width="25%"/>
+            <col width="25%"/>
+            <col width="25%"/>
+            <tr class="R5" style="page-break-inside: avoid;">
+                    <td class="R5C0" style="text-align: right">
+                        <b>
+                        <div style="width:100%;overflow:hidden;"
+                             t-esc="correction['price_subtotal']" t-options="{'widget': 'float', 'precision': 2}">
+                        </div>
+                        </b>
+                    </td>
+                    <td class="R5C0" style="text-align: center">
+                        <div style="width:100%;overflow:hidden;">
+                            <b>-</b>
+                        </div>
+                    </td>
+                    <td class="R5C0">
+                        <b>
+                        <div style="width:100%;overflow:hidden;"
+                             t-esc="correction['vat']" t-options="{'widget': 'float', 'precision': 2}">
+                        </div>
+                        </b>
+                    </td>
+                    <td class="R5C0" style="text-align: right">
+                        <b>
+                            <div style="width:100%;overflow:hidden;"
+                             t-esc="correction['wartosc_brutto']" t-options="{'widget': 'float', 'precision': 2}">
+                            </div>
+                        </b>
+                    </td>
+            </tr>
+        </table>
+<!--        </t>-->
+<!--        </t>-->
+    </template>
+
+    <template id="mobius_sale_order_reports.account_move_vat_correction_invoice_report">
+        <t t-call="mobius_sale_order_reports.account_move_vat_correction_invoice_main_first"/>
+        <t t-call="mobius_sale_order_reports.account_move_vat_correction_invoice_banks"/>
+        <t t-call="mobius_sale_order_reports.account_move_vat_correction_invoice_zamowienie_main_second"/>
+    </template>
+
+    <template id="mobius_sale_order_reports.account_move_vat_correction_invoice">
+<!--        <t t-call="web.html_container">-->
+<!--            <t t-foreach="docs" t-as="doc">-->
+<!--                <t t-set="doc" t-value="doc.with_context(lang='pl_PL')"/>-->
+<!--                <t t-set="invoice" t-value="doc"/>-->
+<!--                <t t-set="doc" t-value="doc.get_from_invoice_sale_order()"/>-->
+        <t t-set="original_invoice" t-value="invoice.reversed_entry_id"/>
+        <t t-call="mobius_sale_order_reports.vat_correction_invoice_layout">
+            <div class="page">
+                <link rel="stylesheet" href="/mobius_sale_order_reports/static/src/css/style.css"/>
+                <div class="oe_structure"/>
+                <t t-call="mobius_sale_order_reports.account_move_vat_correction_invoice_report"/>
+            </div>
+        </t>
+<!--            </t>-->
+<!--        </t>-->
+    </template>
+</odoo>

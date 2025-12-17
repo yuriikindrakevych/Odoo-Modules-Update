@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="code_generation_action_ir_cron" model="ir.cron">
+            <field name="name">Code Generation Cleaning</field>
+            <field eval="True" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="model_id" ref="model_code_generation"/>
+            <field name="state">code</field>
+            <field name="code">model.scheduler_cleaning()</field>
+        </record>
+    </data>
+</odoo>

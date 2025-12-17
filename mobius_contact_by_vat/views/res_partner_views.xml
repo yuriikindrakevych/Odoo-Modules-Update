@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_inherit_change_vat_n" model="ir.ui.view">
+        <field name="name">res.partner.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="replace">
+                <label for="vat"/>
+                <div class="o_row" id="div_vat">
+                    <field name="vat" string="Tax ID" placeholder="e.g. BE0477472701" attrs="{'readonly': [('parent_id','!=',False)]}"/>
+                    <button name="button_download_info_by_vat" type="object" string="Download" class="btn-primary" attrs="{'invisible': [('country_code','!=', 'PL')]}"/>
+                </div>
+                <field name="regon"/>
+                <field name="krs"/>
+                <field name="country_code" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="sale_stock_forecast_inherit" xml:space="preserve">
+    <t t-extend="sale_stock.QtyDetailPopOver">
+        <t t-jquery="table" t-operation="append">
+            <t>
+                <tr>
+                    <td><strong>Quantity at the partner</strong></td>
+                    <td><b t-esc="data.inventory_quantity"/> <t t-esc='data.product_uom.data.display_name'/></td>
+                </tr>
+                <tr>
+                    <td><strong>Forecasted receipt</strong></td>
+                    <td><b t-esc="data.inventory_income"/></td>
+                </tr>
+            </t>
+        </t>
+    </t>
+</templates>

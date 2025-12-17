@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_packaging_tree_view_inherit" model="ir.ui.view">
+        <field name="name">product.packaging.tree.view</field>
+        <field name="model">product.packaging</field>
+        <field name="inherit_id" ref="product.product_packaging_tree_view"/>
+        <field name="arch" type="xml">
+            <tree name="packaging">
+                <button name="generate_all" string="Generate" type="object" class="btn-primary oe_inline oe_right" colspan="2"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,141 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mobius_contact_by_vat
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20230206\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-11 14:32+0000\n"
+"PO-Revision-Date: 2023-09-11 14:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mobius_contact_by_vat
+#: model_terms:ir.ui.view,arch_db:mobius_contact_by_vat.contact_by_vat_wizard_form
+msgid "Cancel"
+msgstr "Відмінити"
+
+#. module: mobius_contact_by_vat
+#: model:ir.model.fields,field_description:mobius_contact_by_vat.field_res_partner__country_code
+#: model:ir.model.fields,field_description:mobius_contact_by_vat.field_res_users__country_code
+msgid "Country Code"
+msgstr " Код країни"
+
+#. module: mobius_contact_by_vat
+#. openerp-web
+#: code:addons/mobius_contact_by_vat/static/src/xml/open_wizard_contact_by_vat_kanban.xml:0
+#: code:addons/mobius_contact_by_vat/static/src/xml/open_wizard_contact_by_vat_tree.xml:0
+#: model_terms:ir.ui.view,arch_db:mobius_contact_by_vat.contact_by_vat_wizard_form
+#, python-format
+msgid "Create by VAT"
+msgstr "Створити за VAT"
+
+#. module: mobius_contact_by_vat
+#. openerp-web
+#: code:addons/mobius_contact_by_vat/static/src/js/open_wizard_contact_by_vat_kanban.js:0
+#: code:addons/mobius_contact_by_vat/static/src/js/open_wizard_contact_by_vat_tree.js:0
+#: model:ir.model,name:mobius_contact_by_vat.model_contact_by_vat_wizard
+#, python-format
+msgid "Creating of Contact by the VAT code"
+msgstr "Створити контакт за VAT кодом"
+
+#. module: mobius_contact_by_vat
+#: model:ir.model.fields,field_description:mobius_contact_by_vat.field_contact_by_vat_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: mobius_contact_by_vat
+#: model_terms:ir.ui.view,arch_db:mobius_contact_by_vat.res_partner_inherit_change_vat_n
+msgid "Download"
+msgstr "Завантажити"
+
+#. module: mobius_contact_by_vat
+#: model:ir.model.fields,field_description:mobius_contact_by_vat.field_contact_by_vat_wizard__vat_code
+msgid "Enter the VAT code"
+msgstr "Введіть ПДВ код"
+
+#. module: mobius_contact_by_vat
+#: code:addons/mobius_contact_by_vat/models/res_partner.py:0
+#, python-format
+msgid "Enter your VAT/Tax ID"
+msgstr "Введіть ПДВ код"
+
+#. module: mobius_contact_by_vat
+#: model:ir.model.fields,field_description:mobius_contact_by_vat.field_res_partner__krs
+#: model:ir.model.fields,field_description:mobius_contact_by_vat.field_res_users__krs
+msgid "KRS"
+msgstr ""
+
+#. module: mobius_contact_by_vat
+#: model:ir.model.fields,field_description:mobius_contact_by_vat.field_contact_by_vat_wizard____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: mobius_contact_by_vat
+#: model:ir.model.fields,field_description:mobius_contact_by_vat.field_contact_by_vat_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mobius_contact_by_vat
+#: model:ir.model.fields,field_description:mobius_contact_by_vat.field_contact_by_vat_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: mobius_contact_by_vat
+#: model:ir.model.fields,field_description:mobius_contact_by_vat.field_res_partner__regon
+#: model:ir.model.fields,field_description:mobius_contact_by_vat.field_res_users__regon
+msgid "REGON"
+msgstr ""
+
+#. module: mobius_contact_by_vat
+#: code:addons/mobius_contact_by_vat/models/res_partner.py:0
+#: code:addons/mobius_contact_by_vat/models/res_partner.py:0
+#, python-format
+msgid "RequestException,{}"
+msgstr ""
+
+#. module: mobius_contact_by_vat
+#: code:addons/mobius_contact_by_vat/models/res_partner.py:0
+#: code:addons/mobius_contact_by_vat/models/res_partner.py:0
+#, python-format
+msgid "Sorry, nothing was found with the code you provided"
+msgstr "Вибачте, нічого не знайдено з наданим вами кодом"
+
+#. module: mobius_contact_by_vat
+#: model_terms:ir.ui.view,arch_db:mobius_contact_by_vat.res_partner_inherit_change_vat_n
+msgid "Tax ID"
+msgstr ""
+
+#. module: mobius_contact_by_vat
+#: model:ir.model.fields,help:mobius_contact_by_vat.field_res_partner__country_code
+#: model:ir.model.fields,help:mobius_contact_by_vat.field_res_users__country_code
+msgid "The ISO country code in two chars. \nYou can use this field for quick search."
+msgstr "ISO код країни двосимвольний. \nВи можете використовувати його для пошуку."
+
+#. module: mobius_contact_by_vat
+#: code:addons/mobius_contact_by_vat/models/mobius_contact_by_vat.py:0
+#, python-format
+msgid "The VAT code value can't be empty!"
+msgstr "Значення коду ПДВ не може бути порожнім"
+
+#. module: mobius_contact_by_vat
+#: code:addons/mobius_contact_by_vat/models/mobius_contact_by_vat.py:0
+#, python-format
+msgid "The VAT code value have to be a digit!"
+msgstr "Значення коду ПДВ повинне бути цифровим!"
+
+#. module: mobius_contact_by_vat
+#: code:addons/mobius_contact_by_vat/models/mobius_contact_by_vat.py:0
+#, python-format
+msgid "This VAT code already exists in the system. \n Contact name: %s \n Manager name: %s"
+msgstr "Цей код ПДВ уже існує в системі. \n Ім'я Контакту: %s \n Ім'я Менеджера: %s"
+
+#. module: mobius_contact_by_vat
+#: model_terms:ir.ui.view,arch_db:mobius_contact_by_vat.res_partner_inherit_change_vat_n
+msgid "e.g. BE0477472701"
+msgstr "наприклад, BE0477472701"

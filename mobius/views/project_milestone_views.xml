@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="project_milestone_view_tree_inherit" model="ir.ui.view">
+        <field name="name">project.milestone.view.tree.inherit</field>
+        <field name="model">project.milestone</field>
+        <field name="inherit_id" ref="project.project_milestone_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="is_deadline_exceeded" position="after">
+                <field name="num_tasks" optional="show"/>
+                <field name="num_incomplete" optional="show"/>
+            </field>
+        </field>
+    </record>
+</odoo>

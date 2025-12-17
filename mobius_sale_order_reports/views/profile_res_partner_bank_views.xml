@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_profile_res_partner_bank" model="ir.ui.view">
+        <field name="name">profile.res.partner.bank.form</field>
+        <field name="model">profile.res.partner.bank</field>
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+            <form string="Profile Res Partner Bank">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            string="Add Banks"
+                            class="oe_stat_button"
+                            icon="fa-th-list"
+                            name="button_add_banks"
+                            context="{'default_active_id': active_id, 'currency_id': context.get('currency_id')}"
+                            type="object"
+                        />
+                        <button
+                            string="Banks"
+                            class="oe_stat_button"
+                            icon="fa-th-list"
+                            name="button_show_banks"
+                            type="object"
+                        />
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" placeholder="e.g. Profile Banks"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <label for="description" />
+                        <div class="o_row">
+                            <field name="description"/>
+                        </div>
+                        <label for="bank_ids" />
+                        <div class="o_row">
+                            <field name="bank_ids" widget="many2many_tags" options="{'limit': 0, 'create': false, 'create_edit': false}"/>
+                        </div>
+                  </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_partner_bank_tree_add_banks" model="ir.ui.view">
+        <field name="name">res.partner.bank.tree.inherit.profile</field>
+        <field name="model">res.partner.bank</field>
+        <field name="priority" eval="10"/>
+        <field name="arch" type="xml">
+            <tree string="Bank Accounts">
+                <header>
+                    <button name="action_add_select_to_profile" type="object" class="btn-primary" string="Add Bank to profile"/>
+                </header>
+                <field name="sequence" widget="handle"/>
+                <field name="acc_number"/>
+                <field name="bank_name"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="partner_id"/>
+                <field name="acc_holder_name" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_bank_form_add_banks" model="ir.actions.act_window">
+        <field name="name">Profile Banks</field>
+        <field name="res_model">res.partner.bank</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_partner_bank_tree_add_banks"/>
+    </record>
+
+    <record id="action_bank_form_show_bank" model="ir.actions.act_window">
+        <field name="name">Profile Banks</field>
+        <field name="res_model">res.partner.bank</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="base.view_partner_bank_tree"/>
+    </record>
+</odoo>

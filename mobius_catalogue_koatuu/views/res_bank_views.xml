@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="mobius_catalogue_koatuu_view_res_bank_form_inherit" model="ir.ui.view">
+        <field name="name">res.bank.form.inherit</field>
+        <field name="model">res.bank</field>
+        <field name="inherit_id" ref="base.view_res_bank_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='city']" position="replace">
+                <field name="city" invisible="1" position="attributes"/>
+            </xpath>
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="city_ua" placeholder="City" class="o_address_city" options="{'no_open': True}"
+                    context="{'default_country_id': country, 'default_res_country_state_id': state}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="sequence_for_attribute_delete_me" model="ir.sequence">
+            <field name="name">attribute_delete_me</field>
+            <field name="code">attribute_delete_me</field>
+            <field name="implementation" eval="'standard'"/>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+    </data>
+</odoo>

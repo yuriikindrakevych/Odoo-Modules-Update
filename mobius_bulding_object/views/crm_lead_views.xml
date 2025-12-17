@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="crm_lead_view_form_inherit_mobius_building_object" model="ir.ui.view">
+        <field name="name">crm.lead.form</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_set_lost']" position="after">
+                <button name="window_bulding_object_lead"
+                    string="Create Building Object"
+                    type="object"
+                    class="oe_highlight"
+                    attrs="{'invisible': ['|', ('building_object_id', '!=', False), ('type', '!=', 'opportunity')]}"
+                    />
+            </xpath>
+            <xpath expr="//group[@name='lead_priority']" position="after">
+                <group name="building_object" attrs="{'invisible': [('type', '!=', 'opportunity')]}">
+                    <field name="building_object_id" options="{'no_create': True}"/>
+                </group>
+            </xpath>
+            <xpath expr="//button[@name='action_show_potential_duplicates']" position="after">
+                <button name="action_show_building_object" type="object"
+                    class="oe_stat_button" icon="fa-home"
+                    attrs="{'invisible': ['|', ('building_object_id', '=', False), ('type', '!=', 'opportunity')]}"
+                    >
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">Building Object</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+    
+
+    <record id="window_bulding_object_lead_form" model="ir.ui.view">
+        <field name="name">crm.lead.form</field>
+        <field name="model">crm.lead</field>
+        <field name="arch" type="xml">
+            <form>
+                <label for="name_building_object"/>
+                <div class="o_row" string="Barcode">
+                    <field name="name_building_object"/>
+                </div>
+                <field name="name" invisible="1"/>
+                <field name="company_id" invisible="1"/>
+                <footer>
+                <button name="create_window_bulding_object_lead_form"
+                    string="Create"
+                    type="object"
+                    class="oe_highlight"/>
+                    <button special="cancel" string="Cancel" class="btn-secondary text-center"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="crm_lead_view_search_inherit_mobius_building_object" model="ir.ui.view">
+        <field name="name">crm.lead.search.lead.inherit (mobius_bulding_object)</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <field name="building_object_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='open_opportunities']" position="after">
+                <filter string="Building Object" name="building_object_id" domain="[('building_object_id', '!=', False)]"/>
+            </xpath>
+            <xpath expr="//filter[@name='source']" position="after">
+                <filter name="building_object_id" domain="" context="{'group_by':'building_object_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

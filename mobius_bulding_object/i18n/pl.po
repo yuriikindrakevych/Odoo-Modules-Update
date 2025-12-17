@@ -1,0 +1,532 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mobius_bulding_object
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20230206\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-15 14:19+0000\n"
+"PO-Revision-Date: 2024-07-15 14:19+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid ""
+"<span attrs=\"{'invisible': [('attachment_number', '=', 1)]}\">\n"
+"                                        Attachments\n"
+"                                    </span>\n"
+"                                    <span attrs=\"{'invisible': [('attachment_number', '!=', 1)]}\">\n"
+"                                        Attachment\n"
+"                                    </span>"
+msgstr ""
+"                                        Załączniki\n"
+"                                    </span>\n"
+"                                    <span attrs=\"{'invisible': [('attachment_number', '!=', 1)]}\">\n"
+"                                        Załącznik\n"
+"                                    </span>"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_partner_form_inherit
+msgid ""
+"<span attrs=\"{'invisible': [('building_object_item_count', '=', 1)]}\">\n"
+"                                Building objects\n"
+"                            </span>\n"
+"                            <span attrs=\"{'invisible': [('building_object_item_count', '!=', 1)]}\">\n"
+"                                Building Object\n"
+"                            </span>"
+msgstr ""
+"<span attrs=\"{'invisible': [('building_object_item_count', '=', 1)]}\">\n"
+"                                Obiekt budowlany\n"
+"                            </span>\n"
+"                            <span attrs=\"{'invisible': [('building_object_item_count', '!=', 1)]}\">\n"
+"                                Obiekt budowlany\n"
+"                            </span>"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid ""
+"<span attrs=\"{'invisible': [('sale_order_count', '=', 1)]}\">\n"
+"                                        Sale Orders\n"
+"                                    </span>\n"
+"                                    <span attrs=\"{'invisible': [('sale_order_count', '!=', 1)]}\">\n"
+"                                        Sale Order\n"
+"                                    </span>"
+msgstr ""
+"<span attrs=\"{'invisible': [('sale_order_count', '=', 1)]}\">\n"
+"                                        Sprzedaż\n"
+"                                    </span>\n"
+"                                    <span attrs=\"{'invisible': [('sale_order_count', '!=', 1)]}\">\n"
+"                                        Sprzedaż\n"
+"                                    </span>"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.crm_lead_view_form_inherit_mobius_building_object
+msgid "<span class=\"o_stat_text\">Building Object</span>"
+msgstr "<span class=\"o_stat_text\">Obiekt budowlany</span>"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "<span class=\"o_stat_text\">Lead</span>"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Add a product"
+msgstr "Dodaj produkt"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Additional Info"
+msgstr "Dodatkowe informacje"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Address"
+msgstr "Adres"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__analytical_account
+msgid "Analytical Account"
+msgstr "Konto analityczne"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.window_bulding_object_lead_form
+msgid "Barcode"
+msgstr "kod kreskowy"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__building_object_line
+msgid "Building Lines"
+msgstr "Linie budowlane"
+
+#. module: mobius_bulding_object
+#: code:addons/mobius_bulding_object/models/crm_lead.py:0
+#: model:ir.actions.act_window,name:mobius_bulding_object.action_building_object_open
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__building_object_id
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_crm_lead__building_object_id
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_sale_order__building_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_sale_order_line__order_building_id
+#: model:ir.ui.menu,name:mobius_bulding_object.menu_action_building_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.crm_lead_view_search_inherit_mobius_building_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form_confirm_order
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_tree
+#, python-format
+msgid "Building Object"
+msgstr "Obiekt budowlany"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_sale_order_line__order_building_line_id
+msgid "Building Object Line"
+msgstr "Linia Obiektu Budowlanego"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_res_partner__building_object_item_count
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_res_users__building_object_item_count
+msgid "Building Object count"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form_confirm_order
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.window_bulding_object_lead_form
+msgid "Cancel"
+msgstr "Anulować"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields.selection,name:mobius_bulding_object.selection__building_object__state__cancel
+msgid "Cancelled"
+msgstr "Odwołany"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__check_box
+msgid "Check Box"
+msgstr "Pole wyboru"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__city
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "City"
+msgstr "Miasto"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form_confirm_order
+msgid "Clear All"
+msgstr "Wyczyść wszystko"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__company_id
+msgid "Company"
+msgstr "Firma"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form_confirm_order
+msgid "Confirm"
+msgstr "Potwierdzać"
+
+#. module: mobius_bulding_object
+#: code:addons/mobius_bulding_object/models/building_object.py:0
+#: code:addons/mobius_bulding_object/models/building_object.py:0
+#: code:addons/mobius_bulding_object/models/building_object.py:0
+#, python-format
+msgid "Confirm Order"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model,name:mobius_bulding_object.model_res_partner
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__country_id
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Country"
+msgstr "Kraj"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.window_bulding_object_lead_form
+msgid "Create"
+msgstr "Tworzyć"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.crm_lead_view_form_inherit_mobius_building_object
+msgid "Create Building Object"
+msgstr "Utwórz obiekt budowlany"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Create Offer"
+msgstr "Utwórz ofertę"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__create_uid
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__create_date
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__partner_id
+msgid "Customer"
+msgstr "Klient"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__demand
+msgid "Demand"
+msgstr "Popyt"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__designer_id
+msgid "Designer"
+msgstr "Projektant"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__display_name
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__display_name
+msgid "Display Name"
+msgstr "Obiekt budowlany"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields.selection,name:mobius_bulding_object.selection__building_object__state__done
+msgid "Done"
+msgstr "Zrobione"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__end_date
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__end_date_time
+msgid "End Date"
+msgstr "Okres realizacji dobiega końca"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields.selection,name:mobius_bulding_object.selection__building_object__state__executed
+msgid "Executed"
+msgstr "Wykonany"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form_confirm_order
+msgid "Fill All"
+msgstr "Wypełnij wszystko"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__full_reserved
+msgid "Full Reserved"
+msgstr "Pełna rezerwacja"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__general_executor_id
+msgid "General Executor"
+msgstr "Generalny Egzekutor"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__id
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__id
+msgid "ID"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__installer_id
+msgid "Installer"
+msgstr "Instalator"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__investor_id
+msgid "Investor"
+msgstr "Inwestor"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object____last_update
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__write_uid
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__write_date
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: code:addons/mobius_bulding_object/models/building_object.py:0
+#, python-format
+msgid "Lead"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model,name:mobius_bulding_object.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Szansa/Możliwość"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_filter
+msgid "My Orders"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: code:addons/mobius_bulding_object/models/crm_lead.py:0
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_crm_lead__name_building_object
+#, python-format
+msgid "Name Building Object"
+msgstr "Nazwij obiekt budowlany"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__name
+msgid "Name Object"
+msgstr "Obiekt budowlany"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields.selection,name:mobius_bulding_object.selection__building_object__state__new
+msgid "New"
+msgstr "Nowy"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__attachment_number
+msgid "Number of Attachments"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__crm_lead_id
+msgid "Opportunity"
+msgstr "Lead"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__order_line_building
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__order_line_building_line
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Order Lines"
+msgstr "Linie zamówień"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__property_product_pricelist
+msgid "Pricelist"
+msgstr "Cennik"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__product_id
+msgid "Product"
+msgstr "Produkt"
+
+#. module: mobius_bulding_object
+#: model:ir.actions.act_window,name:mobius_bulding_object.act_building_object
+msgid "Quotations and Sales"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Renew"
+msgstr "Odnowić"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__reserved
+msgid "Reserved"
+msgstr "Skryty"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__order
+msgid "Sale"
+msgstr "Sprzedaż"
+
+#. module: mobius_bulding_object
+#: code:addons/mobius_bulding_object/models/building_object.py:0
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__sale_order_ids
+#, python-format
+msgid "Sale Order"
+msgstr "Kolej sprzedaży"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__sale_order_count
+msgid "Sale Order count"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model,name:mobius_bulding_object.model_sale_order
+msgid "Sales Order"
+msgstr "Zamówienie sprzedaży"
+
+#. module: mobius_bulding_object
+#: model:ir.model,name:mobius_bulding_object.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Pozycja zamówienia sprzedaży"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form_confirm_order
+msgid "Sales Order Lines"
+msgstr "Linie zamówienia sprzedaży"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__team_id
+msgid "Sales Team"
+msgstr "Zespół sprzedaży"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__user_id
+msgid "Salesperson"
+msgstr "Sprzedawca"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_filter
+msgid "Search Building Object"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__sequence
+msgid "Sequence"
+msgstr "Sekwencja"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__show_button_cancel
+msgid "Show Button Cancel"
+msgstr "Pokaż przycisk Anuluj"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__start_date
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__start_date_time
+msgid "Start Date"
+msgstr "Okres realizacji to początek"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__state_id
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "State"
+msgstr "Region"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__state
+msgid "Status"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__street
+msgid "Street"
+msgstr "Ulica"
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Street 2..."
+msgstr "Ulica 2..."
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "Street..."
+msgstr "Ulica..."
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__street2
+msgid "Street2"
+msgstr "Ulica2"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__crm_lead_id_show
+msgid "Technical"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: code:addons/mobius_bulding_object/models/building_object_line.py:0
+#, python-format
+msgid "The quantity for sale cannot be less than zero"
+msgstr "Sprzedawana ilość nie może być mniejsza od zera"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,help:mobius_bulding_object.field_building_object__property_product_pricelist
+msgid ""
+"This pricelist will be used, instead of the default one, for sales to the "
+"current partner"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form_confirm_order
+msgid "To Sale Order"
+msgstr "Do zamówienia sprzedaży"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__total_power
+msgid "Total power"
+msgstr "Całkowita moc"
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object_line__price_unit
+msgid "Unit Price"
+msgstr "Cena jednostkowa"
+
+#. module: mobius_bulding_object
+#: code:addons/mobius_bulding_object/models/building_object_line.py:0
+#, python-format
+msgid "You cannot sell more than demand."
+msgstr "Nie możesz sprzedać więcej niż popyt."
+
+#. module: mobius_bulding_object
+#: model_terms:ir.ui.view,arch_db:mobius_bulding_object.view_building_object_form
+msgid "ZIP"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model.fields,field_description:mobius_bulding_object.field_building_object__zip
+msgid "Zip"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model,name:mobius_bulding_object.model_building_object
+msgid "building.object"
+msgstr ""
+
+#. module: mobius_bulding_object
+#: model:ir.model,name:mobius_bulding_object.model_building_object_line
+msgid "building.object.line"
+msgstr ""

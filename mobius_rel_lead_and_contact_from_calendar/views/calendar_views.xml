@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="mobius_rel_lead_and_contact_from_calendar_view_calendar_event_form_inherit">
+        <field name="name">calendar.event.form.inherit (mobius_rel_lead_and_contact_from_calendar)</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='send_buttons']" position="inside">
+                <button name="action_choosing_lead_and_contact" type="object" string="Choosing related lead or contact" icon="fa-external-link"/>
+            </xpath>
+
+            <xpath expr="//div[hasclass('oe_title')]" position="after">
+                <field name="assigned_to"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_code_generation_tree" model="ir.ui.view">
+        <field name="name">code.generation.tree</field>
+        <field name="model">code.generation</field>
+        <field name="arch" type="xml">
+            <tree string="Code Generation">
+                <field name="partner_id"/>
+                <field name="phone"/>
+                <field name="code_generation"/>
+                <field name="create_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_code_generation_open" model="ir.actions.act_window">
+        <field name="name">Code Generation</field>
+        <field name="res_model">code.generation</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <record id="action_code_generation_open_tree" model="ir.actions.act_window.view">
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_code_generation_tree"/>
+    </record>
+
+    <menuitem id="crm_code_generation_open"
+        action="action_code_generation_open"
+        name="Code Generation"
+        groups="base.group_user"
+        parent="crm.crm_menu_report"
+    />
+</odoo>

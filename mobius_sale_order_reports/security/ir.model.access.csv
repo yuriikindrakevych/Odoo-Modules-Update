@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+mobius_sale_order_reports.access_profile_res_partner_bank,access_profile_res_partner_bank,mobius_sale_order_reports.model_profile_res_partner_bank,base.group_user,1,1,1,1

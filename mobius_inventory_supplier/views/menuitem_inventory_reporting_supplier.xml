@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="inventory_supplier_menu" model="ir.actions.act_window">
+        <field name="name">Inventory Supplier</field>
+        <field name="res_model">inventory.supplier</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_inventory_reporting_supplier"
+              name="Inventory Supplier"
+              sequence="160"
+              parent="stock.menu_warehouse_report"
+              action="inventory_supplier_menu"/>
+</odoo>

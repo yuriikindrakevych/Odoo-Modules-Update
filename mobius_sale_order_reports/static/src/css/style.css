@@ -1,0 +1,55 @@
+body { background: #ffffff; margin: 0; font-family: Arial; font-size: 12pt; font-style: normal; }
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, hr, blockquote, pre, a, abbr, address, acronym, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font-family: Arial; font-size: 16px; font-style: normal;
+}
+hr {
+    border: none;
+    margin: 5px 0;
+    border: 1px solid black;
+    }
+body { background: #ffffff; margin: 0; font-family: Arial; font-size: 16px; font-style: normal; }
+.border_m {
+    border-left: #000000 1px solid;
+    border-top:#000000 1px solid;
+    border-bottom: #000000 1px solid;
+    border-right: #000000 1px solid;
+}
+tr.R0{ height: 15px; }
+tr.R0 td.R0C2{ font-family: Arial; font-size: 12pt; font-style: normal; font-weight: bold; }
+tr.R1{ height: 24px; }
+tr.R1 td.R1C3{ text-align: center; vertical-align: middle; font-size: 15pt;}
+tr.R3{ height: 25px; }
+tr.R4{ height: 41px; }
+tr.R4 td.R4C0{ font-family: Arial; font-size: 12pt; font-style: normal; font-weight: bold; text-align:
+center; vertical-align: middle; border-left: #000000 1px solid; border-top: #000000 1px solid;
+border-bottom: #000000 1px solid; border-right: #000000 1px solid; }
+tr.R5{ height: 15px; vertical-align: middle; }
+tr.R5 td.R5C0{ text-align: center; vertical-align: middle; border-left: #000000 1px solid; border-top:
+#000000 1px solid; border-bottom: #000000 1px solid; border-right: #000000 1px solid; }
+tr.R6 { height: 80px; }
+tr.R6 td.R6C0{
+font-family: Arial; font-size: 16px; font-style: normal; font-weight: bold; text-align: center; vertical-align: middle;}
+tr.R7 { height: 35px; line-height: 35px;}
+tr.R7 td.R7C0{
+ font-family: Arial; font-size: 12px; font-style: normal; font-weight: bold; text-align: center; vertical-align: middle; line-height: inherit;}
+tr.R8 { height: 150px;}
+tr.R8 td.R8C0{
+font-family: Arial; font-size: 12px; font-style: normal; text-align: left;}
+tr.R9 { height: 35px; line-height: 35px;}
+tr.R9 td.R9C0{
+font-family: Arial; font-size: 12px; font-style: normal; font-weight: bold; text-align: center; vertical-align: middle; line-height: inherit;
+border-left: #000000 1px solid; border-top:#000000 1px solid; border-bottom: #000000 1px solid; border-right: #000000 1px solid;}
+tr.R10 { height: 100px; line-height: 100px;}
+tr.R10 td.R10C0{
+ font-family: Arial; font-size: 16px; font-style: normal; font-weight: normal; text-align: center; vertical-align: middle; line-height: inherit;}
+tr.R11 { height: 20px; line-height: 20px;}
+tr.R11 td.R11C0{
+ font-family: Arial; font-size: 12px; font-style: normal; font-weight: bold; text-align: center; vertical-align: middle; line-height: inherit;}
+table {table-layout: fixed; padding: 0px; padding-left: 2px; vertical-align:bottom;
+border-collapse:collapse;width: 100%; font-family: Arial; font-size: 12pt; font-style: normal;}
+td { padding: 0px; padding-left: 2px; overflow:hidden; }

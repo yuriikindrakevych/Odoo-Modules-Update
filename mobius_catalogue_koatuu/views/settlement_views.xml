@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="mobius_catalogue_koatuu_settlement_view_form" model="ir.ui.view">
+        <field name="name">Create a city</field>
+        <field name="model">mobius_catalogue_koatuu.settlement</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="country_id"/>
+                            <field name="res_country_state_id"/>
+                        </group>
+                        <group>
+                            <field name="settlement_type_id"/>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="mobius_catalogue_koatuu_settlement_view_tree" model="ir.ui.view">
+        <field name="name">List of the settlement</field>
+        <field name="model">mobius_catalogue_koatuu.settlement</field>
+        <field name="arch" type="xml">
+            <tree string="Settlements">
+                <field name="country_id"/>
+                <field name="res_country_state_id"/>
+                <field name="name"/>
+                <field name="settlement_type_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="mobius_catalogue_koatuu_settlement_action" model="ir.actions.act_window">
+        <field name="name">Settlements</field>
+        <field name="res_model">mobius_catalogue_koatuu.settlement</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a city</p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="building_object_sequence_number" model="ir.sequence">
+        <field name="name">Building object number</field>
+        <field name="code">building.object</field>
+        <field name="prefix"/>
+        <field name="padding" eval="5"/>
+        <field name="number_increment" eval="1"/>
+    </record>
+</odoo>

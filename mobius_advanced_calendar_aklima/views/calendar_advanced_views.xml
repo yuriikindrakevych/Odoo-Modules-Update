@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_calendar_event_form_inherit" model="ir.ui.view">
+        <field name="name">calendar.event.form</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='start']" position="before">
+                <field name="activity_type_id_real"/>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="activity_type_id" invisible="1"/>
+                <field name="activity_ids" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_calendar_event_inherit" model="ir.ui.view">
+        <field name="name">calendar.event.calendar</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_calendar"/>
+        <field name="arch" type="xml">
+            <field name="attendee_status" position="after">
+                <field name="user_id" invisible="1"/>
+                <field name="activity_type_id" invisible="1"/>
+                <field name="activity_type_id_name" invisible="1"/>
+                <field name="activity_type_id_boolean" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

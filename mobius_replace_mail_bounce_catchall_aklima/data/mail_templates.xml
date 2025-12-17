@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Mail gateway templates -->
+        <template id="mail.mail_bounce_catchall">
+<div>
+    <p>Witamy! <t t-esc="message['email_from']"/>,</p>
+    <p>Wysłany e-mail do <t t-esc="message['to']"/> nie może być przetworzony. Adres ten
+    służy do zadań technicznych i nie jest bezpośrednim kontaktem z firmą Aklima Polska.</p>
+    <p>Dla kontaktu z firmą prosimy napisać e-mail na <a t-att-href="'mailto:%s' % 'info@aklimapolska.pl'"></a></p>
+    <p>Z poważaniem,</p>
+    <p>Zespół Aklima Polska.</p>
+</div>
+<blockquote><t t-esc="message['body']"/></blockquote>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="website_sale.payment_footer" name="Payment">
+        <div name="o_checkbox_container"
+             class="custom-control custom-checkbox mt-2 o_accept_tc_button"/>
+            <div class="float-left mt-2">
+                <a role="button" href="/shop/cart" class="btn btn-secondary">
+                    <i class="fa fa-chevron-left"/> Return to Cart
+                </a>
+            </div>
+        <t t-if="label_for_pay_now">
+            <t t-set="submit_button_label" t-value="label_for_pay_now"/>
+        </t>
+            <div class="float-right mt-2">
+                <!-- name="o_payment_submit_button" -->
+                <button name="test"
+                        type="submit"
+                        class="btn btn-primary"
+                        data-icon-class="fa-chevron-right">
+                    <t t-esc="submit_button_label"/> <i class="fa fa-chevron-right"/>
+                </button>
+            </div>
+    </template>
+
+    <template id="mobius_portal_aklima.payment_footer_two" name="Payment">
+        <div class="float-right mt-2">
+            <button name="test"
+                    type="submit"
+                    class="btn btn-primary"
+                    data-icon-class="fa-chevron-right">
+                <t t-esc="submit_button_label"/> <i class="fa fa-chevron-right"/>
+            </button>
+        </div>
+    </template>
+
+</odoo>

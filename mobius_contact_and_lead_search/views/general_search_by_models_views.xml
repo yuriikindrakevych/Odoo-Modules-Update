@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="mobius_contact_and_lead_general_search_view_form" model="ir.ui.view">
+        <field name="name">General Search</field>
+        <field name="model">general.search.by.models</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="contact_count" invisible="1"/>
+                    <field name="opportunity_count" invisible="1"/>
+                    <field name="lead_count" invisible="1"/>
+
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object"
+                            name="action_view_contacts"
+                            icon="fa-user"
+                            attrs="{'invisible': [('contact_count', '=', 0)]}">
+                            <field string="Contacts" name="contact_count" widget="statinfo"/>
+                        </button>
+                        <button class="oe_stat_button" type="object"
+                            name="action_view_opportunities"
+                            icon="fa-star"
+                            attrs="{'invisible': [('opportunity_count', '=', 0)]}">
+                            <field string="Opportunities" name="opportunity_count" widget="statinfo"/>
+                        </button>
+                        <button class="oe_stat_button" type="object"
+                            name="action_view_leads"
+                            icon="fa-star"
+                            attrs="{'invisible': [('lead_count', '=', 0)]}">
+                            <field string="Leads" name="lead_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="phone"/>
+                            <field name="vat"/>
+                        </group>
+                        <group>
+                            <field name="email"/>
+                            <field name="title"/>
+                        </group>
+                    </group>
+
+                    <button name="action_general_search" type="object" string="Search" class="oe_highlight"/>
+
+                    <group>
+                        <field name="contact_ids" invisible="1"/>
+                        <field name="opportunity_ids" invisible="1"/>
+                        <field name="lead_ids" invisible="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="mobius_contact_and_lead_general_search_search_view_tree" model="ir.ui.view">
+        <field name="name">General Search</field>
+        <field name="model">general.search.by.models</field>
+        <field name="arch" type="xml">
+            <tree string="General Search">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="mobius_contact_and_lead_search_action_general_search_by_models" model="ir.actions.act_window">
+        <field name="name">General Search</field>
+        <field name="res_model">general.search.by.models</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="mobius_contact_and_lead_search_action_general_search_by_models_form" model="ir.actions.act_window">
+        <field name="name">General Search</field>
+        <field name="res_model">general.search.by.models</field>
+        <field name="view_mode">form</field>
+    </record>
+
+</odoo>

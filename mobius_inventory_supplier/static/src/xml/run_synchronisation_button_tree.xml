@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+   <t t-extend="ListView.buttons" t-name="run_synchronisation_action.buttons">
+       <t t-jquery="button.o_list_button_add" t-operation="after">
+               <button t-if="widget.modelName == 'inventory.supplier'" type="button"
+                       class="btn btn-primary run_synchronisation_action_tree oe_highlight">Run synchronisation</button>
+       </t>
+   </t>
+</templates>

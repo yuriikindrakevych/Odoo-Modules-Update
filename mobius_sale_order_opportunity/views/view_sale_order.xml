@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_order_form_smart_button_leads" model="ir.ui.view">
+        <field name="name">sale.order.form.smart_button_leads</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='preview_sale_order']" position="before">
+                <button name="action_show_opportunity" type="object" class="oe_stat_button" icon="fa-briefcase">
+                    <div class="o_stat_info">
+                        <field name="opportunity_count" class="o_stat_value"/>
+                        <span class="o_stat_text">Opportunity</span>
+                    </div>
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="opportunity_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,689 @@
+local_id,name,vat,region,address,index,city,contact,phone,email,job
+1,RAFAŁ KAZEK ,8291576469,łódzkie,0,98-220 ,0,Rafał Kazek,502501521,biuro@kazeksc.pl ,właściciel
+2,"HURTOWNIA ELEKTROTECHNICZNA ""INSTALATOR"" S.C. SŁAWOMIR LEWANDOWSKI TOMASZ PAWLAK ",5070091565,łódzkie,Ozorkowska 15,99-100,Łęczyca,Tomasz Pawlak,784430938,incognitom@interia.pl,0
+3,"""FENIKS"" Dawid Wielgosik",5080075510,łódzkie,Północna 15,98-330,Pajęczno,Dawid Wielgosik,0,dawwie55@gmail.com,0
+4,Onninen Sp. z o.o. oddział Łódź,5261032852,łódzkie,Teolin 18B,92-701,Łódź,Marzena Olejniczak,507007637,marzena.olejniczak@onninen.com,0
+5,EKOWENT INSTAL Andrzej Kafarski,5271476970,łódzkie,Jana Brzechwy 8,96-100,Skierniewice,Andrzej Kafarski,721821806,wentylacja@op.pl,0
+6,Respol Export – Import Sp z o.o. Oddział Łódź,5272418733,łódzkie,Ludowa 91,93-232 ,Łódź,Patryk Olejniczak,690174711,patryk.olejniczak@respol.pl,0
+7,MACIEJ DIRBACH INŻYNIERIA UNIWERSUM,5542591129,łódzkie,Chyleniec 9a,99-416,Chyleniec,Maciej Dirbach ,607642499,maciej.dirbach@gmail.com,0
+8,"Władysław Popiel - Przedsiębiorstwo Produkcyjno-Handlowo-Usługowe ""ROLNIK""",5741003313,łódzkie,Stanisława Moniuszki 12,98-330,Pajęczno ,Michał Popiel,608027567,0,0
+9,AQUAR Mielczarkowski Arkadiusz,5741508823,łódzkie,Rekreacyjna 42A,98-330,Pajęczno,Arkadiusz Mielczarkowski,606263076,amielczarkowski@gmail.com,właściciel
+10,Siner Sylwester Nikonowicz,5741726566,łódzkie,Wręczyca 34,98-330,Pajęczno ,Sylwester Nikonowicz,660134995,biuro@sinereko.pl,0
+11,PPHU ROLNIKBIS MICHAŁ POPIEL,5741763320,łódzkie,MONIUSZKI 12,98-330,Pajęczno ,Michał Popiel  ,608027567,popiel@rolnikbis.pl,0
+12,Klimazbyt Sp. z o.o. o/Łódź,5862181752,łódzkie,J. Piłsudskiego 92,92-202,Łódź,Sławomir Grad,609002634,s.grad@klimazbyt.pl,0
+13,KENPOL Holding Sp. z o.o. Filia Piotrków Trybunalski,6272761354,łódzkie,Wierzejska 94,97-300,Piotrków Trybunalski,piotrkow@kenpol.pl  ,44 6464599  ,piotrkow@kenpol.pl  ,0
+14,Przedsiębiorstwo Handlowe Alfa Elektro Sp. z o.o. oddział Radomsko,6340135676,łódzkie,Brzeźnicka 57,97-500,Radomsko,0,0,0,0
+15,Instalbud Janosz Sp. z o.o. o/Ksawerów,6381002363,łódzkie,Jana Pawła II 14,95-054,Ksawerów,Arkadiusz Lipczyński,660693752,Arkadiusz.Lipczynski@instalbud.pl,dział handlowy
+16,3W Dystrybucja Budowlana S.A. oddział Łódź,6412479943,łódzkie,3 Maja 64/66,93-408,Łódź,Mateusz Kostecki,725380000,mateusz.kostecki@3wit.pl,doradca handlowy
+17,KML Kamil Dukarski,6652559363,łódzkie,Długa 200,95-041,Gałków Duży,Kamil Dukarski,604233047,kamil@kmlsystem.pl,doradca handlowy
+18,ANG o/Katowice_Go Power Rafał Komar,6772197856,łódzkie,Łuszczanowice 199,97-410,Kleszczów,Aneta Reszel,514601414,aneta.reszel@ang.com.pl,przedstawiciel handlowy
+19,ELEKTRYK EXPERT Marek Cichowlas,6781474137,łódzkie,Janki 2a,98-330,Pajęczno,Piotr Cichowlas,512994486,piotr@elektrykekspert.pl,0
+20,CALDO – WENTYLACJA Sp. z o.o. Łódź,6793108496,łódzkie,Św. Teresy od Dzieciątka Jezus 178,91-222,Łódź,Jakub Snopek,885805107,jakub.snopek@caldo-wentylacja.pl,regionalny koordynator ds wentylacji
+21,P.W.TEMPO Prączko Sławomir,7251005547,łódzkie,Józefów 30B,95-002,Smardzew,Sławomir Prączko,601548095,biuro@tempo.info.pl,właściciel
+22,AirStars Piotr Junczyk ,7251801356,łódzkie,Malownicza 75,92-761,Łódź,Piotr Junczyk ,579525076,piotrjunczyk2@gmail.com,0
+23,ERGOKLIMA Łukasz Gąsiorkiewicz,7251885519,łódzkie,Zakładowa 127C,92-402,Łódź,Łukasz Gąsiorkiewicz,517717555,ergoklima@ergoklimalodz.pl,właściciel
+24,KLIMA-WENT Dominik Gruchot,7251947918,łódzkie,Jana Kilińskiego 15/ 28,90-205,Łódź,Dominik Gruchot,728535501,klimawent.lodz@gmail.com,właściciel
+25,EUTONOMY SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ SPÓŁKA KOMANDYTOWA,7252129926,łódzkie,Piotrkowska 121/ 3A,90-430,Łódz,Maciej Skrzypczyński,601201622,mask@eutonomy.com,0
+26,HBT ENERGY SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,7252191894,łódzkie,Piotrkowska 270,90-361,Łódź,Jacek Deka,793737370,ceo@hbtenergy.eu,0
+27,AJ REAL ESTATE SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,7252284147,łódzkie,"PIOTRKOWSKA 270/4, P. 10",90-361,Łódź,Konrad Pietras,505114649,konrado1982@o2.pl,0
+28,"""SOV-AIR"" Jagoda Flont-Sowała",7252307598,łódzkie,"Piotrkowska, nr 204/210, lok. 238",90-369,Łódz,Cezary Sowała,511933991,biuro@sovair.pl,0
+29,EDSOFT ARTUR GRUSZCZYŃSKI,7261014045,łódzkie,Brzozowa 17,92-701 ,Kopanka,Artur Gruszczynski,601244344,biuro@edsoft.pl,0
+30,ARSEM ANNA ŁUCZAK,7261328016,łódzkie,Rojna 17,91-142,Łódź,Krystian ,602307470,oferty@arsem.pl,specjalista ds. realizacji projektów
+31,DTS SERWIS MARIUSZ MAKSAJDA oddział Łódź,7262336414,łódzkie,Rzgowska 276A,95-200,Pabianice,Katarzyna Żupaniec,507750010,katarzyna@dtsserwis.pl,główny specjalista ds. klientów sieciowych
+32,Arctic Klimat Przemysław Zajder,7262390098,łódzkie,Liściasta 17,91-357,Łódź,Przemysław Zajder,696033222,zajder@arctic-klimat.pl,właściciel
+33,ACTIVE Sebastian Telega,7262424006,łódzkie,Ślaska 101,93-327,Łódź,Sebastian Telega,513870425,active@vip.onet.pl,właściciel
+34,Pionica Poland Marcin Zawadzki,7262430455,łódzkie,Nastrojowa 24/12,91-498,Łódź,Marcin Zawadzki,661500500,marcin@zawa.pl,0
+35,WI-BUD Witold Janczak,7262438936,łódzkie,Sierakowskiego 69,91-324,Łódź,Witold Janczak,519513025,w.janczak@centrumrekuperacji.pl,właściciel
+36,GRUPA E-VENTO Marcin Ziębowicz,7262498602,łódzkie,Lipowa 15/17,90-743,Łódź,Marcin Ziębowicz,783 11 33 83,biuro@e-vento.pl,właściciel
+37,NOVITECH,7272308655,łódzkie,Mickiewicza 26,95-070,Aleksandrów Łódzki,0,607320385,biuro@novitech-lodz.pl,0
+38,MAX-INSTAL PRUSINOWSKI PRZEMYSŁAW,7272449479,łódzkie,"Joachima Lelewela, nr 16, lok. 9",96-100,Łódź,Przemysław Prusinowski,512115071,biuro@maxinstal.pl,0
+39,Kontar Arkadiusz Moszczyński,7272558056,łódzkie,Wiosenna 4,93-535 ,Łódź,Arkadiusz Moszczyński,0,0,0
+40,OAKTREE SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,7272855630,łódzkie,Mikołaja Kopernika 64A/ 1,90-553,Łódz,Artur Stefaniak,696039884,a.stefaniak1979@gmail.com,0
+41,"Therm-Instal B. Michoń, P. Zubiel Sp. J.",7280002818,łódzkie,Józefa Piłsudskiego 143,92-236,Łódź,Zbigniew Zuchmański,604408888,zzuchmanski@therm.pl,kierownik ds. inwestycji
+42,Dom Handlowy ŻACZEK Władysław Żaczek,7280017062,łódzkie,Rokicińska 121,95-020,Andrespol,Władysław Żaczek,603767276,biuro@zaczek.sklep.pl,właściciel
+43,ECO-HEAT STANISŁAW DUDA,7281067553,łódzkie,Piątkowska 83F,95-100,Zgierz,Stanisław Duda,604060093,ecoheat@wp.pl,0
+44,Monolit Rafał Pierzchalski Oddział,7281476671,łódzkie,Legionów 58,90-703,Łódź,Rafał Pierzchalski,601229562,biuro@monolit-kominki.com,właściciel
+45,Monolit Rafał Pierzchalski,7281476671,łódzkie,Zbocze 34 m 1,92-003,Łódź,Rafał Pierzchalski,601229562,biuro@monolit-kominki.com,właściciel
+46,FJORD HOUSE Domy Skandynawskie Piotr Wierzbowski,7282583618,łódzkie,Morgowa 4,91-223 ,Łódź,Adam Drabik,736801700,a.drabik@fjordhouse.pl,0
+47,Usługi Hydrauliczne Piotr Patoleta,7282666853,łódzkie,Długa 60,95-041,Borowa,Paweł Bińkowski,512499773,kontakt.ekokomfort@gmail.com,0
+48,EKO KOMFORT Paweł Bińkowski,7282707581,łódzkie,Chrustowska 3,95-041,Borowa,Paweł Bińkowski,512499773,kontakt.ekokomfort@gmail.com,0
+49,BIMs PLUS FHH Spółka z ograniczona odpowiedzialnoscia ŁÓDZ Sp. k.,7282714150,łódzkie,"Papiernicza 5,",92-312,Łódz,Marcin Łuczak,603-051-022 ,0,Opiekun Asortymentu
+50,Komfoterm Michał Reliszka,7282760227,łódzkie,Cmentarna 13,95-080,Tuszyn,0,500036232,biuro@komfoterm.pl,0
+51,KLIMAZBYT ŁÓDŹ Sp. z o.o.,7282796840,łódzkie,Piłsudskiego 92,92-202,Łódź,Damian Pewniak,507727676,damian@klimazbyt.pl,dział tech.-hand.
+52,Komfort Cieplny Kamil Szymczak,7282814621,łódzkie,Henryka Brodatego 2/ 79,92-413,Łódź,Kamil Szymczak,726571056,bok@komfort-cieplny.pl,właściciel
+53,TomiQ Tomasz Morawsk,7291123922,łódzkie,Przestrzenna 16E,93-434,Łódź,Tomasz Morawski,780606505,biuro@recoven.pl,0
+54,ELTIM TB Tomasz Masłowski,7291186348,łódzkie,Zaspowa 22/24,92-016,Łódź,Tomasz Masłowski,608052231,eltimtb@gmail.com,właściciel
+55,Twój Kominek Paweł Zarzycki,7292374750,łódzkie,Elbląska 16,93-459,Łódź,Paweł Zarzycki,509224696,pawel_zarzycki@op.pl,właściciel
+56,NOMAX Engineering Marcin Góralczyk,7292378624,łódzkie,Wysoka 40/42,90-037,Łódź,Justyna Woźnicka,511147644,jw@nomax.net.pl ,0
+57,Tech-Gaz Sp. z o.o.,7292442747,łódzkie,Zarzewska 63/65,93-124,Łódź,Michał Babacz,603979231,michal@techgaz.com.pl,dyrektor handlowy
+58,K-WENT Krzysztof Bednarkiewicz,7292518410,łódzkie,Stefana Batorego 12,95-030,Rzgów,Krzysztof Bednarkiewicz,501064055,krzysztofbednarkiewicz@gmail.com,właściciel
+59,SOLAR PARTNER Sp. z o.o.,7292703739,łódzkie,Henryka Wieniawskiego 46,93-564,Łódź,Tomasz Marjan,517446675,t.marjan@solarpartner.com.pl,dyrektor ds. sprzedaży
+60,INTEVE Sp. z o.o. Sp.k.,7292709860,łódzkie,Demokratyczna 115,93-438,Łódź,Tomasz Słyścio,604618793,tomek.s@inteve.eu,dzał tech – handlowy
+61,EL-KLIMAT Zbigniew Błaszczyk,7292710225,łódzkie,Kraszewskiego 18 lok. 65,93-161,Łódź,Zbigniew Błaszczyk,537530203,biuro@el-klimat.pl,właściciel
+62,EURUS WENT Krzysztof Ostrowski,7310012136,łódzkie,Szpitalna 43,95-200,Pabianice,Krzysztof Ostrowski,792961572,ko-port@o2.pl,właściciel
+63,Instal-Pab Andrzej Pabjańczyk,7311023716,łódzkie,Żytowice 55c,95-200,Pabianice,Andrzej Pabjańczyk,602490798,apabjanczyk@o2.pl,0
+64,Małgorzata Jaworska,7311223390,łódzkie,Słonecznikowa 9,95-054,Ksawerów,Przemysław Stasiak,668503325,doradcastasiak@gmail.com,właściciel
+65,IZOTHERMO-PRZEM Izabela Socha,7311233000,łódzkie,Szpitalna 43,95-200,Pabianice,Izabela Socha,792961572,ko-port@o2.pl,właściciel
+66,VENTIME Andrzej Kłys,7311248177,łódzkie,Smugowa 19 m5,95-200,Pabianice,Andrzej Kłys,668809596,ventime@interia.eu,właściciel
+67,TEXA CAR SERVICE Sylwester Borowiecki,7311476033,łódzkie,marsz. Józefa Piłsudskiego 34,95-200,Pabianice,Sylwester Borowiecki,692468440,sylwekborowiecki@wp.pl,właściciel
+68,TRAMONTANA KATARZYNA MAKSAJDA,7311796714,łódzkie,Rzgowska 43D,95-200,Pabianice,Tomasz Słyścio,505505483,tomasz.slyscio@tramontana.net.pl,0
+69,BM Nowoczesne Systemy Grzewcze Michał Błaszczyk,7311919275,łódzkie,Osikowa 30,95-200,Pabianice,Michał Błaszczyk,602762688,bm.inwestycje@gmail.com,właściciel
+70,3W Łódź DystrybucjaTG –  NOWOCZESNE TECHNOLOGIE Krystian ,7311922521,łódzkie,Kudrowice 229,95-200,Pabianice,Krystian ,787203820,biuro.jamroze@gmail.com,właściciel
+71,Roc-Went Instalacje Adam Niedzielski,7311943434,łódzkie,Bracka 62/64 m.11,95-200,Pabianice,Adam Niedzielski,798541090,adam.niedzielski@wp.pl,właściciel
+72,Budo-Therm Wojciech Kłos,7311968782,łódzkie,Orpelów-Numerki 5,95-082,Dobroń,Wojciech Kłos,786286279,kontakt@budo-therm.pl,właściciel
+73,POL-WENT Marian Rusek,7321158381,łódzkie,Boya-Żeleńskiego 35 lok. 10,95-100,Zgierz,Marian Rusek,512101225,biuro@pol-went.pl,0
+74,VIA COM FIRMA BARTOSZ SAMIN,7321764012,łódzkie,Jeża 11,95-100,Zgierz,Bartosz Samin,500702800,bartek@samin.pl,Właściciel
+75,CLIMAX Paweł Czarnecki,7321827238,łódzkie,Konstantego Okołowicza 57,95-070 ,Krzywiec,Paweł Czarnecki,693116250,pawelczarnecki111@gmail.com,0
+76,GLOBAL TECHNIKA Arkadiusz Mitera,7321947563,łódzkie,Graniczna 24,95-100,Zgierz,Arkadiusz Mitera,531777091,0,właściciel
+77,HVAC Systems Marcin Kowalski,7322016039,łódzkie,Boya-Żeleńskiego 45/3,95-100,Zgierz,0,0,0,0
+78,Aero-Vent Mariusz Dośpiał,7322028485,łódzkie,Zachodnia 17 / 6,95-035,Ozorków,Mariusz Dośpiał,665727303,aero-vent@o2.pl,właściciel
+79,Aspekt Air - KATARZYNA MICHALAK,7322064825,łódzkie,Kalinowa 28a,95-070,Aleksandrów Łódzki,Mariusz Michalak,733621212,kontakt@aspektair.pl,właściciel
+80,ARIA COMFORT Michał Musialik,7322091118,łódzkie,Władysława Sikorskiego 14,95-070,Aleksandrów Łódzki,Michał Musialik,606273599,ariakomfort@gmail.com,0
+81,Ventcomfort Bartosz Krzesiński,7322099433,łódzkie,Długa 133,95-100,Zgierz,Bartosz Krzesiński,665806112,ventcomfortpl@gmail.com,właściciel
+82,RAFAŁ ŁUKASIK Rafpol-elektric,7681718876,łódzkie,Wola Załężna 23,26-300,Wola Załężna,Rafał Łukasik,503445333,rafpolelektric@gmail.com,właściciel
+83,Jarosław Fiderek,7681767248,łódzkie,"Gałkówek-kolonia, nr 70",95-060 ,Łódz,Jarosław Fiderek,667624303,Jaroslaw.Fiderek@kellogg.com,0
+84,KOPBUD Sp. z o.o.,7681803671,łódzkie,Łazisko 1/9,97-200,Tomaszów Mazowiecki,Krzysztof Ryś,721251740,krzysztof_rys@kopbud.pl,kierownik projektu
+85,Przedsiębiorstwo Produkcyjno - Usługowo - Handlowe Stivex oddział Bełchatów,7690003119,łódzkie,Czapliniecka 146,97-400,Bełchatów,Damian Sawicki,666399149,damian.sawicki@stivex.pl,kierownik działu sanitarnego
+86,PRZEDSIĘBIORSTWO PRODUKCYJNO-USŁUGOWO-HANDLOWE STIVEX Szczepan Wrzesiak,7690003119,łódzkie,Wschodnia 31/33,97-425,Zelów,0,446341654,stivex@stivex.pl,0
+87,C.Z.B i P. ROAR Anna Rosół,7691527534,łódzkie,Brzozowa 7,97-400,Bełchatów,Roman Rosół,601317420,roar-firma@wp.pl,właściciel
+88,EKOINTEL Paweł Stępień,7691887273,łódzkie,Słonecznikowa 12,97-410,Kleszczów,Paweł Stępień,694700006,ekointel@vp.pl,właściciel
+89,RW - Klima Robert Warda,7691984154,łódzkie,Okrzei 3/42,97-400,Bełchatów,Robert Warda,513377888,robertwarda@rw-klima.pl,0
+90,SKALMEN Jakub Skalski,7692048304,łódzkie,Czyżów 6,97-410,Kleszczów,Jakub Skalski,600607612,skalmen@skalmen.pl,właściciel
+91,SHOWLIGHT BARTOSZ STEFANEK,7692066130,łódzkie,Pabianicka 75A,97-400,Bełchatów,Bartosz Stefanek,513023332,bartoszstefanek@gmail.com,0
+92,INSTBUD Sp. z o.o.,7692099980,łódzkie,Transportowa 9,97-400,Bełchatów,Mariusz Gosławski,607094529,instbud_piotrkow@interia.eu,kierownik
+93,RKinstal Robert Karbownik,7692108880,łódzkie,Sienkiewicza 22,97-425,Zelów,Robert Karbownik,500644989,biurorkinstal@gmail.com,właściciel
+94,INSTALVISION TOMASZ BOCZKIEWICZ,7692113177,łódzkie,osiedle Okrzei 4/ 346,97-400,Bełchatów,Tomasz Boczkiewicz,789150000,instalvision@gmail.com,0
+95,Dom bez komina Łukasz Olejnik,7692172837,łódzkie,Dobrzelów 76,97­-400,Bełchatów,Łukasz Olejnik,733676545,ventlab@interia.pl,właściciel
+96,PROJEKTEX Sp. z o.o.,7692221435,łódzkie,Bronisława Malinowskiego 11,97-400,Bełchatów,Michał Grzejszczak,608586466,biuro@prx.pl,prezes
+97,GOPOWER Sp. z o.o.,7692230339,łódzkie,"Łuszczanowice, ul. Złota 13",97-410,Kleszczów,Rafał Komar,609556290,rafal.gopower@op.pl,właściciel
+98,DOM BEZ KOMINA SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,7692242443,łódzkie,STALOWA 43,97-400,Bełchatów,Łukasz Olejnik,733676545,kontakt@dombezkomina.pl,0
+99,Firma prywatna instal-zed,7710104095,łódzkie,Żwirki 9,97-300,Piotrków Trybunalski,D. Magiera,0,d.magiera@instal-zed.com.pl,handel i zaopatrzenie
+100,"MONTEX Technika Grzewcza, Sanitarna i Wentylacyjna Tadeusz Zieliński",7711428109,łódzkie,Folwarczna 62,97-300,Piotrków Trybunalski,Kamil Zieliński,506547586,biuro@montex.org.pl,właściciel
+101,Firma DOM i OGRÓD Zbigniew Jabłoński,7711773668,łódzkie,Kafar 2,97-306,Grabica,Radosław Jabłoński,506879915,radoslawjablonski@hotmail.com,właściciel
+102,CLIMA TOM Tomasz Czarnucha,7712246534,łódzkie,Parkowa 32,97-300,Piotrków Trybunalski,Tomasz Czarnucha,502073017,climatom09@interia.pl,właściciel
+103,PILOTERM Grzegorz Godlewski,7712364541,łódzkie,Towarowa 10,97-300,Piotrków Trybunalski,Grzegorz Godlewski,605826275,piloterm@wp.pl,właściciel
+104,Usługi hydrauliczne Plusk Emil Pluskota,7712755299,łódzkie,Aleja 3-ego Maja 21/4,97-300,Piotrków Trybunalski,Emil Pluskota,514354434,uslugi-plusk@o2.pl,właściciel
+105,ArtCold Sylwia Abratkiewicz,7712913485,łódzkie,Studziennicka 4,97-330,Sulejów,Tobiasz Piątek,785534043,biuroartcold@gmail.com,0
+106,Stanisław Klekociński,7721118505,łódzkie,gen. Władysława Sikorskiego 39,97-360,Kamieńsk,Damian Klekociński,606438456,damianklekocinski@gmail.com,0
+107,RADMAR RADOSŁAW MARSZAŁ,7722101961,łódzkie,Krzywanice 146,97-565,Krzywanice,Radosław Marszał,660002675,radmar.oze@gmail.com,0
+108,GOPOWER Rafał Komar,7722160320,łódzkie,Łuszczanowice 199,97-410,Kleszczów,Rafał Komar,609556290,gopower@op.pl,właściciel
+109,AQUACONCEPT Grzegorz Bartnik,7722203288,łódzkie,Mielczarskiego 1D,97-400,Bełchatów,Grzegorz Bartnik,512231520,bartnik@aquaconcept.pl,właściciel
+110,CALDO-TECH Wojciech Jastrzębski,7722378220,łódzkie,Kościuszki 4/2,97-532,Borzykowa,Sebastian Purgal,733155099,sebastian.purgal@caldo-tech.pl,specjalista ds. obsługi klienta w dziale oze
+111,EKO-INST MATEUSZ SPADŁO,7722425149,łódzkie,Janusza Korczaka 7,97-500,Radomsko,Mateusz Spadło,511587031,eko.inst.biuro@gmail.com,0
+112,INSTAL-SERWIS Marta Wiktorowicz,7731789916,łódzkie,Elizy Orzeszkowej 35/37,97-200,Tomaszów Mazowiecki,Marta Wiktorowicz,606657377,instalserwis.tm@gmail.com,właściciel
+113,Szymon Kaczmarczyk PARAFARM,7732148295,łódzkie,Ciesielska 7,97-200,Tomaszów Mazowiecki,Szymon Kaczmarczyk,691270079,szymkacz74@gmail.com,właściciel
+114,F.U.H. Instalator Katarzyna Pawlak,7732303608,łódzkie,Słowackiego 37,97-200,Tomaszów Mazowiecki,Michał Sady,796096464,michal-instalator@o2.pl,0
+115,KLIM-MAR SERWIS KAMIL MARCZYK,7732346411,łódzkie,Niewiadów 14/8,97-225,Ujazd,0,0,0,0
+116,KLIM-MAR SERWIS KAMIL MARCZYK Oddział Łódź,7732346411,łódzkie,Dąbrowskiego 225/114,93-231,Łódź,0,0,0,0
+117,RealGREEN Sp. z o.o.,7732485489,łódzkie,Osiedle Niewiadów 49,97-225,Ujazd,Daniel Kaczmarek,790787874,d.kaczmarek@realgreen.tech,0
+118,HVAC SYSTEM Szymon Bąk,7732488105,łódzkie,Brzustów 29A,97-215,Brzustów,Szymon Bąk,881662772,szymon48@gmail.com,właściciel
+119,TechnoVent Krzysztof Michalak,7751421823,łódzkie,Sójki 1D,99-307,Strzelce,Krzysztof Michalak,601877768,krzysztof.michalak@technovent.pl,właściciel
+120,KLIMA TECH S.C.,7752054829,łódzkie,Sienkiewicza 25,90-300,Kutno,Krzysztof Michalak,601877768,krzysztof.michalak@klima-tech.com.pl,prezes
+121,Ekoinstal Roman Piłat – oddział Kleszczów,8151537050,łódzkie,Główna 122,97-410,Kleszczów,Roman Piłat,604296362,biuro@ekoinstalacje.pl,właściciel
+122,TB Pompy Ciepła Tomasz Biernacki,8272021664,łódzkie,Kolbego 7/8,98-220,Zduńska Wola,Tomasz Biernacki,666686532,biernacki6oze@gmail.com,0
+123,IndraTech Tomasz Maćkowski,8272120567,łódzkie,Jeremiego Wiśniowieckiego 12,98-200,Sieradz,Tomasz Maćkowski,668261495,paczol21@o2.pl,właściciel
+124,STORKE Sp. z o.o.,8272307314,łódzkie,Stanisława Żółkiewskiego 6,98-200,Sieradz,Marcin Bocian,604636716,biuro@storke.pl,prezes
+125,STORKE Sp. z o.o. Oddział,8272307314,łódzkie,Rzgowska 102 lok. 30,93-153,Łódź,Marcin Bocian,604636716,biuro@storke.pl,prezes
+126,MazuRemontuje Mariusz Mazur,8272332022,łódzkie,Gzików 30,98-200,Błaszki,Mariusz Mazur,784375735,marius.18@o2.pl,0
+127,TERMET Grupa SBS,8290002654,łódzkie,Sieradzka 61,98-220,Zduńska Wola,Jacek Pluskota,43 823 64 31,techniczny@termet.net.pl,kierownik
+128,PHU TATA Piotr Nowak,8291005011,łódzkie,Warszawska 13,98-200,Sieradz,0,43 826 32 00,klima@tata.com.pl,0
+129,IN-THERM MARIUSZ OLEJNIK,8291322438,łódzkie,Kwiatowa 10,94-227,Łódź,Mariusz Olejnik,509285828,m.olejnik@in-therm.pl,właściciel
+130,Inteli-Dom Michał Tymoczko,8291524797,łódzkie,Złota 39B,98-220,Zduńska Wola,Michał Tymoczko,503193548,michal@intel-dom.eu,właściciel
+131,ITELECTRIC KRZYSZTOF TOKAJ,8291584730,łódzkie,Wojsławice 65b,98-220,Wojsławice,Krzysztof Tokaj,504658633,biuro@itelectric.pl,0
+132,HYDRA-GRUPA SBS J. KŁOS SPÓŁKA KOMANDYTOWA,8310003994,łódzkie,9-go Maja 83,98-100,Łask,Agnieszka Żebrowska ,0,Finanse@hydra.com.pl,Księgowa 
+133,BK BUSINESS Krzysztof Białkowski,8311461865,łódzkie,Słowackiego 16,98-100,Łask,Krzysztof Białkowski,43 675 23 53,ogrzewanie@bk.biz.pl,właściciel
+134,DOR-TEX Witold Grobelny ,8311466420,łódzkie,Marzenin Pl. Różany 5,98-160,Sędziejowice,Dariusz Duma,509282223,technologia@dor-tex.pl,0
+135,WOODIT Sp.z.o.o.,8311639903,łódzkie,Kanarkowa 7 Wronowice ,98-100,Łask,Bartlomiej Rakocinski ,885161085,woodit.eu@gmail.com,0
+136,CIG Centrum Instalacji Grzewczych Tomasz Nowakowski,8321608867,łódzkie,Rokicińska 109,95-020,Andrespol,Tomasz Nowakowski,660491115,t.nowakowski@ciginstalacje.pl,właściciel
+137,WAREBUD WIELOCH I PRYSIŃSKI Sp.J.,8322000458,łódzkie,Przemysłowa 3,98-300,Wieluń,Michał Klich,697854965,zapytanie@warebud.pl,specjalista ds. wentylacji
+138,KRZYSZTOF PAWŁOWSKI FIRMA RAMEX,8341024299,łódzkie,Stanisława Skarżyńskiego 8,99-400,Łowicz,Przemysław Pawłowski,509634305,firma.ramex@gmail.com,0
+139,Project 71 Łukasz Szachogłuchowicz,8341740469,łódzkie,Piekarska 4/ 71,99-400,Łowicz,Łukasz Szachogłuchowicz,0,l.szachgluchowicz@gmail.com,0
+140,KLIMANOVUM Marcin Błaszczyk,8341773724,łódzkie,Generała Franciszka Włada 1,99-400,Łowicz,Anna Błaszczyk,792432145,klimanovum@wp.pl,0
+141,CBEO.PL Sławomir Zawadzki,8361100023,łódzkie,Mszczonowska 33/35 lok. 10,96-100,Skierniewice,0,0,0,0
+142,Firma usługowa Roman Kobus,8361164974,łódzkie,Jagodowa 5,96-100,Skierniewice,0,515144277,rj5@onet.pl,0
+143,Grupa Ekoenergia Sp. z o.o.,8361777984,łódzkie,Sierakowice Prawe 141D,96-100,Skierniewice,0,0,0,0
+144,Elektro-Stopi Marcin Stopiński,8381649864,łódzkie,majora Henryka Sucharskiego 2/30 ,96-100,Skierniewice ,Marcin Stopiński ,696172997,elektrostopi230@gmail.com,właściciel
+145,MP-MEDIA Sabina Staruch,8661589560,łódzkie,Kontrewers 12A,95-100,Zgierz,Sabina Staruch,603370073,biuro@starvac.pl,0
+146,"""KLIMA-POP"" ZBIGNIEW POPKOWSKI",8881669539,łódzkie,1-go Maja 64,90-756,Łódź,Rafał Kobiałka,691475551,biuro@klimapop.com.pl,0
+147,CEL HOUSE Piotr Rybaczuk,8881945904,łódzkie,Przanowice 81 H ,95-040,Przanowice,Piotr Rybaczuk,501275845,celhousedomyszkieletowe@gmail.com,0
+148,KENPOL ŁÓDŹ SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,8952210200,łódzkie,Jadzi Andrzejewskiej 1,92-550 ,Łódź,Emil Jaszczura,668147947,emil.jaszczura@kenpol.pl ,0
+149,PROMESS Artur Chołys ,9471235084,łódzkie,Irysowa 6,95-070,Rąbień AB,Artur Chołys,601345226,promess1@wp.pl,0
+150,BIURO PROJEKTOWE FOR CONSTRUCTION Przemysław Solarek,9471490190,łódzkie,Nawrot 7 lok 31,90-060,Łódź,Przemysław Solarek,601868074,BIURO@4construction.eu,właściciel
+151,KBB INSTAL Krzysztof Brzozowski,9471543377,łódzkie,Morgowa 12,91-231,Łódź,Krzysztof Brzozowski,502522398,k.brzozowski@kbb-instal.pl,właściciel
+152,AUTO - SERWIS Robert Filipczak,9471772480,łódzkie,Długa 95c,97-200,Wąwał,Karol Frątczak,506158728,klimatyzator.pl@gmail.com,0
+153,ECOlife Home Agnieszka Chołys,9471820919,łódzkie,Irysowa 6,95-070,Rąbień AB,Artur Chołys,601345226,promess1@wp.pl,0
+154,SUNDAY ARKADIUSZ KUBICKI,9471899393,łódzkie,Liściasta 17,91-357,Łódź,Arkadiusz Kubicki,509877966,0,0
+155,Recool Sp. z o.o.,9472000377,łódzkie,Kaczeńcowa 10,91-214,Łódz,Danmian Zimny,511581354,d.zimny@recool.pl,0
+156,REKUPERATOR.NET Michalczyk Marcin stary adres,0,mazowieckie,Legionów Polskich 18,05-230,Kobyłka,0,0,0,właściciel
+157,Ciepły kominek,0,mazowieckie,Piłsudskiego,05-270,Marki,0,22 771 28 92,0,0
+158,Solgro,0,mazowieckie,Kościuszki 24/16A,05-300,Mińsk Mazowiecki,0,508566638,biuro@solgo.pl,0
+159,Protek klimatyzacja i wentylacja,0,mazowieckie,Wynalazek 3,02-677,Warszawa,0,693930655,grzegorz@protek.pl,0
+160,ECE PLUS,0,mazowieckie,Ludowa 7,05-070,Sulejówek,0,507237637,biuro@eceplus.pl,dział sprzedaży i zamówień
+161,DM-Wentylacja Daniel Majewski,0,mazowieckie,Cicha 12B/10,96-100,Skierniewice,Daniel Majewski,539100162,danielmajewski1@o2.pl,0
+162,SIESTA COMFORT Szczepan Jóźwiak,0,mazowieckie,Słoneczny Poranek 23/1,05-850,Ożarów Mazowiecki,Szczepan Jóźwiak,507620435,szczepan_jozwiak@op.pl,0
+163,Marek Sawicki,0,mazowieckie,Pawia 20,05-510,Czarnów,Marek Sawicki,609820835,marek.sawicki@bistecca.pl,inwestor indywidualny
+164,Instalplast Marcin Grabowski,1130001949,mazowieckie,Rajmunda 23 C,03-606,Warszawa,Marcin Grabowski,602666562,biuro@instalplast.com,właściciel
+165,P.H.U. Maj-KO Andrzej Majkowski,1130264442,mazowieckie,Wileńska 21/1,03-414,Warszawa,Andrzej Majkowski,606333304,maj-ko@o2.pl,0
+166,OZE Wanda Kula,1130370144,mazowieckie,Zwycięsców 33/12a,03-936,Warszawa,Tomasz Brzęczkowski,603095687,tomek.brzeczkowski@gmail.com,0
+167,OZE Wanda Kula biuro handlowe,1130370144,mazowieckie,Góra 45,26-420,Nowe Miasto Nad Pilicą,Tomasz Brzęczkowski,603095687,tomek.brzeczkowski@gmail.com,0
+168,Przedsiębiorstwo Handlowo Usługowe LINK Krzysztof Gruziel,1130588624,mazowieckie,Boremlowska 4/15,04-309,Warszawa,Antoni Zenowicz,602292820,linkair@linkair.pl,0
+169,Przedsiębiorstwo Handlowo Usługowe LINK oddział,1130588624,mazowieckie,Borecka 4B,03-034,Warszawa,Antoni Zenowicz,602292820,linkair@linkair.pl,0
+170,INFOSERV 2 Michał Mitrocki,1130941753,mazowieckie,Mydlarska 85/87,04-690,Warszawa,Michał Mitrocki,501560180,mitrok@mitrok.pl,właściciel
+171,ALTERMAL Wojciech Rybus,1131336818,mazowieckie,"Dziechciniec, ul. Ziołowa 1",05-462,Wiązowna,Wojciech Rybus,0,w_rybus@wp.pl,0
+172,W.R. Silver System,1131395488,mazowieckie,Jana Kazimierza 413,05-126,Nieporęt,Mateusz Durmaj,537 80 80 80 ,m.durmaj@salonviessmann.com,doradca techniczno- handlowy
+173,WIOLETTA KNYŻ W.R.SILVER SYSTEM,1131395488,mazowieckie,"Skarbka z Gór, nr 65D, lok. 17",03-287,Warszawa,Robert Knyż,531394554,hydroprobert@wp.pl,0
+174,ARTUR OSTROWSKI Eko-INVEST,1131427389,mazowieckie,Aleja Wilanowska 364/73,02-665,Warszawa,Artur Ostrowski,602212030,ekoinvest@wp.pl,właściciel
+175,REP-AIR Andrzej Replin,1132309433,mazowieckie,Polna 75C,05-311,Dębe Wielkie,Andrzej Replin,531697666,replin.andrzej@gmail.com,właściciel
+176,KLIWE Klimatyzacja i Wentylacja P. Kremblewski,1132364389,mazowieckie,Stanisława Augusta 42 lok 21,03-846,Warszawa,Michał Adkowski,514630514,m.adkowski@artclimasystem.pl,właściciel
+177,KLIWE Klimatyzacja i Wentylacja P. Kremblewski Oddział,1132364389,mazowieckie,Opłotek 40 A,01-940,Warszawa,Michał Adkowski,514630514,m.adkowski@artclimasystem.pl,właściciel
+178,ANFAN Anna Krzysztoszek,1132387893,mazowieckie,Własna 2,05-074,Józefin,Patryk Halaburda,602483602,info@anfan.pl,dzał tech – handlowy
+179,REP-AIR Joanna Replin,1132554658,mazowieckie,Polna 75c,05-311,Dębe wielkie,Andrzej Replin,531697666,biuro.rep.air@gmail.com,0
+180,MK-WENT Sp. z o.o. Spółka Komandytowa,1132900215,mazowieckie,Trakt Lubelski 195,04-667,Warszawa,Wojciech Pietrak,724598887,handlowy@mkwent.com.pl,dział handlowy
+181,INSTALBOX Maciej Boksa,1133005209,mazowieckie,gen. Stanisława Skalskiego 1/ 107,03-982,Warszawa,Maciej Boksa,0,marcingalazka1@gmail.com,0
+182,Inclim R. Trzpil P. Gontarz s.c. ,1133029552,mazowieckie,Serocka 43/45/9,04-333,Warszawa,Piotr Gontarz,668690086,inclim@inclim.pl,0
+183,"Okulicz sc, Jacek Okulicz-Kozaryn",1180064314,mazowieckie,Działkowa 18,05-080,Hornówek,Jacek Okulicz-Kozaryn,603871099,j.okulicz@polpak.pl,właściciel
+184,Arma San Spółka Jawna Bartczuk Kownacki,1180082269,mazowieckie,Warszawska 185,05-092,Łomianki,Łukasz Dworniczak,505171411,lukasz.dworniczak@armasan.pl,dział tech.-hand.
+185,Arma San oddział Kobyłka,1180082269,mazowieckie,Nadarzyńska 124,05-230,Kobyłka,0,0,0,0
+186,Arma San oddział Czosnów,1180082269,mazowieckie,Warszawska 28,05-152,Czosnów,Arkadiusz Pokrzywicki,504155424,arkadiusz.pokrzywnicki@armasan.pl,dział handlowy
+187,ER-TECH SERWIS Robert Koziarski,1180731265,mazowieckie,Krasnoludków 7,05-092,Dziekanów Polski,0,0,0,0
+188,ART-WENT ARTUR SEPSKI,1181617933,mazowieckie,Rynek 12/ 15,05-870,Błonie,ARTUR SEPSKI,515425434,art-went@o2.pl,0
+189,RG Fotowoltaika Robert Gulczyński,1181624293,mazowieckie,Nowe Gniewniewice 11,05-155,Leoncin,Marcin Mańkowski,724019061,marcinrgfotowoltaika@gmail.com,0
+190,Sylwia Bombała,1181652289,mazowieckie,Amarantowa 14D lok. 2,03-270,Marki,Mirek Marchelak,531501500,m.marchelak@wp.pl,0
+191,I-MATIC Michał Adkowski,1181798900,mazowieckie,Antoniego Magiera 24A/7,01-856,Warszawa,Michał Adkowski,514630514,m.adkowski@artclimasystem.pl,właściciel
+192,I-MATIC biuro,1181798900,mazowieckie,Kabaretowa 21,01-942,Warszawa,Michał Adkowski,514630514,m.adkowski@artclimasystem.pl,właściciel
+193,MS MAKE Mateusz Sasimowski,1181830199,mazowieckie,Kasprowicza 12/21,01-871,Warszawa,Mateusz Sasimowski,505383791,mateusz.sasimowski@gmail.com,0
+194,KLIMATYZACJA Michał Jezierski,1181848561,mazowieckie,Łowicka 1/5/8,02-584,Warszawa,Michał Jezierski,609804631,michal-jezierski@hotmail.com,właściciel
+195,Art Went Rafał Godlewski,1181898895,mazowieckie,Baśniowa 23A,05-830,Stara Wieś,Rafał Godlewski,519308504,rafal@tk1.pl,właściciel
+196,Santech Instalacje Dagmara Zagórska,1182000123,mazowieckie,Reymonta 4/34,01-842,Warszawa,Dagmara Zagórska,504791321,dagzagorska@gmail.com,0
+197,AIR+ J. Głogowski E. Piwnik Spółka Cywilna,1182080719,mazowieckie,Zielona 12,05-092,Łomianki,Damian Nowiński,516516015,nowinski@rplus.pl,specjalista ds. sprzedaży
+198,DALKIA POLSKA SOLUTIONS SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,1182082026,mazowieckie,Kolejowa 49,05-092 ,Łomianki,Magdalena Machnica    ,668122531,magdalena.machnica@dalkia.com ,0
+199,ENERZON Sp. z o.o.,1182097447,mazowieckie,Bajana 21/3,01-904,Warszawa,Dariusz Wawer,607990289,dariusz.wawer@enerzon.pl,właściciel
+200,Pro-Klim Klimatyzacja i Chłodnictwo Alicja Kasprzak,1182164209,mazowieckie,Radzików 8/1,05-870,Błonie,Adrian Kasprzak,508912268,montaz.proklim@gmail.com,0
+201,TOPEKOBUD M.I. Spółka Cywilna,1182180421,mazowieckie,Wiejca 90A,05-085,Kampinos,Mariusz Filipiak,606642247,biuro@topekobud.pl,właściciel
+202,Instalatorstwo Sanitarne Jan Paciorek,1230027434,mazowieckie,Przyleśna 20 B,05-506,Wilcza Góra ,Piotr Paciorek,601506954,biuro@instalatorstwo-sanitarne.com,właściciel
+203,ZAKŁAD INSTALACJI SANITARNYCH OGRZEWANIA I GAZOWYCH Andrzej Jaroszek,1230031186,mazowieckie,Czereśniowa 26A,02-456,Warszawa,Piotr Jaroszek,509753005,zisoig@wp.pl,kierownik oddzi.
+204,Marcin Andziak Amair - Klimatyzacja Wentylacja,1230165277,mazowieckie,Zachodnia 15Y,05-552 ,Wola Mrokowska,Krzysztof Bryja,606420033,amairco@gmail.com,0
+205,Maciej DYBOWSKI K.M.R. PIPES - ENGINEERING ,1230889302,mazowieckie,Jana Pawła II 24/ 68,05-500,Piaseczno,Marlena Przybycień,728558757,m.przybycien@kmr-pe.pl,0
+206,"WILCZYŃSKI DANIEL, Przedsiębiorstwo Budowlano-Inżynieryjne DAN-WIL skrót P.B.I. DAN-WIL",1230921425,mazowieckie,Kielecka 19a,05-500,Stara Iwiczna,Daniel Wilczyński,502121199,dan_wil@vp.pl,0
+207,Jul-Bud Juliusz Winiarski,1230943266,mazowieckie,Młodych Wilcząt 32,05-540,Zalesie Górne,Juliusz Winiarski,504018211,winiarski@julbud.eu,właściciel
+208,Sanitarne-Net Paweł Kozłowski,1230978046,mazowieckie,Bogatki ul. Anemonów 5,05-502,Piaseczno,Paweł Kozłowski,609079764,info@sanitarne.net,właściciel
+209,MG Profi Mikołaj Grzywacz,1231026218,mazowieckie,os. Książąt Mazowieckich 9/13,05-660,Warka,Mikołaj Grzywacz,609127820,airhouse@wp.pl,0
+210,WENTOM Mariusz Osełka,1231044073,mazowieckie,Al. Krakowska 176a,05-552,Łazy,Mariusz Osełka,577077714,biuro@wentom.pl,właściciel
+211,ProMonter  Piotr Paciorek  ,1231055349,mazowieckie,Gandalfa 6 ,05-504 ,Łoś,Piotr Paciorek,601506954,biuro@instalatorstwo-sanitarne.com,0
+212,TOM PRO Tomasz Gil,1231175970,mazowieckie,Linin 33,05-530,Góra Kalwaria,Tomasz Gil,513330240,ecogreenwent@gmail.com,0
+213,Usługi Pomiary Instalacje Elektryczne Konrad Sikorski,1231205719,mazowieckie,Anny Walentynowicz 21G/ 21,05-520,Konstancin-Jeziorna,Konrad Sikorski,600359734,konrad-sikorski@o2.pl,0
+214,Gowent Sp. z o.o.,1231213297,mazowieckie,ul. Główna 33 B,05-504,Prace Duże,Ewa Turkowska,508293369,biuro@gowent.pl,wspólnik
+215,MB Klima Mateusz Biczyk,1231219325,mazowieckie,Spokojna 9a,05-532,Baniocha,Mateusz Biczyk,503901695,mateusz.biczyk@mbklima.pl,0
+216,BR TEXO Sp. z o.o.,1231267850,mazowieckie,Dębowa 11,05-505,Prażmów,Katarzyna Matysiak,501352434,katarzyna.matysiak@brtexo.pl,kierownik działu projektowego
+217,ML ENERGY SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,1231428916,mazowieckie,Kartograficzna 58A,03-290,Warszawa,Łukasz Cymmer,506659090,lukasz.cymmer@mlenergy.pl,0
+218,HYDROKLIMA Jarosław Grochala,1231485297,mazowieckie,Gabryelin ul. Brzozowa 4,05-505,Prażmów,Jarosław Grochala,0,j.grochala.hydroklima@gmail.com,0
+219,WENTOM Mariusz Osełka spółka komandytowa,1231514231,mazowieckie,Al. Krakowska 176A,05-552 ,Łazy,Mariusz Osełka,577077714,biuro@wentom.pl,0
+220,KLIMA-T MICHAŁ TROJANOWSKI,1250031321,mazowieckie,Na Bagnie 3,05-091,Ząbki,Michał Trojanowski,669701995,serwis@klima-t.waw.pl,0
+221,MABO MARIUSZ PLIWKA,1250215506,mazowieckie,Adama Asnyka 20,05-230,Kobyłka,Krzysztof Lewczuk,22  11 666 00,mabohurtownia@wp.pl,dział handlowy
+222,P.H.U. REKUWENT Andrzej Świderek,1250288787,mazowieckie,Sasina 50,05-200,Wołomin,Andrzej Świderek,501021091,rekuwent@wp.pl,0
+223,P.H.U. REKUWENT Andrzej Świderek oddział,1250288787,mazowieckie,Łukasiewicza 11,05-200,Wołomin,Andrzej Świderek,501021091,rekuwent@wp.pl,właściciel
+224,ANDRZEJ ŻAK FIRMA HANDLOWO-USŁUGOWA ESKIMO,1250516366,mazowieckie,Mickiewicza 43A,05-200 ,Wołomin,Małgorzata Zych,507042502,eskimo@hot.pl,0
+225,Went-Dom Włodzimierz Dziwiński,1250599895,mazowieckie,Prądzyńskiego 14,05-200,Wołomin,Marcin Wernicki,663920780,sklep@wentylator.co,0
+226,Went-Dom Centrum Profesjonalnej Wentylacji,1250599895,mazowieckie,Bartycka 26 Pawilon 29,00-716,Warszawa,Aneta Bednarek,663920780,sklep@wentylator.co,0
+227,PCM MONIKA CHEŁCHOWSKA,1250793918,mazowieckie,3 Maja 42,05-230,Kobyłka,Paweł Chełchowski,511308308,biuro@pcmklima.pl,właściciel
+228,EKO MICHAŁ WŁODARCZYK,1250803172,mazowieckie,ks. Hugona Kołłątaja 8,05-230,Kobyłka,Michał Włodarczyk,502599747,wlodarczyk@ekoinstalacje.org,0
+229,Rekuperator.net Michalczyk Marcin,1251047962,mazowieckie,Księcia Józefa Poniatowskiego 48,05-230,Kobyłka,Marcin Michalczyk,503195800,m.michalczyk@rekuperator.net,właściciel
+230,USŁUGI BUDOWLANE TARASIK MICHAŁ,1251175157,mazowieckie,Majdańska 18a,05-200,Wołomin,Michał Tarasik,501582689,michaltarasik1982@gmail.com,0
+231,KRAL Krzysztof Ryczkowski,1251206662,mazowieckie,Zakopiańska 17,05-091,Ząbki,Robert Ryczkowski,601713771,info@rekuperatory.waw.pl,właściciel
+232,Smart Technika Joanna Gadomska,1251208968,mazowieckie,Zielona 2,05-091,Ząbki,Michał Gadomski,513545861,smarttechnika@wp.pl,właściciel
+233,Grzegorz Kucharski KGT-KLIMA,1251234747,mazowieckie,Czubajowizna 18,05-326,Czubajowizna,Grzegorz Kucharski,516484838,kgt.klima@onet.pl,0
+234,HYDRO-CLIM PAWEŁ BOGUTA,1251312542,mazowieckie,Wiosenna 40,05-200,Wołomin,Boguta Paweł ,508811944,hydroclim@o2.pl,0
+235,CLIMA MY WAY JAKUB LESIAK,1251331485,mazowieckie,"Wołomińska, nr 98",05-250,Ciemne,JAKUB LESIAK,698963656,climamyway@onet.com.pl,0
+236,SRK PIOTR GAJEWSKI ,1251391493,mazowieckie,Koleeberga 32,05-200 ,Wołomin,Piotr Gajewski,668267748,systemysrk@gmail.com,0
+237,KB.Instal Konrad Biały,1251422555,mazowieckie,Rzemieślnicza 19,05-240,Tłuszcz,Konrad Biały,kb.instal@op.pl,kb.instal@op.pl,0
+238,Automatic Garden Grzegorz Gumienny,1251450474,mazowieckie,Ujazdowa 6A,05-200,Wołomin,Grzegorz Gumienny,504704646,biuronawodnienia@gmail.com,Właściciel
+239,WODMAR MARIUSZ KOMOŃSKI,1251451597,mazowieckie,Piotra Olszewskiego 8/ 2,05-091,Ząbki,Mariusz Komiński,507824849,sprzedaz@wodmar-instalacje.pl,0
+240,STERMATIK S.C. MARCIN KOT GRZEGORZ ROWIŃSKI,1251596315,mazowieckie,Słoneczna 2,05-270,Marki,Marcin Kot,696488844,marcin.kot@stermatik.pl,właściciel
+241,AVM Engineering Sp. z o.o.,1251622047,mazowieckie,Łodygowa 20,03-687 ,Warszawa,Edem Enverov,797788957,biuro@acm24.plv,0
+242,"ROBMAR S.C. M. ŚWIERCZEWSKI, R. SKWIERCZYŃSKI",1251629836,mazowieckie,Jezuicka 25,05-230,Kobyłka,Robert Świerczynski,607733315,robert@robmar.waw.pl,0
+243,TERMOSFERA.PL Sp. z o.o.,1251668380,mazowieckie,Urszulki 6k/2,05-230,Kobyłka,0,0,0,0
+244,ANN-KARI Sp. z o.o.,1251692496,mazowieckie,Lipińska 172D,05-200,Wołomin,Maciej Orłowski,791031061,maciejor78@gmail.com,wspólnik
+245,"ZBIGNIEW MROWICKI Przedsiębiorstwo Wielobranżowe""Mrówka Z"" – oddział",4660161527,mazowieckie,Dobrzyńska 58,09-400,Płock,Zbigniew Mrowicki,696971903,pwmrowicki@wp.pl,0
+246,Zielone Systemy Wojciech Ruchała,5110048542,mazowieckie,Szkolna 14,09-310,Kuczbork-Osada,Wojciech Ruchała,511533428,wojciechruchala@wp.pl,właściciel
+247,MDJ Polska Mariusz Oleksiak,5110222052,mazowieckie,Trakt Lubelski 74,04-790,Warszawa,Mariusz Oleksiak,668407077,mariuszoleksiak@op.pl,0
+248,Orkan-Went Dawid Pazio,511067626,mazowieckie,Ręczaje Polskie 16,05-326,Poświętne,Dawid Pazio,511067626,orkanwent@gmail.com,0
+249,"Time Control Mirosław Kondzielski, Agnieszka Kondzielska",5210129174,mazowieckie,Baletowa 30 b,02-867,Warszawa,Mirosław Kondzielski,601254968,m.kondzielski@timecontrol.com.pl,0
+250,Ecotherm Tomasz Romanowicz,5210533716,mazowieckie,"Pilchowicka 27, lok.3c",02-175,Warszawa,Tomasz Romanowicz,602225937,ecotherm@supermedia.pl,właściciel
+251,AG Instalacje Artur Gołdyn,5211005178,mazowieckie,Wacława Lachmana 2,02-786,Warszawa,Artur Gołdyn,514710666,ag.instalacje@wp.pl,właściciel
+252,"""CLIMA POLSKA"" SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ",5211288325,mazowieckie,Aleja Komisji Edukacji Narodowej 90/ U-7,02-777,Warszawa,Michał Kulak,512713606,michal@clima.com.pl,0
+253,SeaFinder Tomasz Nowak,5211446793,mazowieckie,Bonifacego 74/45,02-936,Warszawa,Tomasz Nowak,602206650,tomasz.nowak@seafinder.pl,0
+254,P.H.U. OPTIMA Jan Bączek,5211514052,mazowieckie,Płońska 1A,05-170,Zakroczym,Jan Bączek,501238763,phu.optima@interia.pl,właściciel
+255,KLIMEX BIS Goriewski Krzysztof,5211518682,mazowieckie,Domaniewska 9/11 m. 89,02-663,Warszawa,Krzysztof Goriewski,608444575,0,właściciel
+256,K-M-G Krzysztof Gołębiewski,5212100045,mazowieckie,Dolomitowa 26 m 2,05-077,Warszawa,Krzysztof Gołębiewski,668527893,k.golebiewski@eko-instal.ik.pl,dyrektor oddziału
+257,HAKOM Sp. z o.o.,5212800038,mazowieckie,Zdrojowa 2,05-090,Wypędy,Agnieszka Łabuda,503119114,al@hakom.pl,0
+258,Andrzej Pawłowski Converto,5212959359,mazowieckie,Wynalazek 2A lok. U4.,02-677,Warszawa,Adam Szymański,881778202,adamszymanski@converto.com.pl,dział tech.-hand.
+259,ELHURT KLIMA Sp. z o.o.,5213851463,mazowieckie,Gąsocińska 12,00-711,Warszawa,Irena Galas,502662140,elhurtklima@op.pl,0
+260,PHU POPULARNA BARBARA POPŁAWSKA,5220012605,mazowieckie,Popularna 18,02-473,Warszawa,Marek Sprycha,512016503,wentylacja@popularna.pl,dział wentylacji
+261,PHU POPULARNA BARBARA POPŁAWSKA oddział Warszawa,5220012605,mazowieckie,Kleszczowa 16,02-485,Warszawa,Marek Sprycha,512016503,wentylacja@popularna.pl,dział wentylacji
+262,PHU POPULARNA BARBARA POPŁAWSKA oddział Białystok,5220012605,mazowieckie,Kolejowa 7,15-701,Białystok,Eryk Ratkiewicz,501381929,eryk.ratkiewicz@popularna.nazwa.pl,0
+263,Air-Klima sc Sławomir Borowski Mirosław Duplicki,5221019673,mazowieckie,Mieszka Starego 21,02-496,Warszawa,Mirosław Duplicki,606600080,biuro@air-klima.pl,0
+264,KLIMAR ANDRZEJ RYBOŁOWICZ,5221037955,mazowieckie,Wodna 7,05-090,Raszyn,Andrzej Rybołowicz,ecowentylacje@gmail.com,ecowentylacje@gmail.com,0
+265,JERZY WÓJCIAK OBSŁUGA NIERUCHOMOŚCI,5221220033,mazowieckie,Fregaty 4,05-816,Reguły,Aleksandra Pokorska,797578474,apokorska@ogrodywalendow.pl,0
+266,MARIUSZ DYMEK KONSET,5221246831,mazowieckie,Cichy Zakątek 15,05-123,Olszewnica Stara,Mariusz Dymek,0,konset@tlen.pl,0
+267,FLOW Michał Zalewski,5221623357,mazowieckie,Juliana Chrościckiego 47,02-414 ,Warszawa,Michał Zalewski,798500316,miconet@op.pl,0
+268,TMM Maciej Szybalski,5221778924,mazowieckie,Przepiórki 5,05-806,Pęcice Małe,Maciej Szybalski,601151806,tmm@op.pl,właściciel
+269,Konador Grzegorz Konador,5222474681,mazowieckie,"Regulska 3a, Reguły",05-820,Piastów,Grzegorz Konador,504246203,biuro@twojaklima.pl,właściciel
+270,TOMASZ DOROSZ POLY MEDIA,5222485354,mazowieckie,Aleja Bzów 50A,02-495,Warszawa,Tomasz Dorosz,601659993,sztulp-aleja@yahoo.com,właściciel
+271,BCS Sp. z o.o.,5222666481,mazowieckie,Gościnna 11,05-082,Blizne Łaszczyńskiego,Artur Anuszewski,510810150,rekuperacjabcs@gmail.com,właściciel
+272,BCS Sp. z o.o. Oddział,5222666481,mazowieckie,Żelazowa Wola 7A,96-500,Sochaczew,Artur Anuszewski,510810150,rekuperacjabcs@gmail.com,właściciel
+273,Technico Facility Engineering Sp. z o.o.,5222675474,mazowieckie,Plac Przymierza 6,03-944,Warszawa,Maciej Szramowski,603553810,mszramowski@technico.pl,0
+274,Norgips Sp. z o.o. Sp. k.,5222702366,mazowieckie,Racławicka 93,02-634,Warszawa,0,0,0,0
+275,Norgips Sp. z o.o. Sp. k. oddział,5222702366,mazowieckie,"Norweska 1, Brzezie k/Opola",46-081,Dobrzeń Wielki,0,0,0,serwis
+276,Drehfix Polska Maciej Żarski Monika Żarska SC,5222879478,mazowieckie,Anieli Krzywon 4/52,01-391,Warszawa,Maciej Żarski,792646834,zarski@post.pl,właściciel
+277,Kominy-Polska.pl Anna Jasińska,5222928691,mazowieckie,Rysia 29,05-800,Pruszków ,Bartłomiej Jasiński,691022116,kontakt@kominy-polska.pl,0
+278,Kominy-Polska.pl punkt sprzedaży,5222928691,mazowieckie,Al. Krakowska 17,05-090,Raszyn,Bartłomiej Jasiński,691022116,kontakt@kominy-polska.pl,0
+279,AirINN Polska Sp. z o.o. ,5222986530,mazowieckie,Bielawska 14A,05-520,Konstancin-Jeziorna,Artur Sudenis,660662525,artur@climaton.pl,0
+280,AIRWENT SYSTEM SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ SPÓŁKA KOMANDYTOWA,5223027381,mazowieckie,mjr. Władysława Mizikowskiego 3,05-082,Stare Babice,Karol Ochnio,515732175,k.ochnio@airwent-system.pl,0
+281,FRESH WORD SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,5223099908,mazowieckie,Aleje Jerozolimskie 85/ 21,02-001,Warszawa,Dmytro Teterya,511171299,dimtet1215@gmail.com,0
+282,DROSAN Drozd Ewa,5240001987,mazowieckie,Gliwicka 16a,03-608,Warszawa,mgr inż. Dariusz Drozd,691661989,drosan.instalacje@gmail.com,kierownik kontaktu
+283,Przedsiębiorstwo Handlowo Usługowe SANIT Marek Marchewka,5241028497,mazowieckie,Ireny 6,03-641,Warszawa,Marek Marchewka,602618829,sanitmarek@gmail.com,właściciel
+284,HYDROP ROBERT KNYŻ,5241082077,mazowieckie,Płochocińska 161,03-044,Warszawa,Robert Knyż,501394554,robert@hydrop.pl,0
+285,HYDROP ROBERT KNYŻ ODDZIAŁ,5241082077,mazowieckie,Jana Kazimierza 413,05-126,Rembelszczyzna,Robert Knyż,501394554,robert@hydrop.pl,0
+286,PRO-KLIMA Ireneusz Miszczak,5241238993,mazowieckie,Wyszogrodzka 16/43,03-337,Warszawa,0,608321518,biuro@pro-klimacom.pl,0
+287,MILUS.PL Marek Dominiak ,5241823734,mazowieckie,Adama Mickiewicza 37/58,01-625,Warszawa,Artur Zamykło,796132646,artur.zamylko@milus.pl,0
+288,Jarosław Knaś,5241921661,mazowieckie,Zegarynki 17D,03-020,Warszawa,Jarosław Knaś,601320403,jarek.knas@gmail.com,właściciel
+289,EURODOMY GRAŻYNA BŁAŻEJEWSKA,5242223491,mazowieckie,Księdza Skorupki 16,05-504,Złotokłos,Paweł Petrykowski,694033265,p.petrykowski@eurodomy.pl,0
+290,SAGO PROJEKT Agnieszka Polakowska,5242275281,mazowieckie,Aleja Rzeczypospolitej 12,02-972,Warszawa,Emilia Blimel,22 404 64 78,emilia@sagoprojekt.pl,projektant
+291,PROART MARCIN PARADOWSKI,5242449143,mazowieckie,Myśliborska 21,03-185,Warszawa,Marcin Paradowski,733888110,biuro@proart24.pl,właściciel
+292,"4.0 media S.C. MARCIN CYBULSKI, SŁAWOMIR MARKOWSKI, Wiesław Chmiel",5242489349,mazowieckie,"Stanów Zjednoczonych, nr 18, lok. 12",03-965,Warszawa,Marcin Cybulski,668431720,mcybulski@40media.pl,0
+293,AIRVAC PAWEŁ JEZIÓŁKOWSKI,5242512427,mazowieckie,Świerkowa 19 ,05-123,Chotomów,Paweł Jeziółkowski,796559499,info@airvac.pl,0
+294,HTS Sp. z o.o. Sp. k.,5242519398,mazowieckie,Borecka 4B,03-034,Warszawa,0,0,0,z-ca dyr. handlowego
+295,BIMs PLUS FHH Spółka z ograniczoną odpowiedzialnością WARSZAWA Spółka komandytowa,5242541995,mazowieckie,Cieślewskich 44,03-017,Warszawa,Małgorzata Sokół,573222305,Malgorzata.Sokol@bimsplus.com.pl,0
+296,WIREUP Jacek Brzozowski,5242597197,mazowieckie,Mroźna 27/ 1,03-654,Warszawa,Michał Jaszczak,509100430,jaszczak.michal@gmail.com,0
+297,WENT-KLIMA Łukasz Budnik,5242604891,mazowieckie,Balkonowa 1 / 169,03-329,Warszawa,Łukasz Budnik,509634686,biuro@wentklima.pl,właściciel
+298,WENT-KLIMA Łukasz Budnik Oddział,5242604891,mazowieckie,Marymoncka 34,01-813,Warszawa,Łukasz Budnik,509634686,biuro@wentklima.pl,właściciel
+299,Alexa Dystrybucja Sp. z o.o.,5242718519,mazowieckie,Łubinowa 4,03-878,Warszawa,Dariusz Stromski,600048139,d.stromski@alexapolska.pl,doradca tech.-hand.
+300,HYDROSOLAR Spółka z ograniczoną odpowiedzialnością WARSZAWA Spółka komandytowa,5242751445,mazowieckie,Al. Krakowska 57,05-090,Sękocin Nowy,Katarzyna Zbierska,797903661,Katarzyna.Zbierska@hydrosolar.pl,0
+301,POLDOM Sp. z o.o.,5242832675,mazowieckie,św. Jacka Odrowąża 15,03-310,Warszawa,Piotr Latek,517773733,piotr.latek@duotherm.com.pl,wspólnik
+302,WAWENT SPÓŁKA CYWILNA PIOTR KRÓL MAREK SŁOMKOWSKI,5242876738,mazowieckie,Oliwska 11A,03-334,Warszawa,Anna Brzezińska,533716115,a.brzezinska@wawent.pl,0
+303,SES SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,5242913310,mazowieckie,Krzyżówki 28C/ 20,03-193,Warszawa,Łukasz Jędrych,785013062,l.jedrych@ses.eco,0
+304,KLIMEX BIS Goriewski Krzysztof Oddział,5251158682,mazowieckie,Habdzin 19,05-520,Konstancin Jeziorna,Krzysztof Goriewski,608444575,0,właściciel
+305,DAWIKON Paweł Pasiorowski,5251468128,mazowieckie,Myśliborska 93d/ 37,03-185,Warszawa,Paweł Pasiorowski,509626878,biuro@dawikon.pl,właściciel
+306,Katon Sp. z o.o.,5251910179,mazowieckie,Bajana 31E,01-904,Warszawa,0,22 869 43 92,biuro@katon.pl,0
+307,Przemysław Klenczon COOL SYSTEM,5252110481,mazowieckie,Aluzyjna 21E,03-149,Warszawa,Przemysław Klenczon,793430888,kuliszmichal@interia.pl,właściciel
+308,Sanito Sp. z o.o.,5252495386,mazowieckie,Puławska 476,02-884,Warszawa,Piotr Sulik,533330710,piotr.sulik@sanito.pl,inżynier projektów
+309,ECO VENT Sp. z o.o.,5252612047,mazowieckie,Złota 7 lok 18,00-019,Warszawa,0,0,0,0
+310,Threee Sp. z o.o.,5252715333,mazowieckie,Nowy Świat 33/13,00-029,Warszawa,Daniel Rutkowski,785225090,d.rutkowski123@gmail.com,wspólnik
+311,NAB GROUP SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,5252818062,mazowieckie,Lektykarska 20,01-687,Warszawa,Paulina Blewąska,796199899,paulina.blewaska@nabgroup.pl,0
+312,Energy Hunters Sp. z o.o.,5252830086,mazowieckie,Mazowiecka 11/49,00-052,Warszawa,Łukasz Stępień,794541001,sklep@ekoistal.org.pl,0
+313,Beesystem Sp. z o.o.,5252851438,mazowieckie,NOWY ŚWIAT 33 / 13,00-029,Warszawa,Cezary Bąk,883223787,cezary_bak@interia.pl,0
+314,RTM3 SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,5252886052,mazowieckie,Nowy Świat 33/ 13,00-029,Warszawa,Rafał Joniak,500830915,trm.reku@gmail.com,0
+315,Ekoinstal SD sp. z o.o.,5252887212,mazowieckie,Mazowiecka 11/49,00-052,Warszawa,Paweł Poniatowski,690991944,p.poniatowski@ekoinstal.org.pl,0
+316,A&M CONSTRUCTION Z O.O.           ,5252897305,mazowieckie,Złota 7/18,00-019,Warszawa,Arkadiusz Międlarz,883567500,biuro@sadvant.pl,0
+317,AGENCJA ROZWOJU PRZEMYSŁU SPÓŁKA AKCYJNA ,5260300204,mazowieckie,Nowy Świat 6/12,00-400,Warszawa,Łukasz Borowik,516150879,Lukasz.Borowik@arp.pl,0
+318,ChemTech Krzysztof Januszkiewicz,5261000214,mazowieckie,Drewniana 9/8,00-345,Warszawa,Krzysztof Januszkiewicz,601360791,kjanuszkiewicz@filtertech.com.pl,właściciel
+319,ChemTech Krzysztof Januszkiewicz oddział,5261000214,mazowieckie,Kolejowa 53,05-092,Łomianki,Krzysztof Januszkiewicz,601360791,kjanuszkiewicz@filtertech.com.pl,właściciel
+320,BUDOMAT Paweł Szuchnik,5261014707,mazowieckie,Aleja Wyzwolenia 14A / 90,00-570,Warszawa,Paweł Szuchnik,602226694,szuchnik.p@wp.pl,właściciel
+321,BUDOMAT Paweł Szuchnik Oddział,5261014707,mazowieckie,3 Maja 23,05-080,Izabelin B,Paweł Szuchnik,602226694,szuchnik.p@wp.pl,właściciel
+322,Onninen Spólka z o.o.,5261032852,mazowieckie,Emaliowa 28,02-295,Warszawa,Daniel Powierża,502197799,daniel.powierza@onninen.com,przedstawiciel handlowy
+323,MAC-ZUBA INT Tomasz Zubilewicz,5261044074,mazowieckie,Rokosowska 11/17,02-348,Warszawa,Tomasz Zubilewicz,600444750,t.zubilewicz@gmail.com,0
+324,Uni-Lux Sp. z o.o.,5261347573,mazowieckie,Jana Kazimierza 61,01-267,Warszawa,Waldemar Jarzynka,+48 22 395 60 70,waldemar.jarzynka@uni-lux.pl,właściciel
+325,Strefa Klimatu Piotr Walasek,5272119829,mazowieckie,Gen. Tadeusza Pałczyńskiego 22J/16,01-141,Warszawa,Piotr Walasek,516921777,biuro@strefa-klimatu.pl,0
+326,RESPOL Export - Import Sp. z o.o.,5272418733,mazowieckie,Bukowiecka 73,03-893,Warszawa,Adam Małachowski,784065757,adam.malachowski@respol.pl,kierownik działu technicznego
+327,Strefa Klimatyczna Krzysztof Gąsiorowski,5272446020,mazowieckie,Dobiszewskiego 2/61,01-405,Warszawa,Krzysztof Gąsiorowski,784585850,biuro@strefaklimatyczna.pl,właściciel
+328,Galen Łukasz Gnoiński,5272463716,mazowieckie,Leszczynowa 42,05-090,Laszczki,Łukasz Gnoiński,605834507,lukasz.gnoinski@filtrywdomu.pl,0
+329,G-4 Sp. z o.o.,5272475576,mazowieckie,Modlińska 6,03-216,Warszawa,0,0,0,0
+330,PIOTR JANKOWSKI ProService P. Jankowski,5272479137,mazowieckie,Obozowa 76,01-426,Warszawa,Piotr Jankowski,509311822,biuro@caligo.pl,właściciel
+331,Moris Polska Sp. z o.o.,5272572753,mazowieckie,Baletowa 4,02-867,Warszawa,Piotr Welik,515485636,p.welik@morispolska.pl,kosztorysant – branża sanitarna
+332,SERFARM Zbyszek Waz,5272621204,mazowieckie,Wspólna 50A/35,00-514,Warszawa,Zbigniew Waz,512309755,zbyszek.w@serfarm.pl,właściciel
+333,Huch EnTEC Sp. z o. o.,5272625018,mazowieckie,Wronia 45/175,00-870,Warszawa,Mariusz Arczewski ,692563430,mariusz.arczewski@huchentec.pl,kierownik działu technicznego
+334,WOLUMEN SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,5272679008,mazowieckie,Plac Bankowy 2,00-095,Warszawa,Anna Wilczak,693829029,anna.wilczak@wolumen.pl ,0
+335,GMV Technika Adam Kowalski Spółka Komandytowa,5272685144,mazowieckie,Nadarzyńska 1,05-807,Żółwin,Adam Kowalski,600688393,adamatc@vp.pl,właściciel
+336,IceVent Sp. z o.o.,5272745567,mazowieckie,Płocka 15/66,01-231,Warszawa,Maciej Pawlaczyk,884692692,maciej.pawlaczyk@icevent.pl,dyrektor handlowy
+337,IceVent oddział,5272745567,mazowieckie,Syreny 14,01-132,Warszawa,Maciej Pawlaczyk,884692692,maciej.pawlaczyk@icevent.pl,dyrektor handlowy
+338,ECO Synergia Warszawa Sp. z o.o.,5272910084,mazowieckie,Aleja Jana Pawła II 27,00-867,Warszawa,Krzysztof Januszek,536168720,k.januszek@eco-synergia.waw.pl,właściciel
+339,Firma Handlowa Renex Arkadiusz Kozłowski,5291129272,mazowieckie,Radonice 2,05-870,Błonie,Arkadiusz Kozłowski,696475840,renex0026@wp.pl,właściciel
+340,Kozłowski Andrzej PANORAMA+,5291299726,mazowieckie,Kozerki ul. gen. G. Orlicz Dreszera 29A,05-825,Grodzisk Mazowiecki,Andrzej Kozłowski,602320270,plandeki@op.pl,właściciel
+341,WILSAN Budownictwo – Technika Grzewcza i Sanitarna Sylwester Wilanowski,5291506786,mazowieckie,Zaciszna 4,96-300,Żyrardów,Sylwester Wilanowski,609528980,wilanowski@interia.eu,właściciel
+342,Zdrowa Budowa Marek Kasprzyk,5291670103,mazowieckie,Żubrowa 19,05-825,Adamowizna,Marek Kasprzyk,793794426,marekkas@wp.pl,właściciel
+343,EURO TECTUM Piotr Cymmer,5291698389,mazowieckie,T. Bairda 2/ 33,05-827,Grodzisk Mazowiecki,Piotr Cymmer,510636334,piotr.cymmer@zaklimatyzowani.pl,właściciel
+344,Crystal Power Paweł Panaszczuk,5291728357,mazowieckie,Dębowskiej 12,05-822,Milanówek,Piotr Gontarz,668690086,p.gontarz@crystalpower.pl,dział handlowy
+345,OtoKlima,5291746585,mazowieckie,Kraszewskiego 8,05-840,Brwinów,Dorota Zielińska ,501147408,dzielinska@otoklima.pl,specjalista ds handlowych
+346,M&M s.c. Marcin Grot Marcin Wójcicki,5291761780,mazowieckie,Orlicz - Dreszera 2 Kozery,05-825,Grodzisk Mazowiecki,Marcin Wójcicki,504449044,odkurzacze@edd.pl,0
+347,APRES Technology Damian Pilarski,5291791195,mazowieckie,Polnej Róży 5,05-825,Opypy,Przemysław Adamczyk,792062989,biuro@apres-technology.pl,0
+348,Instaltechnic Sp. z o.o.,5291821016,mazowieckie,Irysowa 1,96-321,Zalesie,Paweł Gawroński,608575118,biuro@instaltechnic.pl,0
+349,Instaltechnic Sp. z o.o._biuro,5291821016,mazowieckie,Spółdzielcza 2d,96-321,Żabia Wola,Paweł Gawroński,608575118,biuro@instaltechnic.pl,0
+350,Hydro-Went Jacek Wosiński,5311119303,mazowieckie,Kromnów 20,05-088,Brochów,Jacek Wosiński,509855450,jacek.wosinski1@op.pl,właściciel
+351,Sayko Tomasz Sajna,5311400916,mazowieckie,Arcelin 83d,09-100,Płońsk,Tomasz Sajna,608623650,sajna@interia.pl,0
+352,Sayko oddział,5311400916,mazowieckie,Kilińskiego 14,05-100,Nowy Dwór Mazowiecki,Tomasz Sajna,608623650,sajna@interia.pl,0
+353,KOSMOBUD Mariusz Ampulski,5311498424,mazowieckie,Warszawska 56,05-190,Nasielsk,Mariusz Ampulski,506452868,kosmobud@op.pl,0
+354,Artur Grądek,5311516145,mazowieckie,Wojska Polskiego 11m20,05-101,Nowy Dwór Mazowiecki,Szymon Prandzioch ,884706788,info@gpvent.pl,0
+355,Centrum Budowlane Jerzy Rutkowski Daniel Rutkowski Spółka Jawna,5311520721,mazowieckie,Stanisławów 63a,05-155,Leoncin,Tomasz Saczuk,607174822,t.saczuk.rutkowscy@gmail.com,kierownik działu handlowego
+356,DS Specjal Daniel Sekutowicz,5311602028,mazowieckie,Paulinowo 3,05-190,Nasielsk,Daniel sekutowicz,608632142,panklimatec@gmail.com,0
+357,HOT & COLD ADRIAN ZASTAWNY,5311654864,mazowieckie,Płońska 24D/39,05-190,Nasielsk,Adrian Zastawny,513459542,hot.cold.nsk@gmail.com,0
+358,4DOM Sp. z o.o.,5311688372,mazowieckie,Wiślana 48,05-092,Łomianki,Wojciech Grona,885011010,wojtek@4dom.com.pl,właściciel
+359,PERFEKT INSTAL S.C.,5311694131,mazowieckie,Kolejowa 372c,05-092,Łomianki,Krzysztof Marzęcki,660618395,krzysztof.marzecki@perfektinstal.pl,właściciel
+360,"Eskimo Solution Michał Siewruk, Zbigniew Zalewski S.C.",5311695886,mazowieckie,Targowa 4 a,05-100,Nowy Dwór Mazowiecki,Michał Siewruk,506062301,biuro@eskimosolution.pl,właściciel
+361,OZE PRO Bartosz Bączek,5311700156,mazowieckie,Płońska 1A,05-170,Zakroczym,Bartosz Bączek,501218984,biuro@ozepro.pl,właściciel
+362,PHU OPTIMA Sp. z o.o.,5311709217,mazowieckie,Płońska 1A,05-170,Zakroczym,Jan Bączek,501238763,phu.optima@interia.pl,właściciel
+363,M.G. INSTAL Marcin Górski,5321155542,mazowieckie,Lubelska 29C,05-430,Glina,Marcin Górski,606882666,goralmg@wp.pl,właściciel
+364,A&B Sp. z o.o. ,5321771583,mazowieckie,Majowa 204,05-400,Otwock,Krystian Romsicki,785918466,krystian@aib.waw.pl,dział handlowy
+365,Nowy Dom Mateusz Woźniak,5321882414,mazowieckie,Częstochowska 87,05-480 ,Otwock Mały,Mateusz Woźniak,607620421,wozniak.mateusz@onet.pl,0
+366,Manufaktura Zielonej Energii Michał Zagrabski,5321910079,mazowieckie,Orzechowa 6a,05-340,Kołbiel,Michał Zagrabski,607492753,manufakturazielonejenergii@gmail.com,0
+367,KMK s.c.,5321997560,mazowieckie,Wiązowska 86,05-420,Józefów,Marcin Kępiński,22 789 17 10,m.kepinski@kmksc.pl,0
+368,"Zbysław Marek Jozenas, Biuro Inżynierskie GASMONT79 Z.M.Jozenas",5340203495,mazowieckie,Mikołaja Kopernika 8,05-820,Piastów,Piotr Jozenas,601247971,pjozenas@gasmont.pl,właściciel
+369,F.H.P. PRODMAX ROBERT LICHOŃ,5340206016,mazowieckie,Sokołowska 38,05-806,Sokołów,0,0,0,0
+370,PPHU Varia,5340209380,mazowieckie,Wiejska 15,05-802,Pruszków,Michał Kuc,692176453,varia-2@wp.pl,kierownik działu sprzedaży
+371,Przedsiębiorstwo Produkcyjno-Usługowe SAWENT Maciej Sawicki,5340209865,mazowieckie,Zachodnia 57,05-816,Opacz-Kolonia,Michał Radziwiłl,661116766,mradziwill@sawent.pl,0
+372,"JANUSZ WOLSKI AGENCJA HANDLOWO-USŁUGOWA ""WOLMEX""",5340212092,mazowieckie,Plantowa 97 c,05-800,Pruszków,Jan Wolski,602276584,jan.wolski@wolmex.pl,0
+373,CENTRUM KLIMATYZACJI i WENTYLACJI Piotr Rowiński ,5341008666,mazowieckie,Jana Kochanowskiego 25,05-806,Granica,Piotr Rowiński,505081355,biuro@techniklima.com,0
+374,Tanie Grzanie Tomasz Brzęczkowski,5341014419,mazowieckie,Aleja Tysiąclecia 2/17,05-820,Piastów,Tomasz Brzęczkowski,,tomek.brzeczkowski@gmail.com,0
+375,Tanie Grzanie oddział,5341014419,mazowieckie,Bartycka 24/26 paw. 15A,00-716,Warszawa,Tomasz Brzęczkowski,603095687,tomek.brzeczkowski@gmail.com,0
+376,HEATEC-POLSKA Ewa Kozaczyńska,5341157030,mazowieckie,Dmowskiego 7A,05-850,Ożarów Mazowiecki,Rajmund Wycech,505140440,projektant@heatecpolska.pl,projektant
+377,KOSS-SERVICE Sp. z o.o.,5341561854,mazowieckie,Komorowska 30,05-830,Nadarzyn,0,22 729 84 14,sekretariat@koss-service.pl,0
+378,Pompeo Paweł Gawroński,5342016113,mazowieckie,Irysowa 1,96-321,Zalesie,Paweł Gawroński,608575118,biuro@instaltechnic.pl,0
+379,Pompeo_biuro,5342016113,mazowieckie,Spółdzielcza 2d,96-321,Żabia Wola,Paweł Gawroński,608575118,biuro@instaltechnic.pl,0
+380,Full Comfort Tomasz Domański,5342078249,mazowieckie,Moszna-Parcela 54,05-840,Brwinów,Tomasz Domański,722137820,tomasz@fullcomfort.pl,właściciel 
+381,Pro-klimat Paweł Rybołowicz,5342080335,mazowieckie,Arbuzowa 18,05-830,Rusiec,Andrzej Rybołowicz,ecowentylacje@gmail.com,ecowentylacje@gmail.com,0
+382,PPHU PANEK Michał Panek,5342178330,mazowieckie,Regulska 46,05-816,Michałowice,Anna Wiejak,604183899,kominki@kominy-panek.pl,kierownik oddzi.
+383,INSTALLER MARTA DOMAŃSKA,5342348803,mazowieckie,R. Traugutta 19,05-820 ,Piastów,Tomasz Szulfer,506388364,installer@installer.pl,0
+384,Ductwork Tomasz Wojna,5342372196,mazowieckie,Targowa 35a,05-816,Opacz Mała,Tomasz Wojna,604385376,ductwork.install@gmail.com,0
+385,AKA KOMFORT Adam Kostrzyński,5342439084,mazowieckie,Lilii Wodnych 3,05-090,Dawidy,Adam Kostrzyński,660362576,a.kostrzynski@akakomfort.pl,właściciel
+386,MONEX MONIKA GODLEWSKA,5342480750,mazowieckie,Podleśna 45,05-805,Otrębusy,Bartłomiej Karpiński,533199199,bartlomiejkarpinski1@gmail.com,0
+387,Ogrody Walendów sp. z o.o. sp. K. ,5342495786,mazowieckie,Fregaty 4,05-816,Reguły,Jacek Szuba,502791995,jszuba@ogrodywalendow.pl>,0
+388,Piaskowskie Przedsiębiorstwo Usług Komunalnych Sp. z o.o. Sp. z o.o. ,5342529120,mazowieckie,Tysiąclecia 3,05-820,Piastów,Justyna Pakuła,783544321,sekretariat@ppuk-piastow.pl,0
+389,Wite co Witali Błażewicz,5342538159,mazowieckie,Powstańców 42/12,05-800,Pruszków,Witali Błażewicz,790365988,lexmaul@interia.pl,właściciel
+390,Dom Pełen Energii Warszawa Sp. z o.o.,5342579342,mazowieckie,Tęczowa 6,05-090,Dawidy Bankowe,Marcin Michalski,501600577,marcin@dompelenenergii.pl,właściciel
+391,RAPTOR TECH SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,5342582350,mazowieckie,Plac Poniatowskiego 44,05-830,Nadarzyn,Wojciech Bieńkowski,514297299,wojtek@raptortech.pl,0
+392,STREFA KOMINKA Sp. z o.o.,5342583912,mazowieckie,Mszczonowska 81,05-830,Nadarzyn,Nicolas Senderski,576777407,rekuperacja@strefakominka.pl,spec. ds. rekuperacji
+393,MURUS-VENT Spółka Cywilna,5342594258,mazowieckie,Zdzisława 48,05-800,Pruszków ,bezo,508180596,biuro@murus-vent.pl,0
+394,HOME AIR SOLUTIONS Sp. z o.o.,5342620168,mazowieckie,Jemiołowa 70,05-830,Stara Wieś,Roman Trylski,692400033,roman@homeairsolutions.pl,0
+395,Domowy klimat Sp. z o.o.,5342637281,mazowieckie,Warszawska 43/ 49,05-820,Piastów,Marcin Stachura,794600683,sprzedaz.domowyklimat@gmail.com,0
+396,Domowy klimat Sp. z o.o. oddział,5342637281,mazowieckie,Mikołaja Reja 12a,05-820,Piastów,Marcin Stachura,794600683,sprzedaz.domowyklimat@gmail.com,0
+397,GRODNO S.A. ,5361097644,mazowieckie,Kwiatowa 14,05-126,Nieporęt,0,0,0,0
+398,Rafał Chorążak Refleks Chłodnictwo,5361358895,mazowieckie,Henryka Sienkiewicza 19,05-120,Legionowo,Martyna Lubańska,799000644,martyna.lubanska@refleks-chlodnictwo.pl,specjalistka ds. techniczno-handlowych
+399,PROJEKT INSTAL Roman Brewczyński,5361485576,mazowieckie,Hubala 5/ 14,05-120,Legionowo,Roman Brewczyński,511020941,biuro@projekt-instal.com,właściciel
+400,Roman Pańczyk,5361574736,mazowieckie,Ogrodowa 2/72,05-120,Legionowo,Roman Pańczyk,694452984,rompan@o2.pl,właściciel
+401,Roman Pańczyk Blyweert Aluminium Oddział,5361574736,mazowieckie,Duńska 4,05-152,Czosnów,Roman Pańczyk,694452984,rompan@o2.pl,właściciel
+402,Warmar Marcin Michalski,5361661174,mazowieckie,Tęczowa 6,05-090,Dawidy Bankowe,Marcin Michalski,501600577,marcin@dompelenenergii.pl,właściciel
+403,P.U.H. PARAVENT inż Paweł Rydzewski,5361772152,mazowieckie,Legionowo 104,05-120,Legionowo,Paweł Rydzewski,662154214,paravent@paravent.pl,właściciel
+404,WINSTAL Marek Wnuk,5361785580,mazowieckie,Łukasińskiego 18/20 m.26,96-300,Żyrardów,Marek Wnuk,505968523,kontakt@rekuperatorwdomu.pl,właściciel
+405,Dorian D.Lisicka K.Lisicki Sp.j,5361785976,mazowieckie,Warszawska 10B,05-119,Legionowo Michałów Reginów,Piotr Zaręba,609234620,piotr.zareba@dorian.com.pl,dział tech.-hand.
+406,PAW-KOM Paweł Kawycz,5361787047,mazowieckie,Koncertowa 10,05-126,Stanisławów Pierwszy,Paweł Kawycz,500806193,pawelkawycz@gmail.com,właściciel
+407,KLIMAT RADOSŁAW PUSZEWSKI,5361794722,mazowieckie,Kwiatowa 108,05-120,Legionowo,Radosław Puszewski,511539174,klimat.rp@o2.pl,0
+408,MG Michał Gruszka,5361825546,mazowieckie,Piaskowa 12/ 16,05-119,Legionowo,Michał Gruszka,537951717,michalgruszka1@googlemail.com,właściciel
+409,KLIMA-T MARCIN SZLASZYŃSKI,5361829219,mazowieckie,Adama Branickiego 9/ 81,02-972,Warszawa,Marcin Szlaszyński,726020202,marcin.szlaszynski@gmail.com,0
+410,Clić-M KAMIL ŻABIK,5361867869,mazowieckie,Suwalna D/ 22,05-120,Legionowo,Kamil Żabki,666832966,climcam.zabik@gmail.com,0
+411,Hydro - klimat Piotr Prusinowski,5361898835,mazowieckie,gen. Lucjana Żeligowskiego 20c,05-123,Chotomów,Łukasz Prusinowski,503463727,klima.klimatyzacja@onet.pl,0
+412,EKOPOMPACIEPŁA.PL Sp. z o.o.,5361934809,mazowieckie,Leśna 39,05-124,Skrzeszew,Dariusz Wojtyś,660529520,d.wojtys@ekopompaciepla.pl,wspólnik
+413,PAGRE Sp. z o.o,5361936613,mazowieckie,Warszawska 59/6 ,05-120,Legionowo,Patryk Kołodziejczyk,500008308,pk@pagre.pl,0
+414,DLA CIEBIE DOM SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,5361938871,mazowieckie,Krakowska 14,05-120,Legionowo,Marcin Piotrowski,507142490,kontakt@dlaciebiedom.pl,0
+415,Dla Ciebie Dom Sp. z o.o. Sp. K.,5361944937,mazowieckie,Krakowska 14,05-120,Legionowo,Marcin Piotrowski,507142490,kontakt@dlaciebiedom.pl,0
+416,KAWUCHA Sp. z o.o.,5361945664,mazowieckie,Modlińska 16,05-110,Jabłonna,Mariusz Jeżewski,797581824,mariusz.jezewski@kawucha.pl,dział tech-handl
+417,PRG Sp. z o.o.,5361964213,mazowieckie,Warszawska 59/6,05-020,Legionowo,Radosław Jaworski,730640907,rj@prg-hvac.pl,0
+418,CEDROM CENTRUM AX Jerzy Ostapiuk Oddział Warszawa,5371143481,mazowieckie,Łopuszańska 26,02-220,Warszawa,Jerzy Ostapiuk,693400200,biuro@cedrom.pl,0
+419,Przedsiębiorstwo Budowlane KA Andrzej Kożuch,5371942348,mazowieckie,Celestynów 60 C,05-430,Celestynów,Andrzej Kożuch,733102800,a.kozuch@poczta.fm,właściciel
+420,Ciepły Kominek Artur Jankowski Oddział,5371980490,mazowieckie,Piłsudskiego 50,05-270,Marki,Artur Jankowski,796  796 713,aj@cieplykominek.pl,właściciel
+421,AIRZET Rekuperacja Jan Zapora,5372269273,mazowieckie,Rysie 1A,05-240,Tłuszcz,Jan Zapora,504570969,biuro@kominkizet.pl,0
+422,Łukasz Stępnik HotHouse,5372449012,mazowieckie,Aleja Róż 11,05-500,Piaseczno,Łukasz Stępnik,531834414,hothouse@onet.pl,właściciel
+423,KGS Global Sp. z o.o.,5372606486,mazowieckie,Al. Solidarności 115/2,00-140,Warszawa,0,0,0,0
+424,WI Walaszek Sławomir,5381692278,mazowieckie,Podebłocie 107F lok. 6,08-455,Trojanów,Sławomir Walaszek,512676207,walaszek.s@wp.pl,właściciel
+425,Michał Smoliński SMSERWIS,5391436683,mazowieckie,Wojska Polskiego 1,21-210,Milanów,Bartosz Jezierski,501079827,bartosz.jezierski@smserwis.pl,0
+426,KONDRAT i Partnerzy MARIUSZ KONDRAT,5422415565,mazowieckie,Aleja Niepodległości 223/ 1,02-087,Warszawa,Mariusz Kondrat,504116266,mariusz@kondrat.pl,0
+427,PERFECT SOLUTIONS KONRAD PYRA,5422415565,mazowieckie,Bratnia 13,05-091,Ząbki,Konrad Pyra,604904939,konrad.pyra@kondrat.pl,0
+428,BUDOMSKI Sylwester Jurkowski,5441167447,mazowieckie,Nadwiślańska 170A,05-420,Józefów,Sylwester Jurkowski,729164729,sylwester@jurkowscy.net,właściciel
+429,CMC-INSTALACJE Jarosław Chrząstowski,5441178623,mazowieckie,Józefin ul. Własna 11,05-074,Halinów,Jarosław Chrząstowski,606842542,cmc.instalacje@wp.pl,właściciel
+430,Recohouse Marcin Bednarz,5521598310,mazowieckie,Ludowa 18/2,05-800,Pruszków,Artur Ciółkowski,794375695,biuro@recohouse.eu,wspólnik
+431,Hydro-Project Instalacje Sanitarne,5571038375,mazowieckie,Geodetów 23c lok.2,05-509,Piaseczno,Adam Duda,501365706,biuro@hydro-project.pl,właściciel
+432,DWH Mariusz Bornus,5631928808,mazowieckie,Warszawa,03-599,Błotna 25E,Mariusz Bornus,536498816,mariusz.bornus@gmail.com,właściciel
+433,Instalacje elektryczne Tomasz Tobolski ,5661696455,mazowieckie,Warszawska 22,06-456 ,Ojrzeń,Tomasz Tobolski,602300582,tomus98@interia.pl,0
+434,PG System Paweł Gesek,5661844950,mazowieckie,Skarbka z gór 132c/10,03-287,Warszawa,Paweł Gesek,603544959,pgsystem@gmail.com,właściciel
+435,Plast-Bud Zofia I Kazimierz Olszewscy Spółka Jawna ,5661883482,mazowieckie,Bielińska 2,06-400 ,Ciechanów,Robert Frączek,505335555,robert.fraczek@plast-bud.com,0
+436,air - house Łukasz Burakowski,5671727393,mazowieckie,Miączynek 39,09-150,Miączynek,Łukasz Burakowski,510301304,0,właściciel
+437,ECODOM,5671731199,mazowieckie,Warszawska 57,09-100,Płońsk,0,0,0,0
+438,Varbit Radosław Lisiński,5671780447,mazowieckie,Dzierzążnia 39b,09-164,Dzierzążnia,Radosław Lisiński,790019628,radoslaw.lisinski@gmail.com,właściciel
+439,Lukas Industries Łukasz Woźniak  ,5671863239,mazowieckie,Idzikowice 37,09-110,Sochocin,Łukasz Woźniak ,508529238,lukas@industries.com.pl,0
+440,PHU EWJAN Technika Grzewcz B.J. Długołęccy Beata Długołęcka,5681167984,mazowieckie,Na Skarpie 20,05-140,Wierzbica,0,508285047,sklepewjan@gmail.com,0
+441,MARVENTS Marcin Borzeski,5681504915,mazowieckie,600-lecia 1/ 4,05-135,Wieliszew,Marcin Borzeski,572865855,borzeskimarcin@gmail.com,właściciel
+442,Innowacyjne Okna Mariusz Małkowski,5681605935,mazowieckie,Al. Wojska Polskiego 12 lok 4,06-100,Pułtusk,Mariusz Małkowski,506788567,biuro@innowacyjneokna.pl,właściciel
+443,Innowacyjne Okna Mariusz Małkowski Oddział,5681605935,mazowieckie,Na Skarpie 22,05-140,Wierzbica,Mariusz Małkowski,506788567,biuro@innowacyjneokna.pl,właściciel
+444,Hydro Dom Jan Domagalski,5691176275,mazowieckie,JANUSZA KUSOCIŃSKIEGO 2/6,06-500,Mława,Damian Rodzoch,515717799,rodzoch.d@gmail.com,0
+445,"Włocki Zbigniew Firma Handlowo-Usługowa ""MADEX-BIS""",5691250557,mazowieckie,"Różana, nr 2A",09-320,Bieżuń,Zbigniew Włocki,606818465,madex.wlocki@wp.pl,0
+446,Marcin Ziemlewicz MZ KLIMA,5691254621,mazowieckie,Ponarska 11/1,03-890,Warszawa,Marcin Ziemlewicz,603686717,m.ziemlewicz@gmail.com,0
+447,"'HYDRONOVUM"" Instalatorstwo sanitarne i grzewcze Michał Kocot",5691836719,mazowieckie,Jodłowa 5a,05-123,Chotomów,Michał Kocot,607246569,hydronovum@gmail.com,0
+448,Electrofast Waldemar Orłowski,5691848510,mazowieckie,Romana Konwerskiego 4F,06-406,Opinogóra Górna,Waldemar Orłowski,573085974,waldek5105@gmail.com,0
+449,COMFORTCLIMA SERWIS Janusz Kowalski,5711333000,mazowieckie,Zgoda 15/5,05-300,Miśnk Mazowiecki,0,603722822,biuro@comfortclimaserwis.pl,dział handlowy
+450,KLIM-WEL WOJCIECH STYPIK,5711427787,mazowieckie,Wiśniowa 52,05-800,Pruszków,Wojciech Stypik ,531249453,klim-wel@klim-wel.pl,kierownik projektu
+451,GREGOR Grzegorz Wulff,5811030977,mazowieckie,Sportowa 4C lok. 1,05-840,Brwinów,Grzegorz Wulff,515587479,gregorwulff1975@interia.eu,właściciel
+452,HVAC Unitech Sp. z o.o.,5811958863,mazowieckie,Nakielska 1/75,01-106,Warszawa,Przemysław Sikora,730905105,serwis@hvac-unitech.pl,0
+453,Klimazbyt Sp. z o.o. o/Warszawa,5862181752,mazowieckie,Instalatorów 9,02-237,Warszawa,Bartłomiej Grzegorek,669994633,bartekg@klimazbyt.pl,0
+454,Przemysław Stasiak,5991043147,mazowieckie,Słonecznikowa 9,95-054,Ksawerów,Przemysław Stasiak,668503325,doradcastasiak@gmail.com,0
+455,Firma Usługowa Fachowiec Krzysztof Dąbroś,6112549622,mazowieckie,Ludwinów 31A,05-306,Jakubów,Krzysztof Dąbroś,507055037,krzysztof@fu-fachowiec.pl,właściciel
+456,Firma Usługowa Fachowiec Krzysztof Dąbroś – oddział,6112549622,mazowieckie,Strzelecka 44 lok. 59,03-433,Warszawa,Krzysztof Dąbroś,507055037,krzysztof@fu-fachowiec.pl,właściciel
+457,Marlin o/ Warszawa,6210003522,mazowieckie,Sławęcińska 7,05-850,Ożarów Mazowiecki,0,508176854,warszawa@marlin.com.pl,0
+458,KENPOL Materiały Budowlane EUGENIUSZ KRZYWDA_oddział Warszawa,6270006599,mazowieckie,Jutrzenki 49,02-230,Warszawa,Marcin Luck,535935003,marcin.luck@kenpol.pl,dział tech.-hand.
+459,KENPOL HOLDING SP. Z O.O. Filia Warszawa,6272761354,mazowieckie,Jutrzenki 49,02-230,Warszawa,Monika Soboń,608564564,monika.sobon@kenpol.pl,0
+460,NEWIR SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,6282256758,mazowieckie,Hoża 86/ 410,00-682,Warszawa,Monika Wojtaś,660703353,newir@newir.pl,0
+461,Instalbud Janosz Sp. z o.o. o/Maków Mazowiecki,6381002363,mazowieckie,Duńskiego Czerwonego Krzyża 16,06-200,Maków Mazowiecki,Adrian Giżyński,505194015,adrian.gizynski@instalbud.pl,0
+462,Instalbud Janosz sp z o.o./oddział Ciechanów,6381002363,mazowieckie,Płońska 40,06-400 ,Ciechanów,Radosław Grzybowski,505194014,radoslaw.grzybowski@instalbud.pl,0
+463,3W Dystrybucja Budowlana S.A. oddział Warszawa,6412479943,mazowieckie,Żytnia 90,05-850,Duchnice,0,0,0,0
+464,MACIEJ MIKITIUK ,6443012784,mazowieckie,Akademicka 2,26-600,Radom,Artur Ziółkowski,882848882,serwis@klima4u.pl,wspólnik
+465,Wimar Wentylacja Klimatyzacja – Warszawa spółka z ograniczoną odpowiedzialnością,6443558069,mazowieckie,Stefana Żeromskiego 1,41-200,Sosnowiec,Artur Owczarczyk,690331334,biuro@wimar-warszawa.pl,0
+466,Wimar Wentylacja Klimatyzacja – Warszawa spółka z ograniczoną odpowiedzialnością ,6443558069,mazowieckie,Odlewnicza 7,03-231,Warszawa,Artur Owczarczyk,690331334,biuro@wimar-warszawa.pl,0
+467,GI Andrzej Jojko,6452253435,mazowieckie,Józefa Elsnera 5,05-092,Łomianki ,Andrzej Jojko,570840180,info@greeninside.pl,0
+468,WIZUNI Krzysztof Bąba,6562042308,mazowieckie,Wojciecha Januszewicza 3/1,05-220,Zielonka,Krzysztof Bąba,608276061,krzysztof.baba.wizuni@gmail.com,0
+469,THESSLA GREEN Sp. z o.o. / Kamil Wolski,6783147135,mazowieckie,Kokotów 741,32-002,Kokotów,Kamil Wolski,539000590,kamil.wolski@thesslagreen.com,dział tech.-hand.
+470,SIG Sp. z o.o. oddział Michałowice-Opacz Kolonia,6792740424,mazowieckie,Środkowa 27B,05-816,Michałowice – Opacz Kolonia,Grzegorz Kaszuba,669991279,gkaszuba@sig.pl,koordynator ds. wentylacji
+471,SIG Sp. z o.o. oddział Siedlce,6792740424,mazowieckie,Magazynowa 14,08-119,Siedlce,Piotr Mędza,663880250,pmedza@sig.pl,sprzedawca wewnętrzny
+472,SIG Sp. z o.o. oddział Warszawa,6792740424,mazowieckie,Gierdziejewskiego 5,02-495,Warszawa,Piotr Brylski,694417674,pbrylski@sig.pl,specjalista ds. ofertowania
+473,Sig Sp. z o.o. Oddział SIG Marki,6792740424,mazowieckie,M. Ciurlionisa 3,05-270,Marki,Emil Popławski,691256575,Epoplawski@sig.pl,0
+474,CALDO – WENTYLACJA Sp. z o.o. Warszawa,6793108496,mazowieckie,Szeligowska 77,01-320,Warszawa,Grzegorz Wawryszuk,785100920,grzegorz.wawryszuk@caldo-wentylacja.pl,dział sprzedaży
+475,CALDO – WENTYLACJA Sp. z o.o. Radom,6793108496,mazowieckie,Tartaczna 3,26-600,Radom,Marcin Szyszka,663895805,marcin.szyszka@caldo-izolacja.pl,dyrektor oddziału
+476,CALDO – WENTYLACJA Sp. z o.o. Siedlce,6793108496,mazowieckie,Starzńskiego 8,08-110,Siedlce,Krzysztof Gadomski,663407402,krzysztof.gadomski@caldo-izolacja.pl,biuro obsługi klienta
+477,Centrum Informacji Branżowej Sp. z o.o.,6972314350,mazowieckie,Turmoncka 22/110,03-254,Warszawa,Karol Klos,601222704,k.klos@dom20.pl,0
+478,KWD Daniel Szatkowski,7010086136,mazowieckie,Nowogrodzka 40/41,00-691,Warszawa,Daniel Szatkowski,662061145,d.szatkowski222@gmail.com,0
+479,Studio Palladio Andrzej Suliga,7010232508,mazowieckie,Fabryczna 28/30,00-446,Warszawa,Andrzej Suliga,504167585,asuliga@palladio.waw.pl,właściciel
+480,Senatorska Investment Sp. z o.o.,7010307324,mazowieckie,Senatorska 2,00-075,Warszawa,Joanna Karkowska-Olczak,502274962,joanna.karkowska-olczak@senatorska-investment.pl,architektka
+481,Tivolia Sp. z o.o.,7010439758,mazowieckie,Zaruby 9/188,02-796,Warszawa,Michał Spychalski,605278729,mspycha@gmail.com,0
+482,Domy Plus Sp. z o.o. ,7010844588,mazowieckie,Aleje Jerozolimskie 81,02-001,Warszawa,Karol Prokurat,729961518,karol.prokurat@domyplus.com,kierownik projektu
+483,Studio Palladio sp. z o.o.,7010900795,mazowieckie,Nowogrodzka 31,00-511,Warszawa,Andrzej Suliga,504167585,asuliga@palladio.waw.pl> ,0
+484,TIK SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,7010986650,mazowieckie,Marszałkowska 58,00-545,Warszawa,Viacheslaw Kravets,739692438,v1a4ik@gmail.com,0
+485,JURKOWSKI Sylwia Jurkowska,7131885132,mazowieckie,Nadwiślańska 170A,05-420,Józefów,Sylwester Jurkowski,729164729,sylwester@jurkowscy.net,właściciel
+486,KOMINOX Marcin Czerniak Oddział Otrębusy,7131942551,mazowieckie,Krzywa 1,05-805,Otrębusy,0,512487547,sklep@kominox.pl,0
+487,2M Architekci Mariusz Cuch ,7162236469,mazowieckie,Al. Niepodległości 111 lok. 23,02-626,Warszawa,Adam Zawadzki ,601945159,adam@ekoart.com.pl,projektant
+488,NOVO-TECH Sławomir Czmiel,7162611163,mazowieckie,Główna 60,05-320,Wola Paprotnia,Sławomir Czmiel,508168776,biuronovotech@gmail.com,0
+489,Instal Serwis Patryk Dobkowski,7182029874,mazowieckie,Przykoszarowa 33/4,18-400 ,Łomża,0,0,0,0
+490,Grzegorz Bogucki PNP Inżynieria,7231518522,mazowieckie,gen. Augusta Emila Fieldorfa Nila 9/ 2,03-984,Warszawa,Grzegorz Bogucki,607540013,grzegorz.bogucki@pnpi.pl,właściciel
+491,DTS SERWIS MARIUSZ MAKSAJDA,7262336414,mazowieckie,Pola Karolińskie 4,02-401,Warszawa,Kamil Karasiak,505505867,kamil@dtsserwis.pl,kierownik działu 
+492,DTS Sp. z o.o.,7262652701,mazowieckie,Pola Karolińskie 4,02-401,Warszawa,Mariusz Maksajda,504690443,mariusz@dtsserwis.pl,prezes zarządu
+493,SolarFan,7271314240,mazowieckie,Wspólna 61A,05-123,Dąbrowa  Chotomowska,Bogusław Kalinowski,502052320,solarfan@pro.wp.pl,właściciel
+494,RM KLIMATYZACJA Radosław Miziała,7282661620,mazowieckie,Felinskiego 17/52   ,93-247 ,Łódź,Radosław Miziała,668449896,biuro@rmklimatyzacja.pl,0
+495,FROST-STAR CYPRIAN STARCZEWSKI,7292488011,mazowieckie,Kościelna 23A,05-311,Dębe Wielkie,Cyprian Starczewski,798318508,biuro@frost-star.pl,0
+496,Coolklima Marcin Dolaciński,7311821323,mazowieckie,Kościuszki 4,95-083,Lutomiersk,Marcin Dolaciński,690164798,serwis@coolklima.com.pl,0
+497,A&M INSTALACJE ADRIAN KOTERLA oddział Mazowieckie,7343557361,mazowieckie,Olszana 158,33-386,Olszyna,Adrian Koterla,511106892,kontakt@aminstalacje.com,właściciel
+498,"Lisek Sławomir Usługi Remontowo-Budowlane ""Lisek""",7371886473,mazowieckie,Słopnice,34-615,Słopnice,Sławomir Lisek,600621053,0,0
+499,SUN4YOU SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,7393732406,mazowieckie,Bajkowa 127/ 12,10-696 ,Olsztyn,Dariusz Jędrzejczyk,693007727,dj@sun4you.pl,0
+500,EKO KLIMATYZACJE ANNA RZEWNICKA,7421055350,mazowieckie,Poniatowskiego 17/ 10,05-500,Piaseczno,Krzysztof Rzewnicki,692887946,biuro@eko-klimatyzacje.pl,0
+501,EMSOL ARTUR SZENAWA,7532279288,mazowieckie,3 maja 34/2,09-500,Gostynin,Marcin Mańkowski,531127808,m.mankowski@emsol.com.pl,0
+502,Energy Heat Technology Investment o/Warszawa,7542225644,mazowieckie,0,0,Warszawa,0,602684652,info@hti.com.pl,0
+503,Przedsiębiorstwo Handlowo Produkcyjne MAJA,7571002208,mazowieckie,Łąkowa 1,06-200,Maków Mazowiecki,Wiesław Szacherski,533060464,phpmaja@gmail.com,właściciel
+504,"Mirosław Chrzanowski FIRMA HANDLOWO - USŁUGOWA ""DREVIS""",7571118514,mazowieckie,Kopernika 4,06-200,Maków Mazowiecki,Mirosław Chrzanowski,502029304,drevis.biz@gmail.com,0
+505,AQ-ELTECH Justyna Kudła,7571460388,mazowieckie,Przasnyska 5,06-200,Maków Mazowiecki,Adam Kudła,501168814,aqeltech@gmail.com,0
+506,ZUH KABLOMEX  Grzegorz Masiukiewicz,7580003041,mazowieckie,Cicha 2,07-416,Olszewo Borki,Jarosław Masiukiewicz,692696444,j-masiukiewicz@o2.pl,doradca tech.-hand.
+507,Przedsiębiorstwo Usługowo Produkcyjne EELEKTROWENT,7581050775,mazowieckie,Damięty 5,07-440,Goworowo,Krzysztof Rupiński,605550231,elektrowent.rupinski@wp.pl,właściciel
+508,"HENRYK BORKOWSKI PRZEDSIĘBIORSTWO - USŁUGOWO - PRODUKCYJNE ""ELEKTROWENT""",7581050781,mazowieckie,DAMIĘTY 5,07-440,Goworowo,Henryk Borkowski,600758655,h.borkowski@wp.pl,0
+509,ASH Remigiusz Skowroński,7581098894,mazowieckie,"Juliusza Słowackiego, nr 20A",07-417,Ostrołęka,Adrian Skowroński,793077709,skowronski@ash-instalacje.pl,0
+510,ASH Remigiusz Skowroński -,7581098894,mazowieckie,11-go listopada 74,07-410,Ostrołęka,Adrian Skowroński,793077709,skowronski@ash-instalacje.pl,0
+511,HYDRAL Michał Kupis,7581150519,mazowieckie,"Tadeusza  Zawadzkiego ""ZOŚKI"" 1A",07-410,Ostrołęka,Michał Kupis,721060070,biuro.hydral@wp.pl,0
+512,"TOMCZAK TOMASZ - Grupa TOMCZAK, P.H.U. DETEKTOR",7581768900,mazowieckie,"Henryka Sienkiewicza, nr 28",07-410,Ostrołęka,Konrad Dąbkowski,731404604,rekuperacja@gt-instal.pl,0
+513,CENTRUM TECHNIKI GRZEWCZEJ I SANITARNEJ Maciej Jerzy Kalwas,7582017030,mazowieckie,Targowa 30A,07-410,Ostrołęka,Jerzy Kalwas,29 760 41 44,ctgis@ctgis.pl,właściciel
+514,SŁAWOMIR DRĘŻEK GREEN HOUSE,7582094094,mazowieckie,Poziomkowa 20,07-410,Dzbenin,Sławomir Drężek,509961824,biuro@greenhouse.biz.pl,0
+515,PRZEDSIĘBIORSTWO INŻYNIERII SANITARNEJ ENERGAS SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ SPÓŁKA KOMANDYTOWA,7582147376,mazowieckie,Warszawska 2,07-410,Ostrołęka,Rafał Zyśk,665950596,sklep@energas.pl,0
+516,QESTE Wojciech Gleba ,7582210034,mazowieckie,Diamentowa 1,07-437,Łyse,Wojciech Gleba,798735568,wojciech.gleba@gmail.com,0
+517,SANMIL Rafał Milewski,7582218260,mazowieckie,Brzozowa 5,07-410,Tobolice,Rafał Milewski,694124424,sanmilrm@gmail.com,właściciel
+518,Systemy Wentylacji Mechanicznej Michał Rawa,7591348401,mazowieckie,Gąsiorowo 50,07-323 ,Zaręby Kościelne,Michał Rawa,502383627,rawareku@gmail.com,0
+519,FIRMA HANDLOWO USŁUGOWA Karol Kosewski,7591609706,mazowieckie,Narodowa 31,03-987,Warszawa,Karol Kosewski,502111246,mk.instalacje.grzewcze@gmail.com,właściciel
+520,FIRMA HANDLOWO-USŁUGOWA ELEGANCKI ZAKĄTEK Leszek Piórkowski,7611048844,mazowieckie,Bursztynowa 19,06-200,Maków Mazowiecki,Małgorzata Piórkowska,501797347,biuro@klimatyzacjamakow.pl,właściciel
+521,Hydro-bud,7621368585,mazowieckie,Pułtuska 114P,07-202,Wyszków,Albert Apelski,731155674,hydrobud.aa@gmail.com,kierownik sprzedaży
+522,BUDMAT MATEUSZ SIEDLECKI,7692148282,mazowieckie,Domaniewska 37 lok. 2.43,02-672,Warszawa,Mateusz Siedlecki,788979229,biuro@coldeo.pl,0
+523,"Hydro-Went s.c. T.Zieliński, K.Łaska, K.Zieliński",7712655534,mazowieckie,Folwarczna 62,97-300,Piotrków Trybunalski,Kamilem Zielińskim ,0,0,0
+524,Z.P.U. Klima-Went S.J.,7740019129,mazowieckie,Sierpecka 1M,09-402,Płock,Łukasz Sadowski,604204651,sadowski@klimawent.pl,0
+525,Clima Hit Sp. z o.o. sp.k.,7741002792,mazowieckie,Chabrowa 31A,09-402,Płock,Robert Grochowski,513064380,robert.grochowski@climahit.pl,doradca tech.-hand.
+526,SANITMAR Marek Marciniak,7742278740,mazowieckie,Siecień-Rumunki 14A,09-414,Brudzeń Duży,Marek Marciniak,660681660,biuro@sanitmar.pl,właściciel
+527,FHU BUDEUSZ Piotr Niesiobędzki,7742289040,mazowieckie,Królewska 24 Cekanowo,09-472,Słupno,Piotr Niesobędzki,600236575,biuro@budeusz.pl,właściciel
+528,FHU BUDEUSZ Piotr Niesiobędzki oddział,7742289040,mazowieckie,Harcerska 13,09-410,Płock,Piotr Niesobędzki,600236575,biuro@budeusz.pl,właściciel
+529,Klimat-Dom,7742389758,mazowieckie,Malownicza 2,09-472,Cekanowo,0,24 262 65 62,biuro@klimat-dom.pl,0
+530,KLIMAT-DOM Rędziński Paweł,7742389758,mazowieckie,Juliana Tuwima 11,09-400,Płock,Paweł Rędziński,508152172,biuro@klimat-dom.pl,0
+531,Magis Krzysztof Leonarczyk,7742451397,mazowieckie,Stanowo 3,09-470 ,Bodzanów,Krzysztof Leonarczyk,502418977,krzysztofleonarczyk@poczta.onet.pl,0
+532,"PRZEDSIĘBIORSTWO HANDLOWO-USŁUGOWE ""ASBUD"" S.C.PIOTR SKALSKI, AGNIESZKA SKALSKA",7742519391,mazowieckie,Nowa Biała 42,09-411,Biała,Piotr Skalski,601895014,biuro@asbudplock.eu,0
+533,Koolserwis,7742774410,mazowieckie,Misjonarska 7,09-402,Płock,0,791128528,biuro@koolserwis.pl,0
+534,"SKUPNIEWSKI TOBIASZ FIRMA HANDLOWO - USŁUGOWA ""TOBSAN""",7742875275,mazowieckie,Wesoła 14,09-451,Radzanowo,Tobiasz Skupniewski,790217306,skuptobiasz@op.pl,0
+535,HYDROMAR Sp. z o.o.,7743223505,mazowieckie,Zbożowa 7/ 6,09-410,Płock,Paweł Marcinkowski,791572804,p.marcinkowski@hydro-mar.pl,właściciel
+536,AC-REF SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,7743247687,mazowieckie,Misjonarska 7,09-402,Płock,Piotr Woliński,510473388,acrefplock@gmail.com,0
+537,SANITAS-SPRZEDAŻ-USŁUGI INSTALACYJNE ZASADOWSCY ZASADOWSKA DANUTA,7761000684,mazowieckie,Traugutta 28,09-200,Sierpc,Piotr Zasadowski,501236649,biuro@sanitassierpc.pl,dział handlowy
+538,AS-MAR Andrzej Sulikowski,7761276481,mazowieckie,Reymonta 66,09-200,Sierpc,Andrzej Sulkowski,501012006,biuro@as-mar.pl,0
+539,Skanska S.A.,7780001070,mazowieckie,Gen. Józefa Zajączka 9,01-518,Warszawa,0,0,0,0
+540,TKT Engineering Sp. z o.o.,7792220234,mazowieckie,Pryzmaty 4,02-226,Warszawa,0,0,0,0
+541,TG INSTALACJE Oddział Warszawa,7811709109,mazowieckie,Karczunkowska 19,02-871,Warszawa,Justyna Liman,600207527,justynaliman@tginstalacje.pl,handlowiec stacjonarny
+542,SABER INVEST Sp. z o.o.,7831794845,mazowieckie,Hoża 86/ 410,00-682,Warszawa,Andrzej Kośka,601923735,saber-invest@wp.pl,dział techniczny
+543,AC Klimatyzacja Andrzej Czerkas,7921778123,mazowieckie,Norwida 11 / 5,05-120,Legionowo,0,0,0,0
+544,Krzysztof Szelewa INSTAL-ECO biuro handlowe,795160600,mazowieckie,Płońska 1A,05-170,Zakroczym,Krzysztof Szelewa,660320077,instal-eco@instal-eco.pl,właściciel
+545,Euroterm TGS Sp z o.o. Oddział Warszawa,7952551886,mazowieckie,Stroma 59,01-100,Warszawa,Rafał Wróbel,693561352,R.Wrobel@euroterm24.pl,0
+546,SAN GAZ,7960020092,mazowieckie,Lubelska 50B,26-600,Radom,Piotr Szmidt,503660570,piotr.szmidt@strefaciepla.pl,dział tech.-hand.
+547,GOMAR Marek Ziółkowski,7961252522,mazowieckie,Polna 41/43 lok. 2,26-600,Radom,Kamila Cichawa,48 360 26 52,biuro@gomar.info,0
+548,GOMAR Marek Ziółkowski oddział,7961252522,mazowieckie,Lubelska 9/11,26-603,Radom,Kamila Cichawa,48 360 26 52,biuro@gomar.info,0
+549,KRZYSZTOF KAMIŃSKI FIRMA USŁUGOWO-HANDLOWA KAMIŃSKI,7961649277,mazowieckie,Główna 25,26-640,Skaryszew,Łukasz Kamiński,697021424,druzyna2000@wp.pl,właściciel
+550,A2 AGATA PAWLAK,7962062309,mazowieckie,Albatrosów 10C lok. 10,05-500,Piaseczno,0,0,0,0
+551,TRANS-BUD PRZEDSIĘBIORSTWO TRANSPORTOWO-HANDLOWO-USŁUGOWE Pałczyński Arkadiusz,7962175485,mazowieckie,Zwoleńska 43H,26-600,Radom,Albert,795574689,tb.hydraulika@wp.pl,dział handlowy
+552,VERTIS INVESTMENTS SOLUTIONS Piotr Latek,7962223899,mazowieckie,Baśniowa 8,05-126,Michałów-Grabina,Piotr Latek,517773733,piotr.latek@duotherm.com.pl,właściciel
+553,SANVENT SEBASTIAN SAWICKI,7962369255,mazowieckie,Sadkowska 17 lok. 28,26-600,Radom,Sebastian Sawicki,603310426,biuro@sanvent.pl,właściciel
+554,BS Technologie Bartłomiej Stępień,7962504150,mazowieckie,Królewska 9,26-600 ,Radom,Bartłomiej Stępień,602445527,biuro@bstechnologie.pl,0
+555,MMKOMINKI.PL Konrad Pietrasik,7962606873,mazowieckie,Sobieskiego 5,26-600,Radom,Konrad Pietrasik,514340012,kominki3generacji@gmail.com,0
+556,INTECH S.C.,7962920954,mazowieckie,Lubelska 9/11,26-600,Radom,Mariusz Minda,509030866,mariuszminda@intech.radom.pl,właściciel
+557,F.H.U. AKTIMAR Marcin Zieliński,7971519926,mazowieckie,Kukały 14A,05-651,Chynów,Marcin Zieliński,606981402,aktimar@aktimar.com.pl,właściciel
+558,OLO Michał Kozarzewski,7971670959,mazowieckie,Działkowa 16,05-555,Tarczyn,Michał Kozarzewski,0,0,0
+559,CERTBUD - Jacek Stępień,7971890135,mazowieckie,Jastrzębowskiego 22/ LU44,02-786,Warszawa,Szymon Gąsior,668469407,gasior.szymon@wp.pl,współpracownik
+560,F.H.U SAIMON Łukasz Milczarek,7971913758,mazowieckie,"Jakubów, nr 13",05-610,Goszczyn,Łukasz Milczarek,578818138,saimon2013serwis@gmail.com,0
+561,GreenTerm Łukasz Głowacki ,7971919318,mazowieckie,Wilków Pierwszy 41A,05-620,Błędów,Piotr Czyż,661477561,piotr.czyz@greenterm.pl,0
+562,THERMODYNAMIKA SPÓŁKA CYWILNA MARCIN JANUS PRZEMYSŁAW JAROCKI,7972051135,mazowieckie,Lechanice 54a,05-660,Warka,Jacek Krześniak,797729001,jacek@theka.pl,właściciel
+563,F.H.U. POPIS Leszek Popis,7981034946,mazowieckie,Sądowa 12,26-800,Białobrzegi,Leszek Popis,505164252,klimatyzacja@naszklimat.pl,właściciel
+564,KAFELEK Monika Kozicka,7991598283,mazowieckie,Mirów Stary 13,26-503,Mirów Stary,Tomasz Kozicki,576951162,tomek.kozicki@wp.pl,właściciel
+565,PRZEDSIĘBIORSTWO HANDLOWO-USŁUGOWE AGA AGNIESZKA RZEMEK,7991706643,mazowieckie,Jana Kochanowskiego 181,05-152,Łomna,Agnieszka Rzemek,792205152,agnieszkarzemek3@wp.pl,właściciel
+566,Reventi Piotr Bryśkiewicz,7991977170,mazowieckie,Czachowskiego 58c,26-510,Chlewiska,Piotr Bryśkiewicz,786996849,kontakt.reventi@gmail.com,właściciel
+567,"P.P.H.U. ELSAN S.C. ANNA LISOWSKA,GRZEGORZ LISOWSKI",8111002294,mazowieckie,Aleja Jana Pawła II 27,26-700,Zwoleń,Grzegorz Lisowski,601280404,elsanlisowski@wp.pl,właściciel
+568,"FULARA JAN, P.P.H.U. ""FULMARK""",8111236661,mazowieckie,Torowa 10,05-500,Nowa Iwiczna,Jan Fulara,600100901,fulmark@fulmark.pl,0
+569,FUMARIO Sebastian Pyrka,8111634048,mazowieckie,Aleja Jana Pawła II 11,26-700,Zwoleń,Sebastian Pyrka,516927022,p.sebastian@onet.eu,właściciel
+570,Krzysztof Krakowiak 2Climb,8111672698,mazowieckie,Juliusza Słowackiego 100,26-600,Radom,Krzysztof Krakowiak,601201978,krzysiek.krakowiak@gmail.com,0
+571,Vacuklima Mariusz Mizerski,8111696693,mazowieckie,Piaskowa 1/33,26-900,Kozienice,Mariusz Mizerski,608405646,serwis@vacuklima.pl,właściciel
+572,TOMA Tomasz Warchoł,8121191581,mazowieckie,Jana III Sobieskiego 72/40,02-930,Warszawa,Tomasz Warchoł,501758762,tomek@kominkitoma.pl,0
+573,Klimark Marek Cytryniak,8121641699,mazowieckie,Poziomkowa 5,26-900,Kozienice,Marek Cytryniak,693442737,klimark@klimark.pl,właściciel
+574,Konrad Paduch MS-HOUSE,8121757930,mazowieckie,Janików 34,26-900,Kozienice,Marcin Paduch,502415522,ms-house@ms.pl,0
+575,Cook&Clean ADRIAN MARCHEWKA,8121857844,mazowieckie,Słowackiego 63,05-250,Góra Kalwaria,Adrian Marchewka,511091183,adrian.marchewka9@gmail.com,0
+576,DG MARWEL SP. Z O.O,8133619636,mazowieckie,Hoża 51,00-681,Warszawa,Sławomir Trzcinski,504063000,marwel.sklep@wp.pl,właściciel
+577,MAREK TYKSIŃSKI TERRAQUEST,8171867000,mazowieckie,"Górczewska, nr 156, lok. 50",01-352,Warszawa,Marek Tyksiński,509031078,mtyksinski@gmail.com,0
+578,AGENCJA TECHNICZNO HANDLOWA DG Sp. z o.o.,8212039956,mazowieckie,Stefana Starzyńskiego 4E,08-110,Siedlce,Łukasz Fałdowski,606272136,lukasz@agencjadg.pl,dział handlowy
+579,"Ogłoszeniowa, domyidachy.pl Robert Borkowski",8212297724,mazowieckie,Piaskowa 27,08-110,Żelków-Kolonia,Artur Ogrodnik,537077772,artur.ogrodnik@domyidachy.pl,oferty
+580,"JAKUB KASPEREK 1) MAJORCA, 2) EKOSED",8212299746,mazowieckie,Wojskowa 20,08-110,Siedlce,Jakub Kasperek,534077077,ekosed@ekosed.pl,0
+581,RYM-MONT Karol Rymuza,8212310436,mazowieckie,Kownaciska 22,08-125,Suchożebry,Karol Rymuza,537149314,rymmont.siedlce@gmail.com,właściciel
+582,MB-Instal Maciej Bujalski,8212345624,mazowieckie,Kościelna 52,05-300,Mińsk Mazowiecki,Maciej Bujalski,509077775,mbinstal@mbinstal.pl,właściciel
+583,Rumar Bartosz Rudzki ,8212361474,mazowieckie,Stawigudzka 16/38,10-687 ,Jaroty,Bartosz Rudzki ,505500455,biuro.rumar@o2.pl,0
+584,Klim-Ski Radosław Popławski,8212434701,mazowieckie,Żwirowa 6/21,08-110,Siedlce,Radosław Popławski,664415086,kontakt@klimski.pl,właściciel
+585,Monteron Łukasz Guzek,8212447454,mazowieckie,Generała Jana Skrzyneckiego 36,08-110,Siedlce,Łukasz Guzek,608210376,biuro@monteron.pl,właściciel
+586,SIGMA-TECH Sp. z o.o.,8212465506,mazowieckie,Sokołowska 95,08-110,Siedlce,Paulina Łęczycka,256327773,sigmatech@sigma-tech.com.pl,dział tech.-hand.
+587,APIS Sp. z o.o. Grupa SBS,8212514417,mazowieckie,Ujrzanów 175,08-110,Siedlce,Przemysław Jóźwik,509204290,przemek-apis@wp.pl,0
+588,ŁUKASZ MAZUREK KLIMA PROJEKT,8212517781,mazowieckie,Akacjowa 18,08-110,Siedlce,Łukasz Mazurek,505832552,biuro@klimaprojekt.eu,0
+589,AJKLIMA Adam Jastrzębski,8212578647,mazowieckie,Żwirowa 41,08-110,Siedlce,Adam Jastrzębski,509122232,biuro@aj-klima.pl,właściciel
+590,CITO POLSKA Sp. z o.o.,8212642807,mazowieckie,Spokojna 112,08-110,Żelków-Kolonia,Katarzyna Kazimierska,608390690,citobiuro@gmail.com,0
+591,Ekosed.pl s.c.,8212666854,mazowieckie,Siedlecka 21,08-110,Stok Lacki-Folwark,Jakub Kasperek,534077077,ekosed@ekosed.pl,właściciel
+592,INSBUD Dariusz Zagrabski,8221013229,mazowieckie,Mazowiecka 25,05-300,Wólka Mońska,Dariusz Zagrabski,605600078,insbud1@o2.pl,0
+593,TECHNIKA GRZEWCZA Rafał Bereda,8221536453,mazowieckie,Podgraniczna 11,05-304,Stanisławów,Rafał Bereda,506039923,kontakt@tgbereda.pl,właściciel
+594,TECHNIKA GRZEWCZA Rafał Bereda Oddział,8221536453,mazowieckie,Warszawska 40,05-300,Stojadła,Rafał Bereda,506039923,kontakt@tgbereda.pl,właściciel
+595,P.H.U. MC-WENT MARCIN CYRAN,8221597779,mazowieckie,Szpitalna 17 lok 36,05-300,Mińsk Mazowiecki,Marcin Cyran,690983489,biuro@rekuperacje24.pl,0
+596,RAMIVENT Michał Storma,8221895809,mazowieckie,Żeglugi Wiślanej 7/30,03-043,Warszawa,Sebastian Sawicki,603310426,biuro@sanvent.pl,dział techniczno handlowy
+597,`ELZET` LESZEK ZAJĄC,8221934395,mazowieckie,Bolesława Chrobrego 9,05-300,Mińsk Mazowiecki,Marcin Gołowicz,514148648,marcin@elzetklima.pl,0
+598,Instal Jazz Łukasz Podniesiński,8222030514,mazowieckie,Długa 46,05-320,Mrozy,Łukasz Podniesiński,505121358,instaljazz@gmail.com,0
+599,KLIM-STAR Jerzy Bystrzyński,8222044953,mazowieckie,Targówka ul. Mazowiecka 80,05-300,Mińsk Mazowiecki,Jerzy Bystrzyński,602762055,poczta@klim-star.pl,właściciel
+600,Speed Klima Paweł Rek,8222090657,mazowieckie,Tuwima 1a/3,05-300,Mińsk Mazowiecki,Paweł Rek,603680407,speedklima@onet.pl,0
+601,Express Klima Łukasz Siurek,8222158131,mazowieckie,Plac Stary Rynek 1 lok 13,05-300,Mińsk Mazowiecki,Rafał Gałązka,501767270,rafal.galazka@expressklima.pl,właściciel
+602,CARBON Michał Kryński,8222214384,mazowieckie,Warszawska 81,05-311,Dębe Wielkie,Michał Kryński,509348385,biuro@carbon.net.pl,właściciel
+603,Art – Klimawent Artur Zagórski,8222252580,mazowieckie,Bolesława Prusa 13/15,05-300,Mińsk Mazowiecki,Artur Zagórski,507587888,art-klimawent@o2.pl,0
+604,F.H.U KLIMTECH BENIAMIN LIP,8222348624,mazowieckie,Staszica 26,05-071,Sulejówek,Jacek Szymonka,730735207,jacek.szymonka@wp.pl,0
+605,HYDRO-AIR Kamil Wocial,8222382302,mazowieckie,Polna 87,05-311,Dębe Wielkie,Kamil Wocial,667130958,biuro.hydro.air@gmail.com,właściciel
+606,nFormat Andrzej Augustyniak ,8231145961,mazowieckie,Eugeniusza Lokajskiego 30/ 32,02-793,Warszawa,Andrzej Augustyniak,510001511,andrzej.nformat@gmail.com,0
+607,"GOWOREK ZYGMUNT ""KLIMA-TECH""",8231193003,mazowieckie,Paderewek 3,08-320,Paderewek,Zygmunt Goworek,501669694,zygmunt.goworek@wp.pl,0
+608,Z.U.H HYDROSOWA Tomasz Sowa,8231515151,mazowieckie,Stawiska 38A,07-110,Grębków,Tomasz Sowa,604454695,hydrosowa@interia.pl,właściciel
+609,Z.U.H HYDROSOWA – oddział,8231515151,mazowieckie,Leśnogóra 64,07-110,Grębków,Tomasz Sowa,604454695,hydrosowa@interia.pl,właściciel
+610,ADMAR Instalacje – Marcin Nasiłowski,8231560370,mazowieckie,Wólka Dolna 1,08-330,Kosów Lacki,Marcin Nasiłowski,668193318,marcin.nasilowski@wp.pl,właściciel
+611,Zakład Usług Remontowo Budowlanych Andrzej Samsel,8241182509,mazowieckie,Zalesie 24a,07-140,Sadowne,Michał Rawa,502383627,rawareku@gmail.com,0
+612,Zakład Usługowy Wod.-Kan. C.O. i Gaz Boratyński Edward,8261026221,mazowieckie,Batalionów Chłopskich 34,08-400,Garwolin,Daniel Boratyński,507797409,b.daniel34@wp.pl,właściciel
+613,STORM Krzysztof Stoń,8262030561,mazowieckie,Targowa 60 ,08-400,Garwolin,Krzysztof Stoń,667401409,storm2.garwolin@wp.pl,właściciel
+614,WMG-BIS Sp z.o.o.,8262189540,mazowieckie,3-go Maja 86,08-440,Gocław,0,0,0,0
+615,SOLTIMUS Sp. z o.o.,8262208527,mazowieckie,Batalionów Chłopskich 46B,08-400,Garwolin,Bartosz Dobrowolski,694149777,bartosz@soltimus.pl,wspólnik
+616,Marek Gomułka GOKIMA Engineering,8272328434,mazowieckie,Wróblew 10a,98-285,Wróblew,Marek Gomułka,724573234,gokima@o2.pl,0
+617,"""KAZEK SPÓŁKA CYWILNA"" KAROL KAZEK, RAFAŁ KAZEK",8291723597,mazowieckie,Przyjaźni 3,98-220,Zduńska Wola,0,0,0,0
+618,FRI-GAST Rafał Iwanowski,8311606387,mazowieckie,Koniczyny 34B/ 29,05-850,Kręczki,0,0,0,0
+619,Inżynieria Klimatu Piotr Kieliszek,8351574937,mazowieckie,"Bernardyńska, nr 20, lok. 3",02-904,Warszawa,Piotr Kieliszek,661626904,piotr.kieliszek@inzynieriaklimatu.pl,0
+620,KAWER Dominik Werker,8361396905,mazowieckie,Cicha 14/35 ,96-100,Skierniewice,Dominik Werker,509726014,kawer@kawer.pl,właściciel
+621,Geo-Bud s.c. A. Sabat L. Karkuciński,8361570912,mazowieckie,Sobieskiego 3,96-330,Puszcza Mariańska,Rafał Goliński,509931325,uslugi@rafalgolinski.pl,0
+622,Jacek Wierciński Instalacje,8371149172,mazowieckie,Chodakówek 20,96-500,Sochaczew,Jacek Wierciński,0,aqua@ol.onet.pl,właściciel
+623,Jacek Wierciński Instalacje Oddział,8371149172,mazowieckie,Wiktorska 14/1,02-587,Warszawa,Mariusz Kędzierski,887617085,aqua@ol.onet.pl,dział tech.-hand.
+624,Grodzka Marlena Firma Handlowa MAR-KAS,8371505589,mazowieckie,Radonice 2,05-870,Błonie,Arkadiusz Kozłowski,696475840,renex0026@wp.pl,0
+625,J-WENT ZBIGNIEW JASIŃSKI,8371596818,mazowieckie,Altanka 112,96-500,Sochaczew,Zbigniew Jasiński,726289627,j-went@wp.pl,0
+626,7IT Piotr Zacharzewski,8371697749,mazowieckie,Bukowska 33/2,03-107,Warszawa,Piotr Zacharzewski,690689334,piotr@domai.pl,0
+627,ClimHouse Rafał Karaś,8371707100,mazowieckie,Długa 27/3,96-500,Sochaczew,Rafał Karaś,509982540,rafal.karas9@gmail.com,0
+628,Pracownia Techniki Ogrzewania s.c.,8371739666,mazowieckie,Aleja XX-lecia 78A,96-515,Teresin,Artur Borkowski,608512546,a.borkowski@o2.pl,wspólnik
+629,JUULA REKUPERACJA Julita Włodarczyk,8371754045,mazowieckie,Trojanowska 66A,96-500,Sochaczew,Kamil Włodarczyk,602340151,biuro@juula.com.pl,wspólnik
+630,FRIGUS INSTALACJE KACPER DUPLICKI,8371868056,mazowieckie,Franciszka Żwirki i Stanisława Wigury 3,96-500,Sochaczew,Kacper Duplicki,604362129,biuro@frigusinstalacje.pl,0
+631,SZREDER A.C. Alicja Szreder,8381000980,mazowieckie,Kościuszki 35,96-316,Międzyborów,Michał Szreder,691600400,szrederac@gmail.com,właściciel
+632,Domy Biedrzycki Przemysław Biedrzycki,8381011877,mazowieckie,Wilków nad Wisłą 27,05-155,Leoncin,Przemysław Biedrzycki,501660408,domyzdrewna@gmail.com,właściciel
+633,Eco-Mar Technika Marcin Wandel,8381408244,mazowieckie,Grójecka 55,96-320,Mszczonów,Marcin Wandel,883705400,eco-mar.technika@wp.pl,właściciel
+634,Eco-Mar Technika Marcin Wandel Oddział,8381408244,mazowieckie,Szpaka 15,05-090,Raszyn,Marcin Wandel,883705400,eco-mar.technika@wp.pl,właściciel
+635,RekuMarWent P.H.U. Marek Zając,8381581557,mazowieckie,Jaworowa 9 b,96-316,Henryszew,Marek Zając,697606188,lobodam@wp.pl,właściciel
+636,Eftek Radosław Oskiera,8381740961,mazowieckie,Świeradowska 47,02-662,Warszawa,Radosław Oskiera,691830937,kontakt@effektiv.pl,właściciel
+637,"Firma Usługowo-Handlowa,,HOME-BUD"" Bogusław Skorupa",8461416487,mazowieckie,Zacisze 61/ 1,05-800,Pruszków,Bogusław Skorupka,500800384,boguslaw03@yahoo.com,0
+638,Instaluj Justyna Marczewska,8641879668,mazowieckie,"Ponarska, nr 4, lok. 23",03-890 ,Warszawa,Justyna Marczewska,796302905,hello@instaluj.com.pl,0
+639,ARKA Tomasz Piechowski,8761093249,mazowieckie,Wyszogrodzka 40,09-402,Płock,Grzegorz Golis,508921145,arka.grzegorz@wp.pl,kierownik oddzi.
+640,ERBUD S.A.,8790172253,mazowieckie,Franciszka Klimczaka 1,02-797,Warszawa,Krzysztof Żmijewski,664067488,krzysztof.zmijewski@erbud.pl,0
+641,ZIELONY LIŚĆ Sp. z o.o.,8792702241,mazowieckie,Ks. J. Poniatowskiego 1,03-901,Warszawa,Tomasz Mencwal,734459612,t.mencwal@zielonylisc.com,właściciel
+642,KLIMAN KACPER ZIELIŃSKI,8821978840,mazowieckie,Kuczki-Wieś 101,26-634,Kuczki-Wieś,Kacper Zieliński,klimando@o2.pl,klimando@o2.pl,0
+643,EVOTHERM oddział Warszawa,8943018101,mazowieckie,Bakalarska 34,02-212,Warszawa,Piotr Wojtunik,534348537,piotr.wojtunik@evotherm.pl,kierownik robót mechanicznych i sanitarnych
+644,ALFA Marek Komisaruk,9121014069,mazowieckie,Widawska 15/31,01-494,Warszawa,0,0,0,0
+645,ELEKTROM Krzysztof Romanowski,9181980537,mazowieckie,Szpitalna 12/92,05-270,Marki,Krzysztof Romanowski,698682692,krzysztof.elektrom@gmail.com,0
+646,Klimamika Agnieszka Mika,9222278077,mazowieckie,Zdziarska 57a,03-289,Warszawa,Damian Kulesza,694217390,d_kulesza@klimamika.pl,właściciel
+647,F.H.U ANDRES Andrzej Sozoniuk,9462170072,mazowieckie,Perkuna 54 lok. 29,04-180,Warszawa,Andrzej Sozoniuk,793480365,a.sozoniuk@andres.waw.pl,właściciel
+648,Klimatika Marek Bojek,9481803532,mazowieckie,Cicha 8/10/35,26-600,Radom,0,603465143,klimatika@op.pl,0
+649,IRMEX Usługi Ogólnobudowlane i Melioracyjne Mariusz Opolski,9481969988,mazowieckie,Szydłowiecka 52,26-600,Radom,Szymon Gąsior,668469407,gasior.szymon@wp.pl,z firmy gascon szymon gąsior
+650,TERMOFACH Jarosław Wielocha,9482058562,mazowieckie,Świerkowa 59,26-600,Radom,Jarosław Wielocha,513797007,termofach@wp.pl,właściciel
+651,CENTRUM INSTALACYJNE Patryk Rosik,9482114993,mazowieckie,Tatrzańska 4/ 2 ,26-600,Radom,Sławomir Marczewski,694706737,biuro@centruminstalacyjne.pl,wspólnik
+652,PROinstalacje.com Mariusz Olszewski,9482262587,mazowieckie,Pionierów 1,26-600,Radom,Mariusz Olszewski,510500565,m.olszewski@proinstalacje.com,0
+653,SALAX Maciej Sala,9482504033,mazowieckie,Błędów 21D,26-680,Wierzbica,Maciej Sala,791017005,biuro@salax.pl,0
+654,HVAC KOMFORT FRĄCZEK KRZYSZTOF,9482504671,mazowieckie,Płaska 18/ 1,26-600,Radom,Krzysztof Frączek,501972095,krzysztof@hvackomfort.pl,właściciel
+655,Witex Sp. z o.o.,9482601138,mazowieckie,Przemysłowa 15,26-600,Radom,0,604315709,biuro@witex.radom.pl,0
+656,ELSANTECH Sp. z o.o.,9482602439,mazowieckie,Lirowa 48,02-387,Warszawa,Cezary Lewandowski,785389678,c.lewandowski@elsantech.pl,0
+657,"Air Technology Siczek Paweł, Gadaszewski Arkadiusz s.c.",9482614023,mazowieckie,Długojowska 7,26-600,Radom,Paweł Siczek,532833110,pawelsiczek@op.pl,właściciel
+658,Bestpol Halina Godlewska,9510023418,mazowieckie,Baśniowa 23A,05-830,Stara Wieś,Rafał Godlewski,519308504,rafal@tk1.pl,właściciel
+659,Roman Paśnicki,9511109949,mazowieckie,Złotego Runa 22,05-830 ,Stara Wieś,Roman Paśnicki ,601397758,acs <acs.biuro@gmail.com>,0
+660,EURO KLIMA PIOTR WINNICKI,9511133882,mazowieckie,Langiewicza 121,05-080,Izabelin,Piotr Winnicki,888231666,euroklima@interia.eu,właściciel
+661,Termika Włodzimierz Rutkowski,9511317139,mazowieckie,Marii Dąbrowskiej 6B,05-800,Pruszków,Włodzimierz Rutkowski,504234774,biuro@termika-rutkowski.pl,właściciel
+662,"DOMY Z FINLANDII SPÓŁKA CYWILNA CECYLIA WAŚ, TOMASZ WAŚ",9512281225,mazowieckie,Łąkowa 8,05-077,Warszawa,TOMASZ WAŚ,693398076,biuro@domyzfinlandii.pl,0
+663,"KTD PRODUCENT DOMÓW SP. Z O.O., ŻYRARDÓW",9512289103,mazowieckie,JAKTOROWSKA 43,96-300,Żyrardów,Kamil Rokicki,0,kamil@kuptendom.pl,0
+664,Mares & SSI Polska Honorata Kacprzak,9512296391,mazowieckie,Jana Kazimierza 57/ 89,01-267,Warszawa,Przemysław Kacprzak,691444481,szkieletowe.domy.polska@gmail.com,0
+665,NooBo Quality Sp. z o.o.,9512369983,mazowieckie,Racjonalizacji 5/131,02-673,Warszawa,Michał Cygan,884884922,michal.cygan@telcomedia.pl,0
+666,I.E.T. Sp. z o.o.,9512388696,mazowieckie,Capri 5/34,02-762,Warszawa,Robert Adamczewski,885438438,biuro@iet.com.pl,właściciel
+667,ENERGY AIR Sp. z o.o.,9512417788,mazowieckie,Grzybowska 87,00-844,Warszawa,Piotr Behnke,513953100,biuro@energyair.pl,właściciel
+668,Hydros PSB sp. z o.o. ,9512479513,mazowieckie,Kulczyńskiego 14 pok. 31 ,02-777,Warszawa,Milena Biedrzycka  ,666020104,biuro@hydros.waw.pl ,0
+669,ATB PPHU Andrzej Berowski,9520006077,mazowieckie,Zalipie 13,04-625,Warszawa,Andrzej Berowski,501775514,formatb@wp.pl,właściciel
+670,GRUPA ARCH-BUD CZYŻEWSKI ARTUR,9521001478,mazowieckie,Lazurowa 1,05-074,Halinów,Artur Czyżewski,698638178,biuro@archbud.com,właściciel
+671,Art-Z  Agencja Handlowo-Usługowa Robert Załęski,9521016066,mazowieckie,Konwisarska 80,04-407,Warszawa,Robert Załęski,668272098,tanio@taniogrzej.pl,0
+672,PODMIOT ZAWIESZONY – PHU  DARIUSZ ADAMSKI,9521181813,mazowieckie,,04-044,Warszawa,Dariusz Adamski,601364907,dariuszadamski@klimatrio.pl,właściciel
+673,,,,Bracławska 10/78,,,,,,
+674,"PRZEDSIĘBIORSTWO USŁUGOWO-HANDLOWE ""ELDOM"" MALISZKIEWICZ SŁAWOMIR",9521218551,mazowieckie,Kossaka 11,05-070,Sulejówek,Sławomir Maliszkiewicz,601345135,maliszkiewicz@eldom-instal.pl,0
+675,MARBUD Paweł Rudnik,9521712222,mazowieckie,Polna 170A,05-311,Dębe Wielkie,Paweł Rudnik,603555572,pawel.rudnik@interia.pl,właściciel
+676,KDM System Dariusz Świderski,9522045621,mazowieckie,Obrońców Tobruku 23 lok 82,01-494,Warszawa,Sebastan Sawicki,697331103,s.sawicki@kdmsystem.pl,kierownik działu projektów
+677,KLIMEDO s.c. Robert Gryszkiewicz Marcin Strzałkowski,9522195332,mazowieckie,Zwoleńska 120/ 2,04-761,Warszawa,Lena Nesimko,505515615,lena.nesimko@klimedo.pl,dział inwestycji
+678,MK INSTALACJE GRZEWCZE K. Kosewski M. Lis s.c.,9522210793,mazowieckie,Narodowa 31,03-987,Warszawa,Mariusz Lis,791015956,mk.instalacje.grzewcze@gmail.com,0
+679,Klimvent Solutions Sp. z o.o.,9522218607,mazowieckie,Zwoleńska 120 lok.11,04-761,Warszawa,Marcin Strzałkowski,533303450,marcin@klimedo.com,0
+680,"ZUHP EKO-INSTAL R. Chabowski, G. Śmigielski Sp.j. oddział Warszawa",9530153940,mazowieckie,Trakt Lubelski 166,04-790,Warszawa ,Robert Persiński,666052004,r.persinski@eko-instal.ik.pl,specjalista ds. sprzedaży
+681,Teralwent Tomasz Kufel,9570678181,mazowieckie,Zegrzyńska 33/6,05-119,Legionowo,Tomek Kufel,606499983,kontakt@teralwent.pl,właściciel
+682,DAVENTA Michał Dziadosz,9590146470,mazowieckie,Al. Bohaterów Września 9,00-973,Warszawa,Michał Dziadosz,510261918,md@daventa.pl,właściciel
+683,Piotr Walendziuk,9661923539,mazowieckie,Ejtnera 23/1,05-230,Kobyłka,Piotr Walendziuk,606743007,cieplowchacie@gmail.com,0
+684,Dawid Ciecierski Studio Pomysłów,9671303896,mazowieckie,Targowa 13,05-120,Legionowo,Dawid Ciecierski,dawid.ciecierski@gmail.com,dawid.ciecierski@gmail.com,0
+685,DREWNAR Zbigniew Majchrzak,9710073295,mazowieckie,Helenów 6c,09-500,Gostynin,Bartosz Majchrzak,509116818,b.majchrzak@drewnar.pl,dział tech.-hand.
+686,ZAKŁAD HANDLOWO - USŁUGOWY SYLWESTER STAWICKI,9710112859,mazowieckie,Kępina 11,09-530,Kępina,Sylwester Stawicki,604128711,kontakt@prostawicki.pl,0
+687,FAIR AIR MARTA LUBICZ-NOWICKA,9710710299,mazowieckie,Nad Lasem 9,05-831,Krakowiany,Piotr Lubicz-Nowicki,730187471,kontakt@fairair.waw.pl,0
+688,EPV FOTO Sp. z o.o.,9710730304,mazowieckie,Kolonia 60B,09-500,Gostynin,Marcin Mańkowski,531127808,m.mankowski@emsol.com.pl,0

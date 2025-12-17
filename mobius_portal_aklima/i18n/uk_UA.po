@@ -1,0 +1,501 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mobius_portal_aklima
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20230206\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-04 16:13+0000\n"
+"PO-Revision-Date: 2024-12-04 16:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.portal_my_home
+msgid "/my/building_objects"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.payment_confirmation_status
+msgid "<b> Open Sale Order: </b>"
+msgstr "<b> Відкрити замовлення: </b>"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.total_two
+msgid "<em>Delivery included</em>"
+msgstr "<em>Доставка включена в ціні</em>"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.sale_order_portal_template
+msgid "<i class=\"fa fa-check\"/>Confirm Order"
+msgstr "<i class=\"fa fa-check\"/>Підтвердити замовлення"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.sale_order_portal_template
+msgid "<i class=\"fa fa-download\"/> Download"
+msgstr "<i class=\"fa fa-download\"/> Завантажити"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.sale_order_portal_id
+msgid "<i class=\"fa fa-download\"/> Download PRO-FORMA"
+msgstr "<i class=\"fa fa-download\"/> Завантажити PRO-FORMA"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.sale_order_portal_template
+msgid "<i class=\"fa fa-print\"/> Print"
+msgstr "<i class=\"fa fa-print\"/> Друкувати"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_objects_form
+msgid ""
+"<span class=\"\">Edit</span>\n"
+"                                                        <span class=\"fa fa-chevron-right\"/>"
+msgstr ""
+"<span class=\"\">Відредагувати</span>\n"
+"                                                        <span class=\"fa fa-chevron-right\"/>"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_objects_list
+msgid "<span class=\"d-none d-md-inline\">Country</span>"
+msgstr "<span class=\"d-none d-md-inline\">Країна</span>"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_objects_list
+msgid "<span class=\"d-none d-md-inline\">Name</span>"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_objects_list
+msgid "<span class=\"d-none d-md-inline\">State</span>"
+msgstr "<span class=\"d-none d-md-inline\">Область</span>"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_object_edit
+msgid "<span class=\"text-muted mb-0\">Set now </span>"
+msgstr "<span class=\"text-muted mb-0\">Встановлено зараз </span>"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.sale_order_portal_content_inherit
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.sale_order_portal_content
+msgid "<strong>Building Object:</strong>"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.total_two
+msgid "<strong>Total:</strong>"
+msgstr "<strong>Загально:</strong>"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.product_addcart_inherit
+msgid "Add to Cart"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: code:addons/mobius_portal_aklima/models/sale_order.py:0
+#, python-format
+msgid "Availability is negotiated with the seller"
+msgstr "Доступність узгоджується з продавцем"
+
+#. module: mobius_portal_aklima
+#: code:addons/mobius_portal_aklima/models/sale_order.py:0
+#, python-format
+msgid "Available"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: code:addons/mobius_portal_aklima/models/sale_order.py:0
+#, python-format
+msgid "Available within 5 days"
+msgstr "Доступно протягом 5 днів"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.portal_layout
+msgid "Building Objects"
+msgstr "Об'єкти будови"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.portal_my_home
+msgid "Builging Objects"
+msgstr "Об'єкти будови"
+
+#. module: mobius_portal_aklima
+#. openerp-web
+#: code:addons/mobius_portal_aklima/static/src/js/website_sale_delivery.js:0
+#, python-format
+msgid "Calculate"
+msgstr "Обрахувати"
+
+#. module: mobius_portal_aklima
+#: code:addons/mobius_portal_aklima/controller/portal.py:0
+#, python-format
+msgid ""
+"Changing VAT number is not allowed once document(s) have been issued for "
+"your account. Please contact us directly for this operation."
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_object_edit
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_objects_form
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.create_building_object_form
+msgid "City"
+msgstr "Місто"
+
+#. module: mobius_portal_aklima
+#: model:ir.model,name:mobius_portal_aklima.model_res_config_settings
+msgid "Config Settings"
+msgstr "Налаштування"
+
+#. module: mobius_portal_aklima
+#: code:addons/mobius_portal_aklima/models/sale_order.py:0
+#, python-format
+msgid "Confirm Order"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_object_edit
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_objects_form
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.create_building_object_form
+msgid "Country"
+msgstr "Країна"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_object_edit
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.create_building_object_form
+msgid "Country..."
+msgstr "Країна..."
+
+#. module: mobius_portal_aklima
+#: model:website.menu,name:mobius_portal_aklima.menu_create_building_object_form
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.create_building_object_form
+msgid "Create Building Object"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: code:addons/mobius_portal_aklima/models/sale_order.py:0
+#, python-format
+msgid "Create Quotation"
+msgstr "Створити Пропозицію"
+
+#. module: mobius_portal_aklima
+#: model:ir.model.fields,field_description:mobius_portal_aklima.field_sale_order__created_from_website
+msgid "Created From Website"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model:ir.model.fields,field_description:mobius_portal_aklima.field_stock_location__customs_cleared_product
+msgid "Custom Cleared Product"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.res_config_settings_view_form
+msgid "Days:"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model:ir.model.fields,field_description:mobius_portal_aklima.field_sale_order__amount_delivery
+msgid "Delivery"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.total_two
+msgid "Delivery:"
+msgstr "Доставка"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.sale_order_portal_template
+msgid "Download"
+msgstr "Завантажити"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.sale_order_portal_id
+msgid "Download PRO-FORMA"
+msgstr "Завантажити PRO-FORMA"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_object_edit
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_objects_form
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.create_building_object_form
+msgid "End Date"
+msgstr "Дата кінця"
+
+#. module: mobius_portal_aklima
+#. openerp-web
+#: code:addons/mobius_portal_aklima/static/src/js/website_sale_delivery.js:0
+#, python-format
+msgid "Free"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: code:addons/mobius_portal_aklima/controller/portal.py:0
+#, python-format
+msgid "Invalid Email! Please enter a valid email address."
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: code:addons/mobius_portal_aklima/controller/portal.py:0
+#, python-format
+msgid "Invalid order."
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: code:addons/mobius_portal_aklima/controller/portal.py:0
+#, python-format
+msgid "Invalid signature data."
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model:ir.model,name:mobius_portal_aklima.model_stock_location
+msgid "Inventory Locations"
+msgstr "Місцезнаходження на складі"
+
+#. module: mobius_portal_aklima
+#: code:addons/mobius_portal_aklima/controller/portal.py:0
+#, python-format
+msgid ""
+"It seems that a delivery method is not compatible with your address. Please "
+"refresh the page and try again."
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: code:addons/mobius_portal_aklima/controller/portal.py:0
+#, python-format
+msgid ""
+"It seems that there is already a transaction for your order, you can not "
+"change the delivery method anymore"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.res_config_settings_view_form_inherit
+msgid "Message"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_object_edit
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_objects_form
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.create_building_object_form
+msgid "Object Name"
+msgstr "Назва"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.res_config_settings_view_form_inherit
+msgid "Only if below"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: code:addons/mobius_portal_aklima/controller/portal.py:0
+#, python-format
+msgid "Order signed by %s"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model:ir.model.fields,field_description:mobius_portal_aklima.field_res_config_settings__out_of_stock_message
+msgid "Out-of-Stock Message"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model:ir.model,name:mobius_portal_aklima.model_payment_transaction
+msgid "Payment Transaction"
+msgstr "Платіжна операція"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.sale_order_portal_template
+msgid "Print"
+msgstr "Друкувати"
+
+#. module: mobius_portal_aklima
+#: model:ir.model,name:mobius_portal_aklima.model_product_product
+msgid "Product"
+msgstr "Товар"
+
+#. module: mobius_portal_aklima
+#: model:ir.model,name:mobius_portal_aklima.model_product_template
+msgid "Product Template"
+msgstr "Шаблон товару"
+
+#. module: mobius_portal_aklima
+#: model:ir.model,name:mobius_portal_aklima.model_stock_quant
+msgid "Quants"
+msgstr "Кількості"
+
+#. module: mobius_portal_aklima
+#: code:addons/mobius_portal_aklima/controller/portal.py:0
+#, python-format
+msgid "Quotation viewed by customer %s"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model:ir.model.fields,field_description:mobius_portal_aklima.field_product_product__rounding
+msgid "Rounding Precision"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model:ir.model,name:mobius_portal_aklima.model_sale_order
+msgid "Sales Order"
+msgstr "Замовлення на продаж"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_object_edit
+msgid "Save"
+msgstr "Зберегти"
+
+#. module: mobius_portal_aklima
+#: model:ir.model.fields,field_description:mobius_portal_aklima.field_res_config_settings__available_threshold
+msgid "Show Threshold"
+msgstr "Показати поріг"
+
+#. module: mobius_portal_aklima
+#: model:ir.model.fields,field_description:mobius_portal_aklima.field_res_config_settings__use_product_show_availability
+msgid "Show availability Qty"
+msgstr "Показати доступну к-сть"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.res_config_settings_view_form_inherit
+msgid "Show on web product available"
+msgstr "Показати доступність товару на сайті"
+
+#. module: mobius_portal_aklima
+#: code:addons/mobius_portal_aklima/controller/portal.py:0
+#, python-format
+msgid "Signature is missing."
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: code:addons/mobius_portal_aklima/controller/portal.py:0
+#, python-format
+msgid "Some required fields are empty."
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_object_edit
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_objects_form
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.create_building_object_form
+msgid "Start Date"
+msgstr "Дата початку"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_objects_form
+msgid "State"
+msgstr "Область"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_object_edit
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.create_building_object_form
+msgid "State / Province"
+msgstr "Область"
+
+#. module: mobius_portal_aklima
+#: model:ir.model.fields,field_description:mobius_portal_aklima.field_stock_location__add_quant_to_website
+msgid "Stock For WebSite"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_object_edit
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_objects_form
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.create_building_object_form
+msgid "Street"
+msgstr "Вулиця"
+
+#. module: mobius_portal_aklima
+#: model:ir.model.fields,field_description:mobius_portal_aklima.field_sale_order__amount_tax_custom
+msgid "Taxes Custom"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.total_two
+msgid "Taxes:"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model:ir.model.fields,help:mobius_portal_aklima.field_sale_order__created_from_website
+msgid "Technical field"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model:ir.model.fields,help:mobius_portal_aklima.field_sale_order__amount_delivery
+msgid "The amount without tax."
+msgstr "Сума без податків"
+
+#. module: mobius_portal_aklima
+#: model:ir.model.fields,help:mobius_portal_aklima.field_product_product__rounding
+msgid ""
+"The computed quantity will be a multiple of this value. Use 1.0 for a Unit "
+"of Measure that cannot be further split, such as a piece."
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: code:addons/mobius_portal_aklima/controller/portal.py:0
+#, python-format
+msgid "The order is not in a state requiring customer signature."
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.res_config_settings_view_form
+msgid "The relevance of the order created with a website."
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_objects_list
+msgid "There are currently no building objects for your account."
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model:ir.model.fields,field_description:mobius_portal_aklima.field_sale_order__amount_total_custom
+msgid "Total Custom"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_object_edit
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_objects_form
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.create_building_object_form
+msgid "Total Power"
+msgstr "Загальна потужність"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.res_config_settings_view_form_inherit
+msgid "Units"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model:ir.actions.server,name:mobius_portal_aklima.use_validity_period_for_order_created_with_website_action_ir_cron_ir_actions_server
+#: model:ir.cron,cron_name:mobius_portal_aklima.use_validity_period_for_order_created_with_website_action_ir_cron
+#: model:ir.cron,name:mobius_portal_aklima.use_validity_period_for_order_created_with_website_action_ir_cron
+#: model:ir.model.fields,field_description:mobius_portal_aklima.field_res_config_settings__use_validity_period_for_order_created_with_website
+msgid "Validity Period For Order"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model:ir.model.fields,field_description:mobius_portal_aklima.field_res_config_settings__validity_period_for_order_created_with_website_days
+msgid "Validity Period For Order (Days)"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model:ir.model,name:mobius_portal_aklima.model_website
+msgid "Website"
+msgstr "Веб-сайт"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_object_edit
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_objects_form
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.create_building_object_form
+msgid "ZIP"
+msgstr "Поштовий індекс"
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.res_config_settings_view_form
+msgid "days"
+msgstr ""
+
+#. module: mobius_portal_aklima
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.building_object_edit
+#: model_terms:ir.ui.view,arch_db:mobius_portal_aklima.create_building_object_form
+msgid "select..."
+msgstr ""

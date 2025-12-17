@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_category_property_form" model="ir.ui.view">
+        <field name="name">product.category.form</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <group name="first" position="after">
+                <group name="product_attribute">
+                    <field name="product_attribute_ids" string="Product Attribute" widget="one2many_list"/>
+                </group>
+            </group>
+        </field>
+    </record>
+</odoo>

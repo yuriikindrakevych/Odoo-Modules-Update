@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_automatic_delivery_sale_order_form" model="ir.ui.view">
+        <field name="name">automatic.delivery.sale.order.form</field>
+        <field name="model">automatic.delivery.sale.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <div class="d-flex justify-content-start">
+                        <span style="weight: bold; font-size: 16px;margin-right: 5px;">Cost</span>
+                        <field name="cost_operator"
+                            style="width:5%%; weight: bold;font-size: 16px;margin-right: 5px;text-align: center;"/>
+                        <field name="cost" style="width:10%%"/>
+                    </div>
+                    <span style="weight: bold; font-size: 16px;margin-left: 5%">AND</span>
+                    <div class="d-flex justify-content-start">
+                        <span style="weight: bold; font-size: 16px;margin-right: 5px;">Weight</span>
+                        <field name="weight_operator"
+                            style="width:5%%; weight: bold;font-size: 16px;margin-right: 5px; text-align: center;"/>
+                        <field name="weight" style="width:10%%"/>
+                    </div>
+                    <br/>
+                    <span style="font-size: 16px;">Automatic delivery if the condition is met </span>
+                    <field name="automatic_delivery_condition_is_met" style="width:10%%; font-size: 16px;"/>
+                    <br/>
+                    <div class="d-flex justify-content-start">
+                        <span style="font-size: 16px; margin-right: 10px; display: grid;align-items: center;">
+                            Automatic delivery if the condition is NOT met
+                        </span>
+                        <field name="automatic_delivery_condition_is_not_met"
+                            style="width:10%%; font-size: 16px; margin-right: 10px;display: grid;align-items: center;"/>
+
+
+                        <span class="align-middle" 
+                            style="weight: bold; font-size: 16px;margin-right: 5px;display: grid; align-items: center;">
+                            Weight
+                        </span>
+                        <field class="align-middle" name="weight_operator_not_met"
+                            style="width:5%%; weight: bold;font-size: 16px;margin-right: 5px;text-align: center;display: grid; align-items: center;"/>
+
+                        <field class="align-middle" name="weight_not_met" 
+                            style="width:10%%; font-size: 16px; weight: bold;display: grid;align-items: center;"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_automatic_delivery_sale_order_tree" model="ir.ui.view">
+        <field name="name">automatic.delivery.sale.order.tree</field>
+        <field name="model">automatic.delivery.sale.order</field>
+        <field name="arch" type="xml">
+            <tree string="Rule Automatic Delivery">
+                <field name="name" decoration-bf="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_automatic_delivery_sale_order_open" model="ir.actions.act_window">
+        <field name="name">Rule Template</field>
+        <field name="res_model">automatic.delivery.sale.order</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_automatic_delivery_sale_order_open_tree" model="ir.actions.act_window.view">
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_automatic_delivery_sale_order_tree"/>
+    </record>
+
+    <record id="action_automatic_delivery_sale_order_open_form" model="ir.actions.act_window.view">
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_automatic_delivery_sale_order_form"/>
+    </record>
+
+</odoo>

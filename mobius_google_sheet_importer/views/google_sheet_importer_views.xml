@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="mobius_google_sheet_importer_view_google_sheet_importer_form" model="ir.ui.view">
+        <field name="name">google.sheet.importer.form (mobius_google_sheet_importer)</field>
+        <field name="model">google.sheet.importer</field>
+        <field name="inherit_id" ref="google_sheet_importer.view_google_sheet_importer_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group/group[2]" position="inside">
+                <field name="nextcall" readonly="True"/>
+                <field name="active" widget="boolean_toggle"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Constant Fields" attrs="{'invisible': [('mapping_model_is_contact','=', False)]}">
+                    <group>
+                        <field name="mapping_model_is_contact" invisible="1"/>
+                        <field name="user_id" options="{'no_create': True}" attrs="{'required': [('mapping_model_is_contact','!=', False)]}"/>
+                        <field name="source_id" options="{'no_create': True}" attrs="{'required': [('mapping_model_is_contact','!=', False)]}"/>
+                        <field name="category_ids" widget="many2many_tags" options="{'no_create': True}" attrs="{'required': [('mapping_model_is_contact','!=', False)]}"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

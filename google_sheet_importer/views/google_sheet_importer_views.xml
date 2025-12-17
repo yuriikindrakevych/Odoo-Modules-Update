@@ -1,0 +1,97 @@
+<odoo>
+    <record id="view_google_sheet_importer_search" model="ir.ui.view">
+        <field name="name">google.sheet.importer.search</field>
+        <field name="model">google.sheet.importer</field>
+        <field name="arch" type="xml">
+            <search string="Google Sheet Importer">
+                <field name="name"/>
+                <field name="worksheet_name"/>
+                <field name="mapping_model_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_google_sheet_importer_tree" model="ir.ui.view">
+        <field name="name">google.sheet.importer.tree</field>
+        <field name="model">google.sheet.importer</field>
+        <field name="arch" type="xml">
+            <tree string="Google Sheet Importer">
+                <field name="name" string="Sheet Name"/>
+                <field name="worksheet_name"/>
+                <field name="mapping_model_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_google_sheet_importer_form" model="ir.ui.view">
+        <field name="name">google.sheet.importer.form</field>
+        <field name="model">google.sheet.importer</field>
+        <field name="arch" type="xml">
+            <form string="Google Sheet Importer">
+                <header>
+                    <button name="execute_import" type="object" string="Import" class="oe_highlight"/>
+                    <button name="action_fetch_headers" type="object" string="Fetch Headers"/>
+                </header>
+                <sheet>
+                    <field name="active" invisible="1"/>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" string="Sheet Name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Google Sheet API Credentials">
+                            <field name="google_sheet_id"/>
+                            <field name="worksheet_name"/>
+                            <field name="service_account_credentials" widget="binary"/>
+                        </group>
+                        <group string="Schedule">
+                            <label for="interval_number" string="Execute Every"/>
+                            <div>
+                                <field name="interval_number" class="oe_inline"/>
+                                <field name="interval_type" class="oe_inline"/>
+                            </div>
+                        </group>
+                        <group string="Model">
+                            <field name="mapping_model_id" required="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Field Mappings">
+                            <field name="field_mapping_ids">
+                                <tree editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="sheet_header"/>
+                                    <field name="odoo_field" domain="[('model_id', '=', mapping_model_id)]"/>
+                                    <field name="mandatory"/>
+                                    <field name="duplicate_check"/>
+                                    <field name="import_id" invisible="1"/>
+                                    <field name="mapping_model_id" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_google_sheet_importer" model="ir.actions.act_window">
+        <field name="name">Google Sheet Importer</field>
+        <field name="res_model">google.sheet.importer</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_google_sheet_importer_search"/>
+    </record>
+
+    <menuitem id="menu_google_sheet_importer"
+              name="Google Sheet Importer"
+              action="action_google_sheet_importer"
+              web_icon="google_sheet_importer,static/description/icon.png"
+              sequence="499"/>
+</odoo>

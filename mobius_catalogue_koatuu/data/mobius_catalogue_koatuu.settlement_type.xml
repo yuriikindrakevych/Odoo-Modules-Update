@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="settype_k" model="mobius_catalogue_koatuu.settlement_type">
+            <field name="category">K</field>
+            <field name="name">Місто, що має спеціальний статус</field>
+        </record>
+        <record id="settype_m" model="mobius_catalogue_koatuu.settlement_type">
+            <field name="category">M</field>
+            <field name="name">Місто</field>
+        </record>
+        <record id="settype_t" model="mobius_catalogue_koatuu.settlement_type">
+            <field name="category">Т</field>
+            <field name="name">Селище міського типу</field>
+        </record>
+        <record id="settype_c" model="mobius_catalogue_koatuu.settlement_type">
+            <field name="category">C</field>
+            <field name="name">Село</field>
+        </record>
+        <record id="settype_x" model="mobius_catalogue_koatuu.settlement_type">
+            <field name="category">X</field>
+            <field name="name">Селище</field>
+        </record>
+    </data>
+</odoo>

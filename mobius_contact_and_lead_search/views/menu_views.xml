@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem name="General Search"
+        id="mobius_contact_and_lead_search_menu_general_search"
+        sequence="50"
+        web_icon="mobius_contact_and_lead_search,static/description/icon.png"/>
+
+    <menuitem id="general_search_by_models_menu_general_search_main"
+        name="New search"
+        action="mobius_contact_and_lead_search.mobius_contact_and_lead_search_action_general_search_by_models_form"
+        parent="mobius_contact_and_lead_search_menu_general_search"
+        sequence="2"/>
+
+    <menuitem id="general_search_by_models_menu_general_search_tree"
+        name="All searches"
+        action="mobius_contact_and_lead_search.mobius_contact_and_lead_search_action_general_search_by_models"
+        parent="mobius_contact_and_lead_search_menu_general_search"
+        sequence="3"/>
+
+</odoo>

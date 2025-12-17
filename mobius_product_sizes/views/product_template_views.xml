@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.common.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='weight']" position="after">
+                <label for="length" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}"/>
+                <div class="o_row" name="length" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}">
+                    <field name="length"/>
+                </div>
+            </xpath>
+
+            <field name="length" position="after">
+                <field name="length_uom_id" options="{'no_open': True, 'no_create': True}" groups="uom.group_uom"/>
+            </field>
+
+
+            <xpath expr="//div[@name='length']" position="after">
+                <label for="width" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}"/>
+                <div class="o_row" name="width" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}">
+                    <field name="width"/>
+                </div>
+            </xpath>
+
+            <field name="width" position="after">
+                <field name="width_uom_id" options="{'no_open': True, 'no_create': True}" groups="uom.group_uom"/>
+            </field>
+
+
+            <xpath expr="//div[@name='width']" position="after">
+                <label for="height" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}"/>
+                <div class="o_row" name="height" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}">
+                    <field name="height"/>
+                </div>
+            </xpath>
+
+            <field name="height" position="after">
+                <field name="height_uom_id" options="{'no_open': True, 'no_create': True}" groups="uom.group_uom"/>
+            </field>
+        </field>
+    </record>
+</odoo>

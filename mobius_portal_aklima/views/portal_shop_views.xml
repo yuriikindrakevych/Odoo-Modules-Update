@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="mobius_portal_aklima.products_item" inherit_id="website_sale.products_item">
+        <xpath expr="//div[hasclass('product_price')]" position="replace">
+            <div class="product_price mb-1" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
+                <t t-if="combination_info['is_seller_agreement']">
+                    <span class="h5">Agree with seller</span>
+                </t>
+                <t t-else="">
+                    <span class="h5" t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                    <del t-attf-class="text-danger ml-1 h6 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                    <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />
+                    <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
+                </t>
+            </div>
+        </xpath>
+
+       <xpath expr="//div[hasclass('product_price')]" position="after">
+            <h6 class="o_wsale_products_item_title mb-1">
+                <t t-if="combination_info['show_available_info']">
+                    <span class="text-primary text-decoration-none" itemprop="name"
+                        t-att-content="combination_info['available_quantity']" t-out="combination_info['stock_message']"/>
+                </t>
+            </h6>
+       </xpath>
+    </template>
+
+
+
+
+    <template id="mobius_portal_aklima.product_price_inherit" inherit_id="website_sale.product_price" name="Shop Price Hide">
+        <xpath expr="//div[hasclass('product_price','mt-2','mb-3')]" position="replace">
+            <div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer" class="product_price d-inline-block mt-2 mb-3">
+                <t t-if="combination_info['is_seller_agreement']">
+                    <span class="h5">Agree with seller</span>
+                </t>
+                <t t-else="">
+                    <h3 class="css_editable_mode_hidden">
+                      <span class="oe_price" style="white-space: nowrap;" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                      <span itemprop="price" style="display:none;" t-esc="combination_info['price']"/>
+                      <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name"/>
+                      <span t-attf-class="text-danger oe_default_price ml-1 h5 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="text-decoration: line-through; white-space: nowrap;"
+                          t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
+                      />
+                    </h3>
+                    <h3 class="css_non_editable_mode_hidden decimal_precision" t-att-data-precision="str(website.currency_id.decimal_places)">
+                    <span t-field="product.list_price"
+                        t-options='{
+                           "widget": "monetary",
+                           "display_currency": product.currency_id,
+                       }'/>
+                    </h3>
+                </t>
+              </div>
+        </xpath>
+
+        <xpath expr="//div[hasclass('product_price','mt-2','mb-3')]" position="attributes">
+            <attribute name="t-if">not user_id.partner_id.name == 'Public user'</attribute>
+        </xpath>
+
+    </template>
+
+    <template id="mobius_portal_aklima.configure_optional_products" inherit_id="sale_product_configurator.configure_optional_products">
+        <xpath expr="//td[hasclass('td-price')]" position="replace">
+                <td class="text-center td-price" name="price">
+                    <t t-if="combination_info['is_seller_agreement']">
+                        <div t-attf-class="text-danger oe_default_price oe_striked_price {{'' if combination_info['has_discounted_price'] else 'd-none'}}"
+                            t-esc="float(0)"
+                            t-options='{
+                                "widget": "monetary",
+                                "display_currency": (pricelist or product).currency_id
+                            }'
+                        />
+                        <span class="oe_price product_id" style="white-space: nowrap;"
+                            t-att-data-product-id="product.id"
+                            t-esc="float(0)"
+                            t-options='{
+                                "widget": "monetary",
+                                "display_currency": (pricelist or product).currency_id
+                            }'/>
+                        <span class="js_raw_price d-none" t-esc="float(0)"/>
+                        <p class="css_not_available_msg alert alert-warning">Option not available</p>
+
+                    </t>
+                    <t t-else="">
+                        <div t-attf-class="text-danger oe_default_price oe_striked_price {{'' if combination_info['has_discounted_price'] else 'd-none'}}"
+                            t-esc="combination_info['list_price']"
+                            t-options='{
+                                "widget": "monetary",
+                                "display_currency": (pricelist or product).currency_id
+                            }'
+                        />
+                        <span class="oe_price product_id" style="white-space: nowrap;"
+                            t-att-data-product-id="product.id"
+                            t-esc="combination_info['price']"
+                            t-options='{
+                                "widget": "monetary",
+                                "display_currency": (pricelist or product).currency_id
+                            }'/>
+                        <span class="js_raw_price d-none" t-esc="combination_info['price']"/>
+                        <p class="css_not_available_msg alert alert-warning">Option not available</p>
+                    </t>
+                </td>
+        </xpath>
+
+    </template>
+
+
+    <template id="mobius_portal_aklima.products_item_inherit" inherit_id="website_sale.products_item" name="Shop Price Hide">
+        <xpath expr="//div[hasclass('product_price')]" position="attributes">
+            <attribute name="t-if">product.product_variant_ids and not user_id.partner_id.name == 'Public user'</attribute>
+        </xpath>
+    </template>
+
+    <template id="mobius_portal_aklima.product_addcart_inherit" inherit_id="website_sale.product" name="Shop Price Hide">
+        <xpath expr="//a[@id='add_to_cart']" position="replace">
+            <a id="add_to_cart" t-if="not user_id.partner_id.name == 'Public user'" class="btn btn-primary btn-lg mt8 js_check_product a-submit" href="#">Add to Cart</a>
+        </xpath>
+    </template>
+
+    <template id="mobius_portal_aklima.products_addcart_icon_inherit" inherit_id="website_sale.products_add_to_cart" name="Shop Price Hide">
+        <xpath expr="//span[@class='fa fa-shopping-cart']" position="attributes">
+            <attribute name="style">display:none;</attribute>
+        </xpath>
+    </template>
+
+    <!--                <t t-if="combination_info['available_quantity'] != 0">-->
+<!--                    <t t-if="combination_info['show_availability']">-->
+<!--                        <span class="text-primary text-decoration-none" itemprop="name" -->
+<!--                            t-att-content="combination_info['available_quantity']"> Available-->
+<!--                            <span t-esc="str(combination_info['available_quantity'])"/></span>-->
+<!--                    </t>-->
+<!--                </t>-->
+<!--                <t t-else="">-->
+<!--                        <t t-if="combination_info['has_out_of_stock_message']">-->
+<!--                            <span class="text-primary text-decoration-none" itemprop="name"-->
+<!--                                t-att-content="combination_info['available_quantity']" t-out="combination_info['out_of_stock_message']"/>-->
+<!--                        </t>-->
+<!--                </t>-->
+
+    <template id="mobius_portal_aklima.total_two" inherit_id="website_sale.total">
+        <xpath expr="//div//table//tr[@id='order_total_untaxed']" position="after">
+            <t t-if="website_sale_order.state == 'draft'">
+                <tr id="order_delivery">
+                    <td class="text-right border-0">Delivery:</td>
+                    <td class="text-xl-right border-0">
+                        <span t-field="website_sale_order.amount_delivery" class="monetary_field"
+                            style="white-space: nowrap;"
+                            t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}"/>
+                    </td>
+                </tr>
+            </t>
+            <t t-else="">
+                <t t-set="text" t-value="request.session.uid"/>
+            </t>
+        </xpath>
+        <xpath expr="//div//table//tr[@id='order_total']" position="replace">
+                <t t-if="website_sale_order.state == 'draft'">
+                  <tr id="order_total">
+                      <td class="text-right"><strong>Total:</strong></td>
+                      <td class="text-xl-right">
+                          <strong t-field="website_sale_order.amount_total_custom" class="monetary_field"
+                              t-options='{"widget": "monetary", "display_currency": website_sale_order.pricelist_id.currency_id}'/>
+                      </td>
+                  </tr>
+                </t>
+                <t t-else="">
+                    <tr id="order_total">
+                      <td class="text-right"><strong>Total:</strong></td>
+                      <td class="text-xl-right">
+                          <strong t-field="website_sale_order.amount_total" class="monetary_field"
+                              t-options='{"widget": "monetary", "display_currency": website_sale_order.pricelist_id.currency_id}'/>
+                      </td>
+                    </tr>
+                    <tr style="border: 0px solid white; text-align: end;">
+                        <br/>
+                        <td style="text-right"></td>
+                        <td class="text-xl-right"><em>Delivery included</em></td>
+                    </tr>
+
+                </t>
+        </xpath>
+        <xpath expr="//div//table//tr[@id='order_total_taxes']" position="replace">
+            <t t-if="website_sale_order.state == 'draft'">
+                  <tr id="order_total_taxes">
+                      <td class="text-right border-0">Taxes:</td>
+                      <td class="text-xl-right border-0">
+                           <span t-field="website_sale_order.amount_tax_custom" class="monetary_field" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}" />
+                      </td>
+                  </tr>
+            </t>
+            <t t-else="">
+                  <tr id="order_total_taxes">
+                      <td class="text-right border-0">Taxes:</td>
+                      <td class="text-xl-right border-0">
+                           <span t-field="website_sale_order.amount_tax" class="monetary_field" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}" />
+                      </td>
+                  </tr>
+            </t>
+        </xpath>
+    </template>
+
+
+    <template id="mobius_portal_aklima.payment_delivery_shipping_method" inherit_id="website_sale_delivery.payment_delivery_shipping_method">
+        <xpath expr="//div[hasclass('mt4')]" position="replace">
+            <t t-set="text" t-value="request.session.uid"/>
+        </xpath>
+    </template>
+
+    <template id="mobius_portal_aklima.portal_sidebar" inherit_id="sale.sale_order_portal_template">
+        <xpath expr="//div[hasclass('justify-content-center')]//t//div//a[hasclass('btn-primary')]" position="replace">
+            <t t-set="text" t-value="request.session.uid"/>
+        </xpath>
+        <xpath expr="//div[hasclass('justify-content-center')]//div[last()]" position="replace">
+            <t t-set="text" t-value="request.session.uid"/>
+        </xpath>
+    </template>
+
+
+    <template id="mobius_portal_aklima.payment_confirmation_status" inherit_id="website_sale.payment_confirmation_status">
+        <xpath expr="//div[hasclass('card-body')]" position="replace">
+            <a t-attf-href='/my/orders/#{order.id}/?access_token=#{order.access_token}' style="color: white">
+                <b> Open Sale Order: </b><span t-esc='order.reference'/>
+            </a>
+        </xpath>
+    </template>
+
+    <template id="mobius_portal_aklima.cart_delivery" inherit_id="website_sale_delivery.cart_delivery">
+        <xpath expr="//tr[@id='order_delivery']" position="replace">
+            <t t-set="text" t-value="request.session.uid"/>
+        </xpath>
+
+    </template>
+
+    <template id="mobius_portal_aklima.payment_delivery_methods" inherit_id="website_sale_delivery.payment_delivery_methods">
+         <xpath expr="//input" position="replace">
+            <input t-att-value="delivery.id" t-att-id="'delivery_%i' % delivery.id" type="radio" name="delivery_type" t-att-checked="delivery.id == 9 or False" t-att-class="'d-none' if delivery_nb == 1 else ''"/>
+         </xpath>
+    </template>
+
+
+</odoo>
+<!-- t-esc="'Available ' + str(combination_info['available_quantity'])"
+t-esc="str('Out of stock')" -->

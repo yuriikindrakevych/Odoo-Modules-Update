@@ -1,0 +1,46 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mobius_advanced_calendar_aklima
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20230206\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-10 08:37+0000\n"
+"PO-Revision-Date: 2024-01-10 08:37+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mobius_advanced_calendar_aklima
+#: model:ir.model.fields,field_description:mobius_advanced_calendar_aklima.field_calendar_event__activity_type_id
+msgid "Activity Compute"
+msgstr ""
+
+#. module: mobius_advanced_calendar_aklima
+#: model:ir.model.fields,field_description:mobius_advanced_calendar_aklima.field_calendar_event__activity_id_test
+msgid "Activity ID"
+msgstr ""
+
+#. module: mobius_advanced_calendar_aklima
+#: model:ir.model.fields,field_description:mobius_advanced_calendar_aklima.field_calendar_event__activity_type_id_real
+msgid "Activity Type"
+msgstr "Typ czynności"
+
+#. module: mobius_advanced_calendar_aklima
+#: model:ir.model.fields,field_description:mobius_advanced_calendar_aklima.field_calendar_event__activity_type_id_boolean
+msgid "Activity Type Id Boolean"
+msgstr ""
+
+#. module: mobius_advanced_calendar_aklima
+#: model:ir.model,name:mobius_advanced_calendar_aklima.model_calendar_event
+msgid "Calendar Event"
+msgstr "Wydarzenie w kalendarzu"
+
+#. module: mobius_advanced_calendar_aklima
+#: model:ir.model.fields,field_description:mobius_advanced_calendar_aklima.field_calendar_event__activity_type_id_name
+msgid "Name"
+msgstr ""

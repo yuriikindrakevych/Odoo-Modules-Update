@@ -1,0 +1,27 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mobius_product_category_attributes
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20220902\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-04 02:45+0000\n"
+"PO-Revision-Date: 2023-04-04 02:45+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mobius_product_category_attributes
+#: model_terms:ir.ui.view,arch_db:mobius_product_category_attributes.product_template_only_form_view_inherit
+msgid "Create Attribute by category"
+msgstr "Створити атрибути за категорією"
+
+#. module: mobius_product_category_attributes
+#: model:ir.model.fields,field_description:mobius_product_category_attributes.field_product_category__product_attribute_ids
+#: model_terms:ir.ui.view,arch_db:mobius_product_category_attributes.view_category_property_form
+msgid "Product Attribute"
+msgstr "Атрибути продукту"

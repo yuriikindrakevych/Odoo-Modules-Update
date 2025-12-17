@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+mobius_contact_stage.access_contact_stage,access_contact_stage,mobius_contact_form_aklima.model_contact_stage,base.group_user,1,1,1,1

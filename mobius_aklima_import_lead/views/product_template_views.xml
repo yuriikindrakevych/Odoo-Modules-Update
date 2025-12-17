@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="product_template_only_form_view_inherit" model="ir.ui.view">
+        <field name="name">product.template.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <data>
+                <header position="inside">
+                    <button name="mobius_import_lead"
+                        type="object"
+                        string="CREATE LEAD"
+                        confirm="It can break the logic of the composition, do you want it?"
+                        groups="base.group_no_one"/>
+                </header>
+            </data>
+        </field>
+    </record>
+
+</odoo>

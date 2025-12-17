@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="menu_create_building_object_form" model="website.menu">
+        <field name="name">Create Building Object</field>
+        <field name="url">/create_building_object_webform</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">999</field>
+    </record>
+
+    <template id="mobius_portal_aklima.create_building_object_form" name="Create Building Object Form">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <form role="form" action="/create/webbuildingobject" enctype="multipart/form-data" method="POST">
+                            <div class="o_portal_details">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="form-group">
+                                <label for="name_buil_object" class="control-label">Object Name</label>
+                                <input type="text" name="name_buil_object" t-att-value="name_buil_object" id="name_buil_object"
+                                       class="form-control" required="required"/>
+                            </div>
+
+<!--                             <div class="form-group">
+                                <label for="country_id" class="control-label">Country</label>
+                                <select name="country_id" class="form-control link-style">
+                                    <t t-foreach="country_rec" t-as="country">
+                                        <option t-esc="country.name" t-att-value="country.id"/>
+                                    </t>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="state_id" class="control-label">State</label>
+                                <select name="state_id" class="form-control link-style">
+                                    <t t-foreach="state_rec" t-as="state">
+                                        <option t-esc="state.name" t-att-value="state.id"/>
+                                    </t>
+                                </select>
+                            </div>
+ -->
+
+                            <div t-attf-class="form-group #{error.get('country_id') and 'o_has_error' or ''}">
+                                <label class="col-form-label" for="country_id">Country</label>
+                                <select name="country_id" t-attf-class="form-control #{error.get('country_id') and 'is-invalid' or ''}">
+                                    <option value="">Country...</option>
+                                    <t t-foreach="countries or []" t-as="country">
+                                        <option t-att-value="country.id" t-att-selected="country.id == int(country_id) if country_id else country.id == partner.country_id.id">
+                                            <t t-esc="country.name" />
+                                        </option>
+                                    </t>
+                                </select>
+                            </div>
+                            <div t-attf-class="form-group #{error.get('state_id') and 'o_has_error' or ''}">
+                                <label class="col-form-label" for="state_id">State / Province</label>
+                                <select name="state_id" t-attf-class="form-control #{error.get('state_id') and 'is-invalid' or ''}">
+                                    <option value="">select...</option>
+                                    <t t-foreach="states or []" t-as="state">
+                                        <option t-att-value="state.id" style="display:none;" t-att-data-country_id="state.country_id.id" t-att-selected="state.id == partner.state_id.id">
+                                            <t t-esc="state.name" />
+                                        </option>
+                                    </t>
+                                </select>
+                            </div>
+                            <input type="hidden" name="redirect" t-att-value="redirect"/>
+
+                            <div class="form-group">
+                                <label for="name_city" class="control-label">City</label>
+                                <input type="text" name="name_city" t-att-value="name_city" id="name_city"
+                                       class="form-control" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="name_street" class="control-label">Street</label>
+                                <input type="text" name="name_street" t-att-value="name_street" id="name_street"
+                                       class="form-control" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="name_zip" class="control-label">ZIP</label>
+                                <input type="text" name="name_zip" t-att-value="name_zip" id="name_zip"
+                                       class="form-control" required="required"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name_total_power" class="control-label">Total Power</label>
+                                <input type="text" name="name_total_power" t-att-value="name_total_power" id="name_total_power"
+                                       class="form-control"/>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="my_datetimepicker" class="control-label">Start Date</label>
+                                <div class="input-group datetime"
+                                     id="datetimepickerID"
+                                     data-target-input="nearest">
+                                    
+                                    <input type="text"
+                                           class="form-control datetimepicker-input"
+                                           data-target="#datetimepickerID"
+                                           name="my_datetimepicker"/>
+                                    <div class="input-group-append"
+                                         data-target="#datetimepickerID"
+                                         data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="my_datetimepickertwo" class="control-label">End Date</label>
+                                <div class="input-group datetime"
+                                     id="datetimepickerIDtwo"
+                                     data-target-input="nearest">
+                                    <input type="text"
+                                           class="form-control datetimepicker-input"
+                                           data-target="#datetimepickerIDtwo"
+                                           name="my_datetimepickertwo"/>
+                                    <div class="input-group-append"
+                                         data-target="#datetimepickerIDtwo"
+                                         data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script type="text/javascript">
+                                $(function () {
+                                    $('#datetimepickerID').datetimepicker();
+                                    $('#datetimepickerIDtwo').datetimepicker();
+                                });
+                            </script>
+
+                            <div class="form-group">
+                                <label for="attachment" class="control-label">Attach file</label>
+                                <input type="file" name="attachment" multiple="multiple"/>
+<!--                                 data-show-upload="true" data-show-caption="true" lass="file" data-show-preview="true"-->
+
+<!--                                accept="image/*,application/pdf,video/*"-->
+<!--                                <input type="text" name="name_zip" t-att-value="name_zip" id="name_zip"-->
+<!--                                       class="form-control" required="required"/>-->
+                            </div>
+
+                            <!-- <script type="text/javascript" src="countries.js"></script> -->
+                            <div class="clearfix oe_login_buttons" style="margin-bottom: 25px">
+                                <button type="submit" class="btn btn-primary pull-left">Create Building Object</button>
+                            </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="mobius_portal_aklima.building_object_edit" name="Building Object Edit">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <form t-att-action="'/my/building_objects/%s/edit' % (obj.id)" method="post">
+                            <div class="o_portal_details">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="form-group">
+                                <label for="name_buil_object" class="control-label">Object Name</label>
+                                <input type="text" name="name_buil_object" id="name_buil_object"
+                                       class="form-control"  t-att-value="obj.name"/>
+                            </div>
+
+<!--                             <div class="form-group">
+                                <label for="country_id" class="control-label">Country</label>
+                                <select name="country_id" class="form-control link-style">
+                                    <t t-foreach="country_rec" t-as="country">
+                                        <option t-esc="country.name" t-att-value="country.id"/>
+                                    </t>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="state_id" class="control-label">State</label>
+                                <select name="state_id" class="form-control link-style">
+                                    <t t-foreach="state_rec" t-as="state">
+                                        <option t-esc="state.name" t-att-value="state.id"/>
+                                    </t>
+                                </select>
+                            </div>
+ -->
+
+                            <div t-attf-class="form-group #{error.get('country_id') and 'o_has_error' or ''}">
+                                <label class="col-form-label" for="country_id">Country</label>
+                                <select name="country_id" t-attf-class="form-control #{error.get('country_id') and 'is-invalid' or ''}">
+                                    <option value="">Country...</option>
+                                    <t t-foreach="countries or []" t-as="country">
+                                        <option t-att-value="country.id" t-att-selected="country.id == int(country_id) if country_id else country.id == obj.country_id.id">
+                                            <t t-esc="country.name" />
+                                        </option>
+                                    </t>
+                                </select>
+                            </div>
+                            <div t-attf-class="form-group #{error.get('state_id') and 'o_has_error' or ''}">
+                                <label class="col-form-label label-optional" for="state_id">State / Province</label>
+                                <select name="state_id" t-attf-class="form-control #{error.get('state_id') and 'is-invalid' or ''}">
+                                    <option value="">select...</option>
+                                    <t t-foreach="states or []" t-as="state">
+                                        <option t-att-value="state.id" style="display:none;" t-att-data-country_id="state.country_id.id" t-att-selected="state.id == obj.state_id.id">
+                                            <t t-esc="state.name" />
+                                        </option>
+                                    </t>
+                                </select>
+                            </div>
+                            <input type="hidden" name="redirect" t-att-value="redirect"/>
+
+                            <div class="form-group">
+                                <label for="name_city" class="control-label">City</label>
+                                <input type="text" name="name_city" t-att-value="obj.city" id="name_city"
+                                       class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="name_street" class="control-label">Street</label>
+                                <input type="text" name="name_street" t-att-value="obj.street" id="name_street"
+                                       class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="name_zip" class="control-label">ZIP</label>
+                                <input type="text" name="name_zip" t-att-value="obj.zip" id="name_zip"
+                                       class="form-control"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name_total_power" class="control-label">Total Power</label>
+                                <input type="text" name="name_total_power" t-att-value="obj.total_power" id="name_total_power"
+                                       class="form-control"/>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="my_datetimepicker" class="control-label">Start Date</label>
+                                <div class="col-sm-9">
+                                    <span class="text-muted mb-0">Set now </span>
+                                    <span class="text-muted mb-0" t-field="obj.start_date_time"  
+                                        t-options="{'format': 'dd/MMM/YYYY', 'widget': 'date'}" />
+                                </div>
+                                <div class="input-group datetime"
+                                     id="datetimepickerID"
+                                     data-target-input="nearest">
+                                    
+                                    <input type="text"
+                                            id="datetimepickerIDinput"
+                                           class="form-control datetimepicker-input"
+                                           data-target="#datetimepickerID"
+                                           name="my_datetimepicker"/>
+                                    <div class="input-group-append"
+                                         data-target="#datetimepickerID"
+                                         data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="my_datetimepickertwo" class="control-label">End Date</label>
+                                <div class="col-sm-9">
+                                    <span class="text-muted mb-0">Set now </span>
+                                    <span class="text-muted mb-0" t-field="obj.end_date_time"  
+                                        t-options="{'format': 'dd/MMM/YYYY', 'widget': 'date'}" />
+                                </div>
+                                <div class="input-group datetime"
+                                     id="datetimepickerIDtwo"
+                                     data-target-input="nearest">
+                                    <input type="text"
+                                            id="datetimepickerIDtwoinput"
+                                           class="form-control datetimepicker-input"
+                                           data-target="#datetimepickerIDtwo"
+                                           name="my_datetimepickertwo"/>
+                                    <div class="input-group-append"
+                                         data-target="#datetimepickerIDtwo"
+                                         data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script type="text/javascript">
+                                    $(function () {
+                                        $('#datetimepickerID').datetimepicker();
+                                        $('#datetimepickerIDtwo').datetimepicker();
+                                    });
+                            </script>
+                            <!-- <script type="text/javascript" src="countries.js"></script> -->
+                            </div>
+                            <div class="clearfix oe_login_buttons" style="margin-bottom: 25px">
+                                <button type="submit" class="btn btn-primary pull-left">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo> 

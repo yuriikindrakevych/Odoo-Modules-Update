@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+   <record id="cancel_quotation_form" model="ir.ui.view">
+       <field name="name">cancel.quotation.form</field>
+       <field name="model">cancel.quotation</field>
+       <field name="arch" type="xml">
+           <form string="Cancel Quotation">
+               <group>
+                   <field name="cancel_reason_id"/>
+                   <field name="cancellation_comment"/>
+               </group>
+               <footer>
+                   <button name="create_cancel_reason" string="Confirm" type="object" class="btn-primary"/>
+                   <button string="Cancel" special="cancel" class="btn-secondary" />
+               </footer>
+           </form>
+       </field>
+   </record>
+
+</odoo>

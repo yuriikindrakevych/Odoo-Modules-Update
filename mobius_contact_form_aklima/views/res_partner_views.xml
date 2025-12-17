@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="mobius_contact_form_aklima_view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit (mobius_contact_form_aklima)</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook//page[@name='sales_purchases']//field[@name='user_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+            <xpath expr="//sheet/group[1]/group[1]" position="inside">
+                <field name="user_id" domain="[('share', '=', False)]"/>
+                <field name="team_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mobius_contact_form_aklima_view_partner_form_stage_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.stage.inherit (mobius_contact_form_aklima)</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="mobius_contact_priority.view_partner_form_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='priority']" position="after">
+                <field name="stage_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mobius_contact_form_aklima_view_res_partner_filter_inherit" model="ir.ui.view">
+        <field name="name">res.partner.select.inherit (mobius_contact_form_aklima)</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='group_by']" position="inside">
+                <filter name="group_stage" string="Stage" context="{'group_by': 'stage_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mobius_contact_form_aklima_res_partner_view_team_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.team.inherit (mobius_contact_form_aklima)</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="sales_team.res_partner_view_team"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='team_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mobius_contact_form_aklima_view_partner_form_inherit_mobius_login_screen_api_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.team.inherit.mobius_login_screen_api (mobius_contact_form_aklima)</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="mobius_login_screen_api.view_partner_form_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheet Importer</title>
+</head>
+<body>
+    <header>
+        <h1>Google Sheet Importer</h1>
+        <p>Dynamic models and field mapping with the ability to import multiple Google Sheets into any Odoo model and fields using scheduled actions (cron).</p>
+    </header>
+
+    <section>
+        <h2>Getting Started</h2>
+        <p>To set up the Google Sheet Importer module, you must enable the Google Sheets API and create a Google Service Account for authentication.</p>
+    </section>
+
+    <section>
+        <h2>Steps to Set Up Google Sheets API and Service Account</h2>
+
+        <h3>Step 1: Enable Google Sheets API and Create a Service Account</h3>
+        <ol>
+            <li>Go to the <a href="https://console.cloud.google.com/" target="_blank">Google Cloud Console</a>.</li>
+            <li>Create a new project or select an existing one.</li>
+            <li>Navigate to <strong>APIs & Services > Library</strong>.</li>
+            <li>Search for <strong>Google Sheets API</strong> and click <strong>Enable</strong>.</li>
+            <li>Next, navigate to <strong>APIs & Services > Credentials</strong>.</li>
+            <li>Click on <strong>Create Credentials</strong> and choose <strong>Service Account</strong>.</li>
+            <li>Enter a name for your service account (e.g., "Odoo Google Sheet Importer") and click <strong>Create</strong>.</li>
+            <li>In the "Grant this service account access" section, choose a role such as <strong>Editor</strong> and click <strong>Continue</strong>.</li>
+            <li>Click <strong>Done</strong> after the service account is created.</li>
+        </ol>
+
+        <h3>Step 2: Download the Service Account Credentials</h3>
+        <ol>
+            <li>In the <strong>Credentials</strong> page, find your service account.</li>
+            <li>Click on the service account and go to the <strong>Keys</strong> tab.</li>
+            <li>Click on <strong>Add Key > Create New Key</strong>.</li>
+            <li>Choose <strong>JSON</strong> as the key type and click <strong>Create</strong>.</li>
+            <li>The credentials `.json` file will be downloaded automatically. Store it securely.</li>
+        </ol>
+
+        <h3>Step 3: Share Your Google Sheets with the Service Account</h3>
+        <ol>
+            <li>Open the Google Sheet that you want to import data from.</li>
+            <li>Click the <strong>Share</strong> button in the top-right corner.</li>
+            <li>Share the sheet with the email address in the `.json` file, which will look like: <code>your-service-account@your-project-id.iam.gserviceaccount.com</code>.</li>
+            <li>Grant <strong>Editor</strong> access to the service account.</li>
+        </ol>
+    </section>
+
+    <section class="container">
+        <div class="row text-center mt-5">
+            <h2>Screenshots</h2>
+            <div class="col-12 my-3">
+                <img src="./assets/001.png" class="img-fluid border rounded">
+                <p>Screenshot 1: Module Installation</p>
+            </div>
+            <div class="col-12 my-3">
+                <img src="./assets/002.png" class="img-fluid border rounded">
+                <p>Screenshot 2: Activating Developer Mode</p>
+            </div>
+            <div class="col-12 my-3">
+                <img src="./assets/003.png" class="img-fluid border rounded">
+                <p>Screenshot 3: Granting Access to the user</p>
+            </div>
+            <div class="col-12 my-3">
+                <img src="./assets/004.png" class="img-fluid border rounded">
+                <p>Screenshot 4: Open Google Sheet Importer from Home Menu</p>
+            </div>
+            <div class="col-12 my-3">
+                <img src="./assets/005.png" class="img-fluid border rounded">
+                <p>Screenshot 5: Copy Google Sheet ID from the URL</p>
+            </div>
+            <div class="col-12 my-3">
+                <img src="./assets/006.png" class="img-fluid border rounded">
+                <p>Screenshot 6: Configure the API credentials and other details such as Target Model, field mappings, schedule</p>
+            </div>
+            <div class="col-12 my-3">
+                <img src="./assets/007.png" class="img-fluid border rounded">
+                <p>Screenshot 7: Search the related scheduled action</p>
+            </div>
+            <div class="col-12 my-3">
+                <img src="./assets/008.png" class="img-fluid border rounded">
+                <p>Screenshot 8: Import logs available on Chatter</p>
+            </div>
+            <div class="col-12 my-3">
+                <img src="./assets/009.png" class="img-fluid border rounded">
+                <p>Screenshot 9: Successful Import</p>
+            </div>
+            <div class="col-12 my-3">
+                <img src="./assets/010.png" class="img-fluid border rounded">
+                <p>Screenshot 10: New column on Google Sheet</p>
+            </div>
+            <div class="col-12 my-3">
+                <img src="./assets/011.png" class="img-fluid border rounded">
+                <p>Screenshot 11: Multiple Google Sheets</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>
+            For more information, refer to the README.md or contact the module maintainer
+            <a href="mailto:jothimani.ney@gmail.com" title="email" class="text-truncate"><i class="fa fa-fw fa-envelope me-1"/>jothimani.ney@gmail.com</a>.
+        </p>
+    </footer>
+</body>
+</html>

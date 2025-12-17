@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="currency_rate_source_privatbank" model="mobius.currency.rate.source">
+            <field name="name">PrivatBank</field>
+        </record>
+        <record id="currency_rate_source_monobank" model="mobius.currency.rate.source">
+            <field name="name">MonoBank</field>
+        </record>
+        <record id="currency_rate_source_nbl" model="mobius.currency.rate.source">
+            <field name="name">NBL</field>
+        </record>
+    </data>
+</odoo>

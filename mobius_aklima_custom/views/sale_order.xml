@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_quotation_tree_inherited" model="ir.ui.view">
+        <field name="name">sale.order.tree.new.statuses.inherited</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_total']" position="after">
+                <field name="total_payments_sum" widget="monetary"/>
+            </xpath>
+
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="status_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="account_status" decoration-success="account_status == 'paid'" decoration-info="account_status == 'partial'" widget="badge"/>
+                <field name="shipping_status" decoration-success="shipping_status == 'shipped'" decoration-info="shipping_status == 'partial'" widget="badge"/>
+                <field name="debt_amount"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_order_form_inherit_order_line_name" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit (mobius_aklima_custom)</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="total_payments_sum" widget="monetary"/>
+                <field name="status_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']/tree//field[@name='name']" position="attributes">
+                <attribute name="style">white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-height: 50px;</attribute>
+            </xpath>
+
+            <xpath expr="//page[@name='other_information']" position="after">
+                <page id="partner_payment_list"
+                      name="partner_payment_list"
+                      string="Partner Payments">
+                    <field name="so_partner_payment_ids"
+                           widget="section_and_note_one2many"
+                           mode="tree">
+                        <tree editable="bottom" string="Partner Payments List" create="1">
+                            <control/>
+                            <field name="account_payment_id_company_currency_id" invisible="1"/>
+                            <field name="account_payment_id_currency_id" invisible="1"/>
+                            <field name="account_payment_id" options="{'no_create': True}"/>
+                            <field name="partner_id"/>
+                            <field name="account_payment_date"/>
+                            <field name="account_payment_state" widget="badge" decoration-info="account_payment_state == 'draft'" decoration-success="account_payment_state == 'posted'"/>
+                            <field name="account_payment_amount_company_currency_signed" widget="monetary"/>
+                            <field name="account_payment_amount_signed" widget="monetary"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_sale_order_kanban_inherited" model="ir.ui.view">
+        <field name="name">sale.order.kanban.status.inherit (mobius_aklima_custom)</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sale_order_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="status_ids"/>
+            </xpath>
+            <xpath expr="//div[hasclass('o_kanban_record_top')]" position="after">
+                <div t-if="record.status_ids.raw_value and record.status_ids.raw_value.length" class="mt-2 mb-2">
+                    <field name="status_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

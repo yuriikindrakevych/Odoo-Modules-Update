@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="mobius_lead_contact_import.LeadContactsImportRecords" owl="1">
+        <DropdownItem class="o_import_menu dropdown-item" t-on-click="importRecords">
+            Import lead records
+        </DropdownItem>
+    </t>
+
+</templates>

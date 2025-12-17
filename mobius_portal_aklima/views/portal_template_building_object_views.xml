@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="mobius_portal_aklima.portal_my_home" inherit_id="portal.portal_my_home">
+         <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="url">/my/building_objects</t>
+                <t t-set="title">Builging Objects</t>
+                <t t-set="placeholder_count" t-value="'building_count'"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="portal_layout" inherit_id="portal.portal_breadcrumbs" priority="35">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'building_objects_list'" class="breadcrumb-item">Building Objects</li>
+            <li t-if="page_name == 'building_objects_form'" class="breadcrumb-item">
+                <a  href="/my/building_objects">Building Objects</a> / <span t-out="object.name"/>
+            </li>
+        </xpath>
+    </template>
+
+
+    <template id="mobius_portal_aklima.building_objects_list">
+        <t t-call="portal.portal_layout">
+
+            <t t-if="not orders">
+                <p>There are currently no building objects for your account.</p>
+            </t>
+
+            <t t-if="orders" t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        <th>
+                            <span class='d-none d-md-inline'>Name</span>
+                        </th>
+                        <th>
+                            <span class='d-none d-md-inline'>Country</span>
+                        </th>
+                        <th>
+                            <span class='d-none d-md-inline'>State</span>
+                        </th>
+                    </tr>
+                </thead>
+                <t t-foreach="orders" t-as="order">
+                    <tr>
+                        <td>
+                            <a t-attf-href="/my/building_objects/#{order.id}">
+                                <t t-esc="order.name"/>
+                            </a>
+                        </td>
+                        <td>
+                                <t t-esc="order.country_id.name"/>
+                        </td>
+                        <td>
+                                <t t-esc="order.state_id.name"/>
+                        </td>
+
+                    </tr>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="mobius_portal_aklima.building_objects_form" inherit_id="portal.portal_sidebar">
+        <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">
+            <t t-if="object">
+                <div id="wrap">
+                    <div class="oe_structure">
+                        <div class="container">
+                            <div class="o_portal_details">
+                                <div class="form-group">
+                                            <div class="card-body">
+                                                
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <p class="mb-0">Object Name</p>
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <p class="mb-0"><t t-out="object.name"/></p>
+                                                    </div>
+                                                </div>
+                                                <hr></hr>
+
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <p class="mb-0">Country</p>
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <p class="mb-0"><t t-out="object.country_id.name"/></p>
+                                                    </div>
+                                                </div>
+                                                <hr></hr>
+
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <p class="mb-0">State</p>
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <p class="mb-0"><t t-out="object.state_id.name"/></p>
+                                                    </div>
+                                                </div>
+                                                <hr></hr>
+
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <p class="mb-0">City</p>
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <p class="mb-0"><t t-out="object.city"/></p>
+                                                    </div>
+                                                </div>
+                                                <hr></hr>
+
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <p class="mb-0">Street</p>
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <p class="mb-0"><t t-out="object.street"/></p>
+                                                    </div>
+                                                </div>
+                                                <hr></hr>
+
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <p class="mb-0">ZIP</p>
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <p class="mb-0"><t t-out="object.zip"/></p>
+                                                    </div>
+                                                </div>
+                                                <hr></hr>
+
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <p class="mb-0">Total Power</p>
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <p class="mb-0"><t t-out="object.total_power"/></p>
+                                                    </div>
+                                                </div>
+                                                <hr></hr>
+
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <p class="mb-0">Start Date</p>
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <span class="mb-0" t-esc="object.start_date_time"  
+                                                            options="{'widget': 'date', 'format': 'dd/MMM/yyyy'}" />
+                                                    </div>
+                                                </div>
+                                                <hr></hr>
+
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <p class="mb-0">End Date</p>
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <span class="mb-0" t-esc="object.end_date_time"
+                                                            options="{'widget': 'date', 'format': 'dd/MMM/yyyy'}"/>
+                                                    </div>
+                                                </div>
+                                                <hr></hr>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <a role="button" class="btn btn-primary float-left d-none d-xl-inline-block"
+                                                            t-attf-href="/my/building_objects/#{object.id}/edit">
+                                                        <span class="">Edit</span>
+                                                        <span class="fa fa-chevron-right"/>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </template>
+
+
+    <template id="website_sale.cart" name="Shopping Cart">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container oe_website_sale py-2">
+                    <t name="build_obj" id="build_obj" t-set="build_obj" t-value="" />
+                    <script type="text/javascript">
+                        function getShopCheckout() {
+                            const str = "/shop/checkout?express=1&amp;building_object_id=" + getSelectedObject()
+                            //console.log(">>> getShopCheckout-> str=", str);
+                            return str
+                        }
+                        function getShopQuotation() {
+                            const str = "/shop/create_quotation?building_object_id=" + getSelectedObject()
+                            //console.log(">>> getShopQuotation-> str=", str);
+                            return str
+                        }
+                        function onchangeBuildingObject(val) {
+                            //console.log(">>> onchangeBuildingObject-> val.value=", val.value);
+                            //const obj = document.getElementById("building_object");
+                            //console.log(">>> onchangeBuildingObject-> obj.value=", obj.value);
+
+                            let button_checkout_1 = document.getElementById("button_checkout_1");
+                            if (button_checkout_1) {
+                                //console.log(">>> onchangeBuildingObject-> button_checkout_1.href=", button_checkout_1.href);
+                                button_checkout_1.href = getShopCheckout();
+                                //console.log(">>> onchangeBuildingObject-> button_checkout_1.href=", button_checkout_1.href);
+                            }
+
+                            let button_quotation_1 = document.getElementById("button_quotation_1");
+                            if (button_quotation_1) {
+                                //console.log(">>> onchangeBuildingObject-> button_quotation_1.href=", button_quotation_1.href);
+                                button_quotation_1.href = getShopQuotation();
+                                //console.log(">>> onchangeBuildingObject-> button_quotation_1.href=", button_quotation_1.href);
+                            }
+
+                            let button_checkout_2 = document.getElementById("button_checkout_2");
+                            if (button_checkout_2) {
+                                //console.log(">>> onchangeBuildingObject-> button_checkout_2.href=", button_checkout_2.href);
+                                button_checkout_2.href = getShopCheckout();
+                                //console.log(">>> onchangeBuildingObject-> button_checkout_2.href=", button_checkout_2.href);
+                            }
+
+                            let button_quotation_2 = document.getElementById("button_quotation_2");
+                            if (button_quotation_2) {
+                                //console.log(">>> onchangeBuildingObject-> button_quotation_2.href=", button_quotation_2.href);
+                                button_quotation_2.href = getShopQuotation();
+                                //console.log(">>> onchangeBuildingObject-> button_quotation_2.href=", button_quotation_2.href);
+                            }
+                        }
+                        function getSelectedObject() {
+                            const build_obj = document.getElementById("building_object");
+                            //console.log(">>> getSelectedObject-> build_obj.value=", build_obj.value);
+                            return build_obj.value
+                        }
+                    </script>
+                    <div class="row">
+                        <div class="col-12">
+                            <t t-call="website_sale.wizard_checkout">
+                                <t t-set="step" t-value="10" />
+                            </t>
+                        </div>
+                        <div class="col-12">
+                            <span>Building Object</span>
+                             <select name="building_object" id="building_object" class="form-control" onchange="onchangeBuildingObject(this)">
+                                 <t t-set="building_objects" t-value="website._get_building_objects_shop()"/>
+                                 <t t-foreach="building_objects" t-as="c">
+                                    <option t-esc="c.get('name')" t-attf-value="#{c.get('id')}"/>
+                                 </t>
+                             </select>
+                             <br/>
+                        </div>
+
+                        <br/>
+
+                        <div class="col-12 col-xl-8 oe_cart">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div t-if="abandoned_proceed or access_token" class="mt8 mb8 alert alert-info" role="alert"> 
+                                        <!-- abandoned cart choices -->
+                                        <t t-if="abandoned_proceed">
+                                            <p>Your previous cart has already been completed.</p>
+                                            <p t-if="website_sale_order">Please proceed your current cart.</p>
+                                        </t>
+                                        <t t-if="access_token">
+                                            <p>This is your current cart.</p>
+                                            <p>
+                                                <strong><a t-attf-href="/shop/cart/?access_token=#{access_token}&amp;revive=squash">Click here</a></strong> if you want to restore your previous cart. Your current cart will be replaced with your previous cart.</p>
+                                            <p>
+                                                <strong><a t-attf-href="/shop/cart/?access_token=#{access_token}&amp;revive=merge">Click here</a></strong> if you want to merge your previous cart into current cart.
+                                            </p>
+                                        </t>
+                                    </div>
+                                    <t t-call="website_sale.cart_lines" />
+                                    <div class="clearfix" />
+                                    <a role="button" href="/shop" class="btn btn-secondary mb32 d-none d-xl-inline-block">
+                                        <span class="fa fa-chevron-left" />
+                                        <span class="">Continue Shopping</span>
+                                    </a>
+                                    <t t-if="all_product_avaible and not is_need_seller_agreement">
+                                        <a role="button" t-if="website_sale_order and website_sale_order.website_order_line" class="btn btn-primary float-right d-none d-xl-inline-block"
+                                           name="button_checkout_1" id="button_checkout_1"
+                                           t-attf-href="/shop/checkout?express=1&amp;building_object_id=">
+                                            <span class="">Process Checkout</span>
+                                            <span class="fa fa-chevron-right" />
+                                        </a>
+                                    <br/>
+                                    </t>
+                                    
+
+<!--                                     <div class="js_payment mt-3" id="payment_method" name="  o_website_sale_free_cart">
+                                        <form target="_self" action="/shop/payment/validate" method="post">
+                                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                            <t t-call="mobius_portal_aklima.payment_footer_two">
+                                                <t t-set="submit_button_label">Confirm Order</t>
+                                            </t>
+                                        </form>
+                                    </div> -->
+                                    <a role="button" t-if="website_sale_order and website_sale_order.website_order_line" class="btn btn-primary float-right d-none d-xl-inline-block"
+                                            name="button_quotation_1" id="button_quotation_1"
+                                            t-attf-href="/shop/create_quotation?building_object_id=">
+                                        <span class="">Create Quotation</span>
+                                        <span class="fa fa-chevron-right" />
+                                    </a>
+
+                                    <div class="oe_structure" id="oe_structure_website_sale_cart_1"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-4" id="o_cart_summary">
+                            <t t-call="website_sale.short_cart_summary"/>
+                            <div class="d-xl-none mt8">
+                                <a role="button" href="/shop" class="btn btn-secondary mb32">
+                                    <span class="fa fa-chevron-left" />
+                                    Continue<span class="d-none d-md-inline"> Shopping</span>
+                                </a>
+                                <t t-if="all_product_avaible and not is_need_seller_agreement">
+                                    <a role="button" t-if="website_sale_order and website_sale_order.website_order_line" class="btn btn-primary float-right"
+                                            name="button_checkout_2" id="button_checkout_2"
+                                            t-attf-href="/shop/checkout?express=1&amp;building_object_id=">
+                                        <span class="">Process Checkout</span>
+                                        <span class="fa fa-chevron-right" />
+                                    </a>
+                                    <br/>
+                                </t>
+                                
+<!--                                     <div class="js_payment mt-3" id="payment_method" name="  o_website_sale_free_cart">
+                                        <form target="_self" action="/shop/payment/validate" method="post">
+                                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                            <t t-call="mobius_portal_aklima.payment_footer_two">
+                                                <t t-set="submit_button_label">Confirm Order</t>
+                                            </t>
+                                        </form>
+                                    </div> -->
+                                <a role="button" t-if="website_sale_order and website_sale_order.website_order_line" class="btn btn-primary float-right d-none d-xl-inline-block"
+                                        name="button_quotation_2" id="button_quotation_2"
+                                        t-attf-href="/shop/create_quotation?building_object_id=">
+                                    <span class="">Create Quotation</span>
+                                    <span class="fa fa-chevron-right" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="oe_structure" id="oe_structure_website_sale_cart_2"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="mobius_portal_aklima.sale_order_portal_content" inherit_id="sale.sale_order_portal_content">
+         <xpath expr="//div[@id='informations']" position="inside">
+                <div class="row" id="building_object">
+                    <div class="mb-3 col-6">
+                        <strong>Building Object:</strong> <span t-field="sale_order.building_object.name"/>
+                    </div>
+                </div>
+        </xpath>
+    </template>
+
+    <template id="mobius_portal_aklima.sale_order_portal_template" name="Sales Order Portal Template"
+        inherit_id="sale.sale_order_portal_template">
+        <xpath expr="//ul[hasclass('list-group-flush')]/li[1]" position="replace">
+        <li class="list-group-item flex-grow-1">
+            <t t-if="sale_order.has_all_available()">
+<!--                <a t-if="sale_order.has_to_be_signed(True)"-->
+<!--                    role="button"-->
+<!--                    class="btn btn-primary btn-block mb8"-->
+<!--                    data-toggle="modal"-->
+<!--                    data-target="#modalaccept"-->
+<!--                    href="#">-->
+<!--                        <i class="fa fa-check"/>-->
+<!--                        <t t-if="sale_order.has_to_be_paid(True)"> Sign &amp; Pay</t>-->
+<!--                        <t t-else=""> Accept &amp; Sign</t>-->
+<!--                </a>-->
+<!--                <a t-elif="sale_order.has_to_be_paid(True)"-->
+<!--                    role="button"-->
+<!--                    id="o_sale_portal_paynow"-->
+<!--                    data-toggle="modal"-->
+<!--                    data-target="#modalaccept"-->
+<!--                    href="#"-->
+<!--                    t-att-class="'btn-block mb8 %s' % ('btn btn-light' if sale_order.transaction_ids else 'btn btn-primary')" >-->
+<!--                        <i class="fa fa-check"/>-->
+<!--                        <t t-if="not sale_order.signature">Accept &amp; Pay</t>-->
+<!--                        <t t-else="">Pay Now</t>-->
+<!--                </a>-->
+                <a t-if="sale_order.has_to_be_paid(True)"
+                    t-att-class="'btn-block mb8 %s' % ('btn btn-primary')"
+                    t-att-href="sale_order.confirm_order_m()">
+                        <i class="fa fa-check"/>Confirm Order</a>
+            </t>
+            <div class="o_download_pdf btn-toolbar flex-sm-nowrap">
+                <div class="btn-group flex-grow-1 mr-1 mb-1">
+                    <a class="btn btn-secondary btn-block o_download_btn"
+                       t-att-href="sale_order.get_portal_url(report_type='pdf', download=True)" title="Download">
+                        <i class="fa fa-download"/> Download</a>
+                </div>
+                <div class="btn-group flex-grow-1 mb-1">
+                    <a class="btn btn-secondary btn-block o_print_btn o_portal_invoice_print"
+                       t-att-href="sale_order.get_portal_url(report_type='pdf')"
+                       id="print_invoice_report" title="Print" target="_blank">
+                        <i class="fa fa-print"/> Print</a>
+                </div>
+            </div>
+        </li>
+        </xpath>
+    </template>
+
+
+
+
+
+</odoo>
+
+<!--                             <div class="col-sm-auto mt8">
+                                <a role="button" class="btn btn-primary" data-toggle="modal" data-target="#modalaccept" href="#"><i class="fa fa-check"/><t t-if="sale_order.has_to_be_paid(True)"> Sign &amp; Pay</t><t t-else=""> Accept &amp; Sign</t></a>
+                            </div> -->
+
+
+<!--                         <div t-elif="sale_order.has_to_be_paid(True)" class="col-sm-auto mt8">
+                            <a role="button" data-toggle="modal" data-target="#modalaccept" href="#" t-att-class="'%s' % ('btn btn-light' if sale_order.transaction_ids else 'btn btn-primary')">
+                                <i class="fa fa-check"/> <t t-if="not sale_order.signature">Accept &amp; Pay</t><t t-else="">Pay Now</t>
+                            </a>
+                        </div> -->
+
+
+<!--          <xpath expr="//a[@id='o_sale_portal_paynow']" position="replace">
+                
+                <a t-elif="sale_order.has_to_be_paid(True)"
+                    role="button"
+                    id="o_sale_portal_paynow"
+                    data-toggle="modal"
+                    data-target="#modalaccept"
+                    href="#"
+                    t-att-class="'btn-block mb8 %s' % ('btn btn-light' if sale_order.transaction_ids else 'btn btn-primary')">
+                        <i class="fa fa-check"/>
+                        <t t-if="not sale_order.signature">Accept &amp; Pay</t>
+                        <t t-else="">Pay Now</t>
+                </a>
+                <a t-if="sale_order.has_to_be_paid(True)"
+                    t-att-class="'btn-block mb8 %s' % ('btn btn-primary')"
+                    t-att-href="sale_order.confirm_order_m()">
+                        <i class="fa fa-check"/>Confirm Order</a>
+        </xpath> -->
+
+
+<!--          <xpath expr="//a[@id='o_sale_portal_paynow']" position="replace">
+            <t t-if="sale_order.hide_button_createorder == True">
+                <a t-elif="sale_order.has_to_be_paid(True)" role="button" id="o_sale_portal_paynow" data-toggle="modal" data-target="#modalaccept" href="#" t-att-class="'btn-block mb8 %s' % ('btn btn-light' if sale_order.transaction_ids else 'btn btn-primary')" >
+                    <i class="fa fa-check"/> <t t-if="not sale_order.signature">Accept &amp; Pay</t><t t-else="">Pay Now</t>
+                </a>
+                <a t-if="sale_order.has_to_be_paid(True)" t-att-class="'btn-block mb8 %s' % ('btn btn-primary')"  t-att-href="sale_order.confirm_order_m()">
+                    <i class="fa fa-check"/>Confirm Order</a>
+            </t>
+            <t t-else="">
+            </t>
+        </xpath> -->

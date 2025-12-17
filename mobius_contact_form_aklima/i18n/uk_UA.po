@@ -1,0 +1,89 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mobius_contact_form_aklima
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20230206\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-23 07:43+0000\n"
+"PO-Revision-Date: 2025-04-23 07:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mobius_contact_form_aklima
+#: model:ir.model,name:mobius_contact_form_aklima.model_res_partner
+msgid "Contact"
+msgstr "Контакт"
+
+#. module: mobius_contact_form_aklima
+#: model:ir.actions.act_window,name:mobius_contact_form_aklima.contact_stage_action
+#: model:ir.ui.menu,name:mobius_contact_form_aklima.menu_contact_stages
+msgid "Contact Stages"
+msgstr "Етапи Контакту"
+
+#. module: mobius_contact_form_aklima
+#: model:ir.model.constraint,message:mobius_contact_form_aklima.constraint_contact_stage_name_unique
+msgid "Contact stage name must be unique"
+msgstr "Назва етапу контакту повинна бути унікальною"
+
+#. module: mobius_contact_form_aklima
+#: model:ir.model.fields,field_description:mobius_contact_form_aklima.field_contact_stage__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: mobius_contact_form_aklima
+#: model:ir.model.fields,field_description:mobius_contact_form_aklima.field_contact_stage__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: mobius_contact_form_aklima
+#: model:ir.model.fields,field_description:mobius_contact_form_aklima.field_contact_stage__description
+msgid "Description"
+msgstr "Опис"
+
+#. module: mobius_contact_form_aklima
+#: model:ir.model.fields,field_description:mobius_contact_form_aklima.field_contact_stage__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: mobius_contact_form_aklima
+#: model:ir.model.fields,field_description:mobius_contact_form_aklima.field_contact_stage__id
+msgid "ID"
+msgstr ""
+
+#. module: mobius_contact_form_aklima
+#: model:ir.model.fields,field_description:mobius_contact_form_aklima.field_contact_stage____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: mobius_contact_form_aklima
+#: model:ir.model.fields,field_description:mobius_contact_form_aklima.field_contact_stage__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mobius_contact_form_aklima
+#: model:ir.model.fields,field_description:mobius_contact_form_aklima.field_contact_stage__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: mobius_contact_form_aklima
+#: model:ir.model.fields,field_description:mobius_contact_form_aklima.field_contact_stage__name
+msgid "Name"
+msgstr "Назва"
+
+#. module: mobius_contact_form_aklima
+#: model:ir.model.fields,field_description:mobius_contact_form_aklima.field_res_partner__stage_id
+#: model:ir.model.fields,field_description:mobius_contact_form_aklima.field_res_users__stage_id
+#: model_terms:ir.ui.view,arch_db:mobius_contact_form_aklima.mobius_contact_form_aklima_view_res_partner_filter_inherit
+msgid "Stage"
+msgstr "Етап"
+
+#. module: mobius_contact_form_aklima
+#: model:ir.model,name:mobius_contact_form_aklima.model_contact_stage
+msgid "contact.stage"
+msgstr ""

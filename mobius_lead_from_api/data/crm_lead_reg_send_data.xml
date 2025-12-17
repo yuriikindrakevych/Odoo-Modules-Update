@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <data noupdate="0">
+        <record id="crm_lead_reg_send_info" model="mail.template">
+            <field name="name">Reg Email</field>
+            <field name="model_id" ref="model_crm_lead"/>
+            <field name="subject">ZAREJESTROWANO NOWEGO UŻYTKOWNIKA W SERWISIE PARTNERSHIP360</field>
+            <field name="email_to">{{ object.email_from or ''}}</field>
+            <field name="body_html" type="html">
+            <div class="text-center" style="margin-left:auto;margin-right:auto;">
+                <img alt="logo" src="/web/binary/company_logo" style="max-height:120px; max-width: 100%; width:auto;object-fit: contain;"></img>
+                <p style="box-sizing:border-box;font-weight:bolder;margin: auto, auto;">ZAREJESTROWANO NOWEGO UŻYTKOWNIKA W SERWISIE PARTNERSHIP360</p>
+            </div>
+            <div id="main">
+                <p>Na stronie <a href="https://partnership360.aklimapolska.pl/" style="text-decoration:none;box-sizing:border-box;background-color:transparent;color:#008f8c;">https://partnership360.aklimapolska.pl/</a> możesz zalogować się przez numer telefonu <b><span t-out="object.phone"/></b>
+                ta wysłanego SMSem kodu werywiracjinego.
+                </p>
+                <p>Twój opiekun handlowy <span t-out="object.user_id.name"/>, <span t-out="object.user_id.phone"/>, <span t-out="object.user_id.email"/></p>
+                <p>Z poważaniem, zespół Aklima Polska.</p>
+            </div>
+            </field>
+        </record>
+   </data>
+</odoo>

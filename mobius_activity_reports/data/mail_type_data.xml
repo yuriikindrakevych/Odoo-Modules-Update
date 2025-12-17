@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="mt_document_created" model="mail.message.subtype">
+        <field name="name">Document Created</field>
+        <field name="sequence" eval="32"/>
+        <field name="hidden" eval="True"/>
+        <field name="internal" eval="True"/>
+        <field name="default" eval="False"/>
+        <field name="res_model" eval="False"/>
+        <field name="description">Automatically generated message for document creation events.</field>
+    </record>
+
+    <record id="activity_type_contact_created" model="mail.activity.type">
+        <field name="name">Contacts Created</field>
+        <field name="category">upload_file</field>
+        <field name="sequence" eval="300"/>
+        <field name="default_note">Automatically generated when creating Contact.</field>
+    </record>
+
+    <record id="activity_type_lead_created" model="mail.activity.type">
+        <field name="name">Leads/Opps Created</field>
+        <field name="category">upload_file</field>
+        <field name="sequence" eval="301"/>
+        <field name="default_note">Automatically generated when creating Lead/Opp.</field>
+    </record>
+
+    <record id="activity_type_quotation_created" model="mail.activity.type">
+        <field name="name">Quotations Created</field>
+        <field name="category">upload_file</field>
+        <field name="sequence" eval="302"/>
+        <field name="default_note">Automatically generated when creating Quotation.</field>
+    </record>
+
+     <record id="activity_type_invoice_created" model="mail.activity.type">
+        <field name="name">Invoices Created</field>
+        <field name="category">upload_file</field>
+        <field name="sequence" eval="303"/>
+        <field name="default_note">Automatically generated when creating Invoice.</field>
+    </record>
+</odoo>

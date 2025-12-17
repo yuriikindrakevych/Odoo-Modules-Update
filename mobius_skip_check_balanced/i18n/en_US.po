@@ -1,0 +1,36 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mobius_skip_check_balanced
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-20 15:03+0000\n"
+"PO-Revision-Date: 2023-09-20 15:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mobius_skip_check_balanced
+#: model_terms:ir.ui.view,arch_db:mobius_skip_check_balanced.res_config_settings_view_form
+msgid "Check balanced will be skipped in a document confirmation"
+msgstr ""
+
+#. module: mobius_skip_check_balanced
+#: model:ir.model,name:mobius_skip_check_balanced.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: mobius_skip_check_balanced
+#: model:ir.model,name:mobius_skip_check_balanced.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: mobius_skip_check_balanced
+#: model:ir.model.fields,field_description:mobius_skip_check_balanced.field_res_config_settings__account_move_check_balanced_skip
+msgid "Skip check balanced"
+msgstr ""

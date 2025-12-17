@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--data for display Inventory Supplier tree list-->
+    <record id="inventory_supplier_tree" model="ir.ui.view">
+        <field name="name">inventory_supplier.tree</field>
+        <field name="model">inventory.supplier</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="default_code" optional="show"/>
+                <field name="name"/>
+                <field name="supplier_code" optional="show"/>
+                <field name="category_name" optional="show"/>
+                <field name="supplier_name" optional="show"/>
+                <field name="vendor_name" optional="show"/>
+                <field name="inventory" optional="show"/>
+                <field name="inventory_code" optional="show"/>
+                <field name="inventory_description" optional="show"/>
+                <field name="inventory_article" optional="show"/>
+                <field name="inventory_quantity" optional="show"/>
+                <field name="purchaseorders_income" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--data for display Inventory Supplier form-->
+    <record id="inventory_supplier_form" model="ir.ui.view">
+       <field name="name">inventory_supplier.form</field>
+       <field name="model">inventory.supplier</field>
+       <field name="arch" type="xml">
+           <form>
+               <group name="group_main">
+                   <group name="group_left">
+                       <field name="default_code"/>
+                       <field name="supplier_code"/>
+                       <field name="category_name"/>
+                       <field name="vendor_name"/>
+                       <field name="inventory"/>
+                       <field name="inventory_code"/>
+                       <field name="inventory_description"/>
+                       <field name="inventory_article"/>
+                       <field name="inventory_quantity"/>
+                       <field name="purchaseorders_income"/>
+                   </group>
+                   <group name="group_right">
+                       <field name="name"/>
+                       <field name="supplier_name"/>
+                   </group>
+               </group>
+           </form>
+       </field>
+   </record>
+
+    <!--button "Run synchronisation" on the statusbar of Inventory Supplier tree list -->
+   <record id="inventory_supplier_tree_view" model="ir.ui.view">
+       <field name="name">inventory_supplier.tree.view</field>
+       <field name="model">inventory.supplier</field>
+       <field name="inherit_id" ref="inventory_supplier_tree"/>
+       <field name="arch" type="xml">
+           <xpath expr="//tree" position="attributes">
+               <attribute name="js_class">run_synchronisation_action_tree</attribute>
+           </xpath>
+       </field>
+   </record>
+
+    <record id="inventory_supplier_sync_action" model="ir.actions.act_window">
+        <field name="name">Inventory Supplier View</field>
+        <field name="res_model">inventory.supplier</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="inventory_supplier_sync_action_tree" model="ir.actions.act_window.view">
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="inventory_supplier_tree"/>
+    </record>
+
+    <record id="inventory_supplier_sync_action_form" model="ir.actions.act_window.view">
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="inventory_supplier_form"/>
+    </record>
+</odoo>

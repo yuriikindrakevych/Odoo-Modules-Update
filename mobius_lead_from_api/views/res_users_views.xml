@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_users_form_inherit_m" model="ir.ui.view">
+        <field name="name">res.users.form.forum</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='preferences']//field[@name='tz']" groups="base.group_user" position="after">
+                <field name="trade_guardian_code"/>
+                <field name="access_code_to_external_systems"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_services_rights_form" model="ir.ui.view">
+        <field name="name">rights.of.external.services.form</field>
+        <field name="model">rights.of.external.services</field>
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+            <form string="Mask Form">
+                <sheet>
+                    <group>
+                        <label for="name" />
+                        <div class="o_row">
+                            <field name="name"/>
+                        </div>
+                        <label for="description" />
+                        <div class="o_row">
+                            <field name="description"/>
+                        </div>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_services_rights_tree" model="ir.ui.view">
+        <field name="name">rights.of.external.services.tree</field>
+        <field name="model">rights.of.external.services</field>
+        <field name="arch" type="xml">
+            <tree string="Services Rights">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_services_rights_open" model="ir.actions.act_window">
+        <field name="name">Code Generation</field>
+        <field name="res_model">rights.of.external.services</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_services_rights_open_tree" model="ir.actions.act_window.view">
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_services_rights_tree"/>
+    </record>
+
+    <record id="action_services_rights_open_form" model="ir.actions.act_window.view">
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_services_rights_form"/>
+    </record>
+
+    <menuitem id="res_partner_services_rights_open"
+        action="action_services_rights_open"
+        name="Services Rights"
+        parent="contacts.res_partner_menu_config"/>
+
+</odoo>
