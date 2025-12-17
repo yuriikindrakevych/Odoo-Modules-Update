@@ -1,9 +1,51 @@
 # TODO: План адаптації модулів Odoo 18
 
 ## 🎯 Загальний прогрес
+- [x] **Фаза 0:** Підготовка проекту (завершено)
 - [ ] **Фаза 1:** Базові модулі (0/16)
 - [ ] **Фаза 2:** Середня складність (0/18)
 - [ ] **Фаза 3:** Висока складність (0/6)
+
+---
+
+## ✅ Фаза 0: Підготовка проекту (ЗАВЕРШЕНО)
+
+**Дата:** 2024-12-17
+
+### Виконані роботи:
+- [x] Завантажено бекап з сервера (`odoo_full_backup_20251217`)
+- [x] Знайдено кастомні модулі в `addons-custom/` (14 модулів) та `addons-dev/` (45 модулів)
+- [x] Скопійовано всі 59 модулів в кореневу папку проекту
+- [x] Видалено зайві файли Odoo (`odoo18-migration/`, `odoo_full_backup_20251217/`)
+- [x] Створено `.gitignore` для ігнорування IDE файлів
+- [x] Зроблено git commit та push в GitHub
+
+### Структура модулів:
+
+**Mobius модулі (49):**
+- `mobius` (базовий)
+- `mobius_activity_reports`, `mobius_advanced_calendar_aklima`, `mobius_aklima_custom`
+- `mobius_aklima_import_lead`, `mobius_auto_login`, `mobius_automatic_delivery_sale_order`
+- `mobius_bulding_object`, `mobius_catalogue_koatuu`, `mobius_check_balanced_off`
+- `mobius_choose_reason_loss_lead`, `mobius_contact_and_lead_search`, `mobius_contact_by_vat`
+- `mobius_contact_form_aklima`, `mobius_contact_priority`, `mobius_creating_invoice_after_down_payment_aklima`
+- `mobius_crm_customization`, `mobius_crm_lead_advanced_import`, `mobius_custom_sales_team_autofill`
+- `mobius_email_to_inbox`, `mobius_google_sheet_importer`, `mobius_inventory_supplier`
+- `mobius_lead_by_vat`, `mobius_lead_condition`, `mobius_lead_contact_import`
+- `mobius_lead_from_api`, `mobius_lead_today_task_aklima`, `mobius_login_screen_api`
+- `mobius_portal_aklima`, `mobius_portal_user_correct_pricelist`, `mobius_product_category_attributes`
+- `mobius_product_sizes`, `mobius_quotation_cancel_reason`, `mobius_registration_aklima`
+- `mobius_rel_lead_and_contact_from_calendar`, `mobius_replace_mail_bounce_catchall_aklima`
+- `mobius_sale_order_convert`, `mobius_sale_order_counter`, `mobius_sale_order_downpayment_aklima`
+- `mobius_sale_order_opportunity`, `mobius_sale_order_reports`, `mobius_sales_follower`
+- `mobius_skip_check_balanced`, `mobius_translate_account_aklima`, `mobius_translate_polish_szanse`
+- `mobius_translate_website_aklima`, `mobius_translate_website_sale_stock_aklima`, `mobius_turbosms`
+- `mobius_website_product_sharelink_hide`
+
+**Сторонні/OCA модулі (10):**
+- `account_dynamic_reports`, `account_netting`, `barcodes_generator_abstract`
+- `base_account_budget`, `base_accounting_kit`, `base_api`
+- `crm_facebook_leads`, `google_sheet_importer`, `mail_debrand`, `openapi`
 
 ---
 
