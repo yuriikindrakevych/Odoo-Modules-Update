@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "Mobius Translate Polish Szanse",
-    "version": "15.0.1.0.2",
+    "version": "18.0.1.0.2",
     "author": "Mobius ERP",
     "website": "https://erp-mobius.com",
     "summary": "Mobius customization",

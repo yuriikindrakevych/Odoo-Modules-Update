@@ -5,7 +5,7 @@
     "website": "https://erp-mobius.com",
     "category": "Sales/Contacts",
     "sequence": 1,
-    "version": "0.3",
+    "version": "18.0.0.3",
     "summary": "Mobius customization",
     "description": "Mobius customization",
     

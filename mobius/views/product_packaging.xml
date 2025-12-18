@@ -5,9 +5,9 @@
         <field name="model">product.packaging</field>
         <field name="inherit_id" ref="product.product_packaging_tree_view"/>
         <field name="arch" type="xml">
-            <tree name="packaging">
+            <list name="packaging">
                 <button name="generate_all" string="Generate" type="object" class="btn-primary oe_inline oe_right" colspan="2"/>
-            </tree>
+            </list>
         </field>
     </record>
 </odoo>

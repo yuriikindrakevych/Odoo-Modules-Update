@@ -3,7 +3,7 @@
     "description": "Mobius Replace mail_bounce_catchalle",
     "depends": ["base", "mail"],
     "author": "Mobius team",
-    "version": "1.0.0",
+    "version": "18.0.1.0.0",
     "installable": True,
     "application": False,
     "data": [

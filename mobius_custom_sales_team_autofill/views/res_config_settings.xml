@@ -15,9 +15,9 @@
                                     Команди продажу які автозаповняються при створенні лідів та продажів на контакт їх члена
                                 </div>
                                 <field name="contact_autofill_team_ids" style="margin-top: 10px;">
-                                    <tree width="200px">
+                                    <list width="200px">
                                         <field name="name"/>
-                                    </tree>
+                                    </list>
                                 </field>
                             </div>
                         </div>

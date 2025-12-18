@@ -1,7 +1,7 @@
 {
     "name": "Mobius Lead by the VAT",
     "category": "Sales/Contacts",
-    "version": "0.1.2",
+    "version": "18.0.0.1.2",
     
     "summary": "Mobius customization",
     "description": "Creating of Lead by the VAT code",

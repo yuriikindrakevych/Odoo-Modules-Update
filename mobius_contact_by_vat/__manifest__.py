@@ -3,7 +3,7 @@
     "author": "Mobius ERP",
     "website": "https://erp-mobius.com",
     "description": "Creating of Contact by the VAT code",
-    "version": "1.0.0",
+    "version": "18.0.1.0.0",
     
     "depends": ["base", "contacts", "mobius_catalogue_koatuu", ],
     "assets":

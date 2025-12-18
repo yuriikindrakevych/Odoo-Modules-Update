@@ -6,7 +6,7 @@
     "website": "https://erp-mobius.com",
     "category": "Sales",
     "sequence": 1,
-    "version": "0.4",
+    "version": "18.0.0.4",
     "summary": "Mobius customization",
     "description": "Mobius customization",
     "depends": ["base", "sale", "crm", "mobius_portal_aklima"],

@@ -8,7 +8,7 @@
     "installable": True,
     "author" : "Mobius team",
     "license": "Other proprietary",
-    "version": "1.0.0",
+    "version": "18.0.1.0.0",
     "depends": [
         "crm",
     ],

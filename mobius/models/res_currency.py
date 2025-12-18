@@ -11,8 +11,8 @@ _logger = logging.getLogger(__name__)
 class ResCurrencyRate(models.Model):
     _inherit = "res.currency.rate"
 
-    inv_rate = fields.Float(digits=0, group_operator="avg", help="The rate (sell) of the currency to the currency of rate 1", string="Technical Rate (sell)")
-    inverse_company_rate = fields.Float(digits=0, compute="_compute_inverse_company_rate", inverse="_inverse_inverse_company_rate", group_operator="avg")
+    inv_rate = fields.Float(digits=0, aggregator="avg", help="The rate (sell) of the currency to the currency of rate 1", string="Technical Rate (sell)")
+    inverse_company_rate = fields.Float(digits=0, compute="_compute_inverse_company_rate", inverse="_inverse_inverse_company_rate", aggregator="avg")
 
     @api.model
     def sync_action(self):

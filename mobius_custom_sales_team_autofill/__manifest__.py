@@ -5,7 +5,7 @@
     "website": "https://erp-mobius.com",
     "category": "Sales",
     "sequence": 1,
-    "version": "0.1.0",
+    "version": "18.0.0.1.0",
     "summary": "Mobius customization",
     "description": "Mobius customization",
     "depends": ["base", "sale", "crm"],
