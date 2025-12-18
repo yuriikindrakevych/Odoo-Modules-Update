@@ -2,7 +2,7 @@
     "name": "Mobius Contact Form Aklima",
     "author": "Mobius ERP",
     "website": "https://erp-mobius.com",
-    "version": "15.0.0.0.2",
+    "version": "18.0.0.0.2",
     "summary": "Mobius customization",
     "description": "Mobius Contact Form Aklima",
     "depends": [

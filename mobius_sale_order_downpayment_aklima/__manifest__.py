@@ -3,7 +3,7 @@
     "name": "Mobius Sale Order Downpayment",
     "author": "Mobius ERP",
     "website": "https://erp-mobius.com",
-    "version": "1.0.4",
+    "version": "18.0.1.0.4",
     "description": "Sale Order Downpayment",
     "installable": True,
     "application": True,

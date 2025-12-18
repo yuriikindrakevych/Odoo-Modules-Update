@@ -2,7 +2,7 @@
     "name": "Mobius Catalogue KOATUU",
     "author": "Mobius ERP",
     "website": "https://erp-mobius.com",
-    "version": "0.0.3",
+    "version": "18.0.0.0.3",
     "summary": "Mobius customization",
     "description": "Mobius Catalogue KOATUU",
     "depends": ["base", "contacts"],

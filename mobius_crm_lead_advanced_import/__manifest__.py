@@ -1,7 +1,7 @@
 {
     "name": "Mobius CRM Lead Advanced Import",
     "category": "Sales/Contacts",
-    "version": "0.0.3",
+    "version": "18.0.0.0.3",
     
     "summary": "Mobius customization",
     "description": "Mobius CRM Lead Advanced Import",

@@ -61,16 +61,16 @@
         <field name="name">General Search</field>
         <field name="model">general.search.by.models</field>
         <field name="arch" type="xml">
-            <tree string="General Search">
+            <list string="General Search">
                 <field name="name"/>
-            </tree>
+            </list>
         </field>
     </record>
 
     <record id="mobius_contact_and_lead_search_action_general_search_by_models" model="ir.actions.act_window">
         <field name="name">General Search</field>
         <field name="res_model">general.search.by.models</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <record id="mobius_contact_and_lead_search_action_general_search_by_models_form" model="ir.actions.act_window">

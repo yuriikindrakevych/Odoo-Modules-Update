@@ -1,7 +1,7 @@
 {
     "name": "Mobius Aklima Customization",
     "category": "Customization",
-    "version": "0.2.7",
+    "version": "18.0.0.2.7",
 
     "summary": "Mobius customization",
     "description": "Aklima Customization",

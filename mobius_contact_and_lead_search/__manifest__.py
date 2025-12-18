@@ -2,7 +2,7 @@
     "name": "Mobius Contact and Lead Search",
     "author": "Mobius ERP",
     "website": "https://erp-mobius.com",
-    "version": "15.0.0.0.2",
+    "version": "18.0.0.0.2",
     "summary": "Mobius customization",
     "description": "Mobius Contact and Lead Search",
     "depends": [

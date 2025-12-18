@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "Mobius Sale Order Reports",
-    "version": "15.0.0.3.3",
+    "version": "18.0.0.3.3",
     "category": "Sales/Contacts",
     
     "summary": "Mobius customization",

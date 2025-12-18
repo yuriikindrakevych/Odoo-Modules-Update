@@ -2,7 +2,7 @@
 {
     "name": "Mobius Create Lead From Api",
     "category": "Sales/Contacts",
-    "version": "0.1.4",
+    "version": "18.0.0.1.4",
 
     "summary": "Mobius customization",
     "description": """Mobius customization""",
