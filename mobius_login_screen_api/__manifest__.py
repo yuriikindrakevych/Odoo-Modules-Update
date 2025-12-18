@@ -3,7 +3,7 @@
     "name": "Mobius Login Screen API",
     "author": "Mobius ERP",
     "website": "https://erp-mobius.com",
-    "version": "0.6",
+    "version": "18.0.0.6",
     "category": "Sales/Contacts",
     "sequence": 1,
     "summary": "Mobius customization",

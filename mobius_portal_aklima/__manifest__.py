@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "Mobius Portal",
-    "version": "0.1.6",
+    "version": "18.0.0.1.6",
     "category": "Sales/Contacts",
     "sequence": 1,
 

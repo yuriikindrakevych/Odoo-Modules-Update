@@ -3,7 +3,7 @@
 
 {
     "name": "Mobius Auto Login",
-    "version": "1.0",
+    "version": "18.0.1.0",
     "category": "Sales",
     "sequence": 1,
     "installable": True,

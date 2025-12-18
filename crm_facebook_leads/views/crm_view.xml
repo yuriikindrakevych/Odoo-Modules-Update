@@ -38,7 +38,7 @@
                         </group>
                         <group colspan="2">
                             <field name="form_ids">
-                                <tree editable="0" readonly="1">
+                                <list editable="0" readonly="1">
                                     <field name="name"/>
                                     <field name="facebook_form_id"/>
                                     <field name="team_id"/>
@@ -46,7 +46,7 @@
                                     <field name="medium_id"/>
                                     <field name="source_id"/>
                                     <field name="date_retrieval"/>
-                                </tree>
+                                </list>
                             </field>
                         </group>
                     </sheet>
@@ -58,17 +58,17 @@
             <field name="name">crm.facebook.page.tree</field>
             <field name="model">crm.facebook.page</field>
             <field name="arch" type="xml">
-                <tree string="Facebook Page">
+                <list string="Facebook Page">
                     <field name="label"/>
                     <field name="name"/>
-                </tree>
+                </list>
             </field>
         </record>
 
         <record model="ir.actions.act_window" id="action_crm_facebook_page">
             <field name="name">Facebook Pages</field>
             <field name="res_model">crm.facebook.page</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
             <field name="view_id" ref="crm_facebook_page_tree"/>
             <field name="help" type="html">
                 <p></p>
@@ -112,14 +112,14 @@
                         </group>
                         <group colspan="2" string="Mappings">
                             <field name="mappings">
-                                <tree editable="bottom">
+                                <list editable="bottom">
                                     <field name="name"/>
                                     <field name="facebook_field"/>
                                     <field name="odoo_field"/>
                                     <button name="action_guess_mapping" type="object"
                                             icon="fa-question-circle text-info" string="Guess Mapping"
                                             attrs="{'invisible': [('odoo_field', '!=', False)]}"/>
-                                </tree>
+                                </list>
                             </field>
                         </group>
                     </sheet>
@@ -131,19 +131,19 @@
             <field name="name">crm.facebook.form.tree</field>
             <field name="model">crm.facebook.form</field>
             <field name="arch" type="xml">
-                <tree>
+                <list>
                     <field name="name"/>
                     <field name="facebook_form_id" readonly='1'/>
                     <field name="page_id" readonly='1'/>
                     <field name="team_id"/>
-                </tree>
+                </list>
             </field>
         </record>
 
         <record model="ir.actions.act_window" id="action_crm_facebook_form">
             <field name="name">Facebook Forms</field>
             <field name="res_model">crm.facebook.form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
             <field name="view_id" ref="crm_facebook_form_tree"/>
             <field name="help" type="html">
                 <p></p>
@@ -175,17 +175,17 @@
             <field name="name">crm.facebook.form.mapping.tree</field>
             <field name="model">crm.facebook.form.mapping</field>
             <field name="arch" type="xml">
-                <tree>
+                <list>
                     <field name="facebook_field"/>
                     <field name="odoo_field"/>
-                </tree>
+                </list>
             </field>
         </record>
 
         <record model="ir.actions.act_window" id="action_crm_facebook_form_mapping">
             <field name="name">Default Mappings</field>
             <field name="res_model">crm.facebook.form.mapping</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
             <field name="view_id" ref="crm_facebook_form_mapping_tree"/>
             <field name="help" type="html">
                 <p></p>

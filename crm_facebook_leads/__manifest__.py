@@ -11,7 +11,7 @@
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
     # for the full list
     'category': 'Lead Automation',
-    'version': '14.0.2.0.1',
+    'version': '18.0.2.0.1',
 
     'depends': ['crm'],
     'images': ['static/src/img/banner.png'],

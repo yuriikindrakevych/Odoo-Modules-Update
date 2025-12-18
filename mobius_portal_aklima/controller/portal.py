@@ -516,7 +516,7 @@ class CustomerPortal(CustomerPortal):
 
 
 
-    @http.route(['/my/orders/<int:order_id>/accept'], type='json', auth="public", website=True)
+    @http.route(['/my/orders/<int:order_id>/accept'], type='jsonrpc', auth="public", website=True)
     def portal_quote_accept(self, order_id, access_token=None, name=None, signature=None):
         # get from query string if not on json param
         access_token = access_token or request.httprequest.args.get('access_token')
@@ -849,7 +849,7 @@ class WebsiteSaleDelivery(WebsiteSaleDelivery):
         _logger.info("post=%s", post)
         return super(WebsiteSaleDelivery, self).shop_payment(**post)
 
-    @http.route(['/shop/carrier_rate_shipment'], type='json', auth='public', methods=['POST'], website=True)
+    @http.route(['/shop/carrier_rate_shipment'], type='jsonrpc', auth='public', methods=['POST'], website=True)
     def cart_carrier_rate_shipment(self, carrier_id, **kw):
         order = request.website.sale_get_order(force_create=True)
         _logger.info("order=%s", order)
@@ -909,7 +909,7 @@ class WebsiteSaleDelivery(WebsiteSaleDelivery):
         return res
 
 
-    @http.route(['/shop/update_carrier'], type='json', auth='public', methods=['POST'], website=True, csrf=False)
+    @http.route(['/shop/update_carrier'], type='jsonrpc', auth='public', methods=['POST'], website=True, csrf=False)
     def update_eshop_carrier(self, **post):
         order = request.website.sale_get_order()
         carrier_id = int(post['carrier_id'])

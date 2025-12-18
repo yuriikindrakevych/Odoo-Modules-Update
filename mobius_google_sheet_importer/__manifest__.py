@@ -1,7 +1,7 @@
 {
     "name": "Mobius Aklima Google Sheet Importer",
     "summary": "Aklima Customization",
-    "version": "15.0.1.0.0",
+    "version": "18.0.1.0.0",
     "author": "Mobius ERP",
     "website": "https://erp-mobius.com",
     "category": "Customization",

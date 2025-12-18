@@ -1,7 +1,7 @@
 {
     "name": "Mobius CRM Lead Customization",
     "category": "Sales/CRM",
-    "version": "0.1.1",
+    "version": "18.0.0.1.1",
 
     "summary": "Mobius customization",
     "description": """Mobius customization""",

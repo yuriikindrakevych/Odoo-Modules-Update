@@ -1,7 +1,7 @@
 {
     "name": "Google Sheet Importer",
     "summary": "Dynamic models and field mapping with the ability to import multiple Google Sheets into any Odoo model and fields using scheduled actions (cron)",
-    "version": "15.0.1.0.0",
+    "version": "18.0.1.0.0",
     "author": "Jothimani Rajagopal",
     "website": "https://www.linkedin.com/in/jothimani-r/",
     "category": "Tools",

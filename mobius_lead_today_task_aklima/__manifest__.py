@@ -3,7 +3,7 @@
     "name": "Mobius Lead Today Task",
     "category": "Sales/Contacts",
     "sequence": 1,
-    "version": "0.1",
+    "version": "18.0.0.1",
     "summary": "Mobius customization",
     "description": "Mobius customization",
 
