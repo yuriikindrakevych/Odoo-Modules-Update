@@ -164,8 +164,62 @@
 
 ---
 
-## ✅ Завершальні кроки
+## ✅ Інструменти аналізу (ЗАВЕРШЕНО)
 
+**Дата:** 2024-12-18
+
+Створено скрипти для аналізу модулів перед встановленням:
+
+### scripts/analyze_modules.sh (Серверний)
+Скрипт для запуску на сервері з підключенням до PostgreSQL:
+- Перевірка стану модуля в базі даних (installed/uninstalled)
+- Підрахунок записів у таблицях модуля
+- Аналіз залежностей між модулями
+- Визначення коробкових замін в Odoo 18
+- Генерація детального звіту `analysis_report_YYYYMMDD.md`
+
+**Використання:**
+```bash
+cd /www/wwwroot/odoo18-migration/custom_addons
+chmod +x scripts/analyze_modules.sh
+./scripts/analyze_modules.sh
+```
+
+### scripts/analyze_code_local.sh (Локальний)
+Скрипт для локального аналізу без підключення до БД:
+- Аналіз Python коду (моделі, контролери, wizards)
+- Аналіз XML (views, actions, menus, security)
+- Перевірка JavaScript/OWL компонентів
+- Виявлення legacy `odoo.define()` коду
+- Mermaid граф залежностей
+- Рекомендації порядку встановлення
+
+**Використання:**
+```bash
+cd /media/yurii/Data\ 1/PhpStormProjects/Odoo-Modules-Update
+chmod +x scripts/analyze_code_local.sh
+./scripts/analyze_code_local.sh
+```
+
+### Коробкові заміни в Odoo 18:
+| Модуль | Заміна |
+|--------|--------|
+| `base_account_budget` | account_budget (Enterprise) |
+| `account_dynamic_reports` | Вбудовані динамічні звіти |
+| `base_accounting_kit` | Стандартний Accounting модуль |
+| `crm_facebook_leads` | Social Marketing (Enterprise) |
+| `openapi` | Вбудований REST API (Odoo 17+) |
+| `base_api` | JSON-RPC та REST API |
+| `mail_debrand` | System Parameters |
+| `barcodes_generator_abstract` | Покращений barcode модуль |
+| `account_netting` | OCA/account-financial-tools |
+
+---
+
+## ⏳ Завершальні кроки
+
+- [ ] Запустити `analyze_code_local.sh` локально
+- [ ] Запустити `analyze_modules.sh` на сервері
 - [ ] Оновлення `odoo18.conf` з шляхом до custom_addons
 - [ ] Встановлення всіх модулів разом
 - [ ] Тестування взаємодії модулів
