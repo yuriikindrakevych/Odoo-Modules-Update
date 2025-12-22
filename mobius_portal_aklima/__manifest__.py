@@ -24,7 +24,6 @@
         "mobius_sale_order_reports",
         "account",
         "mobius_automatic_delivery_sale_order",
-        "website_sale_delivery",
     ],
     "data": 
     [
