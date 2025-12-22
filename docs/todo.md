@@ -261,6 +261,81 @@ chmod +x scripts/analyze_code_local.sh
 
 ---
 
+## 📋 План встановлення решти модулів
+
+**Оновлено:** 2024-12-22
+
+### Фаза 1: Прості модулі (без складних залежностей)
+| # | Модуль | Залежності | Статус |
+|---|--------|------------|--------|
+| 1 | `mobius_email_to_inbox` | mail | ⏳ |
+| 2 | `mobius_check_balanced_off` | base, account | ⏳ |
+| 3 | `mobius_translate_polish_szanse` | iap_crm, website_crm, crm | ⏳ |
+| 4 | `mobius_replace_mail_bounce_catchall_aklima` | base, mail | ⏳ |
+| 5 | `mobius_website_product_sharelink_hide` | website_sale | ⏳ |
+| 6 | `mail_debrand` | mail | ⏳ |
+| 7 | `mobius_translate_account_aklima` | account | ⏳ |
+| 8 | `mobius_translate_website_aklima` | website | ⏳ |
+| 9 | `mobius_translate_website_sale_stock_aklima` | website_sale_stock | ⏳ |
+| 10 | `mobius_turbosms` | base | ⏳ |
+
+### Фаза 2: Модулі з залежностями від CRM/Sale
+| # | Модуль | Залежності | Статус |
+|---|--------|------------|--------|
+| 11 | `mobius_lead_today_task_aklima` | crm | ⏳ |
+| 12 | `mobius_login_screen_api` | base, web | ⏳ |
+| 13 | `mobius_product_category_attributes` | product | ⏳ |
+| 14 | `mobius_crm_customization` | crm | ⏳ |
+| 15 | `mobius_bulding_object` | base, crm | ⏳ |
+| 16 | `mobius_aklima_import_lead` | crm | ⏳ |
+| 17 | `mobius_google_sheet_importer` | base | ⏳ |
+
+### Фаза 3: mobius_portal_aklima (потребує виправлень XML templates)
+| # | Модуль | Статус |
+|---|--------|--------|
+| 18 | `mobius_portal_aklima` | ⏳ Потребує виправлень |
+
+### Фаза 4: Модулі що залежать від mobius_portal_aklima
+| # | Модуль | Статус |
+|---|--------|--------|
+| 19 | `mobius_registration_aklima` | ⏳ |
+
+### Фаза 5: Сторонні/OCA модулі
+| # | Модуль | Статус |
+|---|--------|--------|
+| 20 | `base_api` | ⏳ |
+| 21 | `openapi` | ⏳ |
+| 22 | `base_account_budget` | ⏳ |
+| 23 | `base_accounting_kit` | ⏳ |
+| 24 | `account_dynamic_reports` | ⏳ |
+| 25 | `account_netting` | ⏳ |
+| 26 | `crm_facebook_leads` | ⏳ |
+| 27 | `google_sheet_importer` | ⏳ |
+| 28 | `barcodes_generator_abstract` | ⏳ |
+
+### Команди для встановлення
+
+```bash
+# Підготовка
+cd /www/wwwroot/odoo18-migration
+systemctl stop odoo18
+source venv/bin/activate
+
+# Оновлення коду з репозиторію
+cd custom_addons && git pull origin main && cd ..
+
+# Фаза 1 - Прості модулі
+python odoo/odoo-bin -c odoo18.conf -d odoo18_new -i mobius_email_to_inbox,mobius_check_balanced_off,mobius_replace_mail_bounce_catchall_aklima,mail_debrand,mobius_translate_account_aklima,mobius_turbosms --stop-after-init 2>&1 | tail -50
+
+# Фаза 2 - CRM/Sale модулі
+python odoo/odoo-bin -c odoo18.conf -d odoo18_new -i mobius_lead_today_task_aklima,mobius_login_screen_api,mobius_product_category_attributes,mobius_crm_customization --stop-after-init 2>&1 | tail -50
+
+# Запуск сервера
+systemctl start odoo18
+```
+
+---
+
 ## 📝 Нотатки
 
 ### Виявлені проблеми
