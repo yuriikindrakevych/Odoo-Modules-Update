@@ -15,11 +15,12 @@
         "report/report.xml",
         "views/calendar_advanced_views.xml",
     ],
-    "assets": {
-        "web.assets_backend": [
-            "mobius_advanced_calendar_aklima/static/src/xml/base_calendar.xml",
-        ],
-    },
+    # Assets disabled - need OWL rewrite for Odoo 18
+    # "assets": {
+    #     "web.assets_backend": [
+    #         "mobius_advanced_calendar_aklima/static/src/xml/base_calendar.xml",
+    #     ],
+    # },
     "application": True,
     "license": "AGPL-3",
 }

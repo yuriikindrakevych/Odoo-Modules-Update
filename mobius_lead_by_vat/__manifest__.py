@@ -16,14 +16,15 @@
         "mobius_catalogue_koatuu",
     ],
 
-    "assets":
-    {
-       "web.assets_backend":
-       [
-            "mobius_lead_by_vat/static/src/js/**/*",
-            "mobius_lead_by_vat/static/src/xml/**/*",
-       ],
-    },
+    # Assets disabled - need OWL rewrite for Odoo 18
+    # "assets":
+    # {
+    #    "web.assets_backend":
+    #    [
+    #         "mobius_lead_by_vat/static/src/js/**/*",
+    #         "mobius_lead_by_vat/static/src/xml/**/*",
+    #    ],
+    # },
 
     "data": [
         "security/ir.model.access.csv",

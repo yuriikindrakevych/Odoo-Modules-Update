@@ -18,14 +18,15 @@
         "views/res_partner_inherited_views.xml",
     ],
 
-    "assets":
-    {
-       "web.assets_backend":
-       [
-            "mobius_lead_contact_import/static/src/js/lead_import_menu.js",
-            "mobius_lead_contact_import/static/src/xml/**/*",
-       ],
-    },
+    # Assets disabled - need OWL rewrite for Odoo 18
+    # "assets":
+    # {
+    #    "web.assets_backend":
+    #    [
+    #         "mobius_lead_contact_import/static/src/js/lead_import_menu.js",
+    #         "mobius_lead_contact_import/static/src/xml/**/*",
+    #    ],
+    # },
 
     "installable": True,
     "license": "AGPL-3",

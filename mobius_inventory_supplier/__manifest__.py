@@ -9,13 +9,14 @@
     # any module necessary for this one to work correctly
     "depends": ["base", "stock", "sale"],
     # always loaded
-    "assets": {
-       "web.assets_backend": [
-           "mobius_inventory_supplier/static/src/js/run_synchronisation_action_tree.js",
-           "mobius_inventory_supplier/static/src/xml/run_synchronisation_button_tree.xml",
-           "mobius_inventory_supplier/static/src/xml/sale_stock.xml",
-       ],
-    },
+    # Assets disabled - need OWL rewrite for Odoo 18
+    # "assets": {
+    #    "web.assets_backend": [
+    #        "mobius_inventory_supplier/static/src/js/run_synchronisation_action_tree.js",
+    #        "mobius_inventory_supplier/static/src/xml/run_synchronisation_button_tree.xml",
+    #        "mobius_inventory_supplier/static/src/xml/sale_stock.xml",
+    #    ],
+    # },
     "data": [
         "security/ir.model.access.csv",
         "views/inventory_supplier_view.xml",
