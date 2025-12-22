@@ -115,24 +115,10 @@
 -->
 
 
+<!-- Disabled for Odoo 18 - template structure changed
     <template id="mobius_portal_aklima.reduction_code_two" inherit_id="website_sale.reduction_code">
         <xpath expr="//div[@id='cart_total']//table/tr[last()]" position="replace">
             <t t-set="text" t-value="True"/>
-<!--             <t t-if="False">
-                <tr t-if="not hide_promotions">
-                    <td colspan="3" class="text-center text-xl-right border-0">
-                    <span class=''>
-                        <t t-set='force_coupon' t-value="website_sale_order.pricelist_id.code or request.params.get('code_not_available')"/>
-                        <t t-if="not force_coupon">
-                            <a href="#" class="show_coupon">I have a promo code</a>
-                        </t>
-                        <div t-attf-class="coupon_form #{not force_coupon and 'd-none'}">
-                            <t t-call="website_sale.coupon_form"/>
-                        </div>
-                    </span>
-                    </td>
-                </tr>
-            </t> -->
         </xpath>
     </template>
 
@@ -140,21 +126,8 @@
         <xpath expr="//a[hasclass('d-xl-inline-block')]" position="replace">
             <t t-set="text" t-value="True"/>
         </xpath>
-<!--         <div class="card js_cart_summary" t-if="website_sale_order and website_sale_order.website_order_line" >
-            <div class="card-body">
-                <h4 class="d-none d-xl-block">Order Total</h4>
-                <hr class="d-none d-xl-block"/>
-                <div>
-                    <t t-call="website_sale.total">
-                        <t t-set="no_rowspan" t-value="1"/>
-                    </t>
-                    <a role="button" t-if="website_sale_order and website_sale_order.website_order_line" class="btn btn-secondary float-right d-none d-xl-inline-block" href="/shop/checkout?express=1">
-                        <span>Process Checkout</span>
-                    </a>
-                </div>
-            </div>
-        </div> -->
     </template>
+-->
 
 
 
