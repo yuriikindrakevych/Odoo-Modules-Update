@@ -11,7 +11,7 @@
         If no user is found, the email will be put into the Administrator's inbox.
     """,
     "category":    "Discuss",
-    "version":     "15.0.1.0.1",
+    "version":     "18.0.1.0.1",
     "depends":     ["mail"],
     "application": False,
     "license":     "AGPL-3",
