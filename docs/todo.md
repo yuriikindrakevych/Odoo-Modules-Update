@@ -218,28 +218,59 @@ chmod +x scripts/analyze_code_local.sh
 
 ## ⏳ Завершальні кроки
 
-- [ ] Запустити `analyze_code_local.sh` локально
-- [ ] Запустити `analyze_modules.sh` на сервері
-- [ ] Оновлення `odoo18.conf` з шляхом до custom_addons
-- [ ] Встановлення всіх модулів разом
+- [x] Оновлення `odoo18.conf` з шляхом до custom_addons
+- [x] Клонування репозиторію на сервер
+- [x] Встановлення базових модулів (mobius, mobius_lead_condition, etc.)
+- [ ] Виправити модуль `mobius_portal_aklima` (багато XML templates потребують оновлення)
+- [ ] Встановити решту модулів через інтерфейс Odoo
 - [ ] Тестування взаємодії модулів
-- [ ] Фінальний push всіх змін
-- [ ] Merge в main гілку
 - [ ] Деплой на production
+
+---
+
+## ✅ Виправлення Odoo 18 (2024-12-22)
+
+### Виправлені проблеми сумісності:
+
+| Модуль | Проблема | Рішення |
+|--------|----------|---------|
+| `mobius_auto_login` | `main.Home` не існує | Імпорт з `odoo.addons.web.controllers.home` |
+| `mobius_auto_login` | `main.ensure_db()` не існує | Імпорт з `odoo.addons.web.controllers.utils` |
+| `mobius_auto_login` | Старий формат ir.cron | Новий формат без `numbercall`, `model_id`, `state` |
+| `mobius` | Старий формат ir.cron | Аналогічно |
+| `mobius_portal_aklima` | Залежність `sale_product_configurator` | Видалено (не існує в Odoo 18) |
+| `mobius_portal_aklima` | Залежність `website_sale_delivery` | Видалено (не існує в Odoo 18) |
+| `mobius_portal_aklima` | `_message_post_helper` не існує | Створено helper функцію |
+| `mobius_portal_aklima` | `url_for` імпорт | Видалено невикористаний імпорт |
+| `mobius_portal_aklima` | `type='jsonrpc'` | Замінено на `type='json'` |
+| `mobius_portal_aklima` | `acquirer_id` | Замінено на `provider_id` |
+| `mobius_portal_aklima` | XML templates (transaction_status, reduction_code, short_cart_summary) | Закоментовано (структура змінилась) |
+| `mobius_automatic_delivery_sale_order` | Залежність `website_sale_delivery` | Видалено |
+| `mobius_custom_sales_team_autofill` | `partner_id.team_id` в @depends | Замінено на `partner_id` + getattr |
+| `mobius_quotation_cancel_reason` | Залежність `mobius_portal_aklima` | Видалено |
+| `mobius_email_to_inbox` | Версія `15.0.1.0.1` | Оновлено до `18.0.1.0.1` |
+
+### Модулі що потребують додаткової роботи:
+
+1. **mobius_portal_aklima** - багато XML templates наслідують від templates що змінились в Odoo 18:
+   - `website_sale.products_item`
+   - `website_sale.product_price`
+   - `sale_product_configurator.configure_optional_products`
+   - `website_sale_delivery.*`
+   - `website_sale.total`
 
 ---
 
 ## 📝 Нотатки
 
 ### Виявлені проблеми
-_(Записувати проблеми під час міграції)_
-
-1. 
+1. База даних називається `odoo18_new`, не `odoo18`
+2. PostgreSQL на порті 5433
+3. Користувач з id=37 мав 2 типи користувача (Portal + Internal) - конфлікт constraint
 
 ### Рішення
-_(Записувати знайдені рішення)_
-
-1. 
+1. Оновити `DB_NAME` в скриптах
+2. Видалити зайву групу: `DELETE FROM res_groups_users_rel WHERE uid = 37 AND gid = 9;` 
 
 ### Корисні команди
 
