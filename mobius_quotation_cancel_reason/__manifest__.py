@@ -9,7 +9,7 @@
     "version": "18.0.0.4",
     "summary": "Mobius customization",
     "description": "Mobius customization",
-    "depends": ["base", "sale", "crm", "mobius_portal_aklima"],
+    "depends": ["base", "sale", "crm"],
     "data":
     [
         "security/ir.model.access.csv",
