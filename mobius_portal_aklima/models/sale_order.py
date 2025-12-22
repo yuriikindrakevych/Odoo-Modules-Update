@@ -2,8 +2,6 @@
 from odoo import api, fields, models, tools, SUPERUSER_ID, _
 import json
 from odoo.http import request
-from odoo.addons.website.models import ir_http
-from odoo.addons.http_routing.models.ir_http import url_for
 from odoo.tools.float_utils import float_compare, float_is_zero, float_round
 from odoo.addons.base.models.res_partner import WARNING_MESSAGE, WARNING_HELP
 from odoo.tests import Form
