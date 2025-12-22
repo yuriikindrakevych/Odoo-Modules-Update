@@ -5,7 +5,7 @@ from odoo import api, models
 class Lead(models.Model):
     _inherit = "crm.lead"
 
-    @api.depends('user_id', 'type', 'partner_id.team_id')
+    @api.depends('user_id', 'type', 'partner_id')
     def _compute_team_id(self):
         super()._compute_team_id()
 
@@ -14,5 +14,6 @@ class Lead(models.Model):
 
             autofill_team_ids = company.contact_autofill_team_ids.ids
 
-            if record.partner_id and record.partner_id.team_id and record.partner_id.team_id.id in autofill_team_ids:
-                record.team_id = record.partner_id.team_id.id
+            partner_team_id = getattr(record.partner_id, 'team_id', False)
+            if record.partner_id and partner_team_id and partner_team_id.id in autofill_team_ids:
+                record.team_id = partner_team_id.id
