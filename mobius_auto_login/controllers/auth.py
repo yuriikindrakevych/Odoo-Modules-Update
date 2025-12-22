@@ -7,15 +7,16 @@ from collections import OrderedDict
 
 import odoo
 from odoo import http
-import odoo.addons.web.controllers.main as main
+from odoo.addons.web.controllers.home import Home
+from odoo.addons.web.controllers.utils import ensure_db
 from odoo.http import request
 from werkzeug.utils import redirect
 
 _logger = logging.getLogger(__name__)
 
-class AutoLoginHome(main.Home):
+class AutoLoginHome(Home):
 
-    @http.route("/mobius/auth", type="json", auth="none", methods=["POST", "OPTIONS"], csrf=False, website=True, cors="*")
+    @http.route("/mobius/auth", type="jsonrpc", auth="none", methods=["POST", "OPTIONS"], csrf=False, website=True, cors="*")
     def auth(self, db, login, password):
         session_id = uuid.uuid1().hex
         request.env["mobius.session"].sudo().create({
@@ -40,7 +41,7 @@ class AutoLoginHome(main.Home):
     @http.route("/web/login", type="http", auth="none", sitemap=False, csrf=False)
     def web_login(self, redirect=None, **kw):
         try:
-            main.ensure_db()
+            ensure_db()
             session_id = request.httprequest.cookies.get("mob_session_id", None)
             if not session_id:
                 _logger.warning("No mob_session_id cookie")
