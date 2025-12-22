@@ -16,7 +16,7 @@ _logger = logging.getLogger(__name__)
 
 class AutoLoginHome(Home):
 
-    @http.route("/mobius/auth", type="jsonrpc", auth="none", methods=["POST", "OPTIONS"], csrf=False, website=True, cors="*")
+    @http.route("/mobius/auth", type="json", auth="none", methods=["POST", "OPTIONS"], csrf=False, website=True, cors="*")
     def auth(self, db, login, password):
         session_id = uuid.uuid1().hex
         request.env["mobius.session"].sudo().create({
