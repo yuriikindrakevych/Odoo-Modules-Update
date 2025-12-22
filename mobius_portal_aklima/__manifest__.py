@@ -11,21 +11,20 @@
     "author": "Mobius ERP",
     "website": "https://erp-mobius.com",
     
-    "depends": 
+    "depends":
     [
-        "base", 
-        "portal", 
-        "purchase", 
-        "hr_timesheet", 
-        "project", 
-        "sale_management", 
-        "sale", 
-        "website_sale", 
-        "mobius_sale_order_reports", 
+        "base",
+        "portal",
+        "purchase",
+        "hr_timesheet",
+        "project",
+        "sale_management",
+        "sale",
+        "website_sale",
+        "mobius_sale_order_reports",
         "account",
         "mobius_automatic_delivery_sale_order",
         "website_sale_delivery",
-        "sale_product_configurator",
     ],
     "data": 
     [
