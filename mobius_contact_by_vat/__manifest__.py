@@ -12,9 +12,6 @@
        [
            "mobius_contact_by_vat/static/src/js/open_wizard_contact_by_vat_tree.js",
            "mobius_contact_by_vat/static/src/js/open_wizard_contact_by_vat_kanban.js",
-       ],
-       "web.assets_qweb":
-       [
            "mobius_contact_by_vat/static/src/xml/open_wizard_contact_by_vat_tree.xml",
            "mobius_contact_by_vat/static/src/xml/open_wizard_contact_by_vat_kanban.xml",
        ],

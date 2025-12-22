@@ -12,11 +12,8 @@
     "assets": {
        "web.assets_backend": [
            "mobius_inventory_supplier/static/src/js/run_synchronisation_action_tree.js",
-       ],
-       "web.assets_qweb": [
            "mobius_inventory_supplier/static/src/xml/run_synchronisation_button_tree.xml",
            "mobius_inventory_supplier/static/src/xml/sale_stock.xml",
-
        ],
     },
     "data": [

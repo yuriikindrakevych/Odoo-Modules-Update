@@ -21,9 +21,6 @@
        "web.assets_backend":
        [
             "mobius_lead_by_vat/static/src/js/**/*",
-       ],
-       "web.assets_qweb":
-       [
             "mobius_lead_by_vat/static/src/xml/**/*",
        ],
     },

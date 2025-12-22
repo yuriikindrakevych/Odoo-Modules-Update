@@ -16,7 +16,7 @@
         "views/calendar_advanced_views.xml",
     ],
     "assets": {
-        "web.assets_qweb": [
+        "web.assets_backend": [
             "mobius_advanced_calendar_aklima/static/src/xml/base_calendar.xml",
         ],
     },

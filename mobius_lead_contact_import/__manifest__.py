@@ -23,9 +23,6 @@
        "web.assets_backend":
        [
             "mobius_lead_contact_import/static/src/js/lead_import_menu.js",
-       ],
-       "web.assets_qweb":
-       [
             "mobius_lead_contact_import/static/src/xml/**/*",
        ],
     },
