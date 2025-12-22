@@ -530,7 +530,7 @@ class CustomerPortal(CustomerPortal):
 
 
 
-    @http.route(['/my/orders/<int:order_id>/accept'], type='jsonrpc', auth="public", website=True)
+    @http.route(['/my/orders/<int:order_id>/accept'], type='json', auth="public", website=True)
     def portal_quote_accept(self, order_id, access_token=None, name=None, signature=None):
         # get from query string if not on json param
         access_token = access_token or request.httprequest.args.get('access_token')
