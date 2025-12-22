@@ -14,7 +14,6 @@
         "base",
         "sale",
         "delivery",
-        "website_sale_delivery",
     ],
 
     "data": [
