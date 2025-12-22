@@ -647,67 +647,57 @@ class ProductTemplate(models.Model):
 
     is_seller_agreement = fields.Boolean("Agree with seller")
 
-    def _get_combination_info(self, combination=False, product_id=False, add_qty=1, pricelist=False, parent_combination=False, only_template=False):
-        d = super(ProductTemplate, self)._get_combination_info(combination=combination,
-            product_id=product_id, add_qty=add_qty, pricelist=pricelist, parent_combination=parent_combination, only_template=only_template)
+    # Disabled for Odoo 18 - method signature changed, causes RecursionError
+    # Templates using this data (is_seller_agreement, show_available_info) were removed
+    # def _get_combination_info(self, combination=False, product_id=False, add_qty=1, pricelist=False, parent_combination=False, only_template=False):
+    #     d = super(ProductTemplate, self)._get_combination_info(combination=combination,
+    #         product_id=product_id, add_qty=add_qty, pricelist=pricelist, parent_combination=parent_combination, only_template=only_template)
+    #
+    #     if not self.env['ir.config_parameter'].sudo().get_param("use_product_show_availability"):
+    #         d["show_available_info"] = False
+    #         return d
+    #     d["show_available_info"] = True
+    #
+    #     self = self.sudo()
+    #     wh_warehouse = self.env["stock.location"].with_user(SUPERUSER_ID).search([("barcode", "=", "WH-STOCK")])
+    #     product = False
+    #     wh_warehouse = self.env.ref('stock.stock_location_locations', raise_if_not_found=False)
+    #     available_quantity = 0
+    #     _logger.info("product=%s, template=%s", d.get("product_id"), d.get("product_template_id"))
+    #     if d.get("product_id"):
+    #         product = self.env["product.product"].with_user(SUPERUSER_ID).search([("id", "=", d.get("product_id"))], limit=1)
+    #         available_quantity = self.env["stock.quant"]._get_available_quantity_m(product, wh_warehouse)
+    #     elif d.get("product_template_id"):
+    #         product = self.env["product.product"].with_user(SUPERUSER_ID).search([("product_tmpl_id", "=", d.get("product_template_id"))], limit=1)
+    #         available_quantity = self.env["stock.quant"]._get_available_quantity_m(product, wh_warehouse)
 
-        if not self.env['ir.config_parameter'].sudo().get_param("use_product_show_availability"):
-            d["show_available_info"] = False
-            return d
-        d["show_available_info"] = True
-
-        self = self.sudo()
-        wh_warehouse = self.env["stock.location"].with_user(SUPERUSER_ID).search([("barcode", "=", "WH-STOCK")])
-        product = False
-        wh_warehouse = self.env.ref('stock.stock_location_locations', raise_if_not_found=False)
-        available_quantity = 0
-        _logger.info("product=%s, template=%s", d.get("product_id"), d.get("product_template_id"))
-        if d.get("product_id"):
-            product = self.env["product.product"].with_user(SUPERUSER_ID).search([("id", "=", d.get("product_id"))], limit=1)
-            available_quantity = self.env["stock.quant"]._get_available_quantity_m(product, wh_warehouse)
-        elif d.get("product_template_id"):
-            product = self.env["product.product"].with_user(SUPERUSER_ID).search([("product_tmpl_id", "=", d.get("product_template_id"))], limit=1)
-            available_quantity = self.env["stock.quant"]._get_available_quantity_m(product, wh_warehouse)
-
-        available_threshold = self.env['ir.config_parameter'].sudo().get_param("available_threshold") #like 5
-
-        if product:
-            if available_quantity <= available_threshold:
-                d["stock_message"] = (_("Availability is negotiated with the seller"))
-
-            elif available_quantity > available_threshold:
-                available_quantity = self.env["stock.quant"]._get_available_quantity_m(product, wh_warehouse, key="check_for_portal_shop")
-                if available_quantity > 0:
-                    d["stock_message"] = (_("Available"))
-                elif available_quantity <= 0:
-                    d["stock_message"] = (_("Available within 5 days"))
-
-            d["is_seller_agreement"] = product.is_seller_agreement
-            if product.is_seller_agreement:
-                _logger.info("d['price'] = %s", d['price'])
-                _logger.info("d['list_price'] = %s", d['list_price'])
-                _logger.info("d['price_extra'] = %s", d['price_extra'])
-                _logger.info("d['has_discounted_price'] = %s", d['has_discounted_price'])
-                d['price'] = 0.0
-                d['list_price'] = 0.0
-                d['price_extra'] = 0.0
-                d['has_discounted_price'] = False
-
-            d["available_quantity"] = available_quantity
-
-            # if available_quantity <= 0:
-            #     d["has_out_of_stock_message"] = True
-            # else:
-            #     d["has_out_of_stock_message"] = False
-            #
-            # if product.show_availability and available_quantity < product.available_threshold:
-            #     d["show_availability"] = True
-            # else:
-            #     d["show_availability"] = False
-            #
-            # d["out_of_stock_message"] = product.out_of_stock_message
-
-        return d
+    #     available_threshold = self.env['ir.config_parameter'].sudo().get_param("available_threshold") #like 5
+    #
+    #     if product:
+    #         if available_quantity <= available_threshold:
+    #             d["stock_message"] = (_("Availability is negotiated with the seller"))
+    #
+    #         elif available_quantity > available_threshold:
+    #             available_quantity = self.env["stock.quant"]._get_available_quantity_m(product, wh_warehouse, key="check_for_portal_shop")
+    #             if available_quantity > 0:
+    #                 d["stock_message"] = (_("Available"))
+    #             elif available_quantity <= 0:
+    #                 d["stock_message"] = (_("Available within 5 days"))
+    #
+    #         d["is_seller_agreement"] = product.is_seller_agreement
+    #         if product.is_seller_agreement:
+    #             _logger.info("d['price'] = %s", d['price'])
+    #             _logger.info("d['list_price'] = %s", d['list_price'])
+    #             _logger.info("d['price_extra'] = %s", d['price_extra'])
+    #             _logger.info("d['has_discounted_price'] = %s", d['has_discounted_price'])
+    #             d['price'] = 0.0
+    #             d['list_price'] = 0.0
+    #             d['price_extra'] = 0.0
+    #             d['has_discounted_price'] = False
+    #
+    #         d["available_quantity"] = available_quantity
+    #
+    #     return d
 
 
     def _get_available_quantity_m(self, product):
