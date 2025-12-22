@@ -12,13 +12,27 @@ from collections import OrderedDict
 from odoo.tools import float_compare, float_is_zero, single_email_re
 from odoo.addons.payment.controllers import portal as payment_portal
 from odoo.addons.payment import utils as payment_utils
-from odoo.addons.portal.controllers.mail import _message_post_helper
 from odoo.addons.portal.controllers import portal
-from odoo.addons.portal.controllers.portal import pager as portal_pager, get_records_pager
+from odoo.addons.portal.controllers.portal import pager as portal_pager
 from odoo.addons.portal.controllers.portal import CustomerPortal
 from odoo.addons.website_sale.controllers import main
 from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.addons.website_sale_delivery.controllers.main import WebsiteSaleDelivery
+
+
+def _message_post_helper(res_model, res_id, message, attachments=None, **kwargs):
+    """Compatibility helper for Odoo 18 - replaces removed _message_post_helper"""
+    record = request.env[res_model].browse(res_id).sudo()
+    attachment_ids = []
+    if attachments:
+        for name, content in attachments:
+            attachment = request.env['ir.attachment'].sudo().create({
+                'name': name,
+                'datas': base64.b64encode(content),
+                'res_model': res_model,
+                'res_id': res_id,
+            })
+            attachment_ids.append(attachment.id)
+    return record.message_post(body=message, attachment_ids=attachment_ids)
 from datetime import datetime
 from odoo.tests import Form
 import base64
@@ -837,19 +851,19 @@ class PortalAccount(CustomerPortal):
         values = self._invoice_get_page_view_values(invoice_sudo, access_token, **kw)
         return request.render("account.portal_invoice_page", values)
 
-class WebsiteSaleDelivery(WebsiteSaleDelivery):
+class WebsiteSaleDeliveryCustom(http.Controller):
 
-    @http.route()
+    @http.route(['/shop/payment'], type='http', auth='public', website=True, sitemap=False)
     def shop_payment(self, **post):
-        _logger.info("WebsiteSaleDelivery shop_payment")
+        _logger.info("WebsiteSaleDeliveryCustom shop_payment")
         _logger.info("post=%s", post)
         post['carrier_id'] = 9
         post['keep_carrier'] = True
         post['checked'] = True
         _logger.info("post=%s", post)
-        return super(WebsiteSaleDelivery, self).shop_payment(**post)
+        return WebsiteSale().shop_payment(**post)
 
-    @http.route(['/shop/carrier_rate_shipment'], type='jsonrpc', auth='public', methods=['POST'], website=True)
+    @http.route(['/shop/carrier_rate_shipment'], type='json', auth='public', methods=['POST'], website=True)
     def cart_carrier_rate_shipment(self, carrier_id, **kw):
         order = request.website.sale_get_order(force_create=True)
         _logger.info("order=%s", order)
@@ -909,7 +923,7 @@ class WebsiteSaleDelivery(WebsiteSaleDelivery):
         return res
 
 
-    @http.route(['/shop/update_carrier'], type='jsonrpc', auth='public', methods=['POST'], website=True, csrf=False)
+    @http.route(['/shop/update_carrier'], type='json', auth='public', methods=['POST'], website=True, csrf=False)
     def update_eshop_carrier(self, **post):
         order = request.website.sale_get_order()
         carrier_id = int(post['carrier_id'])
