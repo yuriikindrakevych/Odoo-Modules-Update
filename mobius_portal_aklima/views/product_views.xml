@@ -17,7 +17,7 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_shipping_id']" position="after">
-                <field name="is_need_seller_agreement" attrs="{'invisible':[('is_need_seller_agreement','=',False)]}"/>
+                <field name="is_need_seller_agreement" invisible="not is_need_seller_agreement"/>
             </xpath>
         </field>
     </record>
