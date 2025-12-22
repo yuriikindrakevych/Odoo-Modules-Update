@@ -102,16 +102,17 @@
 
 </template>
 
+<!-- Disabled for Odoo 18 - template structure changed
 <template id="mobius_portal_aklima.transaction_status_two" inherit_id="payment.transaction_status">
     <xpath expr="//div[hasclass('alert-warning')]" position="replace">
         <t t-set="text" t-value="request.session.uid"/>
         <div t-if="tx.state == 'pending' and not is_html_empty(tx.provider_id.sudo().pending_msg)">
-            
-<!--             <span t-out="tx.provider_id.sudo().pending_msg"/>
-            <button class="close" data-dismiss="alert" title="Dismiss">×</button> -->
+            <span t-out="tx.provider_id.sudo().pending_msg"/>
+            <button class="close" data-dismiss="alert" title="Dismiss">×</button>
         </div>
     </xpath>
 </template>
+-->
 
 
     <template id="mobius_portal_aklima.reduction_code_two" inherit_id="website_sale.reduction_code">
