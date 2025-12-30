@@ -12,7 +12,7 @@
 
             <xpath expr="//sheet/group[1]/group[1]" position="inside">
                 <field name="user_id" domain="[('share', '=', False)]"/>
-                <field name="team_id"/>
+                <!-- Odoo 18: team_id field removed from res.partner in sales_team module -->
             </xpath>
         </field>
     </record>
@@ -39,6 +39,7 @@
         </field>
     </record>
 
+    <!-- Odoo 18: sales_team.res_partner_view_team removed
     <record id="mobius_contact_form_aklima_res_partner_view_team_inherit" model="ir.ui.view">
         <field name="name">res.partner.form.team.inherit (mobius_contact_form_aklima)</field>
         <field name="model">res.partner</field>
@@ -49,6 +50,7 @@
             </xpath>
         </field>
     </record>
+    -->
 
     <record id="mobius_contact_form_aklima_view_partner_form_inherit_mobius_login_screen_api_inherit" model="ir.ui.view">
         <field name="name">res.partner.form.team.inherit.mobius_login_screen_api (mobius_contact_form_aklima)</field>
