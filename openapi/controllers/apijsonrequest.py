@@ -11,15 +11,18 @@ import psycopg2
 import werkzeug.wrappers
 
 import odoo
-from odoo.http import (
-    Response,
-    Root,
-    SessionExpiredException,
-    request,
-)
+from odoo.http import Response, SessionExpiredException, request
 from odoo.service.server import memory_info
 
-# Odoo 18: These imports were removed or moved
+# Odoo 18: Root class removed - try to import, create stub if not available
+try:
+    from odoo.http import Root
+    _has_root = True
+except ImportError:
+    Root = None
+    _has_root = False
+
+# Odoo 18: WebRequest renamed to Request
 try:
     from odoo.http import WebRequest
 except ImportError:
@@ -249,19 +252,20 @@ def api_route(route=None, **kw):
     return decorator
 
 
-get_request_original = Root.get_request
+# Odoo 18: Root class was removed, skip monkey-patching if not available
+if _has_root and Root is not None:
+    get_request_original = Root.get_request
 
+    def api_get_request(self, httprequest):
+        # deduce type of request
+        if (
+            "authorization" in httprequest.headers
+            and httprequest.headers.get("content-type", "") == "application/json"
+        ):
+            return ApiJsonRequest(httprequest)
+        return get_request_original(self, httprequest)
 
-def api_get_request(self, httprequest):
-    # deduce type of request
-
-    if (
-        "authorization" in httprequest.headers
-        and httprequest.headers.get("content-type", "") == "application/json"
-    ):
-        return ApiJsonRequest(httprequest)
-
-    return get_request_original(self, httprequest)
-
-
-Root.get_request = api_get_request
+    Root.get_request = api_get_request
+else:
+    # Odoo 18+: Alternative approach using request dispatching
+    _logger.info("OpenAPI: Root class not available, API JSON requests may use standard JSON-RPC")
