@@ -31,6 +31,8 @@ from . import asset_modify
 from . import cash_flow_report
 from . import financial_report
 from . import general_ledger
+# Odoo 18: Import base journal report model before journal_audit
+from . import account_common_journal_report
 from . import journal_audit
 from . import partner_ledger
 from . import tax_report
