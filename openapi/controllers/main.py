@@ -10,7 +10,11 @@ import werkzeug
 from odoo import http
 from odoo.tools import date_utils
 
-from odoo.addons.web.controllers.main import ensure_db
+# Odoo 18: ensure_db moved from main to utils
+try:
+    from odoo.addons.web.controllers.main import ensure_db
+except ImportError:
+    from odoo.addons.web.controllers.utils import ensure_db
 
 _logger = logging.getLogger(__name__)
 
