@@ -12,17 +12,38 @@ import werkzeug.wrappers
 
 import odoo
 from odoo.http import (
-    AuthenticationError,
     Response,
     Root,
     SessionExpiredException,
-    WebRequest,
     request,
-    rpc_request,
-    rpc_response,
-    serialize_exception,
 )
 from odoo.service.server import memory_info
+
+# Odoo 18: These imports were removed or moved
+try:
+    from odoo.http import WebRequest
+except ImportError:
+    from odoo.http import Request as WebRequest
+
+try:
+    from odoo.http import rpc_request, rpc_response
+except ImportError:
+    # Odoo 18: rpc_request/rpc_response moved to logging
+    import logging
+    rpc_request = logging.getLogger('odoo.http.rpc.request')
+    rpc_response = logging.getLogger('odoo.http.rpc.response')
+
+try:
+    from odoo.http import serialize_exception
+except ImportError:
+    from odoo.tools import exception_to_unicode
+    def serialize_exception(e):
+        return {"message": exception_to_unicode(e), "debug": str(e)}
+
+# Odoo 18: AuthenticationError removed - create stub for backward compatibility
+class AuthenticationError(Exception):
+    """Stub class for removed odoo.http.AuthenticationError"""
+    pass
 from odoo.tools import date_utils
 
 try:

@@ -70,29 +70,25 @@ class Namespace(models.Model):
         )
     ]
 
-    def name_get(self):
-        return [
-            (
-                record.id,
-                "/api/v1/%s%s"
-                % (
-                    record.name,
-                    " (%s)" % record.description if record.description else "",
-                ),
+    # Odoo 18: name_get deprecated, use _compute_display_name
+    @api.depends('name', 'description')
+    def _compute_display_name(self):
+        for record in self:
+            record.display_name = "/api/v1/%s%s" % (
+                record.name,
+                " (%s)" % record.description if record.description else "",
             )
-            for record in self
-        ]
 
-    @api.model
     def _fix_name(self, vals):
         if "name" in vals:
             vals["name"] = urlparse.quote_plus(vals["name"].lower())
         return vals
 
-    @api.model
-    def create(self, vals):
-        vals = self._fix_name(vals)
-        return super(Namespace, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            self._fix_name(vals)
+        return super(Namespace, self).create(vals_list)
 
     def write(self, vals):
         vals = self._fix_name(vals)
@@ -240,7 +236,7 @@ class Namespace(models.Model):
     def action_show_logs(self):
         return {
             "name": "Logs",
-            "view_mode": "tree,form",
+            "view_mode": "list,form",
             "res_model": "openapi.log",
             "type": "ir.actions.act_window",
             "domain": [["namespace_id", "=", self.id]],
