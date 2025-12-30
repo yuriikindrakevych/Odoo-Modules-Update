@@ -83,6 +83,8 @@
         'views/payment_matching.xml',
         'views/multiple_invoice_layout_view.xml',
         'views/multiple_invoice_form.xml',
+        # Odoo 18: Base view for common reports (was removed from Odoo core)
+        'views/account_common_report_view.xml',
         'wizard/financial_report.xml',
         'wizard/general_ledger.xml',
         'wizard/partner_ledger.xml',
