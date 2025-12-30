@@ -14,10 +14,8 @@
     <record model="res.groups" id="group_manager">
         <field name="name">Manager</field>
         <field name="implied_ids" eval="[(4, ref('openapi.group_user'))]" />
-        <field
-            name="users"
-            eval="[(4, ref('base.partner_root')), (4, ref('base.user_root'))]"
-        />
+        <!-- Odoo 18: Only assign user_root, not partner_root (partner is not a user) -->
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
         <field name="category_id" ref="openapi.module_management" />
     </record>
 </odoo>
