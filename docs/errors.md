@@ -339,6 +339,63 @@ pip install bravado-core
 
 ---
 
+### 11. Модуль openapi - помилка "cannot import AuthenticationError"
+
+**Дата:** 2025-12-30
+
+**Помилка:**
+```
+ImportError: cannot import name 'AuthenticationError' from 'odoo.http'
+```
+
+**Причина:**
+В Odoo 18 видалено/переміщено декілька класів з `odoo.http`:
+- `AuthenticationError` - видалено
+- `WebRequest` - перейменовано на `Request`
+- `rpc_request`, `rpc_response` - переміщено в logging
+- `serialize_exception` - переміщено в `odoo.tools`
+
+**Виправлення (файл `openapi/controllers/apijsonrequest.py`):**
+```python
+# Замість прямого імпорту:
+from odoo.http import AuthenticationError, WebRequest, rpc_request, rpc_response, serialize_exception
+
+# Використовуємо fallback imports:
+try:
+    from odoo.http import WebRequest
+except ImportError:
+    from odoo.http import Request as WebRequest
+
+try:
+    from odoo.http import rpc_request, rpc_response
+except ImportError:
+    import logging
+    rpc_request = logging.getLogger('odoo.http.rpc.request')
+    rpc_response = logging.getLogger('odoo.http.rpc.response')
+
+# AuthenticationError - створюємо stub клас
+class AuthenticationError(Exception):
+    pass
+```
+
+**Додаткові виправлення (файл `openapi/models/openapi_namespace.py`):**
+1. `name_get()` → `_compute_display_name()` з декоратором `@api.depends`
+2. `@api.model def create()` → `@api.model_create_multi def create(vals_list)`
+3. `view_mode="tree,form"` → `view_mode="list,form"`
+
+**Команди:**
+```bash
+cd /www/wwwroot/odoo18-migration/custom_addons && git pull
+cd /www/wwwroot/odoo18-migration
+pip install bravado-core  # якщо ще не встановлено
+python odoo/odoo-bin -c odoo18.conf -i mobius_lead_from_api --stop-after-init
+systemctl restart odoo18
+```
+
+**Статус:** ⏳ В ПРОЦЕСІ
+
+---
+
 ## Загальні зміни API Odoo 15 → 18
 
 ### Синтаксис attrs в XML views
