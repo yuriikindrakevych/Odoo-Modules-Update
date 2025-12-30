@@ -157,7 +157,9 @@ class ReportBankBook(models.AbstractModel):
             journals = self.env['account.journal'].search([('type', '=', 'bank')])
             accounts = []
             for journal in journals:
-                accounts.append(journal.company_id.account_journal_payment_credit_account_id.id)
+                # Odoo 18: use journal's default_account_id
+                if journal.default_account_id:
+                    accounts.append(journal.default_account_id.id)
             accounts = self.env['account.account'].search([('id', 'in', accounts)])
 
         accounts_res = self.with_context(data['form'].get('used_context', {}))._get_account_move_entry(

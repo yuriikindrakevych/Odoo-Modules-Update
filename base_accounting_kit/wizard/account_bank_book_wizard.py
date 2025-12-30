@@ -54,7 +54,10 @@ class BankBookWizard(models.TransientModel):
         journals = self.env['account.journal'].search([('type', '=', 'bank')])
         accounts = []
         for journal in journals:
-            accounts.append(journal.company_id.account_journal_payment_credit_account_id.id)
+            # Odoo 18: account_journal_payment_credit_account_id removed from res.company
+            # Use journal's default_account_id instead
+            if journal.default_account_id:
+                accounts.append(journal.default_account_id.id)
         return accounts
 
     account_ids = fields.Many2many('account.account',
@@ -76,7 +79,9 @@ class BankBookWizard(models.TransientModel):
                 [('type', '=', 'bank')])
             accounts = []
             for journal in journals:
-                accounts.append(journal.company_id.account_journal_payment_credit_account_id.id)
+                # Odoo 18: use journal's default_account_id
+                if journal.default_account_id:
+                    accounts.append(journal.default_account_id.id)
             domain = {'account_ids': [('id', 'in', accounts)]}
             return {'domain': domain}
 
