@@ -54,7 +54,8 @@
     'data': [
         'security/ir.model.access.csv',
         'security/security.xml',
-        'data/account_financial_report_data.xml',
+        # Odoo 18: Disabled - uses removed account.account.type references
+        # 'data/account_financial_report_data.xml',
         'data/cash_flow_data.xml',
         'data/account_pdc_data.xml',
         'data/followup_levels.xml',
