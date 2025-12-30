@@ -335,7 +335,7 @@ systemctl restart odoo18
 pip install bravado-core
 ```
 
-**Статус:** ⏳ В ПРОЦЕСІ - виправлено синтаксис, потрібно встановити модуль
+**Статус:** ✅ ВИПРАВЛЕНО - модуль встановлено
 
 ---
 
@@ -392,7 +392,21 @@ python odoo/odoo-bin -c odoo18.conf -i mobius_lead_from_api --stop-after-init
 systemctl restart odoo18
 ```
 
-**Статус:** ⏳ В ПРОЦЕСІ
+**Додаткові виправлення openapi модуля:**
+
+| Файл | Проблема | Рішення |
+|------|----------|---------|
+| `controllers/apijsonrequest.py` | `AuthenticationError` removed | Створити stub клас |
+| `controllers/apijsonrequest.py` | `Root` class removed | Conditional import з fallback |
+| `controllers/apijsonrequest.py` | `WebRequest` renamed | Import з fallback до `Request` |
+| `controllers/apijsonrequest.py` | `rpc_request/rpc_response` moved | Import з fallback до logging |
+| `controllers/main.py` | `ensure_db` moved | Import з `web.controllers.utils` |
+| `controllers/pinguin.py` | `ReportController` moved | Import з `web.controllers.report` |
+| `models/openapi_namespace.py` | `name_get()` deprecated | Використати `_compute_display_name()` |
+| `models/openapi_namespace.py` | `@api.model create()` | Змінити на `@api.model_create_multi` |
+| `security/openapi_security.xml` | `base.partner_root` invalid | Видалити (це partner, не user) |
+
+**Статус:** ✅ ВИПРАВЛЕНО - модуль встановлено
 
 ---
 
