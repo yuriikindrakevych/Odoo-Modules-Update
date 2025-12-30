@@ -472,3 +472,159 @@ pip install bravado-core
 pip install python-jose  # JWT
 pip install phonenumbers  # phone_validation
 ```
+
+---
+
+### 12. Розділ "Клієнти" - помилка "global_location_number field is undefined"
+
+**Дата:** 2025-12-30
+
+**Помилка:**
+```
+"res.partner"."global_location_number" field is undefined
+```
+
+**Причина:**
+Поле `global_location_number` (GLN - Global Location Number) було визначено в модулі, який більше не встановлений. View в базі даних все ще посилається на це поле.
+
+**Рішення:**
+Створено новий модуль `base_gln` який додає поле `global_location_number` до `res.partner`.
+
+**Створені файли:**
+- `base_gln/__manifest__.py`
+- `base_gln/__init__.py`
+- `base_gln/models/__init__.py`
+- `base_gln/models/res_partner.py`
+- `base_gln/views/res_partner_views.xml`
+
+**Команди:**
+```bash
+cd /www/wwwroot/odoo18-migration/custom_addons && git pull
+cd /www/wwwroot/odoo18-migration
+python odoo/odoo-bin -c odoo18.conf -i base_gln --stop-after-init
+systemctl restart odoo18
+```
+
+**Статус:** ✅ ВИПРАВЛЕНО
+
+---
+
+### 13. Розділ "Google таблиці" (action 795) - помилка ListArchParser
+
+**Дата:** 2025-12-30
+
+**Помилка:**
+```
+TypeError: Cannot read properties of undefined (reading 'length')
+    at ListArchParser.parse
+```
+
+**Причина:**
+Views в базі даних використовували застарілий тег `<tree>` замість `<list>`. В Odoo 18 `<tree>` більше не підтримується.
+
+**Рішення:**
+Оновлено views напряму в базі даних:
+
+```sql
+-- Виправлення ir.attachment view для Google Sheets
+UPDATE ir_ui_view SET arch_db = REPLACE(arch_db::text, '<tree', '<list')::jsonb WHERE id = 3156;
+UPDATE ir_ui_view SET arch_db = REPLACE(arch_db::text, '</tree>', '</list>')::jsonb WHERE id = 3156;
+
+-- Виправлення google.sheet.importer views
+UPDATE ir_ui_view SET arch_db = REPLACE(arch_db::text, '<tree', '<list')::jsonb WHERE id = 3145;
+UPDATE ir_ui_view SET arch_db = REPLACE(arch_db::text, '</tree>', '</list>')::jsonb WHERE id = 3145;
+UPDATE ir_ui_view SET arch_db = REPLACE(arch_db::text, '<tree editable', '<list editable')::jsonb WHERE id = 3146;
+UPDATE ir_ui_view SET arch_db = REPLACE(arch_db::text, '</tree>', '</list>')::jsonb WHERE id = 3146;
+
+-- Очистка кешу assets
+DELETE FROM ir_attachment WHERE url LIKE '/web/assets/%';
+```
+
+**Також оновлено view_mode в action:**
+```sql
+UPDATE ir_act_window SET view_mode = 'list,form' WHERE id = 795;
+```
+
+**Статус:** ✅ ВИПРАВЛЕНО
+
+---
+
+### 14. Розділ "Банківська книга" / "Касова книга" - помилка account_journal_payment_credit_account_id
+
+**Дата:** 2025-12-30
+
+**Помилка:**
+```
+AttributeError: 'res.company' object has no attribute 'account_journal_payment_credit_account_id'
+```
+
+**Причина:**
+В Odoo 18 поле `account_journal_payment_credit_account_id` видалено з `res.company`. Тепер рахунки для платежів зберігаються на рівні журналу (`account.journal.default_account_id`).
+
+**Виправлені файли:**
+- `base_accounting_kit/wizard/account_bank_book_wizard.py`
+- `base_accounting_kit/wizard/account_cash_book_wizard.py`
+- `base_accounting_kit/report/account_bank_book.py`
+- `base_accounting_kit/report/account_cash_book.py`
+
+**Зміни:**
+```python
+# Було:
+accounts.append(journal.company_id.account_journal_payment_credit_account_id.id)
+
+# Стало:
+if journal.default_account_id:
+    accounts.append(journal.default_account_id.id)
+```
+
+**Команди:**
+```bash
+cd /www/wwwroot/odoo18-migration/custom_addons && git pull
+cd /www/wwwroot/odoo18-migration
+python odoo/odoo-bin -c odoo18.conf -u base_accounting_kit --stop-after-init
+systemctl restart odoo18
+```
+
+**Статус:** ✅ ВИПРАВЛЕНО
+
+---
+
+## Підсумок виправлень (сесія 2025-12-30)
+
+| # | Розділ/Модуль | Проблема | Статус |
+|---|---------------|----------|--------|
+| 7 | sale.order | due_amount field undefined | ✅ |
+| 8 | base_accounting_kit | Комплексне виправлення Odoo 18 | ✅ |
+| 9 | mobius_portal_aklima | is_need_seller_agreement undefined | ✅ |
+| 10 | Клієнти | has_user field undefined | ✅ |
+| 11 | openapi | AuthenticationError import | ✅ |
+| 12 | Клієнти | global_location_number undefined | ✅ |
+| 13 | Google таблиці | ListArchParser `<tree>` → `<list>` | ✅ |
+| 14 | Банківська/Касова книга | account_journal_payment_credit_account_id | ✅ |
+
+**Всі критичні помилки виправлено. Система готова до використання.**
+
+---
+
+## Команди для повторення на production сервері
+
+```bash
+# 1. Оновити кастомні модулі
+cd /www/wwwroot/odoo18-migration/custom_addons && git pull
+
+# 2. Встановити Python залежності
+pip install bravado-core
+
+# 3. Встановити/оновити модулі
+cd /www/wwwroot/odoo18-migration
+python odoo/odoo-bin -c odoo18.conf -i base_gln --stop-after-init
+python odoo/odoo-bin -c odoo18.conf -u base_accounting_kit,mobius_portal_aklima,mobius_lead_from_api,openapi,google_sheet_importer --stop-after-init
+
+# 4. Виправити views в БД (якщо потрібно)
+psql -h localhost -p 5433 -U odoo -d odoo18_new -c "UPDATE ir_ui_view SET arch_db = REPLACE(REPLACE(arch_db::text, '<tree', '<list'), '</tree>', '</list>')::jsonb WHERE arch_db::text LIKE '%<tree%';"
+psql -h localhost -p 5433 -U odoo -d odoo18_new -c "UPDATE ir_act_window SET view_mode = REPLACE(view_mode, 'tree', 'list') WHERE view_mode LIKE '%tree%';"
+psql -h localhost -p 5433 -U odoo -d odoo18_new -c "DELETE FROM ir_attachment WHERE url LIKE '/web/assets/%';"
+
+# 5. Перезапустити Odoo
+systemctl restart odoo18
+```
