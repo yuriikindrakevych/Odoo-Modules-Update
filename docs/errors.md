@@ -239,4 +239,165 @@ Caused by: Error: "sale.order"."due_amount" field is undefined.
 2. Додано приховане поле `<field name="due_amount" invisible="1"/>` для забезпечення завантаження поля у клієнтську частину OWL
 3. Оновлено умови invisible з формату `attrs="{'invisible':['|',('field1','=',False),('field2','not in',...)]}"` на формат `invisible="not field1 or field2 not in (...)"`
 
-**Статус:** ВИПРАВЛЕНО
+**Статус:** ✅ ВИПРАВЛЕНО
+
+---
+
+## Сесія 2025-12-30: Виправлення помилок Odoo 18
+
+### 8. Модуль base_accounting_kit - комплексне виправлення для Odoo 18
+
+**Дата:** 2025-12-30
+
+**Проблеми та виправлення:**
+
+| Проблема | Файл | Рішення |
+|----------|------|---------|
+| `account.menu_finance_entries_management` not found | `base_account_budget/views/account_budget_views.xml` | Замінено на `account.menu_finance_configuration` |
+| `ImportError: transfer_field_to_modifiers` | `base_accounting_kit/wizard/asset_modify.py` | Видалено deprecated imports, переписано без `fields_view_get` |
+| Model `account.common.report` not found | Новий файл `report/account_common_report.py` | Створено базову модель |
+| Model `account.common.journal.report` not found | Новий файл `wizard/account_common_journal_report.py` | Створено модель |
+| `account.account.type` removed | `__manifest__.py` | Disabled `account_financial_report_data.xml` |
+| `view_mode="tree"` deprecated | Всі XML файли | Замінено на `view_mode="list"` |
+| Menu references removed | Всі views | Замінено `menu_finance_entries_*` на `menu_finance_configuration` |
+| `account.account_common_report_view` not found | Новий файл `views/account_common_report_view.xml` | Створено базовий view |
+| jQuery not available (білий екран) | `__manifest__.py` | Disabled всі legacy JS/CSS assets |
+
+**Створені файли:**
+- `base_accounting_kit/report/account_common_report.py`
+- `base_accounting_kit/wizard/account_common_journal_report.py`
+- `base_accounting_kit/views/account_common_report_view.xml`
+
+**Команди:**
+```bash
+# Встановлення після виправлень
+cd /www/wwwroot/odoo18-migration
+python odoo/odoo-bin -c odoo18.conf -i base_accounting_kit --stop-after-init
+systemctl restart odoo18
+```
+
+**Статус:** ✅ ВИПРАВЛЕНО - модуль встановлено
+
+---
+
+### 9. Модуль mobius_portal_aklima - помилка "is_need_seller_agreement field is undefined"
+
+**Дата:** 2025-12-30
+
+**Помилка:**
+```
+"sale.order"."is_need_seller_agreement" field is undefined
+```
+
+**Причина:**
+Поле `is_need_seller_agreement` визначено в модулі `mobius_portal_aklima`, який не був встановлений через помилку з template `website_sale.payment_footer`.
+
+**Виправлення (файл `mobius_portal_aklima/views/portal_pay_now_views.xml`):**
+- Закоментовано template `website_sale.payment_footer` (видалений/перейменований в Odoo 18)
+- Залишено власний template `mobius_portal_aklima.payment_footer_two`
+
+**Команди:**
+```bash
+cd /www/wwwroot/odoo18-migration
+python odoo/odoo-bin -c odoo18.conf -i mobius_portal_aklima --stop-after-init
+systemctl restart odoo18
+```
+
+**Статус:** ✅ ВИПРАВЛЕНО - модуль встановлено
+
+---
+
+### 10. Розділ "Клієнти" - помилка "has_user field is undefined"
+
+**Дата:** 2025-12-30
+
+**Помилка:**
+```
+"res.partner"."has_user" field is undefined
+```
+
+**Причина:**
+Поле `has_user` визначено в модулі `mobius_lead_from_api`, який не встановлений.
+
+**Виправлення синтаксису (файли в `mobius_lead_from_api/views/`):**
+
+1. `res_partner_views.xml`:
+   - Замінено: `attrs="{'invisible': ['|', ('has_user', '=', True), ('company_type', '=', 'company')]}"`
+   - На: `invisible="has_user or company_type == 'company'"`
+
+2. `crm_lead_views.xml`:
+   - Замінено: `attrs="{'invisible': [('partner_id', '!=', False)]}"`
+   - На: `invisible="partner_id"`
+
+**Залежності модуля:**
+Модуль залежить від `openapi`, який потребує Python-пакет `bravado-core`:
+```bash
+pip install bravado-core
+```
+
+**Статус:** ⏳ В ПРОЦЕСІ - виправлено синтаксис, потрібно встановити модуль
+
+---
+
+## Загальні зміни API Odoo 15 → 18
+
+### Синтаксис attrs в XML views
+
+**Старий синтаксис (Odoo 15):**
+```xml
+<field name="field_name" attrs="{'invisible': [('condition_field', '=', False)]}"/>
+<button attrs="{'invisible': ['|', ('field1', '=', True), ('field2', '=', 'value')]}"/>
+```
+
+**Новий синтаксис (Odoo 17+):**
+```xml
+<field name="field_name" invisible="not condition_field"/>
+<button invisible="field1 or field2 == 'value'"/>
+```
+
+### Приховані поля для OWL
+
+В Odoo 17+ (OWL framework) потрібно явно декларувати поля, які використовуються в expressions:
+```xml
+<field name="some_field" invisible="1"/>
+<div invisible="some_field">...</div>
+```
+
+### view_mode в ir.actions.act_window
+
+**Старий синтаксис:**
+```xml
+<field name="view_mode">tree,form</field>
+```
+
+**Новий синтаксис:**
+```xml
+<field name="view_mode">list,form</field>
+```
+
+### Видалені меню в Odoo 18
+
+| Старий ID | Заміна |
+|-----------|--------|
+| `account.menu_finance_entries_management` | `account.menu_finance_configuration` |
+| `account.menu_finance_entries_actions` | `account.menu_finance_configuration` |
+| `account.menu_finance_entries` | `account.menu_finance_configuration` |
+
+### Видалені моделі в Odoo 18
+
+| Модель | Опис |
+|--------|------|
+| `account.account.type` | Видалено - типи рахунків тепер в `account.account.account_type` field |
+| `account.common.report` | Видалено з ядра - потрібно створити в кастомному модулі |
+| `account.common.journal.report` | Видалено з ядра |
+
+### Python залежності для сторонніх модулів
+
+```bash
+# openapi модуль
+pip install bravado-core
+
+# Інші можливі залежності
+pip install python-jose  # JWT
+pip install phonenumbers  # phone_validation
+```
