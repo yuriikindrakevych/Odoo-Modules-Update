@@ -37,7 +37,12 @@ from odoo.addons.base_api.lib.pinguin import (
     get_dictlist_from_model,
     get_model_for_read,
 )
-from odoo.addons.web.controllers.main import ReportController
+
+# Odoo 18: ReportController moved from main to report
+try:
+    from odoo.addons.web.controllers.main import ReportController
+except ImportError:
+    from odoo.addons.web.controllers.report import ReportController
 
 from .apijsonrequest import api_route
 
