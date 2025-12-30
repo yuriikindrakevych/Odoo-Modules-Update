@@ -22,7 +22,7 @@
                     string="Create contact/user"
                     type="object"
                     class="oe_highlight"
-                    attrs="{'invisible': [('partner_id', '!=', False)]}"/>
+                    invisible="partner_id"/>
                 <button name="send_email_crm_lead_template"
                     string="Send Mail"
                     type="object"
@@ -45,7 +45,7 @@
                     string="YES (Create contact/user and send mail)"
                     type="object"
                     class="oe_highlight"
-                    attrs="{'invisible': [('partner_id', '!=', False)]}"/>
+                    invisible="partner_id"/>
                     <button special="cancel" string="No" class="btn-secondary text-center"/>
                 </footer>
             </form>

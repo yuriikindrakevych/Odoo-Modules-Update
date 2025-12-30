@@ -12,7 +12,7 @@
                         string="Create User"
                         type="object"
                         confirm="Are you sure you want to do this?"
-                        attrs="{'invisible': ['|', ('has_user', '=', True), ('company_type', '=', 'company')]}"
+                        invisible="has_user or company_type == 'company'"
                         />
                     <field name="has_user" invisible="1"/>
                 </header>
