@@ -19,8 +19,10 @@
 #    If not, see <http://www.gnu.org/licenses/>.
 #
 #############################################################################
-from . import general_ledger_report
+# Odoo 18: Import base report model first (was removed from core Odoo)
+from . import account_common_report
 from . import account_report_common_account
+from . import general_ledger_report
 from . import report_partner_ledger
 from . import report_tax
 from . import report_trial_balance
