@@ -7,12 +7,12 @@
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//page[@name='accounting']" position="inside">
-                    <group string="Credit Limit" attrs="{'invisible':[('enable_credit_limit','=',False)]}">
+                    <group string="Credit Limit" invisible="not enable_credit_limit">
                         <group>
                             <field name="active_limit"/>
                             <field name="enable_credit_limit" invisible="1"/>
-                            <field name="warning_stage" attrs="{'invisible':[('active_limit','=',False)]}"/>
-                            <field name="blocking_stage" attrs="{'invisible':[('active_limit','=',False)]}"/>
+                            <field name="warning_stage" invisible="not active_limit"/>
+                            <field name="blocking_stage" invisible="not active_limit"/>
                         </group>
                     </group>
                 </xpath>
@@ -27,16 +27,17 @@
                 <xpath expr="//field[@name='payment_term_id']" position="after">
                     <field name="has_due" invisible="1"/>
                     <field name="is_warning" invisible="1"/>
+                    <field name="due_amount" invisible="1"/>
                 </xpath>
                 <xpath expr="//header" position="after">
                     <div class="alert alert-info" role="alert" style="height: 40px; margin-bottom:0px;"
-                         attrs="{'invisible':[('has_due','=',False)]}">
-                        This Customer's due amount is <strong><field name="due_amount"/></strong>.
+                         invisible="not has_due">
+                        This Customer's due amount is <strong><field name="due_amount" nolabel="1"/></strong>.
                     </div>
                 </xpath>
                 <xpath expr="//sheet/div[@name='button_box']" position="after">
                     <div role="alert" class="alert alert-danger" style="height: 40px; width: 350px; margin-bottom:0px;"
-                         attrs="{'invisible':[('is_warning','=',False)]}">
+                         invisible="not is_warning">
                         This customer's <strong>warning limit</strong> has been crossed.
                     </div>
                 </xpath>
@@ -51,16 +52,17 @@
                 <xpath expr="//field[@name='ref']" position="after">
                     <field name="has_due" invisible="1"/>
                     <field name="is_warning" invisible="1"/>
+                    <field name="due_amount" invisible="1"/>
                 </xpath>
                 <xpath expr="//header" position="after">
                     <div class="alert alert-info" role="alert" style="height: 40px; margin-bottom:0px;"
-                         attrs="{'invisible':['|',('has_due','=',False),('move_type','not in',('out_invoice','out_refund','out_receipt'))]}">
-                        This Customer's due amount is <strong><field name="due_amount"/></strong>.
+                         invisible="not has_due or move_type not in ('out_invoice', 'out_refund', 'out_receipt')">
+                        This Customer's due amount is <strong><field name="due_amount" nolabel="1"/></strong>.
                     </div>
                 </xpath>
                 <xpath expr="//sheet/div[@name='button_box']" position="after">
                     <div role="alert" class="alert alert-danger" style="height: 40px; width: 350px; margin-bottom:0px;"
-                         attrs="{'invisible':['|',('is_warning','=',False),('move_type','not in',('out_invoice','out_refund','out_receipt'))]}">
+                         invisible="not is_warning or move_type not in ('out_invoice', 'out_refund', 'out_receipt')">
                         This customer's <strong>warning limit</strong> has been crossed.
                     </div>
                 </xpath>
