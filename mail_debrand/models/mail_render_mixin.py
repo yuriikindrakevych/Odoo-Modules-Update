@@ -67,8 +67,7 @@ class MailRenderMixin(models.AbstractModel):
         res_ids,
         engine="qweb_view",
         add_context=None,
-        options=None,
-        post_process=False,
+        **kwargs,
     ):
         """replace anything that is with odoo in templates
         if is a <a that contains odoo will delete it completely
@@ -81,8 +80,6 @@ class MailRenderMixin(models.AbstractModel):
         :param str model: model name of records on which we want to perform rendering
         :param list res_ids: list of ids of records (all belonging to same model)
         :param string engine: jinja
-        :param post_process: perform rendered str / html post processing (see
-          ``_render_template_postprocess``)
 
         :return dict: {res_id: string of rendered template based on record}"""
         orginal_rendered = super()._render_template(
@@ -91,7 +88,7 @@ class MailRenderMixin(models.AbstractModel):
             res_ids,
             engine=engine,
             add_context=add_context,
-            post_process=post_process,
+            **kwargs,
         )
 
         for key in res_ids:
