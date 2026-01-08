@@ -804,13 +804,8 @@ class CustomerPortal(CustomerPortal):
                 providers_sudo = request.env["payment.provider"].sudo()
                 tokens = request.env["payment.token"]
 
-            fees_by_provider = {
-                provider: provider._compute_fees(
-                    order_sudo.amount_total,
-                    order_sudo.currency_id,
-                    order_sudo.partner_id.country_id,
-                ) for provider in providers_sudo.filtered("fees_active")
-            }
+            # Odoo 18: fees_active field and _compute_fees removed from payment.provider
+            fees_by_provider = {}
             # Prevent public partner from saving payment methods but force it for logged in partners
             # buying subscription products
             show_tokenize_input = logged_in \
