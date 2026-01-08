@@ -218,6 +218,20 @@ class SaleOrder(models.Model):
     amount_tax_custom = fields.Monetary(string="Taxes Custom", store=True, compute="_amount_all")
     is_need_seller_agreement = fields.Boolean(string="Need Seller Agreement", compute='_compute_is_need_seller_agreement', store=True)
 
+    def has_to_be_paid(self, include_draft=False):
+        """Check if the order has to be paid.
+
+        Odoo 18 compatibility: This method was removed from sale.order in Odoo 18.
+        Re-implemented here for backward compatibility with portal templates.
+
+        :param include_draft: if True, also return True for draft orders
+        :return: True if the order requires payment
+        """
+        self.ensure_one()
+        if include_draft:
+            return self.state in ('draft', 'sent') and self.amount_total > 0
+        return self.state in ('draft', 'sent') and self.amount_total > 0
+
     @api.depends('order_line.product_id', 'order_line.product_template_id')
     def _compute_is_need_seller_agreement(self):
         for order in self:

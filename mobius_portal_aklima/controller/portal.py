@@ -783,14 +783,16 @@ class CustomerPortal(CustomerPortal):
         if order_sudo.has_to_be_paid():
             logged_in = not request.env.user._is_public()
 
-            acquirers_sudo = request.env["payment.acquirer"].sudo()._get_compatible_acquirers(
+            # Odoo 18: payment.acquirer renamed to payment.provider
+            providers_sudo = request.env["payment.provider"].sudo()._get_compatible_providers(
                 order_sudo.company_id.id,
                 order_sudo.partner_id.id,
+                order_sudo.amount_total,
                 currency_id=order_sudo.currency_id.id,
                 sale_order_id=order_sudo.id,
-            )  # In sudo mode to read the fields of acquirers and partner (if not logged in)
+            )  # In sudo mode to read the fields of providers and partner (if not logged in)
             tokens = request.env["payment.token"].search([
-                ("acquirer_id", "in", acquirers_sudo.ids),
+                ("provider_id", "in", providers_sudo.ids),
                 ("partner_id", "=", order_sudo.partner_id.id)
             ]) if logged_in else request.env["payment.token"]
 
@@ -798,26 +800,26 @@ class CustomerPortal(CustomerPortal):
             if not payment_portal.PaymentPortal._can_partner_pay_in_company(
                 order_sudo.partner_id, order_sudo.company_id
             ):
-                acquirers_sudo = request.env["payment.acquirer"].sudo()
+                providers_sudo = request.env["payment.provider"].sudo()
                 tokens = request.env["payment.token"]
 
-            fees_by_acquirer = {
-                acquirer: acquirer._compute_fees(
+            fees_by_provider = {
+                provider: provider._compute_fees(
                     order_sudo.amount_total,
                     order_sudo.currency_id,
                     order_sudo.partner_id.country_id,
-                ) for acquirer in acquirers_sudo.filtered("fees_active")
+                ) for provider in providers_sudo.filtered("fees_active")
             }
             # Prevent public partner from saving payment methods but force it for logged in partners
             # buying subscription products
             show_tokenize_input = logged_in \
-                and not request.env["payment.acquirer"].sudo()._is_tokenization_required(
+                and not request.env["payment.provider"].sudo()._is_tokenization_required(
                     sale_order_id=order_sudo.id
                 )
             values.update({
-                "acquirers": acquirers_sudo,
+                "providers": providers_sudo,
                 "tokens": tokens,
-                "fees_by_acquirer": fees_by_acquirer,
+                "fees_by_provider": fees_by_provider,
                 "show_tokenize_input": show_tokenize_input,
                 "amount": order_sudo.amount_total,
                 "currency": order_sudo.pricelist_id.currency_id,

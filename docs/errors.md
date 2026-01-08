@@ -628,3 +628,123 @@ psql -h localhost -p 5433 -U odoo -d odoo18_new -c "DELETE FROM ir_attachment WH
 # 5. Перезапустити Odoo
 systemctl restart odoo18
 ```
+
+---
+
+## Сесія 2026-01-08: Виправлення помилки timezone Europe/Kiev
+
+### 15. Розділ CRM - помилка "time zone Europe/Kiev not recognized"
+
+**Дата:** 2026-01-08
+
+**Помилка:**
+```
+psycopg2.errors.InvalidParameterValue: time zone "Europe/Kiev" not recognized
+```
+
+**Причина:**
+Часовий пояс `Europe/Kiev` був перейменований на `Europe/Kyiv` в базі даних IANA tzdata. В Ubuntu 24.04 та новіших версіях PostgreSQL цей старий timezone більше не існує в системі. Odoo намагається використати timezone з контексту користувача, який зберігався в базі даних як `Europe/Kiev`.
+
+**Діагностика:**
+```bash
+# Перевірити чи PostgreSQL знає timezone
+psql -h localhost -p 5433 -U odoo -d odoo18_new -c "SELECT NOW() AT TIME ZONE 'Europe/Kiev';"
+# Результат: ERROR: time zone "Europe/Kiev" not recognized
+
+# Перевірити чи існує файл timezone в системі
+ls -la /usr/share/zoneinfo/Europe/Kiev  # Not exists
+ls -la /usr/share/zoneinfo/Europe/Kyiv  # Exists
+```
+
+**Рішення:**
+
+**Крок 1: Оновити всі записи з `Europe/Kiev` на `Europe/Kyiv` в базі даних:**
+```bash
+psql -h localhost -p 5433 -U odoo -d odoo18_new -c "UPDATE res_partner SET tz = 'Europe/Kyiv' WHERE tz = 'Europe/Kiev';"
+psql -h localhost -p 5433 -U odoo -d odoo18_new -c "UPDATE resource_calendar SET tz = 'Europe/Kyiv' WHERE tz = 'Europe/Kiev';"
+psql -h localhost -p 5433 -U odoo -d odoo18_new -c "UPDATE resource_resource SET tz = 'Europe/Kyiv' WHERE tz = 'Europe/Kiev';"
+psql -h localhost -p 5433 -U odoo -d odoo18_new -c "UPDATE website_visitor SET timezone = 'Europe/Kyiv' WHERE timezone = 'Europe/Kiev';"
+psql -h localhost -p 5433 -U odoo -d odoo18_new -c "UPDATE mail_guest SET timezone = 'Europe/Kyiv' WHERE timezone = 'Europe/Kiev';"
+```
+
+**Крок 2: Створити симлінк для timezone в Docker контейнері PostgreSQL:**
+```bash
+# Знайти контейнер PostgreSQL (порт 5433)
+docker ps | grep postgres
+
+# Створити симлінк всередині контейнера
+docker exec migration-db ln -sf /usr/share/zoneinfo/Europe/Kyiv /usr/share/zoneinfo/Europe/Kiev
+
+# Перезапустити контейнер
+docker restart migration-db
+```
+
+**Крок 3: Очистити сесії Odoo та перезапустити:**
+```bash
+rm -rf /www/wwwroot/odoo18-migration/filestore/sessions/*
+systemctl restart odoo18
+```
+
+**Перевірка:**
+```bash
+# Після симлінку PostgreSQL має розпізнавати timezone
+psql -h localhost -p 5433 -U odoo -d odoo18_new -c "SELECT NOW() AT TIME ZONE 'Europe/Kiev';"
+# Результат: timezone (correct time)
+```
+
+**Примітка:** Odoo 18 має вбудований monkeypatch в `/odoo/odoo/_monkeypatches/pytz.py` який конвертує `Europe/Kiev` → `Europe/Kyiv` для Python pytz. Але це не допомагає PostgreSQL, який використовує системні timezone файли. Симлінк в Docker контейнері вирішує цю проблему на рівні PostgreSQL.
+
+**Статус:** ✅ ВИПРАВЛЕНО
+
+---
+
+### 16. Розділ "Продажі" - попередній перегляд комерційної пропозиції - помилка has_to_be_paid
+
+**Дата:** 2026-01-08
+
+**Помилка:**
+```
+AttributeError: 'sale.order' object has no attribute 'has_to_be_paid'
+```
+
+**Причина:**
+В Odoo 18 метод `has_to_be_paid()` видалено з моделі `sale.order`. Також `payment.acquirer` перейменовано на `payment.provider`.
+
+**Виправлені файли:**
+- `mobius_portal_aklima/models/sale_order.py` - додано метод `has_to_be_paid()`
+- `mobius_portal_aklima/controller/portal.py` - замінено `payment.acquirer` на `payment.provider`
+
+**Зміни в sale_order.py:**
+```python
+def has_to_be_paid(self, include_draft=False):
+    """Check if the order has to be paid.
+
+    Odoo 18 compatibility: This method was removed from sale.order in Odoo 18.
+    Re-implemented here for backward compatibility with portal templates.
+    """
+    self.ensure_one()
+    if include_draft:
+        return self.state in ('draft', 'sent') and self.amount_total > 0
+    return self.state in ('draft', 'sent') and self.amount_total > 0
+```
+
+**Зміни в portal.py:**
+| Було (Odoo 15) | Стало (Odoo 18) |
+|----------------|-----------------|
+| `payment.acquirer` | `payment.provider` |
+| `_get_compatible_acquirers()` | `_get_compatible_providers()` |
+| `acquirer_id` | `provider_id` |
+| `acquirers_sudo` | `providers_sudo` |
+| `fees_by_acquirer` | `fees_by_provider` |
+
+**Команди:**
+```bash
+cd /www/wwwroot/odoo18-migration/custom_addons && git pull
+cd /www/wwwroot/odoo18-migration
+python odoo/odoo-bin -c odoo18.conf -u mobius_portal_aklima --stop-after-init
+systemctl restart odoo18
+```
+
+**Статус:** ✅ ВИПРАВЛЕНО
+
+---
