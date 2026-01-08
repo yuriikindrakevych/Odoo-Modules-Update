@@ -140,7 +140,7 @@ class Website(models.Model):
             sale_order.with_context(not_self_saleperson=True).onchange_partner_id()
             sale_order.write({"partner_invoice_id": partner.id})
             sale_order.onchange_partner_shipping_id() # fiscal position
-            sale_order["payment_term_id"] = self.sale_get_payment_term(partner)
+            sale_order["payment_term_id"] = partner.property_payment_term_id.id
 
             # check the pricelist : update it if the pricelist is not the 'forced' one
             values = {}
@@ -198,7 +198,7 @@ class Website(models.Model):
         values = {
             "partner_id": partner.id,
             "pricelist_id": pricelist.id,
-            "payment_term_id": self.sale_get_payment_term(partner),
+            "payment_term_id": partner.property_payment_term_id.id,
             "team_id": self.salesteam_id.id or partner.parent_id.team_id.id or partner.team_id.id,
             "partner_invoice_id": partner.id,
             "partner_shipping_id": addr["delivery"],
