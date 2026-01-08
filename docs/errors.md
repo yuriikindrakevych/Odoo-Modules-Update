@@ -748,3 +748,135 @@ systemctl restart odoo18
 **Статус:** ✅ ВИПРАВЛЕНО
 
 ---
+
+### 17. Попередній перегляд комерційної пропозиції - комплексні виправлення порталу
+
+**Дата:** 2026-01-08
+
+**Виправлені помилки:**
+
+| Помилка | Файл | Рішення |
+|---------|------|---------|
+| `get_records_pager` not defined | `mobius_portal_aklima/controller/portal.py` | Додано імпорт |
+| `detailed_type` not found | `mobius_portal_aklima`, `mobius_sale_order_reports`, `mobius_inventory_supplier` | Замінено на `type` |
+| `object` KeyError | `mobius_portal_aklima/controller/portal.py` | Додано `"object": order_sudo` |
+| `building_objects_form` renders on sale.order | `portal_template_building_object_views.xml` | Додано перевірку `object._name == 'building.object'` |
+| `sale_order_portal_template` xpath error | `portal_template_building_object_views.xml` | Закоментовано шаблон |
+
+---
+
+### 18. Магазин - помилки при додаванні товару в корзину
+
+**Дата:** 2026-01-08
+
+**Виправлені помилки:**
+
+| Помилка | Файл | Рішення |
+|---------|------|---------|
+| `sale_get_payment_term` not found | `mobius_portal_aklima/models/sale_order.py` | Замінено на `partner.property_payment_term_id.id` |
+| `add_sign` field not found | `mobius_activity_reports/models/models_for_shadow_messages.py` | Видалено поле з mail.message |
+| `onchange_partner_shipping_id` not found | `mobius_portal_aklima/models/sale_order.py` | Замінено на `_get_fiscal_position()` |
+| `currency.compute()` not found | `mobius_sale_order_convert`, `base_accounting_kit` | Замінено на `_convert()` |
+| `_amount_all` not in super | `mobius_portal_aklima/models/sale_order.py` | Видалено `super()._amount_all()` |
+| `short_cart_summary` template not found | `portal_template_building_object_views.xml` | Закоментовано виклик |
+| `fees_active` field not found | `mobius_portal_aklima/controller/portal.py` | Видалено fees_by_provider логіку |
+| `payment_methods_sudo` is None | `mobius_portal_aklima/controller/portal.py` | Додано payment_methods_sudo змінну |
+
+---
+
+### 19. Модуль mail_debrand - помилка _render_template
+
+**Дата:** 2026-01-08
+
+**Помилка:**
+```
+TypeError: MailRenderMixin._render_template() got an unexpected keyword argument 'post_process'
+```
+
+**Виправлення:**
+Замінено явні параметри на `**kwargs` для сумісності з різними версіями Odoo.
+
+**Файл:** `mail_debrand/models/mail_render_mixin.py`
+
+**Статус:** ✅ ВИПРАВЛЕНО
+
+---
+
+### 20. Сторінка "Мої рахунки" - помилка _check_balanced
+
+**Дата:** 2026-01-08
+
+**Помилка:**
+```
+TypeError: AccountMove._check_balanced() takes 1 positional argument but 2 were given
+TypeError: 'bool' object does not support the context manager protocol
+```
+
+**Причина:**
+В Odoo 18 метод `_check_balanced()` змінив сигнатуру - тепер приймає параметр `container` і повертає context manager замість bool.
+
+**Виправлені файли:**
+- `mobius_skip_check_balanced/models/account_move.py`
+- `mobius_check_balanced_off/models/account_move.py`
+
+**Зміни:**
+```python
+# Було:
+def _check_balanced(self):
+    return True
+
+# Стало:
+def _check_balanced(self, container=None):
+    from contextlib import nullcontext
+    return nullcontext()
+```
+
+**Статус:** ✅ ВИПРАВЛЕНО
+
+---
+
+## Підсумок виправлень (сесія 2026-01-08 - продовження)
+
+| # | Модуль | Проблема | Статус |
+|---|--------|----------|--------|
+| 16 | mobius_portal_aklima | has_to_be_paid + payment.provider | ✅ |
+| 17 | mobius_portal_aklima | Комплексні виправлення порталу | ✅ |
+| 18 | mobius_portal_aklima | Помилки корзини магазину | ✅ |
+| 19 | mail_debrand | _render_template kwargs | ✅ |
+| 20 | mobius_skip/check_balanced | _check_balanced context manager | ✅ |
+
+---
+
+## Зміни API Odoo 18 (доповнення)
+
+### Видалені/змінені методи
+
+| Модель | Старий метод | Заміна в Odoo 18 |
+|--------|--------------|------------------|
+| `sale.order` | `has_to_be_paid()` | Потрібно реалізувати власний |
+| `sale.order` | `_amount_all()` | Видалено з super |
+| `sale.order` | `onchange_partner_shipping_id()` | `_get_fiscal_position()` |
+| `sale.order` | `onchange_partner_id()` | Прямий `write()` |
+| `website` | `sale_get_payment_term()` | `partner.property_payment_term_id.id` |
+| `res.currency` | `compute()` | `_convert(amount, to_currency, company, date)` |
+| `account.move` | `_check_balanced()` | Повертає context manager |
+| `mail.message` | `add_sign` field | Видалено |
+
+### Перейменування моделей/полів
+
+| Старе | Нове |
+|-------|------|
+| `payment.acquirer` | `payment.provider` |
+| `acquirer_id` | `provider_id` |
+| `_get_compatible_acquirers()` | `_get_compatible_providers()` |
+| `product.detailed_type` | `product.type` |
+| `fees_active` | Видалено |
+
+### Шаблони
+
+| Шаблон | Статус в Odoo 18 |
+|--------|------------------|
+| `website_sale.short_cart_summary` | Видалено |
+| `payment.form` | Очікує `payment_methods_sudo` замість `providers` |
+
+---
