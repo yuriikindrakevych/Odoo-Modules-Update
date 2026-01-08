@@ -338,30 +338,22 @@ class SaleOrder(models.Model):
 
     @api.depends("order_line.price_total")
     def _amount_all(self):
-        _logger.error("test 4242")
-        res = super()._amount_all()
-        delivery = self.env["delivery.carrier"].sudo().with_context(lang='en_US').search([("base_delivery", "=", True)])
-        _logger.info("DELIVERY 8888=%s", delivery)
-        _logger.info("self=%s", self)
-        _logger.info("res=%s", res)
+        # Odoo 18: _amount_all no longer exists in base sale.order
+        # Custom fields computation for delivery amounts
+        delivery = self.env["delivery.carrier"].sudo().with_context(lang='en_US').search([("base_delivery", "=", True)], limit=1)
         for order in self:
-            _logger.error("order=%s", order)
             template = order.get_template_automatic_delivery_sale_order()
             if not order.is_enable_use_automatic_delivery_sale_order() or not template:
-                _logger.error("return res #1")
                 order.set_amount_delivery_default()
-                return res
+                continue
 
-            _logger.error("res delivery=%s, template=%s, template.name=%s", res, template, template.name)
-            _logger.error("tax_totals_json=%s", order.amount_total)
             total = order.amount_total
             if not template.the_price_is_suitable(total):
-                _logger.error("return res #2")
                 order.set_amount_delivery_default()
-                return res
+                continue
 
             weight = order.calculate_weight_in_order()
-            get_tax_product = delivery.product_id.taxes_id
+            get_tax_product = delivery.product_id.taxes_id if delivery else []
             sum_tax = 0
             clc_tax = 0.0
             delivery_condition = 0
@@ -369,9 +361,6 @@ class SaleOrder(models.Model):
                 sum_tax += tax.amount
 
             condition_is_met = template.the_weight_is_suitable(weight)
-            
-            _logger.error("amount_total_custom=%s", order.amount_total_custom)
-            _logger.error("amount_delivery=%s", order.amount_delivery)
 
             if condition_is_met:
                 delivery_condition = template.automatic_delivery_condition_is_met
@@ -380,28 +369,16 @@ class SaleOrder(models.Model):
 
             if sum_tax != 0:
                 clc_tax = round((delivery_condition / 100 * sum_tax), 2)
-            _logger.error("delivery_condition=%s, clc_tax=%s", delivery_condition, clc_tax)
 
             order.update({
                 "amount_delivery": delivery_condition,
                 "amount_total_custom": order.amount_total + delivery_condition + clc_tax,
                 "amount_tax_custom": order.amount_tax + clc_tax,
             })
-            _logger.error("amount_delivery=%s", order.amount_delivery)
-            _logger.error("amount_delivery 2=%s", delivery_condition)
-
-
-            _logger.error("order.amount_tax=%s", order.amount_tax)
-            _logger.error("order.amount_tax=%s", order.amount_total_custom)
-
-            _logger.error("amount_total_custom=%s", order.amount_total)
-            _logger.error("amount_total_custom=%s", order.amount_total_custom)
-        return res
 
 
     def check_all_product_available(self):
         self = self.sudo()
-        self._amount_all()
         wh_warehouse = self.env["stock.location"].sudo().search([("barcode", "=", "WH-STOCK")])
 
         wh_warehouse = self.env.ref('stock.stock_location_locations', raise_if_not_found=False)
@@ -424,7 +401,6 @@ class SaleOrder(models.Model):
 
     def check_all_product_available_for_buy(self):
         self = self.sudo()
-        self._amount_all()
         wh_warehouse = self.env["stock.location"].sudo().search([("barcode", "=", "WH-STOCK")])
 
         wh_warehouse = self.env.ref('stock.stock_location_locations', raise_if_not_found=False)
