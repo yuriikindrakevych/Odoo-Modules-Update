@@ -21,7 +21,7 @@ class SaleOrderLine(models.Model):
     def get_order_line_can_be_printed(self):
         if self.is_delivery:
             return True
-        if self.product_id.detailed_type == "service":
+        if self.product_id.type == "service":
             if self.product_uom_qty == 0:
                 return False
         return True
@@ -242,7 +242,7 @@ class AccountMove(models.Model):
         return number
 
     def get_order_line_can_be_printed(self):
-        if self.product_id.detailed_type == "service":
+        if self.product_id.type == "service":
             if self.product_uom_qty == 0:
                 return False
         if self.is_delivery:

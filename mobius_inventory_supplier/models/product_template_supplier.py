@@ -31,5 +31,5 @@ class ProductTemplateSupplier(models.Model):
               left join product_supplierinfo s on (p.id = s.product_tmpl_id)
 			  left join product_category c on (c.id = p.categ_id)
               left join res_partner r on (r.id = s.partner_id)
-             where p.detailed_type = 'product'
+             where p.type = 'product'
         )""")
