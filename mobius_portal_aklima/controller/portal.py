@@ -768,6 +768,7 @@ class CustomerPortal(CustomerPortal):
 
         values = {
             "sale_order": order_sudo,
+            "object": order_sudo,  # Required for portal.message_thread template
             "message": message,
             "token": access_token,
             "landing_route": "/shop/payment/validate",
