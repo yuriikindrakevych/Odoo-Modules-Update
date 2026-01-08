@@ -24,10 +24,14 @@ class SaleOrder(models.Model):
 
     @api.onchange('user_id')
     def onchange_user_id(self):
-        super().onchange_user_id()
+        # Odoo 18: onchange_user_id removed from base, call only if exists
+        if hasattr(super(), 'onchange_user_id'):
+            super().onchange_user_id()
         self._update_team_id_from_partner()
 
     @api.onchange('partner_id')
     def onchange_partner_id(self):
-        super().onchange_partner_id()
+        # Odoo 18: onchange_partner_id removed from base, call only if exists
+        if hasattr(super(), 'onchange_partner_id'):
+            super().onchange_partner_id()
         self._update_team_id_from_partner()
