@@ -18,8 +18,13 @@ class SaleOrder(models.Model):
         for order in self:
             company_currency = self.env.company.currency_id
             if order.currency_id.id != company_currency.id:
-                amount_convert = order.currency_id.with_context(
-                    date=fields.Date.today()).compute(order.amount_untaxed, company_currency)
+                # Odoo 18: compute() replaced with _convert()
+                amount_convert = order.currency_id._convert(
+                    order.amount_untaxed,
+                    company_currency,
+                    order.company_id or self.env.company,
+                    fields.Date.today()
+                )
                 order.amount_untaxed_convert = amount_convert
             else:
                 order.amount_untaxed_convert = order.amount_untaxed
