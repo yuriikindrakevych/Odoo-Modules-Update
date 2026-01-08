@@ -404,11 +404,11 @@ class SaleOrder(models.Model):
             _logger.error("END 1 (bad)")
             return False
         for line in self.order_line:
-            if line.product_id.detailed_type == "consu":
+            if line.product_id.type == "consu":
                 _logger.error("END 3 (bad)")
                 return False
             _logger.error("first line prod.name=%s", line.product_id.name)
-            if line.product_id.detailed_type == "product":
+            if line.product_id.type == "product":
                 available_quantity = self.env["stock.quant"].with_user(SUPERUSER_ID)._get_available_quantity_m(line.product_id, wh_warehouse)
                 _logger.error("available_quantity=%s, qty_need=%s", available_quantity, line.product_uom_qty)
                 if available_quantity <= 0 and line.product_uom_qty > 0:
@@ -428,11 +428,11 @@ class SaleOrder(models.Model):
             return False
 
         for line in self.order_line:
-            if line.product_id.detailed_type == "consu":
+            if line.product_id.type == "consu":
                 _logger.error("END 3 (bad)")
                 return False
             _logger.error("first line prod.name=%s", line.product_id.name)
-            if line.product_id.detailed_type == "product":
+            if line.product_id.type == "product":
                 available_quantity = self.env["stock.quant"].with_user(SUPERUSER_ID)._get_available_quantity_m(line.product_id, wh_warehouse, key="check_for_portal_shop")
                 _logger.error("available_quantity=%s, qty_need=%s", available_quantity, line.product_uom_qty)
                 if available_quantity <= 0:
@@ -597,7 +597,7 @@ class PaymentTransaction(models.Model):
             for record in sales_orders:
                 can_confirm = True
                 for prod in record.order_line:
-                    if prod.product_template_id.detailed_type != "product" or prod.product_id.detailed_type != "product":
+                    if prod.product_template_id.type != "product" or prod.product_id.type != "product":
                         continue
                     if prod.product_id:
                         available_quantity = 0
