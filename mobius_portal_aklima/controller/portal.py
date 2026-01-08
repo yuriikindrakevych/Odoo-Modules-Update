@@ -812,9 +812,20 @@ class CustomerPortal(CustomerPortal):
                 and not request.env["payment.provider"].sudo()._is_tokenization_required(
                     sale_order_id=order_sudo.id
                 )
+            # Odoo 18: get payment methods
+            payment_methods_sudo = request.env["payment.method"].sudo()
+            if providers_sudo:
+                payment_methods_sudo = request.env["payment.method"].sudo().search([
+                    ("provider_ids", "in", providers_sudo.ids),
+                    ("active", "=", True),
+                ])
+
             values.update({
-                "providers": providers_sudo,
-                "tokens": tokens,
+                "providers_sudo": providers_sudo,
+                "providers": providers_sudo,  # backward compatibility
+                "payment_methods_sudo": payment_methods_sudo,
+                "tokens_sudo": tokens,
+                "tokens": tokens,  # backward compatibility
                 "fees_by_provider": fees_by_provider,
                 "show_tokenize_input": show_tokenize_input,
                 "amount": order_sudo.amount_total,
