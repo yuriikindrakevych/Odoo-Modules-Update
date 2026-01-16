@@ -5,10 +5,10 @@
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_move_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='other_info']//group[@name='accounting_info_group']//field[@name='to_check']" position="after">
+            <xpath expr="//page[@name='other_info']//group[@name='accounting_info_group']//field[@name='checked']" position="after">
                 <field name="advance_payment_method_delivered" string="Regular invoice"/>
             </xpath>
-            <xpath expr="//page[@id='invoice_tab']//field[@name='invoice_line_ids']//tree//field[@name='price_subtotal']" position="after">
+            <xpath expr="//page[@id='invoice_tab']//field[@name='invoice_line_ids']//field[@name='price_subtotal']" position="after">
                 <field name="line_down_payment" string="Avans" optional="hide"/>
             </xpath>
             <xpath expr="//group[@id='header_right_group']" position="inside">
@@ -16,12 +16,12 @@
                 <div class="o_row">
                     <field name="type_show_bank"/>
                 </div>
-                <label for="bank_account_id" attrs="{'invisible':[('type_show_bank', '!=', 'one')]}"/>
-                <div class="o_row" attrs="{'invisible':[('type_show_bank', '!=', 'one')]}">
+                <label for="bank_account_id" invisible="type_show_bank != 'one'"/>
+                <div class="o_row" invisible="type_show_bank != 'one'">
                     <field name="bank_account_id"/>
                 </div>
-                <label for="profile_id" attrs="{'invisible':[('type_show_bank', '!=', 'profile')]}"/>
-                <div class="o_row" attrs="{'invisible':[('type_show_bank', '!=', 'profile')]}">
+                <label for="profile_id" invisible="type_show_bank != 'profile'"/>
+                <div class="o_row" invisible="type_show_bank != 'profile'">
                     <field name="profile_id" context="{'currency_id': currency_id}"/>
                 </div>
             </xpath>

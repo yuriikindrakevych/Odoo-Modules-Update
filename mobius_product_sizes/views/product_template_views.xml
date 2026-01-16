@@ -6,8 +6,8 @@
         <field name="inherit_id" ref="product.product_template_form_view" />
         <field name="arch" type="xml">
             <xpath expr="//div[@name='weight']" position="after">
-                <label for="length" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}"/>
-                <div class="o_row" name="length" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}">
+                <label for="length" invisible="product_variant_count > 1 and not is_product_variant"/>
+                <div class="o_row" name="length" invisible="product_variant_count > 1 and not is_product_variant">
                     <field name="length"/>
                 </div>
             </xpath>
@@ -18,8 +18,8 @@
 
 
             <xpath expr="//div[@name='length']" position="after">
-                <label for="width" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}"/>
-                <div class="o_row" name="width" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}">
+                <label for="width" invisible="product_variant_count > 1 and not is_product_variant"/>
+                <div class="o_row" name="width" invisible="product_variant_count > 1 and not is_product_variant">
                     <field name="width"/>
                 </div>
             </xpath>
@@ -30,8 +30,8 @@
 
 
             <xpath expr="//div[@name='width']" position="after">
-                <label for="height" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}"/>
-                <div class="o_row" name="height" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}">
+                <label for="height" invisible="product_variant_count > 1 and not is_product_variant"/>
+                <div class="o_row" name="height" invisible="product_variant_count > 1 and not is_product_variant">
                     <field name="height"/>
                 </div>
             </xpath>

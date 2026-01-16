@@ -5,7 +5,7 @@
         <field name="model">project.milestone</field>
         <field name="inherit_id" ref="project.project_milestone_view_tree"/>
         <field name="arch" type="xml">
-            <field name="is_deadline_exceeded" position="after">
+            <field name="is_reached" position="after">
                 <field name="num_tasks" optional="show"/>
                 <field name="num_incomplete" optional="show"/>
             </field>

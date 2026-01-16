@@ -20,7 +20,7 @@
         <field name="model">calendar.event</field>
         <field name="inherit_id" ref="calendar.view_calendar_event_calendar"/>
         <field name="arch" type="xml">
-            <field name="attendee_status" position="after">
+            <field name="partner_id" position="after">
                 <field name="user_id" invisible="1"/>
                 <field name="activity_type_id" invisible="1"/>
                 <field name="activity_type_id_name" invisible="1"/>

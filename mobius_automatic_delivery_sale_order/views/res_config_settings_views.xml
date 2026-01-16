@@ -6,27 +6,19 @@
         <field name="model">res.config.settings</field>
         <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//div[@name='quotation_order_setting_container']" position="inside">
-                <div class="col-12 col-lg-6 o_setting_box" id="automatic_delivery_sale_order">
-                    <div class="o_setting_left_pane">
-                        <field name="use_automatic_delivery_sale_order"/>
-                    </div>
-                    <div class="o_setting_right_pane">
-                        <label for="use_automatic_delivery_sale_order"/>
-                        <div class="text-muted">
-                            Select your rule to create automatic delivery for Sale Orders
+            <xpath expr="//block[@name='quotation_order_setting_container']" position="inside">
+                <setting id="automatic_delivery_sale_order" help="Select your rule to create automatic delivery for Sale Orders">
+                    <field name="use_automatic_delivery_sale_order"/>
+                    <div class="content-group" invisible="not use_automatic_delivery_sale_order">
+                        <div class="mt16">
+                            <label for="automatic_delivery_sale_order_source" class="o_light_label"/>
+                            <field name="automatic_delivery_sale_order_source" class="oe_inline"/>
                         </div>
-                        <div class="content-group" attrs="{'invisible': [('use_automatic_delivery_sale_order', '=', False)]}">
-                            <div class="mt16">
-                                <label for="automatic_delivery_sale_order_source" class="o_light_label"/>
-                                <field name="automatic_delivery_sale_order_source" class="oe_inline"/>
-                            </div>
-                            <div class="mt8">
-                                <button name="%(mobius_automatic_delivery_sale_order.action_automatic_delivery_sale_order_open)d" icon="fa-arrow-right" type="action" string="Rule Templates" class="btn-link"/>
-                            </div>
+                        <div class="mt8">
+                            <button name="%(mobius_automatic_delivery_sale_order.action_automatic_delivery_sale_order_open)d" icon="oi-arrow-right" type="action" string="Rule Templates" class="btn-link"/>
                         </div>
                     </div>
-                </div>
+                </setting>
             </xpath>
         </field>
     </record>

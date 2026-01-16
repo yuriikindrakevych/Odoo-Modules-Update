@@ -15,19 +15,19 @@
                         <button class="oe_stat_button" type="object"
                             name="action_view_contacts"
                             icon="fa-user"
-                            attrs="{'invisible': [('contact_count', '=', 0)]}">
+                            invisible="contact_count == 0">
                             <field string="Contacts" name="contact_count" widget="statinfo"/>
                         </button>
                         <button class="oe_stat_button" type="object"
                             name="action_view_opportunities"
                             icon="fa-star"
-                            attrs="{'invisible': [('opportunity_count', '=', 0)]}">
+                            invisible="opportunity_count == 0">
                             <field string="Opportunities" name="opportunity_count" widget="statinfo"/>
                         </button>
                         <button class="oe_stat_button" type="object"
                             name="action_view_leads"
                             icon="fa-star"
-                            attrs="{'invisible': [('lead_count', '=', 0)]}">
+                            invisible="lead_count == 0">
                             <field string="Leads" name="lead_count" widget="statinfo"/>
                         </button>
                     </div>

@@ -7,14 +7,14 @@
             <form string="Building Object">
                 <header>
                     <button name="create_offer" type="object" string="Create Offer" class="oe_highlight"
-                        attrs="{'invisible': ['|', ('state', 'in', ['cancel', 'done']), ('show_button_cancel', '=', False)]}"/>
+                        invisible="state in ['cancel', 'done'] or not show_button_cancel"/>
                     <button name="button_cancel" type="object" string="Cancel"
                             class="oe_highlight"
-                            attrs="{'invisible': ['|', ('show_button_cancel', '=', True), ('state', '=', 'cancel')]}">
+                            invisible="show_button_cancel or state == 'cancel'">
                     </button>
                     <button name="button_renew" type="object" string="Renew"
                             class="oe_highlight"
-                            attrs="{'invisible': ['|', ('state', '!=', 'cancel'), ('state', '=', 'new')]}">
+                            invisible="state != 'cancel' or state == 'new'">
                     </button>
                     <field name="state" widget="statusbar" options="{'clickable': 1}"/>
                 </header>
@@ -27,10 +27,10 @@
                                     <span class="o_stat_value">
                                         <field name="attachment_number"/>
                                     </span>
-                                    <span attrs="{'invisible': [('attachment_number', '=', 1)]}">
+                                    <span invisible="attachment_number == 1">
                                         Attachments
                                     </span>
-                                    <span attrs="{'invisible': [('attachment_number', '!=', 1)]}">
+                                    <span invisible="attachment_number != 1">
                                         Attachment
                                     </span>
                                 </div>
@@ -43,10 +43,10 @@
                                     <span class="o_stat_value">
                                         <field name="crm_lead_count"/>
                                     </span>
-                                    <span attrs="{'invisible': [('crm_lead_count', '=', 1)]}">
+                                    <span invisible="crm_lead_count == 1">
                                         Leads
                                     </span>
-                                    <span attrs="{'invisible': [('crm_lead_count', '!=', 1)]}">
+                                    <span invisible="crm_lead_count != 1">
                                         Lead
                                     </span>
                                 </div>
@@ -59,17 +59,17 @@
                                     <span class="o_stat_value">
                                         <field name="sale_order_count"/>
                                     </span>
-                                    <span attrs="{'invisible': [('sale_order_count', '=', 1)]}">
+                                    <span invisible="sale_order_count == 1">
                                         Sale Orders
                                     </span>
-                                    <span attrs="{'invisible': [('sale_order_count', '!=', 1)]}">
+                                    <span invisible="sale_order_count != 1">
                                         Sale Order
                                     </span>
                                 </div>
                         </button>
                         <button name="action_show_crm_lead" type="object"
                             class="oe_stat_button" icon="fa-user"
-                            attrs="{'invisible': [('crm_lead_id', '=', False)]}">
+                            invisible="not crm_lead_id">
                             <div class="o_stat_info">
                                 <span class="o_stat_text">Lead</span>
                             </div>
@@ -258,7 +258,7 @@
                                 'partner_id': parent.partner_id,
                                 'company_id': parent.company_id,
                             }"
-                            attrs="{'readonly': [('full_reserved', '=', True)]}"
+                            readonly="full_reserved"
                             domain="['|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]"
                             widget="product_configurator"
                         />

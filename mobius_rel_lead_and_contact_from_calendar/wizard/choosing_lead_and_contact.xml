@@ -11,8 +11,8 @@
                         <field name="calendar_event_id" invisible="1"/>
                         <field name="opportunity_old_id" invisible="1"/>
                         <field name="contact_old_id" invisible="1"/>
-                        <field name="opportunity_id" attrs="{'readonly': [('contact_id', '!=', False)]}"/>
-                        <field name="contact_id" attrs="{'readonly': [('opportunity_id', '!=', False)]}"/>
+                        <field name="opportunity_id" readonly="contact_id"/>
+                        <field name="contact_id" readonly="opportunity_id"/>
                     </group>
 
                     <footer>

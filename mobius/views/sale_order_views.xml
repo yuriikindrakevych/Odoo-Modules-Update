@@ -5,7 +5,7 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_tree"/>
             <field name="arch" type="xml">
-                <xpath expr="//tree//field[@name='amount_total']" position="after">
+                <xpath expr="//field[@name='amount_total']" position="after">
                     <field name="amount_of_debt_m"/>
                     <field name="procentage_of_payment"/>
                 </xpath>

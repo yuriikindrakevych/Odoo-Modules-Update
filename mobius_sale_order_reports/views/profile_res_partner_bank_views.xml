@@ -13,7 +13,7 @@
                             class="oe_stat_button"
                             icon="fa-th-list"
                             name="button_add_banks"
-                            context="{'default_active_id': active_id, 'currency_id': context.get('currency_id')}"
+                            context="{'default_active_id': id, 'currency_id': context.get('currency_id')}"
                             type="object"
                         />
                         <button

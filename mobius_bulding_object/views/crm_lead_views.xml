@@ -5,23 +5,23 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_lead_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//button[@name='action_set_lost']" position="after">
+            <xpath expr="//button[@name='action_set_won_rainbowman']" position="after">
                 <button name="window_bulding_object_lead"
                     string="Create Building Object"
                     type="object"
                     class="oe_highlight"
-                    attrs="{'invisible': ['|', ('building_object_id', '!=', False), ('type', '!=', 'opportunity')]}"
+                    invisible="building_object_id or type != 'opportunity'"
                     />
             </xpath>
             <xpath expr="//group[@name='lead_priority']" position="after">
-                <group name="building_object" attrs="{'invisible': [('type', '!=', 'opportunity')]}">
+                <group name="building_object" invisible="type != 'opportunity'">
                     <field name="building_object_id" options="{'no_create': True}"/>
                 </group>
             </xpath>
             <xpath expr="//button[@name='action_show_potential_duplicates']" position="after">
                 <button name="action_show_building_object" type="object"
                     class="oe_stat_button" icon="fa-home"
-                    attrs="{'invisible': ['|', ('building_object_id', '=', False), ('type', '!=', 'opportunity')]}"
+                    invisible="not building_object_id or type != 'opportunity'"
                     >
                     <div class="o_stat_info">
                         <span class="o_stat_text">Building Object</span>
