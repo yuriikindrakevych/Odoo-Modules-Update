@@ -25,7 +25,7 @@ SERVICE_NAME="odoo18"
 BACKUP_DIR="${ODOO_DIR}/backups"
 LOG_DIR="${ODOO_DIR}/logs"
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-GIT_BRANCH="odoo18-migration"
+GIT_BRANCH="main"
 
 # PostgreSQL конфігурація
 DB_HOST="localhost"

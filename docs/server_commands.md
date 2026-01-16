@@ -64,8 +64,8 @@ git clone [REPOSITORY_URL] custom_addons
 # Перейти в директорію модулів
 cd custom_addons
 
-# Переключитися на гілку міграції
-git checkout odoo18-migration
+# Переключитися на основну гілку
+git checkout main
 ```
 
 ### 3. Копіювання скрипта деплою
@@ -139,7 +139,7 @@ cd /www/wwwroot/odoo-18.aclima.ua/custom_addons
 git status
 
 # Завантажити зміни
-git pull origin odoo18-migration
+git pull origin main
 
 # Переглянути останні коміти
 git log --oneline -10
@@ -235,7 +235,7 @@ psql -h localhost -p 5432 -U odoo -d odoo18_new < backup.sql
 ```bash
 # 1. На сервері: завантажити зміни
 cd /www/wwwroot/odoo-18.aclima.ua/custom_addons
-git pull origin odoo18-migration
+git pull origin main
 
 # 2. Перевірити що змінилося
 git log --oneline -5
@@ -263,7 +263,7 @@ sudo journalctl -u odoo18 -n 50 --no-pager
 ```bash
 # Якщо сервіс може бути перезапущений
 cd /www/wwwroot/odoo-18.aclima.ua/custom_addons
-git pull origin odoo18-migration
+git pull origin main
 sudo systemctl restart odoo18
 ```
 
