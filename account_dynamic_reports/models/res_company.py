@@ -77,7 +77,8 @@ class ins_account_financial_report(models.Model):
         ], 'Type', default='sum')
     account_ids = fields.Many2many('account.account', 'ins_account_account_financial_report', 'report_line_id', 'account_id', 'Accounts')
     account_report_id = fields.Many2one('ins.account.financial.report', 'Report Value')
-    account_type_ids = fields.Many2many('account.account.type', 'ins_account_account_financial_report_type', 'report_id', 'account_type_id', 'Account Types')
+    # Odoo 18: account.account.type model no longer exists, account_type is now a selection on account.account
+    account_type_ids = fields.Char('Account Types', help='Comma-separated account type codes (e.g., income,expense)')
     sign = fields.Selection([('-1', 'Reverse balance sign'), ('1', 'Preserve balance sign')], 'Sign on Reports', required=True, default='1',
                             help='For accounts that are typically more debited than credited and that you would like to print as negative amounts in your reports, you should reverse the sign of the balance; e.g.: Expense account. The same applies for accounts that are typically more credited than debited and that you would like to print as positive amounts in your reports; e.g.: Income account.')
     range_selection = fields.Selection([

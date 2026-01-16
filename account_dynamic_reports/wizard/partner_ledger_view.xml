@@ -23,7 +23,7 @@
                     </group>
                     <group col="2">
                         <field name="account_ids" widget="many2many_tags"
-                               domain="[('company_id','=',company_id)]"
+                               domain="[('company_ids','in',[company_id])]"
                                 options="{'no_create_edit': True,'no_create': True, 'no_quick_create': True}"/>
                         <field name="journal_ids" widget="many2many_tags"
                                domain="[('company_id','=',company_id)]"
