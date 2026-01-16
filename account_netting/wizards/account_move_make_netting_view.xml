@@ -20,7 +20,7 @@
                     <field name="balance" />
                     <field
                         name="balance_type"
-                        attrs="{'invisible': [('balance', '=', 0)]}"
+                        invisible="balance == 0"
                     />
                     <field name="journal_id" />
                 </group>

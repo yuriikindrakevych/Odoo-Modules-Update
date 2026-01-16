@@ -14,10 +14,10 @@
                             <span class="o_stat_value">
                                 <field name="building_object_item_count"/>
                             </span>
-                            <span attrs="{'invisible': [('building_object_item_count', '=', 1)]}">
+                            <span invisible="building_object_item_count == 1">
                                 Building objects
                             </span>
-                            <span attrs="{'invisible': [('building_object_item_count', '!=', 1)]}">
+                            <span invisible="building_object_item_count != 1">
                                 Building Object
                             </span>
                         </div>

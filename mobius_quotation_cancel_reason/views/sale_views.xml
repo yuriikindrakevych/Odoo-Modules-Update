@@ -7,10 +7,10 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//notebook" position="before">
-                <group string="Quotation Cancel Reason" attrs="{'invisible': [('state', '!=', 'cancel')]}">
+                <group string="Quotation Cancel Reason" invisible="state != 'cancel'">
                     <group>
-                        <field name="cancel_reason_id" attrs="{'readonly': [('state', '!=', 'cancel')]}"/>
-                        <field name="cancellation_comment" attrs="{'readonly': [('state', '!=', 'cancel')]}"/>
+                        <field name="cancel_reason_id" readonly="state != 'cancel'"/>
+                        <field name="cancellation_comment" readonly="state != 'cancel'"/>
                     </group>
                 </group>
             </xpath>

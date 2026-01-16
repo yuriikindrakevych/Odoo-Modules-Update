@@ -5,7 +5,7 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//form//sheet" position="before">
+            <xpath expr="//sheet" position="before">
                 <header>
                     <button
                         name="create_user"
@@ -25,7 +25,7 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//form//sheet//field[@name='trade_guardian_code']" position="after">
+            <xpath expr="//field[@name='trade_guardian_code']" position="after">
                 <field name="right_services_ids" widget="many2many_tags"/>
                 <field name="user_ids" widget="many2many_tags"/>
             </xpath>

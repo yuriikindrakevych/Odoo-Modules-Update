@@ -118,7 +118,7 @@
                                     <field name="odoo_field"/>
                                     <button name="action_guess_mapping" type="object"
                                             icon="fa-question-circle text-info" string="Guess Mapping"
-                                            attrs="{'invisible': [('odoo_field', '!=', False)]}"/>
+                                            invisible="odoo_field"/>
                                 </list>
                             </field>
                         </group>

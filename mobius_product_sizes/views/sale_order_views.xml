@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//page/field[@name='order_line']/tree/field[@name='name']" position="after">
-                <field name="serial_number" attrs="{'invisible': [('state', '=', 'done')]}"/>
+                <field name="serial_number" invisible="state == 'done'"/>
             </xpath>
         </field>
     </record>

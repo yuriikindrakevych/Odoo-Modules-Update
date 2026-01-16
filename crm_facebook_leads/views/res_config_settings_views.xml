@@ -31,7 +31,7 @@
                                         <label for="crm_fb_app_secret" class="col-md-3 o_light_label"/>
                                         <field name="crm_fb_app_secret"/>
                                     </div>
-                                    <div attrs="{'invisible': ['|', ('crm_fb_app_id', 'in', ('', False)), ('crm_fb_app_secret', 'in', ('', False))]}">
+                                    <div invisible="not crm_fb_app_id or not crm_fb_app_secret">
                                         <button type="object" name="action_get_access_token" string="Get Access Token"
                                                 icon="fa-arrow-right" class="btn-link"/>
                                     </div>
@@ -77,7 +77,7 @@
                                     <!--                                        <label for="crm_fb_access_token_state_message" class="col-md-3 o_light_label"/>-->
                                     <!--                                        <field name="crm_fb_access_token_state_message"/>-->
                                     <!--                                    </div>-->
-                                    <div attrs="{'invisible': [('crm_fb_access_token', 'in', ('', False))]}">
+                                    <div invisible="not crm_fb_access_token">
                                         <button type="object" name="action_get_facebook_pages" string="Get Pages"
                                                 icon="fa-arrow-right" class="btn-link"/>
                                     </div>

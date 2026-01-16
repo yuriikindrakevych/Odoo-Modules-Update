@@ -6,13 +6,20 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
+            <!-- Приховуємо поле city -->
             <xpath expr="//field[@name='city']" position="replace">
-                <field name="city" invisible="1" position="attributes"/>
+                <field name="city" modifiers="{'invisible': True}"/>
             </xpath>
+
+            <!-- Додаємо поле city_ua з новими модифікаторами -->
             <xpath expr="//field[@name='state_id']" position="after">
-                <field name="city_ua" placeholder="City" class="o_address_city" options="{'no_open': True}"
+                <field name="city_ua"
+                    placeholder="City"
+                    class="o_address_city"
+                    options="{'no_open': True}"
                     context="{'default_country_id': country_id, 'default_res_country_state_id': state_id}"
-                    attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                    modifiers="{'readonly': [('type', '=', 'contact'), ('parent_id', '!=', False)]}"
+                />
             </xpath>
         </field>
     </record>

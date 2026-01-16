@@ -11,12 +11,12 @@
                 <field name="active" widget="boolean_toggle"/>
             </xpath>
             <xpath expr="//notebook" position="inside">
-                <page string="Constant Fields" attrs="{'invisible': [('mapping_model_is_contact','=', False)]}">
+                <page string="Constant Fields" invisible="not mapping_model_is_contact">
                     <group>
                         <field name="mapping_model_is_contact" invisible="1"/>
-                        <field name="user_id" options="{'no_create': True}" attrs="{'required': [('mapping_model_is_contact','!=', False)]}"/>
-                        <field name="source_id" options="{'no_create': True}" attrs="{'required': [('mapping_model_is_contact','!=', False)]}"/>
-                        <field name="category_ids" widget="many2many_tags" options="{'no_create': True}" attrs="{'required': [('mapping_model_is_contact','!=', False)]}"/>
+                        <field name="user_id" options="{'no_create': True}" required="mapping_model_is_contact"/>
+                        <field name="source_id" options="{'no_create': True}" required="mapping_model_is_contact"/>
+                        <field name="category_ids" widget="many2many_tags" options="{'no_create': True}" required="mapping_model_is_contact"/>
                     </group>
                 </page>
             </xpath>
