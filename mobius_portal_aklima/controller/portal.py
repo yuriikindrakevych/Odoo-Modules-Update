@@ -160,10 +160,18 @@ class Hospital(http.Controller):
         date_end = None
         if kw.get("my_datetimepicker"):
             parts = str(kw.get("my_datetimepicker")).rsplit(' ', 2)
-            date_start = datetime.strptime(parts[0], '%m/%d/%Y').date()
+            try:
+                date_start = datetime.strptime(parts[0], '%m/%d/%Y').date()
+            except ValueError:
+                _logger.warning("Invalid date format for start date: %s", parts[0])
+                date_start = None
         if kw.get("my_datetimepickertwo"):
             parts_two = str(kw.get("my_datetimepickertwo")).rsplit(' ', 2)
-            date_end = datetime.strptime(parts_two[0], '%m/%d/%Y').date()
+            try:
+                date_end = datetime.strptime(parts_two[0], '%m/%d/%Y').date()
+            except ValueError:
+                _logger.warning("Invalid date format for end date: %s", parts_two[0])
+                date_end = None
         _logger.error("request.env.context.get('uid')=%s", request.env.context.get("uid"))
         _logger.error("env.user.partner_id=%s", request.env.user.partner_id)
 
