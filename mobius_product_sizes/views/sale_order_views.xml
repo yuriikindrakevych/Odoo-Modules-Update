@@ -5,8 +5,8 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//page/field[@name='order_line']/tree/field[@name='name']" position="after">
-                <field name="serial_number" invisible="state == 'done'"/>
+            <xpath expr="//page[@name='order_lines']/field[@name='order_line']/list/field[@name='name']" position="after">
+                <field name="serial_number" column_invisible="parent.state == 'done'" optional="hide"/>
             </xpath>
         </field>
     </record>

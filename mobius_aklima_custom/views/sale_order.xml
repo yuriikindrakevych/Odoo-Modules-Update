@@ -28,7 +28,7 @@
                 <field name="status_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
             </xpath>
 
-            <xpath expr="//field[@name='order_line']/tree//field[@name='name']" position="attributes">
+            <xpath expr="//field[@name='order_line']/list//field[@name='name']" position="attributes">
                 <attribute name="style">white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-height: 50px;</attribute>
             </xpath>
 
@@ -64,7 +64,8 @@
             <xpath expr="//field[@name='state']" position="after">
                 <field name="status_ids"/>
             </xpath>
-            <xpath expr="//div[hasclass('o_kanban_record_top')]" position="after">
+            <!-- In Odoo 18, kanban uses t-name="card" template structure -->
+            <xpath expr="//t[@t-name='card']/div[1]" position="after">
                 <div t-if="record.status_ids.raw_value and record.status_ids.raw_value.length" class="mt-2 mb-2">
                     <field name="status_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 </div>

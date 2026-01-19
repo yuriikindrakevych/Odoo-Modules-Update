@@ -6,7 +6,7 @@
            <field name="model">crm.lead</field>
            <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
            <field name="arch" type="xml">
-               <xpath expr="//tree" position="attributes">
+               <xpath expr="//list" position="attributes">
                    <attribute name="js_class">open_wizard_lead_by_vat_tree</attribute>
                </xpath>
            </field>
