@@ -586,11 +586,9 @@ class CustomerPortal(CustomerPortal):
         values = super()._prepare_home_portal_values(counters)
         partner = request.env.user.partner_id
 
-        BuildingObject = request.env["building.object"].sudo()
-
-        values["building_count"] = BuildingObject.search_count(self._prepare_building_object_domain(partner))
-
-        partner = request.env.user.partner_id
+        if 'building_count' in counters:
+            BuildingObject = request.env["building.object"].sudo()
+            values["building_count"] = BuildingObject.search_count(self._prepare_building_object_domain(partner))
         _logger.info("partner=%s", partner)
         SaleOrder = request.env['sale.order'].sudo()
         if 'quotation_count' in counters:
