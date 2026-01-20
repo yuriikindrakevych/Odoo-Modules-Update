@@ -39,8 +39,7 @@
             <field name="display_detail">detail_with_hierarchy</field>
             <field name="type">account_type</field>
             <field name="range_selection">current_date_range</field>
-            <field name="account_type_ids"
-                   eval="[(4,ref('account.data_account_type_revenue'))]"/>
+            <field name="account_type_ids">income</field>
         </record>
 
         <record id="ins_account_financial_report_cost_of_revenue0"
@@ -52,8 +51,7 @@
             <field name="display_detail">detail_with_hierarchy</field>
             <field name="type">account_type</field>
             <field name="range_selection">current_date_range</field>
-            <field name="account_type_ids"
-                   eval="[(4,ref('account.data_account_type_direct_costs'))]"/>
+            <field name="account_type_ids">expense_direct_cost</field>
         </record>
 
         <record id="ins_account_financial_report_other_income0"
@@ -64,8 +62,7 @@
             <field name="display_detail">detail_with_hierarchy</field>
             <field name="type">account_type</field>
             <field name="range_selection">current_date_range</field>
-            <field name="account_type_ids"
-                   eval="[(4,ref('account.data_account_type_other_income'))]"/>
+            <field name="account_type_ids">income_other</field>
         </record>
 
         <record id="ins_account_financial_report_expense0"
@@ -77,8 +74,7 @@
             <field name="display_detail">detail_with_hierarchy</field>
             <field name="type">account_type</field>
             <field name="range_selection">current_date_range</field>
-            <field name="account_type_ids"
-                   eval="[(4,ref('account.data_account_type_expenses')), (4,ref('account.data_account_type_depreciation'))]"/>
+            <field name="account_type_ids">expense,expense_depreciation</field>
         </record>
 
         <record id="ins_account_financial_report_balancesheet0"
@@ -96,8 +92,7 @@
             <field name="display_detail">detail_with_hierarchy</field>
             <field name="range_selection">from_the_beginning</field>
             <field name="type">account_type</field>
-            <field name="account_type_ids"
-                   eval="[(4,ref('account.data_account_type_receivable')), (4,ref('account.data_account_type_liquidity')), (4,ref('account.data_account_type_current_assets')), (4,ref('account.data_account_type_non_current_assets'), (4,ref('account.data_account_type_prepayments'))), (4,ref('account.data_account_type_fixed_assets'))]"/>
+            <field name="account_type_ids">asset_receivable,asset_cash,asset_current,asset_non_current,asset_prepayments,asset_fixed</field>
         </record>
 
         <record id="ins_account_financial_report_liabilitysum0"
@@ -118,8 +113,7 @@
             <field name="display_detail">detail_with_hierarchy</field>
             <field name="type">account_type</field>
             <field name="range_selection">from_the_beginning</field>
-            <field name="account_type_ids"
-                   eval="[(4,ref('account.data_account_type_payable')), (4,ref('account.data_account_type_current_liabilities')), (4,ref('account.data_account_type_non_current_liabilities'))]"/>
+            <field name="account_type_ids">liability_payable,liability_current,liability_non_current</field>
         </record>
 
         <record id="ins_account_financial_report_equitysum0"
@@ -141,8 +135,7 @@
             <field name="display_detail">detail_with_hierarchy</field>
             <field name="type">account_type</field>
             <field name="range_selection">from_the_beginning</field>
-            <field name="account_type_ids"
-                   eval="[(4,ref('account.data_account_type_equity'))]"/>
+            <field name="account_type_ids">equity</field>
         </record>
 
         <record id="ins_account_financial_report_unallocated_earnings0"
@@ -173,12 +166,7 @@
             <field name="display_detail">no_detail</field>
             <field name="type">account_type</field>
             <field name="range_selection">current_date_range</field>
-            <field name="account_type_ids"
-                   eval="[(4,ref('account.data_account_type_other_income')),
-                   (4,ref('account.data_account_type_revenue')),
-                   (4,ref('account.data_account_type_expenses')),
-                   (4,ref('account.data_account_type_direct_costs')),
-                   (4,ref('account.data_account_type_depreciation'))]"/>
+            <field name="account_type_ids">income_other,income,expense,expense_direct_cost,expense_depreciation</field>
         </record>
 
         <record id="ins_account_financial_report_current_allocated_earnings0"
@@ -190,8 +178,7 @@
             <field name="display_detail">no_detail</field>
             <field name="type">account_type</field>
             <field name="range_selection">current_date_range</field>
-            <field name="account_type_ids"
-                   eval="[(4,ref('account.data_unaffected_earnings'))]"/>
+            <field name="account_type_ids">equity_unaffected</field>
         </record>
 
         <record id="ins_account_financial_report_previous_unallocated_earnings0"
@@ -203,13 +190,7 @@
             <field name="display_detail">no_detail</field>
             <field name="type">account_type</field>
             <field name="range_selection">initial_date_range</field>
-            <field name="account_type_ids"
-                   eval="[(4,ref('account.data_unaffected_earnings')),
-                   (4,ref('account.data_account_type_other_income')),
-                   (4,ref('account.data_account_type_revenue')),
-                   (4,ref('account.data_account_type_expenses')),
-                   (4,ref('account.data_account_type_direct_costs')),
-                   (4,ref('account.data_account_type_depreciation'))]"/>
+            <field name="account_type_ids">equity_unaffected,income_other,income,expense,expense_direct_cost,expense_depreciation</field>
         </record>
 
         <record id="ins_account_financial_report_cash_flow0" model="ins.account.financial.report">

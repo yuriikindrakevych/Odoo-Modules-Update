@@ -6,18 +6,21 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_lead_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='team_id']" position="after">
+            <!-- Add fields after team_id in the lead info section -->
+            <xpath expr="//group[@name='lead_info']" position="inside">
                 <field name="certificate_data"/>
                 <field name="trade_guardian_code"/>
                 <field name="vat"/>
             </xpath>
-            <xpath expr="//group[@name='opportunity_info']" position="after">
+            <!-- Add linkedin fields after lead_priority group -->
+            <xpath expr="//group[@name='lead_priority']" position="after">
                 <group>
                     <field name="linkedin"/>
                     <field name="linkedin_company"/>
                 </group>
             </xpath>
-            <xpath expr="//button[@name='action_set_lost']" position="after">
+            <!-- Add buttons in header after the Lost button (action reference in Odoo 18) -->
+            <xpath expr="//header" position="inside">
                 <button name="window_accept_create_user_contact_company"
                     string="Create contact/user"
                     type="object"

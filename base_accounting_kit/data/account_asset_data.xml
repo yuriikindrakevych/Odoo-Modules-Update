@@ -4,6 +4,8 @@
         <field name="name">Account Asset: Generate asset entries</field>
         <field name="interval_number">1</field>
         <field name="interval_type">months</field>
+        <field name="model_id" ref="model_account_asset_asset"/>
+        <field name="state">code</field>
         <field name="code">env['account.asset.asset']._cron_generate_entries()</field>
     </record>
 </odoo>

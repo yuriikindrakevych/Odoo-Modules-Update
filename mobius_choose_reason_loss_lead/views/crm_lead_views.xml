@@ -13,17 +13,14 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_lead_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//button[@name='action_set_lost']" position="replace">
-                <button name="action_set_lost" string="Lost" type="object" data-hotkey="l" title="Mark as lost"
-                    invisible="type == 'opportunity' or (probability == 0 and not active) or type == 'lead'"/>
-            </xpath>
-            <xpath expr="//button[@name='action_set_lost']" position="after">
-                <button name="%(crm_lead_lost_action_mobius)d" string="Lost"
+            <!-- In Odoo 18, Lost button uses action reference, add custom button in header -->
+            <xpath expr="//header" position="inside">
+                <button name="%(crm_lead_lost_action_mobius)d" string="Lost (Custom)"
                     type="action" context="{'default_lead_id': active_id}"
-                    invisible="type == 'opportunity' or (probability == 0 and not active)"/>
+                    invisible="type == 'lead' or (probability == 0 and not active)"/>
             </xpath>
-            <xpath expr="//group[@name='opportunity_info']" position="after">
-                <group name="lead_info" invisible="type == 'opportunity'">
+            <xpath expr="//group[@name='lead_priority']" position="after">
+                <group name="mobius_lead_info" invisible="type == 'opportunity'">
                     <field name="lost_reason" invisible="active"/>
                     <field name="date_conversion" invisible="1"/>
                     <field name="company_id" groups="base.group_multi_company"/>

@@ -43,16 +43,17 @@
     'assets': {
         'web.assets_backend': [
             'account_dynamic_reports/static/src/scss/dynamic_common_style.scss',
-            'account_dynamic_reports/static/src/js/action_manager.js',
-            'account_dynamic_reports/static/src/js/script.js',
-            'account_dynamic_reports/static/src/js/select2.full.min.js',
+            # Note: JS disabled for Odoo 18.0 compatibility - uses old widget system
+            # 'account_dynamic_reports/static/src/js/action_manager.js',
+            # 'account_dynamic_reports/static/src/js/script.js',
+            # 'account_dynamic_reports/static/src/js/select2.full.min.js',
         ],
-        'web.assets_qweb': [
-            'account_dynamic_reports/static/src/xml/view.xml',
-        ]
+        # 'web.assets_qweb': [
+        #     'account_dynamic_reports/static/src/xml/view.xml',
+        # ]
     },
     'license': 'OPL-1',
-    'qweb': ['static/src/xml/view.xml'],
+    # 'qweb': ['static/src/xml/view.xml'],  # Deprecated in Odoo 18.0
     'installable': True,
     'application': True,
     'auto_install': False,

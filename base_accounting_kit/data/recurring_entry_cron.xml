@@ -4,6 +4,8 @@
         <field name="name">Generate Recurring Entries</field>
         <field name="interval_number">1</field>
         <field name="interval_type">days</field>
+        <field name="model_id" ref="model_account_recurring_payments"/>
+        <field name="state">code</field>
         <field name="code">env['account.recurring.payments']._cron_generate_entries()</field>
     </record>
 </odoo>
