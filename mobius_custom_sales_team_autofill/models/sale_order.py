@@ -8,11 +8,13 @@ class SaleOrder(models.Model):
     def _get_default_team_new(self):
         autofill_team_ids = self.env.company.contact_autofill_team_ids.ids
         partner_team_id = getattr(self.partner_id, 'team_id', False)
-
+        
         if partner_team_id and partner_team_id.id in autofill_team_ids:
             return partner_team_id
-
-        return super()._get_default_team()
+        
+        # Odoo 18 compatibility: simplified team selection
+        # Return default team for current user
+        return self.env['crm.team']._get_default_team_id(user_id=self.user_id.id)
 
     team_id = fields.Many2one(default=_get_default_team_new)
 

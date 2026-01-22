@@ -49,7 +49,7 @@ class ReportAgedPartnerBalance(models.AbstractModel):
         # +120     : 2018-10-10
         periods = {}
         start = datetime.strptime(date_from, "%Y-%m-%d")
-        date_from = datetime.strptime(date_from, "%Y-%m-%d").date()
+        date_from_dt = datetime.strptime(date_from, "%Y-%m-%d").date()
         for i in range(5)[::-1]:
             stop = start - relativedelta(days=period_length)
             period_name = str((5 - (i + 1)) * period_length + 1) + '-' + str(
@@ -69,7 +69,6 @@ class ReportAgedPartnerBalance(models.AbstractModel):
         cr = self.env.cr
         user_company = self.env.company
         user_currency = user_company.currency_id
-        ResCurrency = self.env['res.currency'].with_context(date=date_from)
         company_ids = self._context.get('company_ids') or [user_company.id]
         move_state = ['draft', 'posted']
         if target_move == 'posted':
@@ -79,21 +78,23 @@ class ReportAgedPartnerBalance(models.AbstractModel):
         reconciliation_clause = '(l.reconciled IS FALSE)'
         cr.execute(
             'SELECT debit_move_id, credit_move_id FROM account_partial_reconcile where max_date > %s',
-            (date_from,))
+            (date_from_dt,))
         reconciled_after_date = []
         for row in cr.fetchall():
             reconciled_after_date += [row[0], row[1]]
         if reconciled_after_date:
             reconciliation_clause = '(l.reconciled IS FALSE OR l.id IN %s)'
             arg_list += (tuple(reconciled_after_date),)
-        arg_list += (date_from, tuple(company_ids))
+        arg_list += (date_from_dt, tuple(company_ids))
+        
+        # Fixed for Odoo 18: internal_type → account_type
         query = '''
             SELECT DISTINCT l.partner_id, UPPER(res_partner.name)
             FROM account_move_line AS l left join res_partner on l.partner_id = res_partner.id, account_account, account_move am
             WHERE (l.account_id = account_account.id)
                 AND (l.move_id = am.id)
                 AND (am.state IN %s)
-                AND (account_account.internal_type IN %s)
+                AND (account_account.account_type IN %s)
                 AND ''' + reconciliation_clause + '''
                 AND (l.date <= %s)
                 AND l.company_id IN %s
@@ -115,38 +116,38 @@ class ReportAgedPartnerBalance(models.AbstractModel):
 
         # This dictionary will store the not due amount of all partners
         undue_amounts = {}
+        # Fixed for Odoo 18: internal_type → account_type
         query = '''SELECT l.id
                 FROM account_move_line AS l, account_account, account_move am
                 WHERE (l.account_id = account_account.id) AND (l.move_id = am.id)
                     AND (am.state IN %s)
-                    AND (account_account.internal_type IN %s)
+                    AND (account_account.account_type IN %s)
                     AND (COALESCE(l.date_maturity,l.date) >= %s)\
                     AND ((l.partner_id IN %s) OR (l.partner_id IS NULL))
                 AND (l.date <= %s)
                 AND l.company_id IN %s'''
         cr.execute(query, (
-            tuple(move_state), tuple(account_type), date_from,
-            tuple(partner_ids), date_from, tuple(company_ids)))
+            tuple(move_state), tuple(account_type), date_from_dt,
+            tuple(partner_ids), date_from_dt, tuple(company_ids)))
         aml_ids = cr.fetchall()
         aml_ids = aml_ids and [x[0] for x in aml_ids] or []
         for line in self.env['account.move.line'].browse(aml_ids):
             partner_id = line.partner_id.id or False
             if partner_id not in undue_amounts:
                 undue_amounts[partner_id] = 0.0
-            line_amount = ResCurrency._compute(line.company_id.currency_id,
-                                               user_currency, line.balance)
+            # Fixed for Odoo 18: _compute → _convert
+            line_amount = line.company_id.currency_id._convert(
+                line.balance, user_currency, user_company, date_from_dt)
             if user_currency.is_zero(line_amount):
                 continue
             for partial_line in line.matched_debit_ids:
-                if partial_line.max_date <= date_from:
-                    line_amount += ResCurrency._compute(
-                        partial_line.company_id.currency_id, user_currency,
-                        partial_line.amount)
+                if partial_line.max_date <= date_from_dt:
+                    line_amount += partial_line.company_id.currency_id._convert(
+                        partial_line.amount, user_currency, user_company, date_from_dt)
             for partial_line in line.matched_credit_ids:
-                if partial_line.max_date <= date_from:
-                    line_amount -= ResCurrency._compute(
-                        partial_line.company_id.currency_id, user_currency,
-                        partial_line.amount)
+                if partial_line.max_date <= date_from_dt:
+                    line_amount -= partial_line.company_id.currency_id._convert(
+                        partial_line.amount, user_currency, user_company, date_from_dt)
             if not self.env.company.currency_id.is_zero(line_amount):
                 undue_amounts[partner_id] += line_amount
                 lines[partner_id].append({
@@ -173,13 +174,14 @@ class ReportAgedPartnerBalance(models.AbstractModel):
             else:
                 dates_query += ' <= %s)'
                 args_list += (periods[str(i)]['stop'],)
-            args_list += (date_from, tuple(company_ids))
+            args_list += (date_from_dt, tuple(company_ids))
 
+            # Fixed for Odoo 18: internal_type → account_type
             query = '''SELECT l.id
                     FROM account_move_line AS l, account_account, account_move am
                     WHERE (l.account_id = account_account.id) AND (l.move_id = am.id)
                         AND (am.state IN %s)
-                        AND (account_account.internal_type IN %s)
+                        AND (account_account.account_type IN %s)
                         AND ((l.partner_id IN %s) OR (l.partner_id IS NULL))
                         AND ''' + dates_query + '''
                     AND (l.date <= %s)
@@ -192,20 +194,19 @@ class ReportAgedPartnerBalance(models.AbstractModel):
                 partner_id = line.partner_id.id or False
                 if partner_id not in partners_amount:
                     partners_amount[partner_id] = 0.0
-                line_amount = ResCurrency._compute(line.company_id.currency_id,
-                                                   user_currency, line.balance)
+                # Fixed for Odoo 18: _compute → _convert
+                line_amount = line.company_id.currency_id._convert(
+                    line.balance, user_currency, user_company, date_from_dt)
                 if user_currency.is_zero(line_amount):
                     continue
                 for partial_line in line.matched_debit_ids:
-                    if partial_line.max_date <= date_from:
-                        line_amount += ResCurrency._compute(
-                            partial_line.company_id.currency_id, user_currency,
-                            partial_line.amount)
+                    if partial_line.max_date <= date_from_dt:
+                        line_amount += partial_line.company_id.currency_id._convert(
+                            partial_line.amount, user_currency, user_company, date_from_dt)
                 for partial_line in line.matched_credit_ids:
-                    if partial_line.max_date <= date_from:
-                        line_amount -= ResCurrency._compute(
-                            partial_line.company_id.currency_id, user_currency,
-                            partial_line.amount)
+                    if partial_line.max_date <= date_from_dt:
+                        line_amount -= partial_line.company_id.currency_id._convert(
+                            partial_line.amount, user_currency, user_company, date_from_dt)
 
                 if not self.env.company.currency_id.is_zero(
                         line_amount):
@@ -281,11 +282,11 @@ class ReportAgedPartnerBalance(models.AbstractModel):
         date_from = data['form'].get('date_from', time.strftime('%Y-%m-%d'))
 
         if data['form']['result_selection'] == 'customer':
-            account_type = ['receivable']
+            account_type = ['asset_receivable']
         elif data['form']['result_selection'] == 'supplier':
-            account_type = ['payable']
+            account_type = ['liability_payable']
         else:
-            account_type = ['payable', 'receivable']
+            account_type = ['liability_payable', 'asset_receivable']
 
         movelines, total, dummy = self._get_partner_move_lines(account_type,
                                                                date_from,

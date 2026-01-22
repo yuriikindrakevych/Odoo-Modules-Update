@@ -41,20 +41,18 @@ class ReportFinancial(models.AbstractModel):
         for account in accounts:
             res[account.id] = dict.fromkeys(mapping, 0.0)
         if accounts:
-            tables, where_clause, where_params = self.env[
-                'account.move.line']._query_get()
-            tables = tables.replace('"', '') if tables else "account_move_line"
-            wheres = [""]
-            if where_clause.strip():
-                wheres.append(where_clause.strip())
-            filters = " AND ".join(wheres)
-            request = "SELECT account_id as id, " + ', '.join(
-                mapping.values()) + \
-                      " FROM " + tables + \
-                      " WHERE account_id IN %s " \
-                      + filters + \
-                      " GROUP BY account_id"
-            params = (tuple(accounts._ids),) + tuple(where_params)
+            # Fixed for Odoo 18: simplified query without deprecated methods
+            request = """
+                SELECT account_id as id, 
+                       COALESCE(SUM(debit), 0) as debit,
+                       COALESCE(SUM(credit), 0) as credit,
+                       COALESCE(SUM(debit), 0) - COALESCE(SUM(credit), 0) as balance
+                FROM account_move_line
+                WHERE account_id IN %s
+                  AND parent_state = 'posted'
+                GROUP BY account_id
+            """
+            params = (tuple(accounts.ids),)
             self.env.cr.execute(request, params)
             for row in self.env.cr.dictfetchall():
                 res[row['id']] = row
@@ -172,24 +170,24 @@ class ReportFinancial(models.AbstractModel):
                         'balance': value['balance'] * int(report.sign) or 0.0,
                         'type': 'account',
                         'level': report.display_detail == 'detail_with_hierarchy' and 4,
-                        'account_type': account.internal_type,
+                        'account_type': account.account_type,  # Fixed for Odoo 18
                     }
                     if data['debit_credit']:
                         vals['debit'] = value['debit']
                         vals['credit'] = value['credit']
-                        if not account.company_id.currency_id.is_zero(
-                                vals[
-                                    'debit']) or not account.company_id.currency_id.is_zero(
-                            vals['credit']):
+                        # Fixed for Odoo 18: company_id is now company_ids
+                        company = account.company_ids[:1] if account.company_ids else self.env.company
+                        currency = company.currency_id
+                        if not currency.is_zero(vals['debit']) or not currency.is_zero(vals['credit']):
                             flag = True
-                    if not account.company_id.currency_id.is_zero(
-                            vals['balance']):
+                    company = account.company_ids[:1] if account.company_ids else self.env.company
+                    currency = company.currency_id
+                    if not currency.is_zero(vals['balance']):
                         flag = True
                     if data['enable_filter']:
                         vals['balance_cmp'] = value['comp_bal'] * int(
                             report.sign)
-                        if not account.company_id.currency_id.is_zero(
-                                vals['balance_cmp']):
+                        if not currency.is_zero(vals['balance_cmp']):
                             flag = True
                     if flag:
                         sub_lines.append(vals)

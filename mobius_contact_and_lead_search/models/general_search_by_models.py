@@ -70,60 +70,53 @@ class GeneralSearchByModels(models.Model):
             obj.opportunity_count = len(obj.opportunity_ids)
 
     def action_view_contacts(self):
-        action = {
-            "name": _("Contacts"),
-            "res_model": "res.partner",
-            "type": "ir.actions.act_window"
-        }
+        self.ensure_one()
+        
+        # Use standard Odoo action for partners
+        action = self.env['ir.actions.act_window']._for_xml_id('base.action_partner_form')
+        action['domain'] = [('id', 'in', self.contact_ids.ids)]
+        action['context'] = dict(self.env.context)
+        
         if self.contact_count == 1:
-            action.update({
-                "view_mode": "form",
-                "res_id": self.contact_ids.ids[0],
-            })
-        else:
-            action.update({
-                "domain": [("id", "in", self.contact_ids.ids)],
-                "view_mode": "tree,form"
-            })
-
+            action['views'] = [(False, 'form')]
+            action['res_id'] = self.contact_ids.ids[0]
+        
         return action
 
     def action_view_opportunities(self):
-        action = {
-            "name": _("Opportunities"),
-            "res_model": "crm.lead",
-            "type": "ir.actions.act_window"
-        }
+        self.ensure_one()
+        
+        # Use standard Odoo action for opportunities
+        try:
+            action = self.env['ir.actions.act_window']._for_xml_id('crm.crm_lead_opportunities')
+        except:
+            action = self.env['ir.actions.act_window']._for_xml_id('crm.crm_lead_action_pipeline')
+        
+        action['domain'] = [('id', 'in', self.opportunity_ids.ids), ('type', '=', 'opportunity')]
+        action['context'] = dict(self.env.context, default_type='opportunity')
+        
         if self.opportunity_count == 1:
-            action.update({
-                "view_mode": "form",
-                "res_id": self.opportunity_ids.ids[0],
-            })
-        else:
-            action.update({
-                "domain": [("id", "in", self.opportunity_ids.ids)],
-                "view_mode": "kanban,tree,form"
-            })
-
+            action['views'] = [(False, 'form')]
+            action['res_id'] = self.opportunity_ids.ids[0]
+        
         return action
 
     def action_view_leads(self):
-        action = {
-            "name": _("Leads"),
-            "res_model": "crm.lead",
-            "type": "ir.actions.act_window"
-        }
+        self.ensure_one()
+        
+        # Use standard Odoo action for leads
+        try:
+            action = self.env['ir.actions.act_window']._for_xml_id('crm.crm_lead_all_leads')
+        except:
+            action = self.env['ir.actions.act_window']._for_xml_id('crm.crm_lead_action_pipeline')
+        
+        action['domain'] = [('id', 'in', self.lead_ids.ids), ('type', '=', 'lead')]
+        action['context'] = dict(self.env.context, default_type='lead')
+        
         if self.lead_count == 1:
-            action.update({
-                "view_mode": "form",
-                "res_id": self.lead_ids.ids[0],
-            })
-        else:
-            action.update({
-                "domain": [("id", "in", self.lead_ids.ids)],
-                "view_mode": "kanban,tree,form"
-            })
-
+            action['views'] = [(False, 'form')]
+            action['res_id'] = self.lead_ids.ids[0]
+        
         return action
 
     def action_general_search(self):

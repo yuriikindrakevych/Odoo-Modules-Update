@@ -32,11 +32,7 @@ class DayBookPdfReport(models.AbstractModel):
 
     def _get_account_move_entry(self, accounts, form_data, pass_date):
         cr = self.env.cr
-        move_line = self.env['account.move.line']
-        tables, where_clause, where_params = move_line._query_get()
-        wheres = [""]
-        if where_clause.strip():
-            wheres.append(where_clause.strip())
+        # Fixed for Odoo 18: removed _query_get() and using direct SQL
         if form_data['target_move'] == 'posted':
             target_move = "AND m.state = 'posted'"
         else:

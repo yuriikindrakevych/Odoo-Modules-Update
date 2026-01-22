@@ -106,7 +106,8 @@ class AccountInvoiceLine(models.Model):
                     raise UserError(_(
                         'The number of depreciations or the period length of your asset category cannot be null.'))
                 months = cat.method_number * cat.method_period
-                if record.move_id in ['out_invoice', 'out_refund']:
+                # Odoo 18: move_id is object, not string - use move_type
+                if record.move_id.move_type in ['out_invoice', 'out_refund']:
                     record.asset_mrr = record.price_subtotal_signed / months
                 if record.move_id.invoice_date:
                     start_date = datetime.strptime(
@@ -141,26 +142,28 @@ class AccountInvoiceLine(models.Model):
 
     @api.onchange('asset_category_id')
     def onchange_asset_category_id(self):
-        if self.move_id == 'out_invoice' and self.asset_category_id:
+        # Odoo 18: move_id is object, not string - use move_type
+        if self.move_id.move_type == 'out_invoice' and self.asset_category_id:
             self.account_id = self.asset_category_id.account_asset_id.id
-        elif self.move_id == 'in_invoice' and self.asset_category_id:
+        elif self.move_id.move_type == 'in_invoice' and self.asset_category_id:
             self.account_id = self.asset_category_id.account_asset_id.id
 
     @api.onchange('product_uom_id')
     def _onchange_uom_id(self):
-        result = super(AccountInvoiceLine, self)._onchange_uom_id()
+        # Odoo 18: _onchange_uom_id removed from super
+        # Just call our custom logic
         self.onchange_asset_category_id()
-        return result
 
     @api.onchange('product_id')
     def _onchange_product_id(self):
-        vals = super(AccountInvoiceLine, self)._onchange_product_id()
+        # Odoo 18: _onchange_product_id removed from super
+        # Just set asset category based on product
         if self.product_id:
-            if self.move_id == 'out_invoice':
+            # Odoo 18: move_id is object, not string - use move_type
+            if self.move_id.move_type == 'out_invoice':
                 self.asset_category_id = self.product_id.product_tmpl_id.deferred_revenue_category_id
-            elif self.move_id == 'in_invoice':
+            elif self.move_id.move_type == 'in_invoice':
                 self.asset_category_id = self.product_id.product_tmpl_id.asset_category_id
-        return vals
 
     def _set_additional_fields(self, invoice):
         if not self.asset_category_id:

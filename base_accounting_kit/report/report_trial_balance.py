@@ -44,20 +44,26 @@ class ReportTrialBalance(models.AbstractModel):
         """
 
         account_result = {}
-        # Prepare sql query base on selected parameters from wizard
-        tables, where_clause, where_params = self.env[
-            'account.move.line']._query_get()
-        tables = tables.replace('"', '')
-        if not tables:
-            tables = 'account_move_line'
-        wheres = [""]
-        if where_clause.strip():
-            wheres.append(where_clause.strip())
-        filters = " AND ".join(wheres)
+        # Fixed for Odoo 18: removed _query_get() and using direct SQL with date filters
+        date_from = self.env.context.get('date_from')
+        date_to = self.env.context.get('date_to')
+        
+        filters = " AND m.state = 'posted'"
+        where_params = []
+        
+        if date_from:
+            filters += " AND l.date >= %s"
+            where_params.append(date_from)
+        if date_to:
+            filters += " AND l.date <= %s"
+            where_params.append(date_to)
+        
         # compute the balance, debit and credit for the provided accounts
         request = (
-                    "SELECT account_id AS id, SUM(debit) AS debit, SUM(credit) AS credit, (SUM(debit) - SUM(credit)) AS balance" + \
-                    " FROM " + tables + " WHERE account_id IN %s " + filters + " GROUP BY account_id")
+                    "SELECT l.account_id AS id, SUM(l.debit) AS debit, SUM(l.credit) AS credit, (SUM(l.debit) - SUM(l.credit)) AS balance" + \
+                    " FROM account_move_line l" + \
+                    " JOIN account_move m ON (l.move_id = m.id)" + \
+                    " WHERE l.account_id IN %s " + filters + " GROUP BY l.account_id")
         params = (tuple(accounts.ids),) + tuple(where_params)
         self.env.cr.execute(request, params)
         for row in self.env.cr.dictfetchall():
@@ -66,7 +72,10 @@ class ReportTrialBalance(models.AbstractModel):
         account_res = []
         for account in accounts:
             res = dict((fn, 0.0) for fn in ['credit', 'debit', 'balance'])
-            currency = account.currency_id and account.currency_id or account.company_id.currency_id
+            # Fixed for Odoo 18: company_id is now company_ids
+            company = account.company_ids[:1] if account.company_ids else self.env.company
+            currency = account.currency_id or company.currency_id
+            
             res['code'] = account.code
             res['name'] = account.name
             if account.id in account_result:

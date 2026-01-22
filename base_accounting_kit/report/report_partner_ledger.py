@@ -33,24 +33,32 @@ class ReportPartnerLedger(models.AbstractModel):
     def _lines(self, data, partner):
         full_account = []
         currency = self.env['res.currency']
-        query_get_data = self.env['account.move.line'].with_context(
-            data['form'].get('used_context', {}))._query_get()
-        reconcile_clause = "" if data['form'][
-            'reconciled'] else ' AND "account_move_line".full_reconcile_id IS NULL '
-        params = [partner.id, tuple(data['computed']['move_state']),
-                  tuple(data['computed']['account_ids'])] + \
-                 query_get_data[2]
+        # Fixed for Odoo 18: removed _query_get() and using direct query with date filters
+        reconcile_clause = "" if data['form']['reconciled'] else ' AND "account_move_line".full_reconcile_id IS NULL '
+        
+        date_from = data['form'].get('date_from')
+        date_to = data['form'].get('date_to')
+        
+        date_filter = ""
+        params = [partner.id, tuple(data['computed']['move_state']), tuple(data['computed']['account_ids'])]
+        
+        if date_from:
+            date_filter += ' AND "account_move_line".date >= %s'
+            params.append(date_from)
+        if date_to:
+            date_filter += ' AND "account_move_line".date <= %s'
+            params.append(date_to)
+        
         query = """
             SELECT "account_move_line".id, "account_move_line".date, j.code, acc.code as a_code, acc.name as a_name, "account_move_line".ref, m.name as move_name, "account_move_line".name, "account_move_line".debit, "account_move_line".credit, "account_move_line".amount_currency,"account_move_line".currency_id, c.symbol AS currency_code
-            FROM """ + query_get_data[0] + """
+            FROM account_move_line
             LEFT JOIN account_journal j ON ("account_move_line".journal_id = j.id)
             LEFT JOIN account_account acc ON ("account_move_line".account_id = acc.id)
             LEFT JOIN res_currency c ON ("account_move_line".currency_id=c.id)
             LEFT JOIN account_move m ON (m.id="account_move_line".move_id)
             WHERE "account_move_line".partner_id = %s
                 AND m.state IN %s
-                AND "account_move_line".account_id IN %s AND """ + \
-                query_get_data[1] + reconcile_clause + """
+                AND "account_move_line".account_id IN %s""" + date_filter + reconcile_clause + """
                 ORDER BY "account_move_line".date"""
         self.env.cr.execute(query, tuple(params))
         res = self.env.cr.dictfetchall()
@@ -75,21 +83,28 @@ class ReportPartnerLedger(models.AbstractModel):
         if field not in ['debit', 'credit', 'debit - credit']:
             return
         result = 0.0
-        query_get_data = self.env['account.move.line'].with_context(
-            data['form'].get('used_context', {}))._query_get()
-        reconcile_clause = "" if data['form'][
-            'reconciled'] else ' AND "account_move_line".full_reconcile_id IS NULL '
+        # Fixed for Odoo 18: removed _query_get() and using direct query
+        reconcile_clause = "" if data['form']['reconciled'] else ' AND "account_move_line".full_reconcile_id IS NULL '
 
-        params = [partner.id, tuple(data['computed']['move_state']),
-                  tuple(data['computed']['account_ids'])] + \
-                 query_get_data[2]
+        date_from = data['form'].get('date_from')
+        date_to = data['form'].get('date_to')
+        
+        date_filter = ""
+        params = [partner.id, tuple(data['computed']['move_state']), tuple(data['computed']['account_ids'])]
+        
+        if date_from:
+            date_filter += ' AND "account_move_line".date >= %s'
+            params.append(date_from)
+        if date_to:
+            date_filter += ' AND "account_move_line".date <= %s'
+            params.append(date_to)
+
         query = """SELECT sum(""" + field + """)
-                FROM """ + query_get_data[0] + """, account_move AS m
+                FROM account_move_line, account_move AS m
                 WHERE "account_move_line".partner_id = %s
                     AND m.id = "account_move_line".move_id
                     AND m.state IN %s
-                    AND account_id IN %s
-                    AND """ + query_get_data[1] + reconcile_clause
+                    AND account_id IN %s""" + date_filter + reconcile_clause
         self.env.cr.execute(query, tuple(params))
 
         contemp = self.env.cr.fetchone()
@@ -106,41 +121,52 @@ class ReportPartnerLedger(models.AbstractModel):
         data['computed'] = {}
 
         obj_partner = self.env['res.partner']
-        query_get_data = self.env['account.move.line'].with_context(
-            data['form'].get('used_context', {}))._query_get()
+        # Fixed for Odoo 18: removed _query_get()
         data['computed']['move_state'] = ['draft', 'posted']
         if data['form'].get('target_move', 'all') == 'posted':
             data['computed']['move_state'] = ['posted']
         result_selection = data['form'].get('result_selection', 'customer')
+        
+        # Fixed for Odoo 18: updated account types
         if result_selection == 'supplier':
-            data['computed']['ACCOUNT_TYPE'] = ['payable']
+            data['computed']['ACCOUNT_TYPE'] = ['liability_payable']
         elif result_selection == 'customer':
-            data['computed']['ACCOUNT_TYPE'] = ['receivable']
+            data['computed']['ACCOUNT_TYPE'] = ['asset_receivable']
         else:
-            data['computed']['ACCOUNT_TYPE'] = ['payable', 'receivable']
+            data['computed']['ACCOUNT_TYPE'] = ['liability_payable', 'asset_receivable']
 
+        # Fixed for Odoo 18: internal_type → account_type
         self.env.cr.execute("""
             SELECT a.id
             FROM account_account a
-            WHERE a.internal_type IN %s
+            WHERE a.account_type IN %s
             AND NOT a.deprecated""",
                             (tuple(data['computed']['ACCOUNT_TYPE']),))
-        data['computed']['account_ids'] = [a for (a,) in
-                                           self.env.cr.fetchall()]
-        params = [tuple(data['computed']['move_state']),
-                  tuple(data['computed']['account_ids'])] + query_get_data[2]
-        reconcile_clause = "" if data['form'][
-            'reconciled'] else ' AND "account_move_line".full_reconcile_id IS NULL '
+        data['computed']['account_ids'] = [a for (a,) in self.env.cr.fetchall()]
+        
+        date_from = data['form'].get('date_from')
+        date_to = data['form'].get('date_to')
+        
+        date_filter = ""
+        params = [tuple(data['computed']['move_state']), tuple(data['computed']['account_ids'])]
+        
+        if date_from:
+            date_filter += ' AND "account_move_line".date >= %s'
+            params.append(date_from)
+        if date_to:
+            date_filter += ' AND "account_move_line".date <= %s'
+            params.append(date_to)
+        
+        reconcile_clause = "" if data['form']['reconciled'] else ' AND "account_move_line".full_reconcile_id IS NULL '
         query = """
             SELECT DISTINCT "account_move_line".partner_id
-            FROM """ + query_get_data[0] + """, account_account AS account, account_move AS am
+            FROM account_move_line, account_account AS account, account_move AS am
             WHERE "account_move_line".partner_id IS NOT NULL
                 AND "account_move_line".account_id = account.id
                 AND am.id = "account_move_line".move_id
                 AND am.state IN %s
                 AND "account_move_line".account_id IN %s
-                AND NOT account.deprecated
-                AND """ + query_get_data[1] + reconcile_clause
+                AND NOT account.deprecated""" + date_filter + reconcile_clause
         self.env.cr.execute(query, tuple(params))
         partner_ids = [res['partner_id'] for res in self.env.cr.dictfetchall()]
         partners = obj_partner.browse(partner_ids)
